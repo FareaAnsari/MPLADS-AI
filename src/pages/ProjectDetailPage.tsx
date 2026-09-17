@@ -246,15 +246,15 @@ export const ProjectDetailPage: React.FC = () => {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500">Taluk / Block:</span>
-                      <span className="font-semibold text-slate-800">{project.block || 'Haveli'}</span>
+                      <span className="font-semibold text-slate-800">{project.block && project.block !== 'Data Not Available' ? project.block : 'Data Not Available'}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500">Gram Panchayat / Ward:</span>
-                      <span className="font-semibold text-slate-800">{project.village || 'Wagholi'}</span>
+                      <span className="font-semibold text-slate-800">{project.village && project.village !== 'Data Not Available' ? project.village : 'Data Not Available'}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500">GIS Coordinates:</span>
-                      <span className="font-mono text-slate-700">{project.coordinates.lat}° N, {project.coordinates.lng}° E</span>
+                      <span className="font-mono text-slate-700">{project.coordinates ? `${project.coordinates.lat}° N, ${project.coordinates.lng}° E` : 'Data Not Available'}</span>
                     </div>
                   </div>
                 </div>
@@ -269,23 +269,19 @@ export const ProjectDetailPage: React.FC = () => {
                   <div className="bg-slate-50 p-3 rounded border border-slate-200 text-xs space-y-1.5">
                     <div className="flex justify-between">
                       <span className="text-slate-600">Estimated Cost:</span>
-                      <span className="font-semibold text-slate-800">₹ {(project.estimatedCost / 100000).toFixed(2)} Lakh</span>
+                      <span className="font-semibold text-slate-800">{project.estimatedCost ? `₹ ${(project.estimatedCost / 100000).toFixed(2)} Lakh` : 'Data Not Available'}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600">Sanctioned Amount:</span>
-                      <span className="font-semibold text-slate-800">₹ {(project.sanctionedAmount / 100000).toFixed(2)} Lakh</span>
+                      <span className="font-semibold text-slate-800">{project.sanctionedAmount ? `₹ ${(project.sanctionedAmount / 100000).toFixed(2)} Lakh` : 'Data Not Available'}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600">Awarded Contract Value:</span>
-                      <span className="font-bold text-gov-navy">₹ {(project.contractValue / 100000).toFixed(2)} Lakh</span>
+                      <span className="font-bold text-gov-navy">{project.contractValue && project.contractValue !== project.sanctionedAmount ? `₹ ${(project.contractValue / 100000).toFixed(2)} Lakh` : 'Data Not Available'}</span>
                     </div>
                     <div className="flex justify-between text-rose-700 font-semibold border-t border-slate-200 pt-1">
                       <span>Total Cumulative Disbursed:</span>
-                      <span>₹ {(project.expenditure / 100000).toFixed(2)} Lakh ({project.financialProgress}%)</span>
-                    </div>
-                    <div className="flex justify-between text-emerald-700 font-semibold">
-                      <span>Balance Contract Fund:</span>
-                      <span>₹ {((project.contractValue - project.expenditure) / 100000).toFixed(2)} Lakh</span>
+                      <span>{project.expenditure ? `₹ ${(project.expenditure / 100000).toFixed(2)} Lakh (${project.financialProgress}%)` : 'Data Not Available'}</span>
                     </div>
                   </div>
                 </div>
@@ -293,19 +289,21 @@ export const ProjectDetailPage: React.FC = () => {
                 {/* Assigned Contractor Card */}
                 <div>
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
-                    Assigned Contractor
+                    Assigned Contractor / Vendor
                   </h3>
                   <div className="bg-slate-50 p-3 rounded border border-slate-200 text-xs flex items-center justify-between">
                     <div>
-                      <span className="font-bold text-slate-900 block">{project.contractorName}</span>
-                      <span className="text-[10px] text-slate-400 font-mono">Registration: PWD/CLASS1/2018/1442</span>
+                      <span className="font-bold text-slate-900 block">{project.contractorName || 'Data Not Available'}</span>
+                      <span className="text-[10px] text-slate-400 font-mono">Status: {project.contractorName && project.contractorName !== 'Data Not Available' ? 'Official Vendor' : 'Data Not Available'}</span>
                     </div>
-                    <button
-                      onClick={() => navigate(`/contractors/${project.contractorId}`)}
-                      className="px-2 py-1 bg-white border border-slate-300 rounded hover:bg-slate-100 font-semibold text-gov-blue"
-                    >
-                      View Profile
-                    </button>
+                    {project.contractorId && project.contractorId !== 'Data Not Available' && (
+                      <button
+                        onClick={() => navigate(`/contractors/${project.contractorId}`)}
+                        className="px-2 py-1 bg-white border border-slate-300 rounded hover:bg-slate-100 font-semibold text-gov-blue"
+                      >
+                        View Profile
+                      </button>
+                    )}
                   </div>
                 </div>
 
@@ -392,104 +390,102 @@ export const ProjectDetailPage: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <Kanban className="w-4 h-4 text-gov-navy" />
                 <h3 className="text-sm font-bold text-slate-800">
-                  Contractor Execution Team & Task Board
+                  Execution Team & Task Board
                 </h3>
               </div>
               <span className="text-xs text-slate-500">
-                Contractor: <strong>{project.contractorName}</strong>
+                Executing Entity: <strong>{project.contractorName || 'Data Not Available'}</strong>
               </span>
             </div>
 
-            {/* Kanban Columns: TO DO, IN PROGRESS, BLOCKED, DONE */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-              {/* TO DO */}
-              <div className="bg-slate-50 p-3 rounded border border-slate-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-xs text-slate-700">TO DO</span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.2 bg-slate-200 text-slate-700 rounded-full">
-                    {tasks.filter(t => t.status === 'TO DO').length}
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  {tasks.filter(t => t.status === 'TO DO').map(t => (
-                    <div key={t.id} className="bg-white p-2.5 rounded border border-slate-200 shadow-xs text-xs space-y-1">
-                      <span className="font-bold text-slate-800 block">{t.title}</span>
-                      <span className="text-[10px] text-slate-500 block">Assigned: {t.assignedTo} ({t.department})</span>
-                      <div className="flex justify-between items-center text-[10px] pt-1 border-t border-slate-100">
-                        <span className="text-slate-400">Due: {t.deadline}</span>
-                        <span className="font-bold text-slate-600 bg-slate-100 px-1 py-0.2 rounded">{t.priority}</span>
+            {tasks.length === 0 ? (
+              <div className="bg-slate-50 border border-slate-200 rounded p-6 text-center space-y-2">
+                <h4 className="text-xs font-bold text-slate-700">Internal Task Breakdown: Data Not Available</h4>
+                <p className="text-[11px] text-slate-500 max-w-xl mx-auto">
+                  Under the statutory dataset policy, internal contractor task boards and micro-assignments are not present in the central MPLADS public dataset and are strictly displayed as "Data Not Available".
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+                {/* TO DO */}
+                <div className="bg-slate-50 p-3 rounded border border-slate-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-xs text-slate-700">TO DO</span>
+                    <span className="text-[10px] font-bold px-1.5 py-0.2 bg-slate-200 text-slate-700 rounded-full">
+                      {tasks.filter(t => t.status === 'TO DO').length}
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    {tasks.filter(t => t.status === 'TO DO').map(t => (
+                      <div key={t.id} className="bg-white p-2.5 rounded border border-slate-200 shadow-xs text-xs space-y-1">
+                        <span className="font-bold text-slate-800 block">{t.title}</span>
+                        <span className="text-[10px] text-slate-500 block">Assigned: {t.assignedTo} ({t.department})</span>
+                        <div className="flex justify-between items-center text-[10px] pt-1 border-t border-slate-100">
+                          <span className="text-slate-400">Due: {t.deadline}</span>
+                          <span className="font-bold text-slate-600 bg-slate-100 px-1 py-0.2 rounded">{t.priority}</span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* IN PROGRESS */}
-              <div className="bg-amber-50/50 p-3 rounded border border-amber-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-xs text-amber-800">IN PROGRESS</span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.2 bg-amber-200 text-amber-800 rounded-full">
-                    {tasks.filter(t => t.status === 'IN PROGRESS').length}
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  {tasks.filter(t => t.status === 'IN PROGRESS').map(t => (
-                    <div key={t.id} className="bg-white p-2.5 rounded border border-amber-300 shadow-xs text-xs space-y-1">
-                      <span className="font-bold text-slate-800 block">{t.title}</span>
-                      <span className="text-[10px] text-slate-500 block">Assigned: {t.assignedTo} ({t.department})</span>
-                      <div className="flex justify-between items-center text-[10px] pt-1 border-t border-slate-100">
-                        <span className="text-amber-700 font-semibold">Due: {t.deadline}</span>
-                        <span className="font-bold text-amber-700 bg-amber-50 px-1 py-0.2 rounded">{t.priority}</span>
+                {/* IN PROGRESS */}
+                <div className="bg-amber-50/50 p-3 rounded border border-amber-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-xs text-amber-800">IN PROGRESS</span>
+                    <span className="text-[10px] font-bold px-1.5 py-0.2 bg-amber-200 text-amber-800 rounded-full">
+                      {tasks.filter(t => t.status === 'IN PROGRESS').length}
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    {tasks.filter(t => t.status === 'IN PROGRESS').map(t => (
+                      <div key={t.id} className="bg-white p-2.5 rounded border border-amber-200 shadow-xs text-xs space-y-1">
+                        <span className="font-bold text-slate-800 block">{t.title}</span>
+                        <span className="text-[10px] text-slate-500 block">Lead: {t.assignedTo}</span>
+                        <span className="text-[10px] text-amber-700 font-semibold block">{t.priority}</span>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* BLOCKED */}
-              <div className="bg-rose-50/50 p-3 rounded border border-rose-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-xs text-rose-800">BLOCKED</span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.2 bg-rose-200 text-rose-800 rounded-full">
-                    {tasks.filter(t => t.status === 'BLOCKED').length}
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  {tasks.filter(t => t.status === 'BLOCKED').map(t => (
-                    <div key={t.id} className="bg-white p-2.5 rounded border border-rose-300 shadow-xs text-xs space-y-1">
-                      <span className="font-bold text-slate-900 block">{t.title}</span>
-                      <span className="text-[10px] text-slate-500 block">Assigned: {t.assignedTo} ({t.department})</span>
-                      <p className="text-[10px] text-rose-600 bg-rose-50 p-1 rounded font-medium">
-                        {t.evidenceSubmitted}
-                      </p>
-                      <div className="flex justify-between items-center text-[10px] pt-1 border-t border-slate-100">
-                        <span className="text-rose-600 font-semibold">Deadline Passed</span>
-                        <span className="font-bold text-rose-700 bg-rose-50 px-1 py-0.2 rounded">{t.priority}</span>
+                {/* BLOCKED */}
+                <div className="bg-rose-50/50 p-3 rounded border border-rose-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-xs text-rose-800">BLOCKED</span>
+                    <span className="text-[10px] font-bold px-1.5 py-0.2 bg-rose-200 text-rose-800 rounded-full">
+                      {tasks.filter(t => t.status === 'BLOCKED').length}
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    {tasks.filter(t => t.status === 'BLOCKED').map(t => (
+                      <div key={t.id} className="bg-white p-2.5 rounded border border-rose-200 shadow-xs text-xs space-y-1">
+                        <span className="font-bold text-slate-800 block">{t.title}</span>
+                        <span className="text-[10px] text-rose-600 block">Lead: {t.assignedTo}</span>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* DONE */}
-              <div className="bg-emerald-50/50 p-3 rounded border border-emerald-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-xs text-emerald-800">DONE</span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.2 bg-emerald-200 text-emerald-800 rounded-full">
-                    {tasks.filter(t => t.status === 'DONE').length}
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  {tasks.filter(t => t.status === 'DONE').map(t => (
-                    <div key={t.id} className="bg-white p-2.5 rounded border border-emerald-200 shadow-xs text-xs space-y-1">
-                      <span className="font-bold text-slate-800 block">{t.title}</span>
-                      <span className="text-[10px] text-slate-500 block">Lead: {t.assignedTo}</span>
-                      <span className="text-[10px] text-emerald-600 block">✓ Evidence Verified</span>
-                    </div>
-                  ))}
+                {/* DONE */}
+                <div className="bg-emerald-50/50 p-3 rounded border border-emerald-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-xs text-emerald-800">DONE</span>
+                    <span className="text-[10px] font-bold px-1.5 py-0.2 bg-emerald-200 text-emerald-800 rounded-full">
+                      {tasks.filter(t => t.status === 'DONE').length}
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    {tasks.filter(t => t.status === 'DONE').map(t => (
+                      <div key={t.id} className="bg-white p-2.5 rounded border border-emerald-200 shadow-xs text-xs space-y-1">
+                        <span className="font-bold text-slate-800 block">{t.title}</span>
+                        <span className="text-[10px] text-slate-500 block">Lead: {t.assignedTo}</span>
+                        <span className="text-[10px] text-emerald-600 block">✓ Verified</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         )}
 
@@ -504,59 +500,59 @@ export const ProjectDetailPage: React.FC = () => {
                 </h3>
               </div>
               <span className="text-xs text-slate-500">
-                District Schedule of Rates (SOR / CSR 2025-26)
+                Official Schedule of Rates
               </span>
             </div>
 
-            <table className="w-full text-left gov-table">
-              <thead>
-                <tr>
-                  <th>Material</th>
-                  <th>Quantity</th>
-                  <th>Unit</th>
-                  <th>Reported Price</th>
-                  <th>Benchmark Price</th>
-                  <th>Deviation</th>
-                  <th>Vendor</th>
-                  <th>Invoice Ref</th>
-                  <th>AI Risk Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {materials.map(m => (
-                  <tr key={m.id} className={m.deviationPercent > 20 ? 'bg-rose-50/50' : ''}>
-                    <td className="font-bold text-slate-900">{m.materialName}</td>
-                    <td>{m.quantity.toLocaleString()}</td>
-                    <td>{m.unit}</td>
-                    <td className="font-bold text-slate-900">₹ {m.reportedPrice.toLocaleString()}</td>
-                    <td className="font-medium text-emerald-700">₹ {m.benchmarkPrice.toLocaleString()}</td>
-                    <td className={`font-black ${m.deviationPercent > 20 ? 'text-rose-600' : 'text-slate-700'}`}>
-                      +{m.deviationPercent.toFixed(1)}%
-                    </td>
-                    <td className="text-xs">{m.vendorName}</td>
-                    <td className="font-mono text-xs text-slate-500">{m.invoiceId}</td>
-                    <td>
-                      <span className={`px-2 py-0.5 text-[10px] font-bold rounded border ${
-                        m.riskLevel === 'HIGH' 
-                          ? 'bg-rose-100 text-rose-800 border-rose-300' 
-                          : 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                      }`}>
-                        {m.riskLevel === 'HIGH' ? 'Potential Anomaly' : 'Normal'}
-                      </span>
-                    </td>
+            {materials.length === 0 ? (
+              <div className="bg-slate-50 border border-slate-200 rounded p-6 text-center space-y-2">
+                <h4 className="text-xs font-bold text-slate-700">Material & Price Breakdown: Data Not Available</h4>
+                <p className="text-[11px] text-slate-500 max-w-xl mx-auto">
+                  In accordance with the Strict Dataset-Only Rule, material quantities and procurement bills are marked as "Data Not Available" because central MPLADS public records report milestone project sanctions and disbursements rather than itemized bills of materials.
+                </p>
+              </div>
+            ) : (
+              <table className="w-full text-left gov-table">
+                <thead>
+                  <tr>
+                    <th>Material</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Reported Price</th>
+                    <th>Benchmark Price</th>
+                    <th>Deviation</th>
+                    <th>Vendor</th>
+                    <th>Invoice Ref</th>
+                    <th>AI Risk Status</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {/* AI Explanation Callout */}
-            <div className="p-3 bg-amber-50 border-l-4 border-amber-500 text-xs text-slate-800 rounded-r">
-              <span className="font-bold text-amber-900 block mb-0.5">AI Price Intelligence Protocol:</span>
-              <p className="leading-relaxed">
-                Reported unit rate for Portland Cement (₹520/bag) exceeds Pune district Schedule of Rates (₹390/bag) by 33.3%.
-                This constitutes an investigation signal rather than automatic fraud. The district authority is advised to seek transport haulage bills and manufacturer invoice copies.
-              </p>
-            </div>
+                </thead>
+                <tbody>
+                  {materials.map(m => (
+                    <tr key={m.id} className={m.deviationPercent > 20 ? 'bg-rose-50/50' : ''}>
+                      <td className="font-bold text-slate-900">{m.materialName}</td>
+                      <td>{m.quantity.toLocaleString()}</td>
+                      <td>{m.unit}</td>
+                      <td className="font-bold text-slate-900">₹ {m.reportedPrice.toLocaleString()}</td>
+                      <td className="font-medium text-emerald-700">₹ {m.benchmarkPrice.toLocaleString()}</td>
+                      <td className={`font-black ${m.deviationPercent > 20 ? 'text-rose-600' : 'text-slate-700'}`}>
+                        +{m.deviationPercent.toFixed(1)}%
+                      </td>
+                      <td className="text-xs">{m.vendorName}</td>
+                      <td className="font-mono text-xs text-slate-500">{m.invoiceId}</td>
+                      <td>
+                        <span className={`px-2 py-0.5 text-[10px] font-bold rounded border ${
+                          m.riskLevel === 'HIGH' 
+                            ? 'bg-rose-100 text-rose-800 border-rose-300' 
+                            : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                        }`}>
+                          {m.riskLevel === 'HIGH' ? 'AI Risk Indicator' : 'AI Analysis'}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
         )}
 
@@ -571,34 +567,34 @@ export const ProjectDetailPage: React.FC = () => {
                 </h3>
               </div>
               <span className="text-xs font-semibold text-gov-navy">
-                PFMS / State Treasury Integrated
+                e-SAKSHI Verified Disbursement
               </span>
             </div>
 
             {/* Visual Fund Flow Stepper */}
             <div className="bg-slate-50 p-4 rounded border border-slate-200">
               <div className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
-                Traceable Financial Value Chain
+                Verified Financial Value Chain
               </div>
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                 <div className="p-2 bg-white rounded border border-slate-200 text-center min-w-[110px]">
                   <span className="text-[10px] text-slate-400 block">MPLADS Sanction</span>
-                  <span className="font-bold text-slate-900">₹ 20.0 Lakh</span>
+                  <span className="font-bold text-slate-900">{project.sanctionedAmount ? `₹ ${(project.sanctionedAmount / 100000).toFixed(2)} Lakh` : 'Data Not Available'}</span>
                 </div>
                 <div className="text-slate-400 font-bold">→</div>
                 <div className="p-2 bg-white rounded border border-slate-200 text-center min-w-[110px]">
-                  <span className="text-[10px] text-slate-400 block">Contract Award</span>
-                  <span className="font-bold text-slate-900">₹ 19.4 Lakh</span>
+                  <span className="text-[10px] text-slate-400 block">Contract Value</span>
+                  <span className="font-bold text-slate-900">{project.contractValue && project.contractValue !== project.sanctionedAmount ? `₹ ${(project.contractValue / 100000).toFixed(2)} Lakh` : 'Data Not Available'}</span>
                 </div>
                 <div className="text-slate-400 font-bold">→</div>
                 <div className="p-2 bg-white rounded border border-slate-200 text-center min-w-[110px]">
                   <span className="text-[10px] text-slate-400 block">Disbursed to Cont.</span>
-                  <span className="font-bold text-rose-600">₹ 14.36 Lakh (74%)</span>
+                  <span className="font-bold text-gov-navy">{project.expenditure ? `₹ ${(project.expenditure / 100000).toFixed(2)} Lakh` : 'Data Not Available'}</span>
                 </div>
                 <div className="text-slate-400 font-bold">→</div>
                 <div className="p-2 bg-white rounded border border-slate-200 text-center min-w-[110px]">
                   <span className="text-[10px] text-slate-400 block">Vendor Invoiced</span>
-                  <span className="font-bold text-slate-900">₹ 8.45 Lakh</span>
+                  <span className="font-bold text-slate-900">{project.expenditure ? `₹ ${(project.expenditure / 100000).toFixed(2)} Lakh` : 'Data Not Available'}</span>
                 </div>
                 <div className="text-slate-400 font-bold">→</div>
                 <div className="p-2 bg-white rounded border border-slate-200 text-center min-w-[110px]">

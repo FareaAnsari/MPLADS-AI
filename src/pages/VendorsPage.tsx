@@ -93,19 +93,21 @@ export const VendorsPage: React.FC = () => {
               <tr key={v.id} className="hover:bg-slate-50 transition">
                 <td>
                   <span className="font-bold text-slate-900 block">{v.name}</span>
-                  <span className="text-[11px] text-slate-500">{v.contactPerson} • {v.phone}</span>
+                  <span className="text-[11px] text-slate-500">
+                    {v.address ? `State: ${v.address}` : 'State: Data Not Available'} • Contact: {v.contactPerson && v.contactPerson !== 'Data Not Available' ? v.contactPerson : 'Data Not Available'}
+                  </span>
                 </td>
                 <td className="text-xs font-mono">
-                  <span className="font-semibold text-slate-700 block">{v.gst}</span>
-                  <span className="text-[10px] text-slate-400">{v.registrationNo}</span>
+                  <span className="font-semibold text-slate-700 block">{v.gst && v.gst !== 'Data Not Available' ? v.gst : 'Data Not Available'}</span>
+                  <span className="text-[10px] text-slate-400">{v.registrationNo && v.registrationNo !== 'Data Not Available' ? v.registrationNo : 'Reg: Data Not Available'}</span>
                 </td>
-                <td className="text-xs font-medium text-slate-800">{v.category}</td>
+                <td className="text-xs font-medium text-slate-800">{v.category || 'Official Vendor'}</td>
                 <td className="text-xs text-slate-600 max-w-xs">
-                  {v.products.join(', ')}
+                  {v.products && v.products.length > 0 ? v.products.join(', ') : 'Data Not Available'}
                 </td>
                 <td className="text-xs">
-                  <span className="font-bold text-slate-900 block">₹ {(v.totalInvoicesValue / 100000).toFixed(1)} L</span>
-                  <span className="text-[10px] text-slate-400">{v.totalOrders} Orders</span>
+                  <span className="font-bold text-slate-900 block">₹ {(v.totalInvoicesValue / 100000).toFixed(2)} L</span>
+                  <span className="text-[10px] text-slate-400">{v.totalOrders} Disbursements</span>
                 </td>
                 <td>
                   <span className={`px-2 py-0.5 text-[10px] font-bold rounded border ${

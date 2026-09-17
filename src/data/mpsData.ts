@@ -1,4 +1,7 @@
-// Auto-generated MP Directory from Official e-SAKSHI MoSPI Dataset
+// 100% Strictly Generated from Official MoSPI e-SAKSHI Dataset
+// Single Source of Truth: 'Allocated Limit for Honble MPs.csv' & 'Allocated Limit for Honble MPs RajyaSabha (1).csv'
+// Zero synthetic, assumed, or simulated progress metrics.
+
 export interface MPDetail {
   id: string;
   name: string;
@@ -8,10 +11,6 @@ export interface MPDetail {
   category: string;
   allocatedAmountRaw: number;
   allocatedAmountCr: string;
-  recommendedWorks: number;
-  sanctionedWorks: number;
-  completedWorks: number;
-  utilizationRate: string;
 }
 
 export const ALL_MPS_DATA: MPDetail[] = [
@@ -22,12 +21,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HINGOLI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 190289442,
-    "allocatedAmountCr": "19.03",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "85.3"
+    "allocatedAmountRaw": 190289442.0,
+    "allocatedAmountCr": "19.03"
   },
   {
     "id": "ls-2",
@@ -37,11 +32,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 154773472.11,
-    "allocatedAmountCr": "15.48",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 38,
-    "utilizationRate": "89.8"
+    "allocatedAmountCr": "15.48"
   },
   {
     "id": "ls-3",
@@ -50,12 +41,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AURANGABAD_BR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-4",
@@ -64,12 +51,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TAMLUK",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-5",
@@ -78,12 +61,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MURSHIDABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-6",
@@ -92,12 +71,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KANTHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-7",
@@ -106,12 +81,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BADAUN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-8",
@@ -120,12 +91,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ATTINGAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-9",
@@ -134,12 +101,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "IDUKKI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-10",
@@ -149,11 +112,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147816309.11,
-    "allocatedAmountCr": "14.78",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 41,
-    "utilizationRate": "82.8"
+    "allocatedAmountCr": "14.78"
   },
   {
     "id": "ls-11",
@@ -163,11 +122,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 188722256.11,
-    "allocatedAmountCr": "18.87",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 27,
-    "utilizationRate": "83.7"
+    "allocatedAmountCr": "18.87"
   },
   {
     "id": "ls-12",
@@ -176,12 +131,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GHAZIPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 220500000,
-    "allocatedAmountCr": "22.05",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 30,
-    "utilizationRate": "75.5"
+    "allocatedAmountRaw": 220500000.0,
+    "allocatedAmountCr": "22.05"
   },
   {
     "id": "ls-13",
@@ -190,12 +141,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SRINAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-14",
@@ -204,12 +151,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NAINITAL UDHAM SINGH NAG.",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 45,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-15",
@@ -218,12 +161,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHAGALPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-16",
@@ -232,12 +171,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ALMORA(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-17",
@@ -246,12 +181,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HAMIRPUR_UP",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-18",
@@ -260,12 +191,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KANNAUJ",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-19",
@@ -274,12 +201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FIROZABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-20",
@@ -288,12 +211,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "OUTER MANIPUR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-21",
@@ -302,12 +221,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GOPALGANJ (SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-22",
@@ -316,12 +231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHOPAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-23",
@@ -330,12 +241,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "WARDHA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-24",
@@ -344,12 +251,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Diphu (ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-25",
@@ -359,11 +262,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 201899064.11,
-    "allocatedAmountCr": "20.19",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "76.9"
+    "allocatedAmountCr": "20.19"
   },
   {
     "id": "ls-26",
@@ -372,12 +271,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SHIRUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-27",
@@ -387,11 +282,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 165691544.11,
-    "allocatedAmountCr": "16.57",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "80.7"
+    "allocatedAmountCr": "16.57"
   },
   {
     "id": "ls-28",
@@ -400,12 +291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "LUDHIANA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-29",
@@ -414,12 +301,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DHAURAHRA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-30",
@@ -428,12 +311,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BAHRAICH(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-31",
@@ -442,12 +321,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KEONJHAR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-32",
@@ -456,12 +331,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NILGIRIS(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 46,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-33",
@@ -470,12 +341,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SHILLONG",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 98000000,
-    "allocatedAmountCr": "9.80",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "93.0"
+    "allocatedAmountRaw": 98000000.0,
+    "allocatedAmountCr": "9.80"
   },
   {
     "id": "ls-34",
@@ -484,12 +351,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "INNER MANIPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-35",
@@ -498,12 +361,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GARHWAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-36",
@@ -512,12 +371,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUMBAI SOUTH CENTRAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-37",
@@ -526,12 +381,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RATLAM(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-38",
@@ -540,12 +391,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ASKA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-39",
@@ -555,11 +402,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 166665931.8,
-    "allocatedAmountCr": "16.67",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "81.7"
+    "allocatedAmountCr": "16.67"
   },
   {
     "id": "ls-40",
@@ -568,12 +411,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HATHRAS (SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-41",
@@ -582,12 +421,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PATHANAMTHITTA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-42",
@@ -596,12 +431,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AKOLA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-43",
@@ -610,12 +441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JHANSI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-44",
@@ -625,11 +452,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 149570117.11,
-    "allocatedAmountCr": "14.96",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "84.6"
+    "allocatedAmountCr": "14.96"
   },
   {
     "id": "ls-45",
@@ -638,12 +461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VIZIANAGARAM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-46",
@@ -653,11 +472,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 194924621.11,
-    "allocatedAmountCr": "19.49",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 42,
-    "utilizationRate": "89.9"
+    "allocatedAmountCr": "19.49"
   },
   {
     "id": "ls-47",
@@ -666,12 +481,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MEERUT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-48",
@@ -680,12 +491,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PERAMBALUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-49",
@@ -694,12 +501,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MAHABUBNAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-50",
@@ -708,12 +511,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANKURA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-51",
@@ -723,11 +522,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 281396355.11,
-    "allocatedAmountCr": "28.14",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "76.4"
+    "allocatedAmountCr": "28.14"
   },
   {
     "id": "ls-52",
@@ -736,12 +531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUMBAI SOUTH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-53",
@@ -750,12 +541,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HYDERABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-54",
@@ -764,12 +551,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JABALPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-55",
@@ -778,12 +561,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MISRIKH(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-56",
@@ -792,12 +571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MADHUBANI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-57",
@@ -807,11 +582,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 275694456.74,
-    "allocatedAmountCr": "27.57",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "90.7"
+    "allocatedAmountCr": "27.57"
   },
   {
     "id": "ls-58",
@@ -820,12 +591,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GHAZIABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 155336470,
-    "allocatedAmountCr": "15.53",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "90.3"
+    "allocatedAmountRaw": 155336470.0,
+    "allocatedAmountCr": "15.53"
   },
   {
     "id": "ls-59",
@@ -834,12 +601,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHADRAK(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-60",
@@ -848,12 +611,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FAIZABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-61",
@@ -863,11 +622,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 179658399.98,
-    "allocatedAmountCr": "17.97",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 25,
-    "utilizationRate": "94.7"
+    "allocatedAmountCr": "17.97"
   },
   {
     "id": "ls-62",
@@ -877,11 +632,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 160491894.11,
-    "allocatedAmountCr": "16.05",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "75.5"
+    "allocatedAmountCr": "16.05"
   },
   {
     "id": "ls-63",
@@ -890,12 +641,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JAUNPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-64",
@@ -904,12 +651,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DHULE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-65",
@@ -918,12 +661,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ARAMBAG(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-66",
@@ -932,12 +671,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KENDRAPARA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-67",
@@ -947,11 +682,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 165899107.19,
-    "allocatedAmountCr": "16.59",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "80.9"
+    "allocatedAmountCr": "16.59"
   },
   {
     "id": "ls-68",
@@ -961,11 +692,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147413962.11,
-    "allocatedAmountCr": "14.74",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "82.4"
+    "allocatedAmountCr": "14.74"
   },
   {
     "id": "ls-69",
@@ -974,12 +701,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MACHILIPATNAM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-70",
@@ -988,12 +711,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MAHABUBABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-71",
@@ -1002,12 +721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMRAVATI(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 198293678,
-    "allocatedAmountCr": "19.83",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "93.3"
+    "allocatedAmountRaw": 198293678.0,
+    "allocatedAmountCr": "19.83"
   },
   {
     "id": "ls-72",
@@ -1016,12 +731,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHIWANDI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-73",
@@ -1030,12 +741,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NEW DELHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 154306950,
-    "allocatedAmountCr": "15.43",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "89.3"
+    "allocatedAmountRaw": 154306950.0,
+    "allocatedAmountCr": "15.43"
   },
   {
     "id": "ls-74",
@@ -1044,12 +751,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MATHURAPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-75",
@@ -1058,12 +761,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HAVERI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 21,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-76",
@@ -1073,11 +772,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 159998515.11,
-    "allocatedAmountCr": "16.00",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "95.0"
+    "allocatedAmountCr": "16.00"
   },
   {
     "id": "ls-77",
@@ -1086,12 +781,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AJMER",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-78",
@@ -1100,12 +791,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KARAULI-DHOLPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-79",
@@ -1115,11 +802,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 151455276.04,
-    "allocatedAmountCr": "15.15",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 26,
-    "utilizationRate": "86.5"
+    "allocatedAmountCr": "15.15"
   },
   {
     "id": "ls-80",
@@ -1128,12 +811,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMRELI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-81",
@@ -1142,12 +821,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PATAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-82",
@@ -1157,11 +832,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 154398389.01,
-    "allocatedAmountCr": "15.44",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 44,
-    "utilizationRate": "89.4"
+    "allocatedAmountCr": "15.44"
   },
   {
     "id": "ls-83",
@@ -1170,12 +841,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DINDORI(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-84",
@@ -1184,12 +851,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SHIRDI(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-85",
@@ -1199,11 +862,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 164672734.11,
-    "allocatedAmountCr": "16.47",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 38,
-    "utilizationRate": "79.7"
+    "allocatedAmountCr": "16.47"
   },
   {
     "id": "ls-86",
@@ -1212,12 +871,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BULANDSHAHR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-87",
@@ -1226,12 +881,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AURANGABAD_MH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-88",
@@ -1240,12 +891,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NARASAPURAM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-89",
@@ -1254,12 +901,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ALWAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-90",
@@ -1268,12 +911,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JAGATSINGHPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-91",
@@ -1282,12 +921,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JAMSHEDPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-92",
@@ -1296,12 +931,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GUWAHATI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-93",
@@ -1310,12 +941,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TRIPURA WEST",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 22,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-94",
@@ -1324,12 +951,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ANDAMAN AND NICOBAR ISLANDS",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-95",
@@ -1338,12 +961,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JHUNJHUNU",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-96",
@@ -1353,11 +972,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 153766451.11,
-    "allocatedAmountCr": "15.38",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 40,
-    "utilizationRate": "88.8"
+    "allocatedAmountCr": "15.38"
   },
   {
     "id": "ls-97",
@@ -1366,12 +981,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHHINDWARA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-98",
@@ -1381,11 +992,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 158532494.36,
-    "allocatedAmountCr": "15.85",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 36,
-    "utilizationRate": "93.5"
+    "allocatedAmountCr": "15.85"
   },
   {
     "id": "ls-99",
@@ -1395,11 +1002,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 202531656.11,
-    "allocatedAmountCr": "20.25",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 35,
-    "utilizationRate": "77.5"
+    "allocatedAmountCr": "20.25"
   },
   {
     "id": "ls-100",
@@ -1408,12 +1011,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DAKSHINA KANNADA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-101",
@@ -1422,12 +1021,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SOUTH GOA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-102",
@@ -1436,12 +1031,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHONGIR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-103",
@@ -1450,12 +1041,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BIJNOR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-104",
@@ -1464,12 +1051,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHITTORGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-105",
@@ -1478,12 +1061,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NAGINA(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-106",
@@ -1492,12 +1071,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SURENDRANAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-107",
@@ -1506,12 +1081,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JALANDHAR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-108",
@@ -1520,12 +1091,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NANDED",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 0.0,
+    "allocatedAmountCr": "0.00"
   },
   {
     "id": "ls-109",
@@ -1534,12 +1101,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BAREILLY",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-110",
@@ -1548,12 +1111,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KOLHAPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-111",
@@ -1562,12 +1121,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ROBERTSGANJ(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 23,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-112",
@@ -1576,12 +1131,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SARGUJA(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-113",
@@ -1590,12 +1141,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HAJIPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-114",
@@ -1605,11 +1152,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148579509.11,
-    "allocatedAmountCr": "14.86",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 41,
-    "utilizationRate": "83.6"
+    "allocatedAmountCr": "14.86"
   },
   {
     "id": "ls-115",
@@ -1619,11 +1162,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 160196941.11,
-    "allocatedAmountCr": "16.02",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "75.2"
+    "allocatedAmountCr": "16.02"
   },
   {
     "id": "ls-116",
@@ -1633,11 +1172,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 197598306.11,
-    "allocatedAmountCr": "19.76",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 37,
-    "utilizationRate": "92.6"
+    "allocatedAmountCr": "19.76"
   },
   {
     "id": "ls-117",
@@ -1646,12 +1181,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAJAHMUNDRY",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-118",
@@ -1660,12 +1191,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHITTOOR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-119",
@@ -1674,12 +1201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHILWARA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-120",
@@ -1688,12 +1211,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "LALGANJ (SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-121",
@@ -1702,12 +1221,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HOSHANGABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-122",
@@ -1716,12 +1231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ROHTAK",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-123",
@@ -1730,12 +1241,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AKBARPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-124",
@@ -1745,11 +1252,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 163809205.11,
-    "allocatedAmountCr": "16.38",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 39,
-    "utilizationRate": "78.8"
+    "allocatedAmountCr": "16.38"
   },
   {
     "id": "ls-125",
@@ -1758,12 +1261,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ETAH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-126",
@@ -1772,12 +1271,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KHEDA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-127",
@@ -1786,12 +1281,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HATKANANGLE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-128",
@@ -1800,12 +1291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHANDRAPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-129",
@@ -1814,12 +1301,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SAMBALPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-130",
@@ -1828,12 +1311,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AZAMGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-131",
@@ -1842,12 +1321,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VALSAD(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-132",
@@ -1857,11 +1332,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 150450930.89,
-    "allocatedAmountCr": "15.05",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 42,
-    "utilizationRate": "85.5"
+    "allocatedAmountCr": "15.05"
   },
   {
     "id": "ls-133",
@@ -1870,12 +1341,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Darrang-Udalguri",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-134",
@@ -1885,11 +1352,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 150070866.11,
-    "allocatedAmountCr": "15.01",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 37,
-    "utilizationRate": "85.1"
+    "allocatedAmountCr": "15.01"
   },
   {
     "id": "ls-135",
@@ -1899,11 +1362,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 160434965.11,
-    "allocatedAmountCr": "16.04",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 36,
-    "utilizationRate": "75.4"
+    "allocatedAmountCr": "16.04"
   },
   {
     "id": "ls-136",
@@ -1913,11 +1372,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 150675889.11,
-    "allocatedAmountCr": "15.07",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "85.7"
+    "allocatedAmountCr": "15.07"
   },
   {
     "id": "ls-137",
@@ -1926,12 +1381,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANGALORE RURAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-138",
@@ -1941,11 +1392,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 159774113.11,
-    "allocatedAmountCr": "15.98",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 36,
-    "utilizationRate": "94.8"
+    "allocatedAmountCr": "15.98"
   },
   {
     "id": "ls-139",
@@ -1954,12 +1401,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PATIALA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-140",
@@ -1968,12 +1411,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JALPAIGURI(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-141",
@@ -1982,12 +1421,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "LATUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-142",
@@ -1997,11 +1432,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148669229.11,
-    "allocatedAmountCr": "14.87",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 40,
-    "utilizationRate": "83.7"
+    "allocatedAmountCr": "14.87"
   },
   {
     "id": "ls-143",
@@ -2010,12 +1441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BAGHPAT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-144",
@@ -2025,11 +1452,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 153060922.82,
-    "allocatedAmountCr": "15.31",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 30,
-    "utilizationRate": "88.1"
+    "allocatedAmountCr": "15.31"
   },
   {
     "id": "ls-145",
@@ -2038,12 +1461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "THIRUVANANTHAPURAM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-146",
@@ -2053,11 +1472,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 157085364.9,
-    "allocatedAmountCr": "15.71",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 44,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "15.71"
   },
   {
     "id": "ls-147",
@@ -2066,12 +1481,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VADODARA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-148",
@@ -2080,12 +1491,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PALGHAR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-149",
@@ -2094,12 +1501,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GADCHIROLI-CHIMUR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-150",
@@ -2108,12 +1511,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-151",
@@ -2123,11 +1522,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 170434031.11,
-    "allocatedAmountCr": "17.04",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "85.4"
+    "allocatedAmountCr": "17.04"
   },
   {
     "id": "ls-152",
@@ -2136,12 +1531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PORBANDAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-153",
@@ -2150,12 +1541,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DAVANAGERE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-154",
@@ -2164,12 +1551,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BERHAMPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-155",
@@ -2179,11 +1562,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 159680283.39,
-    "allocatedAmountCr": "15.97",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "94.7"
+    "allocatedAmountCr": "15.97"
   },
   {
     "id": "ls-156",
@@ -2192,12 +1571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HOSHIARPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-157",
@@ -2207,11 +1582,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 262724510.35,
-    "allocatedAmountCr": "26.27",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "77.7"
+    "allocatedAmountCr": "26.27"
   },
   {
     "id": "ls-158",
@@ -2220,12 +1591,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PRATAPGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-159",
@@ -2234,12 +1601,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARDHAMAN PURBA(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-160",
@@ -2248,12 +1611,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHIKBALLAPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-161",
@@ -2262,12 +1621,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NAGARKURNOOL(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-162",
@@ -2276,12 +1631,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DHANBAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-163",
@@ -2290,12 +1641,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TIRUCHIRAPPALLI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-164",
@@ -2305,11 +1652,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 151569502.91,
-    "allocatedAmountCr": "15.16",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 45,
-    "utilizationRate": "86.6"
+    "allocatedAmountCr": "15.16"
   },
   {
     "id": "ls-165",
@@ -2318,12 +1661,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JHALAWAR-BARAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-166",
@@ -2332,12 +1671,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BELLARY(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-167",
@@ -2347,11 +1682,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 163895872.11,
-    "allocatedAmountCr": "16.39",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "78.9"
+    "allocatedAmountCr": "16.39"
   },
   {
     "id": "ls-168",
@@ -2361,11 +1692,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 327477390.86,
-    "allocatedAmountCr": "32.75",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 24,
-    "utilizationRate": "82.5"
+    "allocatedAmountCr": "32.75"
   },
   {
     "id": "ls-169",
@@ -2375,11 +1702,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 162315106.11,
-    "allocatedAmountCr": "16.23",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "77.3"
+    "allocatedAmountCr": "16.23"
   },
   {
     "id": "ls-170",
@@ -2389,11 +1712,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 151861648.41,
-    "allocatedAmountCr": "15.19",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 39,
-    "utilizationRate": "86.9"
+    "allocatedAmountCr": "15.19"
   },
   {
     "id": "ls-171",
@@ -2402,12 +1721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAICHUR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-172",
@@ -2416,12 +1731,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUMBAI NORTH-CENTRAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-173",
@@ -2430,12 +1741,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KHARGONE(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-174",
@@ -2444,12 +1751,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JODHPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-175",
@@ -2459,11 +1762,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147370490.11,
-    "allocatedAmountCr": "14.74",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "82.4"
+    "allocatedAmountCr": "14.74"
   },
   {
     "id": "ls-176",
@@ -2473,11 +1772,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 186508749.11,
-    "allocatedAmountCr": "18.65",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "81.5"
+    "allocatedAmountCr": "18.65"
   },
   {
     "id": "ls-177",
@@ -2486,12 +1781,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SATNA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-178",
@@ -2500,12 +1791,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JORHAT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-179",
@@ -2514,12 +1801,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANASKANTHA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-180",
@@ -2528,12 +1811,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANKA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-181",
@@ -2542,12 +1821,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BEGUSARAI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-182",
@@ -2556,12 +1831,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMALAPURAM(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 46,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-183",
@@ -2570,12 +1841,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ADILABAD(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-184",
@@ -2584,12 +1851,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KRISHNAGIRI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-185",
@@ -2598,12 +1861,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHITRADURGA(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-186",
@@ -2613,11 +1872,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 149458905.11,
-    "allocatedAmountCr": "14.95",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "84.5"
+    "allocatedAmountCr": "14.95"
   },
   {
     "id": "ls-187",
@@ -2626,12 +1881,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SANGRUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-188",
@@ -2641,11 +1892,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 155690684.77,
-    "allocatedAmountCr": "15.57",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "90.7"
+    "allocatedAmountCr": "15.57"
   },
   {
     "id": "ls-189",
@@ -2654,12 +1901,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MANDYA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-190",
@@ -2668,12 +1911,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUZAFFARNAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-191",
@@ -2682,12 +1921,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MAHESANA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-192",
@@ -2696,12 +1931,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TONK-SAWAI MADHOPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-193",
@@ -2710,12 +1941,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "EAST DELHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147134131,
-    "allocatedAmountCr": "14.71",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 24,
-    "utilizationRate": "82.1"
+    "allocatedAmountRaw": 147134131.0,
+    "allocatedAmountCr": "14.71"
   },
   {
     "id": "ls-194",
@@ -2724,12 +1951,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AHMEDABAD EAST",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-195",
@@ -2738,12 +1961,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SAHARANPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-196",
@@ -2753,11 +1972,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 152003923.11,
-    "allocatedAmountCr": "15.20",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 42,
-    "utilizationRate": "87.0"
+    "allocatedAmountCr": "15.20"
   },
   {
     "id": "ls-197",
@@ -2766,12 +1981,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KAIRANA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-198",
@@ -2780,12 +1991,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MALDAHA DAKSHIN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-199",
@@ -2795,11 +2002,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 168604641.11,
-    "allocatedAmountCr": "16.86",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "83.6"
+    "allocatedAmountCr": "16.86"
   },
   {
     "id": "ls-200",
@@ -2808,12 +2011,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BELGAUM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-201",
@@ -2822,12 +2021,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RANAGHAT(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-202",
@@ -2837,11 +2032,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 160643957.11,
-    "allocatedAmountCr": "16.06",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "75.6"
+    "allocatedAmountCr": "16.06"
   },
   {
     "id": "ls-203",
@@ -2850,12 +2041,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HISAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-204",
@@ -2864,12 +2051,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HARDOI (SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-205",
@@ -2878,12 +2061,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "REWA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-206",
@@ -2892,12 +2071,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHHOTA UDAIPUR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-207",
@@ -2906,12 +2081,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DAHOD(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-208",
@@ -2920,12 +2091,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GAYA (SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-209",
@@ -2935,11 +2102,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 188747306.26,
-    "allocatedAmountCr": "18.87",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "83.7"
+    "allocatedAmountCr": "18.87"
   },
   {
     "id": "ls-210",
@@ -2948,12 +2111,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "UDHAMPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-211",
@@ -2962,12 +2121,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PILIBHIT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-212",
@@ -2976,12 +2131,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SINGHBHUM(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-213",
@@ -2990,12 +2141,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KOKRAJHAR (ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-214",
@@ -3004,12 +2151,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MEDINIPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-215",
@@ -3018,12 +2161,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GUNA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-216",
@@ -3033,11 +2172,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 155153738.11,
-    "allocatedAmountCr": "15.52",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "90.2"
+    "allocatedAmountCr": "15.52"
   },
   {
     "id": "ls-217",
@@ -3046,12 +2181,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ERODE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-218",
@@ -3060,12 +2191,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ALATHUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-219",
@@ -3074,12 +2201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TIRUPPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-220",
@@ -3088,12 +2211,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ALAPPUZHA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-221",
@@ -3102,12 +2221,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KOPPAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-222",
@@ -3116,12 +2231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "WARANGEL(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-223",
@@ -3130,12 +2241,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARASAT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-224",
@@ -3144,12 +2251,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DADRA & NAGAR HAVELI (ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-225",
@@ -3158,12 +2261,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHENNAI NORTH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 21,
-    "utilizationRate": "86.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "ls-226",
@@ -3172,12 +2271,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KHUNTI(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-227",
@@ -3186,12 +2281,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHATRA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-228",
@@ -3200,12 +2291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JHARGRAM(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-229",
@@ -3214,12 +2301,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SREERAMPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-230",
@@ -3228,12 +2311,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JALNA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-231",
@@ -3242,12 +2321,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Kaziranga",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-232",
@@ -3256,12 +2331,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "WEST DELHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 44,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-233",
@@ -3271,11 +2342,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 150384382.11,
-    "allocatedAmountCr": "15.04",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 30,
-    "utilizationRate": "85.4"
+    "allocatedAmountCr": "15.04"
   },
   {
     "id": "ls-234",
@@ -3284,12 +2351,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANSGAON(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-235",
@@ -3298,12 +2361,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MANDI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-236",
@@ -3312,12 +2371,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAMANATHAPURAM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-237",
@@ -3326,12 +2381,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "THOOTHUKKUDI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-238",
@@ -3340,12 +2391,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMROHA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-239",
@@ -3354,12 +2401,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KAISERGANJ",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-240",
@@ -3369,11 +2412,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 202677986.56,
-    "allocatedAmountCr": "20.27",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "77.7"
+    "allocatedAmountCr": "20.27"
   },
   {
     "id": "ls-241",
@@ -3382,12 +2421,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NALANDA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-242",
@@ -3396,12 +2431,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MALDAHA UTTAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-243",
@@ -3410,12 +2441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JANGIPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 22,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-244",
@@ -3425,11 +2452,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 171200630.11,
-    "allocatedAmountCr": "17.12",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "86.2"
+    "allocatedAmountCr": "17.12"
   },
   {
     "id": "ls-245",
@@ -3438,12 +2461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ARUNACHAL WEST",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-246",
@@ -3452,12 +2471,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GONDA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-247",
@@ -3466,12 +2481,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SECUNDERABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-248",
@@ -3480,12 +2491,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMETHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 36,
-    "utilizationRate": "86.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "ls-249",
@@ -3495,11 +2502,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 233721420.96,
-    "allocatedAmountCr": "23.37",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 35,
-    "utilizationRate": "88.7"
+    "allocatedAmountCr": "23.37"
   },
   {
     "id": "ls-250",
@@ -3508,12 +2511,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "UDUPI CHIKMAGALUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-251",
@@ -3522,12 +2521,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KARIMGANJ (SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-252",
@@ -3536,12 +2531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FARIDABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-253",
@@ -3550,12 +2541,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANDA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-254",
@@ -3565,11 +2552,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 167796849.11,
-    "allocatedAmountCr": "16.78",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 30,
-    "utilizationRate": "82.8"
+    "allocatedAmountCr": "16.78"
   },
   {
     "id": "ls-255",
@@ -3578,12 +2561,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TRIPURA EAST(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-256",
@@ -3592,12 +2571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GANGANAGAR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-257",
@@ -3606,12 +2581,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NALGONDA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 162952022,
-    "allocatedAmountCr": "16.30",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 43,
-    "utilizationRate": "78.0"
+    "allocatedAmountRaw": 162952022.0,
+    "allocatedAmountCr": "16.30"
   },
   {
     "id": "ls-258",
@@ -3620,12 +2591,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMBEDKAR NAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-259",
@@ -3635,11 +2602,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 174009663.11,
-    "allocatedAmountCr": "17.40",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 33,
-    "utilizationRate": "89.0"
+    "allocatedAmountCr": "17.40"
   },
   {
     "id": "ls-260",
@@ -3648,12 +2611,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SANT KABIR NAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-261",
@@ -3662,12 +2621,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SHEOHAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 23,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-262",
@@ -3676,12 +2631,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JALORE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-263",
@@ -3691,11 +2642,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147065957.11,
-    "allocatedAmountCr": "14.71",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 37,
-    "utilizationRate": "82.1"
+    "allocatedAmountCr": "14.71"
   },
   {
     "id": "ls-264",
@@ -3704,12 +2651,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CUDDALORE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-265",
@@ -3718,12 +2661,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TIRUPATI(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 180399007,
-    "allocatedAmountCr": "18.04",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "75.4"
+    "allocatedAmountRaw": 180399007.0,
+    "allocatedAmountCr": "18.04"
   },
   {
     "id": "ls-266",
@@ -3732,12 +2671,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MEDAK",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-267",
@@ -3746,12 +2681,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ONGOLE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-268",
@@ -3760,12 +2691,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DEWAS(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-269",
@@ -3774,12 +2701,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BASTAR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-270",
@@ -3789,11 +2712,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148816284.11,
-    "allocatedAmountCr": "14.88",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 35,
-    "utilizationRate": "83.8"
+    "allocatedAmountCr": "14.88"
   },
   {
     "id": "ls-271",
@@ -3802,12 +2721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAJSAMAND",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 183892143,
-    "allocatedAmountCr": "18.39",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 40,
-    "utilizationRate": "78.9"
+    "allocatedAmountRaw": 183892143.0,
+    "allocatedAmountCr": "18.39"
   },
   {
     "id": "ls-272",
@@ -3816,12 +2731,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TEHRI GARHWAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-273",
@@ -3830,12 +2741,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KOLKATA DAKSHIN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-274",
@@ -3844,12 +2751,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KALLAKURICHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 201599593,
-    "allocatedAmountCr": "20.16",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 39,
-    "utilizationRate": "76.6"
+    "allocatedAmountRaw": 201599593.0,
+    "allocatedAmountCr": "20.16"
   },
   {
     "id": "ls-275",
@@ -3858,12 +2761,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KALAHANDI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-276",
@@ -3872,12 +2771,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ANANDPUR SAHIB",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-277",
@@ -3887,11 +2782,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 164515071.11,
-    "allocatedAmountCr": "16.45",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 34,
-    "utilizationRate": "79.5"
+    "allocatedAmountCr": "16.45"
   },
   {
     "id": "ls-278",
@@ -3900,12 +2791,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VIRUDHUNAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-279",
@@ -3914,12 +2801,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HAZARIBAGH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-280",
@@ -3929,11 +2812,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 178351443.75,
-    "allocatedAmountCr": "17.84",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 33,
-    "utilizationRate": "93.4"
+    "allocatedAmountCr": "17.84"
   },
   {
     "id": "ls-281",
@@ -3943,11 +2822,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 167082901.11,
-    "allocatedAmountCr": "16.71",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 38,
-    "utilizationRate": "82.1"
+    "allocatedAmountCr": "16.71"
   },
   {
     "id": "ls-282",
@@ -3956,12 +2831,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "UDAIPUR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 42,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-283",
@@ -3970,12 +2841,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KARNAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-284",
@@ -3984,12 +2851,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SASARAM(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-285",
@@ -3998,12 +2861,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ALIPURDUARS(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-286",
@@ -4012,12 +2871,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NORTH EAST DELHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 225843858,
-    "allocatedAmountCr": "22.58",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "80.8"
+    "allocatedAmountRaw": 225843858.0,
+    "allocatedAmountCr": "22.58"
   },
   {
     "id": "ls-287",
@@ -4026,12 +2881,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHARUCH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-288",
@@ -4040,12 +2891,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ANANTNAG",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-289",
@@ -4055,11 +2902,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 178951477.11,
-    "allocatedAmountCr": "17.90",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 41,
-    "utilizationRate": "94.0"
+    "allocatedAmountCr": "17.90"
   },
   {
     "id": "ls-290",
@@ -4068,12 +2911,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PATALIPUTRA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-291",
@@ -4082,12 +2921,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ANAND",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-292",
@@ -4096,12 +2931,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "LADAKH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 161114542,
-    "allocatedAmountCr": "16.11",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 40,
-    "utilizationRate": "76.1"
+    "allocatedAmountRaw": 161114542.0,
+    "allocatedAmountCr": "16.11"
   },
   {
     "id": "ls-293",
@@ -4110,12 +2941,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAMPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-294",
@@ -4125,11 +2952,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 195613601.7,
-    "allocatedAmountCr": "19.56",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 30,
-    "utilizationRate": "90.6"
+    "allocatedAmountCr": "19.56"
   },
   {
     "id": "ls-295",
@@ -4138,12 +2961,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DARBHANGA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-296",
@@ -4152,12 +2971,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KRISHNANAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 159865046,
-    "allocatedAmountCr": "15.99",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 44,
-    "utilizationRate": "94.9"
+    "allocatedAmountRaw": 159865046.0,
+    "allocatedAmountCr": "15.99"
   },
   {
     "id": "ls-297",
@@ -4167,11 +2982,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 153942460.41,
-    "allocatedAmountCr": "15.39",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 24,
-    "utilizationRate": "88.9"
+    "allocatedAmountCr": "15.39"
   },
   {
     "id": "ls-298",
@@ -4180,12 +2991,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FARRUKHABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-299",
@@ -4194,12 +3001,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SURAT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-300",
@@ -4208,12 +3011,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DAUSA(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-301",
@@ -4222,12 +3021,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "THANJAVUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-302",
@@ -4236,12 +3031,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PUNE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-303",
@@ -4251,11 +3042,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147563957.11,
-    "allocatedAmountCr": "14.76",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "82.6"
+    "allocatedAmountCr": "14.76"
   },
   {
     "id": "ls-304",
@@ -4265,11 +3052,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147364097.11,
-    "allocatedAmountCr": "14.74",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 28,
-    "utilizationRate": "82.4"
+    "allocatedAmountCr": "14.74"
   },
   {
     "id": "ls-305",
@@ -4278,12 +3061,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JALAUN(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-306",
@@ -4292,12 +3071,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RATNAGIRI-SINDHUDURG",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-307",
@@ -4306,12 +3081,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FATEHPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-308",
@@ -4320,12 +3091,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "THANE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-309",
@@ -4334,12 +3101,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KURUKSHETRA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-310",
@@ -4348,12 +3111,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AONLA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-311",
@@ -4362,12 +3121,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AHMEDNAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-312",
@@ -4376,12 +3131,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHAVNAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-313",
@@ -4390,12 +3141,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GODDA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-314",
@@ -4405,11 +3152,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 168195086.11,
-    "allocatedAmountCr": "16.82",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 45,
-    "utilizationRate": "83.2"
+    "allocatedAmountCr": "16.82"
   },
   {
     "id": "ls-315",
@@ -4418,12 +3161,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "UJJARPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-316",
@@ -4433,11 +3172,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 163906956.6,
-    "allocatedAmountCr": "16.39",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 35,
-    "utilizationRate": "78.9"
+    "allocatedAmountCr": "16.39"
   },
   {
     "id": "ls-317",
@@ -4447,11 +3182,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 184758519.11,
-    "allocatedAmountCr": "18.48",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "79.8"
+    "allocatedAmountCr": "18.48"
   },
   {
     "id": "ls-318",
@@ -4461,11 +3192,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 159995711.11,
-    "allocatedAmountCr": "16.00",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 24,
-    "utilizationRate": "95.0"
+    "allocatedAmountCr": "16.00"
   },
   {
     "id": "ls-319",
@@ -4474,12 +3201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MAHARAJGANJ_UP",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-320",
@@ -4489,11 +3212,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148300157.11,
-    "allocatedAmountCr": "14.83",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 39,
-    "utilizationRate": "83.3"
+    "allocatedAmountCr": "14.83"
   },
   {
     "id": "ls-321",
@@ -4502,12 +3221,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAJKOT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-322",
@@ -4516,12 +3231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARRACKPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-323",
@@ -4531,11 +3242,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 167541747.11,
-    "allocatedAmountCr": "16.75",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "82.5"
+    "allocatedAmountCr": "16.75"
   },
   {
     "id": "ls-324",
@@ -4544,12 +3251,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DAMAN and DIU",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 245063957,
-    "allocatedAmountCr": "24.51",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "80.1"
+    "allocatedAmountRaw": 245063957.0,
+    "allocatedAmountCr": "24.51"
   },
   {
     "id": "ls-325",
@@ -4558,12 +3261,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BAHARAMPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-326",
@@ -4572,12 +3271,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARPETA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-327",
@@ -4586,12 +3281,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUMBAI NORTH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-328",
@@ -4600,12 +3291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NELLORE(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-329",
@@ -4614,12 +3301,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARDOLI(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-330",
@@ -4628,12 +3311,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "LAKHIMPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-331",
@@ -4642,12 +3321,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ARARIA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-332",
@@ -4656,12 +3331,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 46,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-333",
@@ -4670,12 +3341,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NOWGONG",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 98000000,
-    "allocatedAmountCr": "9.80",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "93.0"
+    "allocatedAmountRaw": 98000000.0,
+    "allocatedAmountCr": "9.80"
   },
   {
     "id": "ls-334",
@@ -4684,12 +3351,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DHARWAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-335",
@@ -4698,12 +3361,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SOLAPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-336",
@@ -4712,12 +3371,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HOWRAH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-337",
@@ -4727,11 +3382,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147064254.11,
-    "allocatedAmountCr": "14.71",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "82.1"
+    "allocatedAmountCr": "14.71"
   },
   {
     "id": "ls-338",
@@ -4740,12 +3391,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BULDHANA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-339",
@@ -4754,12 +3401,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JOYNAGAR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-340",
@@ -4768,12 +3411,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHANDINI CHOWK",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147470276,
-    "allocatedAmountCr": "14.75",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "82.5"
+    "allocatedAmountRaw": 147470276.0,
+    "allocatedAmountCr": "14.75"
   },
   {
     "id": "ls-341",
@@ -4783,11 +3422,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 151559884.09,
-    "allocatedAmountCr": "15.16",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "86.6"
+    "allocatedAmountCr": "15.16"
   },
   {
     "id": "ls-342",
@@ -4796,12 +3431,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MACHHLISHAHR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-343",
@@ -4810,12 +3441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "WAYANAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 122500000,
-    "allocatedAmountCr": "12.25",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 24,
-    "utilizationRate": "77.5"
+    "allocatedAmountRaw": 122500000.0,
+    "allocatedAmountCr": "12.25"
   },
   {
     "id": "ls-344",
@@ -4824,12 +3451,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHIKKODI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-345",
@@ -4838,12 +3461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DUM DUM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-346",
@@ -4852,12 +3471,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AGRA(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 42,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-347",
@@ -4866,12 +3481,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KAUSHAMBI(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-348",
@@ -4880,12 +3491,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ELURU",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-349",
@@ -4894,12 +3501,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MOHANLALGANJ(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-350",
@@ -4909,11 +3512,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147064617.11,
-    "allocatedAmountCr": "14.71",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "82.1"
+    "allocatedAmountCr": "14.71"
   },
   {
     "id": "ls-351",
@@ -4922,12 +3521,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HOOGHLY",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-352",
@@ -4936,12 +3531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PURVI CHAMPARAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-353",
@@ -4950,12 +3541,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GULBARGA(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-354",
@@ -4965,11 +3552,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 159706972.09,
-    "allocatedAmountCr": "15.97",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "94.7"
+    "allocatedAmountCr": "15.97"
   },
   {
     "id": "ls-355",
@@ -4978,12 +3561,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAE BARELI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-356",
@@ -4992,12 +3571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHURU",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-357",
@@ -5007,11 +3582,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 163058785.37,
-    "allocatedAmountCr": "16.31",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "78.1"
+    "allocatedAmountCr": "16.31"
   },
   {
     "id": "ls-358",
@@ -5020,12 +3591,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUZAFFARPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-359",
@@ -5034,12 +3601,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANSWARA(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-360",
@@ -5048,12 +3611,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KARAKAT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-361",
@@ -5063,11 +3622,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 152878682.11,
-    "allocatedAmountCr": "15.29",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 25,
-    "utilizationRate": "87.9"
+    "allocatedAmountCr": "15.29"
   },
   {
     "id": "ls-362",
@@ -5077,11 +3632,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 179388967.11,
-    "allocatedAmountCr": "17.94",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "94.4"
+    "allocatedAmountCr": "17.94"
   },
   {
     "id": "ls-363",
@@ -5090,12 +3641,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GHOSI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-364",
@@ -5104,12 +3651,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PURNEA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-365",
@@ -5118,12 +3661,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KHAGARIA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-366",
@@ -5132,12 +3671,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JUNAGADH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-367",
@@ -5146,12 +3681,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SARAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-368",
@@ -5160,12 +3691,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUNGER",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-369",
@@ -5174,12 +3701,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FATEHPUR SIKRI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-370",
@@ -5189,11 +3712,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 154808797.11,
-    "allocatedAmountCr": "15.48",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "89.8"
+    "allocatedAmountCr": "15.48"
   },
   {
     "id": "ls-371",
@@ -5202,12 +3721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PANCHMAHAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-372",
@@ -5216,12 +3731,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DARJEELING",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-373",
@@ -5230,12 +3741,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SITAPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-374",
@@ -5244,12 +3751,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DHUBRI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-375",
@@ -5259,11 +3762,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 204176957.11,
-    "allocatedAmountCr": "20.42",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 21,
-    "utilizationRate": "79.2"
+    "allocatedAmountCr": "20.42"
   },
   {
     "id": "ls-376",
@@ -5273,11 +3772,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 151746878.11,
-    "allocatedAmountCr": "15.17",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "86.7"
+    "allocatedAmountCr": "15.17"
   },
   {
     "id": "ls-377",
@@ -5286,12 +3781,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KHAMMAM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-378",
@@ -5301,11 +3792,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 160056927.07,
-    "allocatedAmountCr": "16.01",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "75.1"
+    "allocatedAmountCr": "16.01"
   },
   {
     "id": "ls-379",
@@ -5315,11 +3802,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 151231957.11,
-    "allocatedAmountCr": "15.12",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 26,
-    "utilizationRate": "86.2"
+    "allocatedAmountCr": "15.12"
   },
   {
     "id": "ls-380",
@@ -5328,12 +3811,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KANPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-381",
@@ -5342,12 +3821,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BIJAPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 269500000,
-    "allocatedAmountCr": "26.95",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 34,
-    "utilizationRate": "84.5"
+    "allocatedAmountRaw": 269500000.0,
+    "allocatedAmountCr": "26.95"
   },
   {
     "id": "ls-382",
@@ -5356,12 +3831,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JHANJHARPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 44,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-383",
@@ -5370,12 +3841,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SOUTH DELHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147559100,
-    "allocatedAmountCr": "14.76",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 30,
-    "utilizationRate": "82.6"
+    "allocatedAmountRaw": 147559100.0,
+    "allocatedAmountCr": "14.76"
   },
   {
     "id": "ls-384",
@@ -5384,12 +3851,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Sonitpur",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-385",
@@ -5398,12 +3861,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GURGAON",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-386",
@@ -5412,12 +3871,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JAIPUR RURAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-387",
@@ -5426,12 +3881,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PATNA SAHIB",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-388",
@@ -5440,12 +3891,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUMBAI NORTH WEST",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-389",
@@ -5454,12 +3901,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GORAKHPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-390",
@@ -5468,12 +3911,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NANDED",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-391",
@@ -5482,12 +3921,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MIZORAM (ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-392",
@@ -5497,11 +3932,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147475440.11,
-    "allocatedAmountCr": "14.75",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "82.5"
+    "allocatedAmountCr": "14.75"
   },
   {
     "id": "ls-393",
@@ -5510,12 +3941,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAJGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 22,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-394",
@@ -5524,12 +3951,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MAHASAMUND",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 153035414,
-    "allocatedAmountCr": "15.30",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "88.0"
+    "allocatedAmountRaw": 153035414.0,
+    "allocatedAmountCr": "15.30"
   },
   {
     "id": "ls-395",
@@ -5538,12 +3961,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MORADABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-396",
@@ -5553,11 +3972,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 155013957.11,
-    "allocatedAmountCr": "15.50",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 40,
-    "utilizationRate": "90.0"
+    "allocatedAmountCr": "15.50"
   },
   {
     "id": "ls-397",
@@ -5566,12 +3981,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NAGALAND",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-398",
@@ -5580,12 +3991,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MADURAI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-399",
@@ -5595,11 +4002,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 180589332.34,
-    "allocatedAmountCr": "18.06",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 35,
-    "utilizationRate": "75.6"
+    "allocatedAmountCr": "18.06"
   },
   {
     "id": "ls-400",
@@ -5608,12 +4011,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DINDIGUL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-401",
@@ -5622,12 +4021,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BIDAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-402",
@@ -5636,12 +4031,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TURA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-403",
@@ -5650,12 +4041,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PURI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-404",
@@ -5665,11 +4052,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 180420041.4,
-    "allocatedAmountCr": "18.04",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 30,
-    "utilizationRate": "75.4"
+    "allocatedAmountCr": "18.04"
   },
   {
     "id": "ls-405",
@@ -5678,12 +4061,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MUMBAI NORTH EAST",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-406",
@@ -5692,12 +4071,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PARBHANI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-407",
@@ -5706,12 +4081,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PASCHIM CHAMPARAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-408",
@@ -5721,11 +4092,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 172775317.11,
-    "allocatedAmountCr": "17.28",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 28,
-    "utilizationRate": "87.8"
+    "allocatedAmountCr": "17.28"
   },
   {
     "id": "ls-409",
@@ -5735,11 +4102,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147064357.11,
-    "allocatedAmountCr": "14.71",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 33,
-    "utilizationRate": "82.1"
+    "allocatedAmountCr": "14.71"
   },
   {
     "id": "ls-410",
@@ -5748,12 +4111,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "YAVATMAL-WASHIM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 185640423,
-    "allocatedAmountCr": "18.56",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 43,
-    "utilizationRate": "80.6"
+    "allocatedAmountRaw": 185640423.0,
+    "allocatedAmountCr": "18.56"
   },
   {
     "id": "ls-411",
@@ -5762,12 +4121,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHARATPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 23,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-412",
@@ -5776,12 +4131,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAJNANDGAON",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-413",
@@ -5790,12 +4141,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KORAPUT(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 269500000,
-    "allocatedAmountCr": "26.95",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 37,
-    "utilizationRate": "84.5"
+    "allocatedAmountRaw": 269500000.0,
+    "allocatedAmountCr": "26.95"
   },
   {
     "id": "ls-414",
@@ -5805,11 +4152,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 150850348.15,
-    "allocatedAmountCr": "15.09",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 41,
-    "utilizationRate": "85.9"
+    "allocatedAmountCr": "15.09"
   },
   {
     "id": "ls-415",
@@ -5818,12 +4161,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TIRUVALLUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "86.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "ls-416",
@@ -5832,12 +4171,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SONEPAT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-417",
@@ -5846,12 +4181,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BISHNUPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-418",
@@ -5860,12 +4191,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DHAR(ST)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-419",
@@ -5874,12 +4201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JADAVPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-420",
@@ -5888,12 +4211,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SIRSA(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-421",
@@ -5902,12 +4221,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SALEM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-422",
@@ -5916,12 +4231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NAGAPATTINAM(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-423",
@@ -5930,12 +4241,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VADAKARA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-424",
@@ -5944,12 +4251,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SAMASTIPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-425",
@@ -5958,12 +4261,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "INDORE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-426",
@@ -5972,12 +4271,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DEORIA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-427",
@@ -5986,12 +4281,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ASANSOL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-428",
@@ -6000,12 +4291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FIROZPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-429",
@@ -6014,12 +4301,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MORENA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-430",
@@ -6028,12 +4311,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VIDISHA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-431",
@@ -6042,12 +4321,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANGALORE NORTH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-432",
@@ -6056,12 +4331,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SABARKANTHA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 42,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-433",
@@ -6070,12 +4341,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HASSAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-434",
@@ -6084,12 +4351,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHIWANI MAHENDRAGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-435",
@@ -6098,12 +4361,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DIAMOND HARBOUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-436",
@@ -6112,12 +4371,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "FATEHGARH SAHIB(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-437",
@@ -6126,12 +4381,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GANDHINAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-438",
@@ -6140,12 +4391,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "UJJAIN(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-439",
@@ -6154,12 +4401,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BIKANER(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-440",
@@ -6168,12 +4411,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SHAHJAHANPUR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-441",
@@ -6182,12 +4421,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SHIMOGA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-442",
@@ -6197,11 +4432,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 164674770.11,
-    "allocatedAmountCr": "16.47",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 40,
-    "utilizationRate": "79.7"
+    "allocatedAmountCr": "16.47"
   },
   {
     "id": "ls-443",
@@ -6210,12 +4441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CUTTACK",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 26,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-444",
@@ -6224,12 +4451,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GIRIDIH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-445",
@@ -6238,12 +4461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GHATAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 200747364,
-    "allocatedAmountCr": "20.07",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 35,
-    "utilizationRate": "75.7"
+    "allocatedAmountRaw": 200747364.0,
+    "allocatedAmountCr": "20.07"
   },
   {
     "id": "ls-446",
@@ -6252,12 +4471,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMRITSAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 44,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-447",
@@ -6266,12 +4481,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NAGAUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-448",
@@ -6281,11 +4492,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 162177260.11,
-    "allocatedAmountCr": "16.22",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 34,
-    "utilizationRate": "77.2"
+    "allocatedAmountCr": "16.22"
   },
   {
     "id": "ls-449",
@@ -6294,12 +4501,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MAHARAJGANJ_BR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-450",
@@ -6309,11 +4512,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 173096756.91,
-    "allocatedAmountCr": "17.31",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "88.1"
+    "allocatedAmountCr": "17.31"
   },
   {
     "id": "ls-451",
@@ -6322,12 +4521,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JAMMU",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-452",
@@ -6336,12 +4531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PURULIA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-453",
@@ -6351,11 +4542,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 159049284.11,
-    "allocatedAmountCr": "15.90",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "94.0"
+    "allocatedAmountCr": "15.90"
   },
   {
     "id": "ls-454",
@@ -6364,12 +4551,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KANNUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-455",
@@ -6378,12 +4561,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANGALORE SOUTH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-456",
@@ -6392,12 +4571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KOZHIKODE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-457",
@@ -6407,11 +4582,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 162070276.11,
-    "allocatedAmountCr": "16.21",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "77.1"
+    "allocatedAmountCr": "16.21"
   },
   {
     "id": "ls-458",
@@ -6421,11 +4592,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 171477994.11,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 32,
-    "utilizationRate": "86.5"
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "ls-459",
@@ -6434,12 +4601,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "PALI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-460",
@@ -6449,11 +4612,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 156754633.11,
-    "allocatedAmountCr": "15.68",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 41,
-    "utilizationRate": "91.8"
+    "allocatedAmountCr": "15.68"
   },
   {
     "id": "ls-461",
@@ -6462,12 +4621,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DIBRUGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-462",
@@ -6476,12 +4631,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ALIGARH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-463",
@@ -6490,12 +4641,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BANGAON(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-464",
@@ -6505,11 +4652,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148988014.83,
-    "allocatedAmountCr": "14.90",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 45,
-    "utilizationRate": "84.0"
+    "allocatedAmountCr": "14.90"
   },
   {
     "id": "ls-465",
@@ -6519,11 +4662,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 172429519.11,
-    "allocatedAmountCr": "17.24",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "87.4"
+    "allocatedAmountCr": "17.24"
   },
   {
     "id": "ls-466",
@@ -6532,12 +4671,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ARUNACHAL EAST",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-467",
@@ -6546,12 +4681,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KANNIYAKUMARI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "86.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "ls-468",
@@ -6560,12 +4691,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KALYAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 24,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-469",
@@ -6574,12 +4701,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SATARA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-470",
@@ -6588,12 +4711,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NORTH GOA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-471",
@@ -6602,12 +4721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MAVAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-472",
@@ -6616,12 +4731,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAMTEK(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-473",
@@ -6630,12 +4741,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VIJAYAWADA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-474",
@@ -6644,12 +4751,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BASIRHAT",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 37,
-    "utilizationRate": "84.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "ls-475",
@@ -6659,11 +4762,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148107373.11,
-    "allocatedAmountCr": "14.81",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "83.1"
+    "allocatedAmountCr": "14.81"
   },
   {
     "id": "ls-476",
@@ -6672,12 +4771,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MIRZAPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-477",
@@ -6687,11 +4782,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147420861.41,
-    "allocatedAmountCr": "14.74",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "82.4"
+    "allocatedAmountCr": "14.74"
   },
   {
     "id": "ls-478",
@@ -6701,11 +4792,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 192042469.11,
-    "allocatedAmountCr": "19.20",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 41,
-    "utilizationRate": "87.0"
+    "allocatedAmountCr": "19.20"
   },
   {
     "id": "ls-479",
@@ -6715,11 +4802,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 159775982.39,
-    "allocatedAmountCr": "15.98",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "94.8"
+    "allocatedAmountCr": "15.98"
   },
   {
     "id": "ls-480",
@@ -6728,12 +4811,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MATHURA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-481",
@@ -6743,11 +4822,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 150724861.11,
-    "allocatedAmountCr": "15.07",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "85.7"
+    "allocatedAmountCr": "15.07"
   },
   {
     "id": "ls-482",
@@ -6756,12 +4831,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JAMNAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 46,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-483",
@@ -6771,11 +4842,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 153112586.11,
-    "allocatedAmountCr": "15.31",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "88.1"
+    "allocatedAmountCr": "15.31"
   },
   {
     "id": "ls-484",
@@ -6784,12 +4851,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KARUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-485",
@@ -6798,12 +4861,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ULUBERIA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-486",
@@ -6812,12 +4871,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHIND(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 25,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-487",
@@ -6826,12 +4881,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BOLANGIR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-488",
@@ -6840,12 +4891,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BIRBHUM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-489",
@@ -6854,12 +4901,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARAMATI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-490",
@@ -6868,12 +4911,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VAISHALI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-491",
@@ -6882,12 +4921,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VISAKHAPATNAM",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 164841922,
-    "allocatedAmountCr": "16.48",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "79.8"
+    "allocatedAmountRaw": 164841922.0,
+    "allocatedAmountCr": "16.48"
   },
   {
     "id": "ls-492",
@@ -6896,12 +4931,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ARRAH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-493",
@@ -6911,11 +4942,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147332315.11,
-    "allocatedAmountCr": "14.73",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 24,
-    "utilizationRate": "82.3"
+    "allocatedAmountCr": "14.73"
   },
   {
     "id": "ls-494",
@@ -6925,11 +4952,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 185211956.54,
-    "allocatedAmountCr": "18.52",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 34,
-    "utilizationRate": "80.2"
+    "allocatedAmountCr": "18.52"
   },
   {
     "id": "ls-495",
@@ -6938,12 +4961,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KOLKATA UTTAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-496",
@@ -6953,11 +4972,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 190712424.11,
-    "allocatedAmountCr": "19.07",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 54,
-    "completedWorks": 42,
-    "utilizationRate": "85.7"
+    "allocatedAmountCr": "19.07"
   },
   {
     "id": "ls-497",
@@ -6967,11 +4982,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 171821957.11,
-    "allocatedAmountCr": "17.18",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "86.8"
+    "allocatedAmountCr": "17.18"
   },
   {
     "id": "ls-498",
@@ -6980,12 +4991,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "GURDASPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 43,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-499",
@@ -6994,12 +5001,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHAMARAJANAGAR(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-500",
@@ -7008,12 +5011,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "RAIGAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 32,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-501",
@@ -7022,12 +5021,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "VALMIKI NAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-502",
@@ -7036,12 +5031,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "JAHANABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 155325714,
-    "allocatedAmountCr": "15.53",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 46,
-    "completedWorks": 36,
-    "utilizationRate": "90.3"
+    "allocatedAmountRaw": 155325714.0,
+    "allocatedAmountCr": "15.53"
   },
   {
     "id": "ls-503",
@@ -7050,12 +5041,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "THRISSUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-504",
@@ -7065,11 +5052,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 153563957.11,
-    "allocatedAmountCr": "15.36",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 26,
-    "utilizationRate": "88.6"
+    "allocatedAmountCr": "15.36"
   },
   {
     "id": "ls-505",
@@ -7078,12 +5061,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ZAHIRABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-506",
@@ -7092,12 +5071,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "UNNAO",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 49,
-    "completedWorks": 40,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-507",
@@ -7106,12 +5081,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHENNAI SOUTH",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-508",
@@ -7121,11 +5092,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 199417886.76,
-    "allocatedAmountCr": "19.94",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 38,
-    "completedWorks": 30,
-    "utilizationRate": "94.4"
+    "allocatedAmountCr": "19.94"
   },
   {
     "id": "ls-509",
@@ -7135,11 +5102,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148198170.11,
-    "allocatedAmountCr": "14.82",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "83.2"
+    "allocatedAmountCr": "14.82"
   },
   {
     "id": "ls-510",
@@ -7148,12 +5111,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KATIHAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 52,
-    "completedWorks": 39,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-511",
@@ -7163,11 +5122,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196905535.11,
-    "allocatedAmountCr": "19.69",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 31,
-    "completedWorks": 25,
-    "utilizationRate": "91.9"
+    "allocatedAmountCr": "19.69"
   },
   {
     "id": "ls-512",
@@ -7176,12 +5131,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "THENI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 41,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-513",
@@ -7191,11 +5142,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 168337124.35,
-    "allocatedAmountCr": "16.83",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "83.3"
+    "allocatedAmountCr": "16.83"
   },
   {
     "id": "ls-514",
@@ -7204,12 +5151,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHENNAI CENTRAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 55,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-515",
@@ -7218,12 +5161,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHIDAMBARAM(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-516",
@@ -7232,12 +5171,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BILASPUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 44,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-517",
@@ -7246,12 +5181,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "HARDWAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-518",
@@ -7260,12 +5191,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "ALLAHABAD",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 33,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-519",
@@ -7274,12 +5201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BARMER",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-520",
@@ -7288,12 +5211,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KHERI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 50,
-    "sanctionedWorks": 47,
-    "completedWorks": 37,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-521",
@@ -7303,11 +5222,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 162539930.11,
-    "allocatedAmountCr": "16.25",
-    "recommendedWorks": 57,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "77.5"
+    "allocatedAmountCr": "16.25"
   },
   {
     "id": "ls-522",
@@ -7316,12 +5231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TUMKUR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 39,
-    "sanctionedWorks": 36,
-    "completedWorks": 27,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-523",
@@ -7331,11 +5242,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 209368972.11,
-    "allocatedAmountCr": "20.94",
-    "recommendedWorks": 46,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "84.4"
+    "allocatedAmountCr": "20.94"
   },
   {
     "id": "ls-524",
@@ -7345,11 +5252,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 148451721.11,
-    "allocatedAmountCr": "14.85",
-    "recommendedWorks": 53,
-    "sanctionedWorks": 50,
-    "completedWorks": 41,
-    "utilizationRate": "83.5"
+    "allocatedAmountCr": "14.85"
   },
   {
     "id": "ls-525",
@@ -7358,12 +5261,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "AMBALA (SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 255454264,
-    "allocatedAmountCr": "25.55",
-    "recommendedWorks": 35,
-    "sanctionedWorks": 29,
-    "completedWorks": 21,
-    "utilizationRate": "90.5"
+    "allocatedAmountRaw": 255454264.0,
+    "allocatedAmountCr": "25.55"
   },
   {
     "id": "ls-526",
@@ -7373,11 +5272,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 167807990.11,
-    "allocatedAmountCr": "16.78",
-    "recommendedWorks": 42,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "82.8"
+    "allocatedAmountCr": "16.78"
   },
   {
     "id": "ls-527",
@@ -7386,12 +5281,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "DURG",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 49,
-    "sanctionedWorks": 43,
-    "completedWorks": 36,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-528",
@@ -7400,12 +5291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KUSHI NAGAR",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 148900000,
-    "allocatedAmountCr": "14.89",
-    "recommendedWorks": 56,
-    "sanctionedWorks": 53,
-    "completedWorks": 39,
-    "utilizationRate": "83.9"
+    "allocatedAmountRaw": 148900000.0,
+    "allocatedAmountCr": "14.89"
   },
   {
     "id": "ls-529",
@@ -7415,11 +5302,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 147223957.11,
-    "allocatedAmountCr": "14.72",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 26,
-    "utilizationRate": "82.2"
+    "allocatedAmountCr": "14.72"
   },
   {
     "id": "ls-530",
@@ -7428,12 +5311,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SIWAN",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 45,
-    "sanctionedWorks": 42,
-    "completedWorks": 35,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-531",
@@ -7442,12 +5321,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KACHCHH(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 52,
-    "sanctionedWorks": 46,
-    "completedWorks": 34,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-532",
@@ -7456,12 +5331,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "BHADOHI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 59,
-    "sanctionedWorks": 56,
-    "completedWorks": 44,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-533",
@@ -7470,12 +5341,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "TIKAMGARH(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 41,
-    "sanctionedWorks": 35,
-    "completedWorks": 30,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-534",
@@ -7484,12 +5351,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "CHANDAULI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 48,
-    "sanctionedWorks": 45,
-    "completedWorks": 33,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-535",
@@ -7498,12 +5361,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SANGLI",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 55,
-    "sanctionedWorks": 49,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-536",
@@ -7513,11 +5372,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 158176083.11,
-    "allocatedAmountCr": "15.82",
-    "recommendedWorks": 37,
-    "sanctionedWorks": 34,
-    "completedWorks": 29,
-    "utilizationRate": "93.2"
+    "allocatedAmountCr": "15.82"
   },
   {
     "id": "ls-537",
@@ -7526,12 +5381,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "KHAJURAHO",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 44,
-    "sanctionedWorks": 38,
-    "completedWorks": 28,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-538",
@@ -7540,12 +5391,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "UTTARA KANNADA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 51,
-    "sanctionedWorks": 48,
-    "completedWorks": 38,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-539",
@@ -7554,12 +5401,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NAWADA",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 58,
-    "sanctionedWorks": 52,
-    "completedWorks": 43,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-540",
@@ -7569,11 +5412,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Lok Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 156430260.11,
-    "allocatedAmountCr": "15.64",
-    "recommendedWorks": 40,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "91.4"
+    "allocatedAmountCr": "15.64"
   },
   {
     "id": "ls-541",
@@ -7582,12 +5421,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "MYSORE",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 47,
-    "sanctionedWorks": 41,
-    "completedWorks": 32,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "ls-542",
@@ -7596,12 +5431,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "NORTH WEST DELHI(SC)",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147876307,
-    "allocatedAmountCr": "14.79",
-    "recommendedWorks": 54,
-    "sanctionedWorks": 51,
-    "completedWorks": 42,
-    "utilizationRate": "82.9"
+    "allocatedAmountRaw": 147876307.0,
+    "allocatedAmountCr": "14.79"
   },
   {
     "id": "ls-543",
@@ -7610,12 +5441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "SAMBHAL",
     "house": "Lok Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 36,
-    "sanctionedWorks": 30,
-    "completedWorks": 22,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-1",
@@ -7624,12 +5451,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Telangana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 73421449,
-    "allocatedAmountCr": "7.34",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "79.4"
+    "allocatedAmountRaw": 73421449.0,
+    "allocatedAmountCr": "7.34"
   },
   {
     "id": "rs-2",
@@ -7638,12 +5461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-3",
@@ -7652,12 +5471,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Rajasthan (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-4",
@@ -7667,11 +5482,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49356476.5,
-    "allocatedAmountCr": "4.94",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "77.4"
+    "allocatedAmountCr": "4.94"
   },
   {
     "id": "rs-5",
@@ -7681,11 +5492,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-6",
@@ -7695,11 +5502,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 222487632.14,
-    "allocatedAmountCr": "22.25",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "74.5"
+    "allocatedAmountCr": "22.25"
   },
   {
     "id": "rs-7",
@@ -7708,12 +5511,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 186200000,
-    "allocatedAmountCr": "18.62",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "82.2"
+    "allocatedAmountRaw": 186200000.0,
+    "allocatedAmountCr": "18.62"
   },
   {
     "id": "rs-8",
@@ -7723,11 +5522,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Nominated MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-9",
@@ -7736,12 +5531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 186200000,
-    "allocatedAmountCr": "18.62",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "82.2"
+    "allocatedAmountRaw": 186200000.0,
+    "allocatedAmountCr": "18.62"
   },
   {
     "id": "rs-10",
@@ -7750,12 +5541,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-11",
@@ -7765,11 +5552,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 235263957.11,
-    "allocatedAmountCr": "23.53",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "87.3"
+    "allocatedAmountCr": "23.53"
   },
   {
     "id": "rs-12",
@@ -7779,11 +5562,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 245063957.11,
-    "allocatedAmountCr": "24.51",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "75.1"
+    "allocatedAmountCr": "24.51"
   },
   {
     "id": "rs-13",
@@ -7792,12 +5571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-14",
@@ -7807,11 +5582,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 197637007.11,
-    "allocatedAmountCr": "19.76",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "93.6"
+    "allocatedAmountCr": "19.76"
   },
   {
     "id": "rs-15",
@@ -7821,11 +5592,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 200830405.8,
-    "allocatedAmountCr": "20.08",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "74.8"
+    "allocatedAmountCr": "20.08"
   },
   {
     "id": "rs-16",
@@ -7835,11 +5602,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 197118521.35000002,
-    "allocatedAmountCr": "19.71",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "93.1"
+    "allocatedAmountCr": "19.71"
   },
   {
     "id": "rs-17",
@@ -7848,12 +5611,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-18",
@@ -7862,12 +5621,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 196000000,
-    "allocatedAmountCr": "19.60",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "92.0"
+    "allocatedAmountRaw": 196000000.0,
+    "allocatedAmountCr": "19.60"
   },
   {
     "id": "rs-19",
@@ -7877,11 +5632,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 89248285.42,
-    "allocatedAmountCr": "8.92",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "73.2"
+    "allocatedAmountCr": "8.92"
   },
   {
     "id": "rs-20",
@@ -7891,11 +5642,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49356476.5,
-    "allocatedAmountCr": "4.94",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "77.4"
+    "allocatedAmountCr": "4.94"
   },
   {
     "id": "rs-21",
@@ -7904,12 +5651,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-22",
@@ -7918,12 +5661,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Nominated by President",
     "house": "Rajya Sabha",
     "category": "Nominated MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-23",
@@ -7932,12 +5671,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-24",
@@ -7946,12 +5681,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-25",
@@ -7961,11 +5692,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 203626524.67000002,
-    "allocatedAmountCr": "20.36",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "77.6"
+    "allocatedAmountCr": "20.36"
   },
   {
     "id": "rs-26",
@@ -7975,11 +5702,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 232203454.24,
-    "allocatedAmountCr": "23.22",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "84.2"
+    "allocatedAmountCr": "23.22"
   },
   {
     "id": "rs-27",
@@ -7988,12 +5711,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-28",
@@ -8002,12 +5721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Odisha (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-29",
@@ -8017,11 +5732,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 178564551.09,
-    "allocatedAmountCr": "17.86",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "74.6"
+    "allocatedAmountCr": "17.86"
   },
   {
     "id": "rs-30",
@@ -8031,11 +5742,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-31",
@@ -8044,12 +5751,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Rajasthan (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-32",
@@ -8059,11 +5762,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 207863957.11,
-    "allocatedAmountCr": "20.79",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "81.9"
+    "allocatedAmountCr": "20.79"
   },
   {
     "id": "rs-33",
@@ -8072,12 +5771,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-34",
@@ -8086,12 +5781,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Karnataka (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-35",
@@ -8101,11 +5792,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 276720323.27,
-    "allocatedAmountCr": "27.67",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "84.7"
+    "allocatedAmountCr": "27.67"
   },
   {
     "id": "rs-36",
@@ -8115,11 +5802,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 198656208.57000002,
-    "allocatedAmountCr": "19.87",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "72.7"
+    "allocatedAmountCr": "19.87"
   },
   {
     "id": "rs-37",
@@ -8128,12 +5811,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-38",
@@ -8142,12 +5821,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Delhi (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-39",
@@ -8157,11 +5832,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 191620112.11,
-    "allocatedAmountCr": "19.16",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "87.6"
+    "allocatedAmountCr": "19.16"
   },
   {
     "id": "rs-40",
@@ -8171,11 +5842,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 221271395.11,
-    "allocatedAmountCr": "22.13",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "73.3"
+    "allocatedAmountCr": "22.13"
   },
   {
     "id": "rs-41",
@@ -8185,11 +5852,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-42",
@@ -8199,11 +5862,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 310898953.29,
-    "allocatedAmountCr": "31.09",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "74.9"
+    "allocatedAmountCr": "31.09"
   },
   {
     "id": "rs-43",
@@ -8213,11 +5872,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 227628508.2,
-    "allocatedAmountCr": "22.76",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "79.6"
+    "allocatedAmountCr": "22.76"
   },
   {
     "id": "rs-44",
@@ -8226,12 +5881,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Karnataka (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-45",
@@ -8240,12 +5891,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 186200000,
-    "allocatedAmountCr": "18.62",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "82.2"
+    "allocatedAmountRaw": 186200000.0,
+    "allocatedAmountCr": "18.62"
   },
   {
     "id": "rs-46",
@@ -8254,12 +5901,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-47",
@@ -8268,12 +5911,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Telangana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-48",
@@ -8282,12 +5921,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Himachal Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-49",
@@ -8297,11 +5932,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 223492764.11,
-    "allocatedAmountCr": "22.35",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "75.5"
+    "allocatedAmountCr": "22.35"
   },
   {
     "id": "rs-50",
@@ -8310,12 +5941,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-51",
@@ -8324,12 +5951,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-52",
@@ -8339,11 +5962,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 265563957.11,
-    "allocatedAmountCr": "26.56",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "73.6"
+    "allocatedAmountCr": "26.56"
   },
   {
     "id": "rs-53",
@@ -8352,12 +5971,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Telangana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 244365104,
-    "allocatedAmountCr": "24.44",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "74.4"
+    "allocatedAmountRaw": 244365104.0,
+    "allocatedAmountCr": "24.44"
   },
   {
     "id": "rs-54",
@@ -8367,11 +5982,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-55",
@@ -8380,12 +5991,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-56",
@@ -8395,11 +6002,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-57",
@@ -8408,12 +6011,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Jharkhand (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-58",
@@ -8422,12 +6021,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-59",
@@ -8436,12 +6031,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-60",
@@ -8450,12 +6041,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-61",
@@ -8464,12 +6051,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Assam (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 98000000,
-    "allocatedAmountCr": "9.80",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 98000000.0,
+    "allocatedAmountCr": "9.80"
   },
   {
     "id": "rs-62",
@@ -8479,11 +6062,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-63",
@@ -8492,12 +6071,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Nominated by President",
     "house": "Rajya Sabha",
     "category": "Nominated MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-64",
@@ -8506,12 +6081,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-65",
@@ -8520,12 +6091,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Jammu And Kashmir (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-66",
@@ -8535,11 +6102,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49356476.5,
-    "allocatedAmountCr": "4.94",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "77.4"
+    "allocatedAmountCr": "4.94"
   },
   {
     "id": "rs-67",
@@ -8548,12 +6111,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Rajasthan (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-68",
@@ -8563,11 +6122,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49356476.5,
-    "allocatedAmountCr": "4.94",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "77.4"
+    "allocatedAmountCr": "4.94"
   },
   {
     "id": "rs-69",
@@ -8577,11 +6132,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 239919406.11,
-    "allocatedAmountCr": "23.99",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "91.9"
+    "allocatedAmountCr": "23.99"
   },
   {
     "id": "rs-70",
@@ -8590,12 +6141,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Odisha (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 23800006,
-    "allocatedAmountCr": "2.38",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "73.8"
+    "allocatedAmountRaw": 23800006.0,
+    "allocatedAmountCr": "2.38"
   },
   {
     "id": "rs-71",
@@ -8604,12 +6151,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-72",
@@ -8619,11 +6162,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 170837637.76,
-    "allocatedAmountCr": "17.08",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "88.8"
+    "allocatedAmountCr": "17.08"
   },
   {
     "id": "rs-73",
@@ -8633,11 +6172,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220383643.11,
-    "allocatedAmountCr": "22.04",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "72.4"
+    "allocatedAmountCr": "22.04"
   },
   {
     "id": "rs-74",
@@ -8646,12 +6181,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Odisha (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-75",
@@ -8661,11 +6192,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 150170726.11,
-    "allocatedAmountCr": "15.02",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "90.2"
+    "allocatedAmountCr": "15.02"
   },
   {
     "id": "rs-76",
@@ -8674,12 +6201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Karnataka (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-77",
@@ -8689,11 +6212,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-78",
@@ -8702,12 +6221,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-79",
@@ -8716,12 +6231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-80",
@@ -8731,11 +6242,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Nominated MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-81",
@@ -8744,12 +6251,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Jammu And Kashmir (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-82",
@@ -8759,11 +6262,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220984094.27,
-    "allocatedAmountCr": "22.10",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "73.0"
+    "allocatedAmountCr": "22.10"
   },
   {
     "id": "rs-83",
@@ -8773,11 +6272,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 226801049.11,
-    "allocatedAmountCr": "22.68",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "78.8"
+    "allocatedAmountCr": "22.68"
   },
   {
     "id": "rs-84",
@@ -8786,12 +6281,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Kerala (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 122500000,
-    "allocatedAmountCr": "12.25",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "84.5"
+    "allocatedAmountRaw": 122500000.0,
+    "allocatedAmountCr": "12.25"
   },
   {
     "id": "rs-85",
@@ -8800,12 +6291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Himachal Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-86",
@@ -8814,12 +6301,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Nominated by President",
     "house": "Rajya Sabha",
     "category": "Nominated MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-87",
@@ -8829,11 +6312,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 89248285.42,
-    "allocatedAmountCr": "8.92",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "73.2"
+    "allocatedAmountCr": "8.92"
   },
   {
     "id": "rs-88",
@@ -8843,11 +6322,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Nominated MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-89",
@@ -8856,12 +6331,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 196000000,
-    "allocatedAmountCr": "19.60",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "92.0"
+    "allocatedAmountRaw": 196000000.0,
+    "allocatedAmountCr": "19.60"
   },
   {
     "id": "rs-90",
@@ -8870,12 +6341,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-91",
@@ -8885,11 +6352,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-92",
@@ -8899,11 +6362,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-93",
@@ -8912,12 +6371,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Meghalaya (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-94",
@@ -8927,11 +6382,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-95",
@@ -8941,11 +6392,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 214074707.67000002,
-    "allocatedAmountCr": "21.41",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "88.1"
+    "allocatedAmountCr": "21.41"
   },
   {
     "id": "rs-96",
@@ -8954,12 +6401,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Assam (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-97",
@@ -8968,12 +6411,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Kerala (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 122500000,
-    "allocatedAmountCr": "12.25",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "84.5"
+    "allocatedAmountRaw": 122500000.0,
+    "allocatedAmountCr": "12.25"
   },
   {
     "id": "rs-98",
@@ -8983,11 +6422,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 238513975.53,
-    "allocatedAmountCr": "23.85",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "90.5"
+    "allocatedAmountCr": "23.85"
   },
   {
     "id": "rs-99",
@@ -8997,11 +6432,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 89248285.42,
-    "allocatedAmountCr": "8.92",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "73.2"
+    "allocatedAmountCr": "8.92"
   },
   {
     "id": "rs-100",
@@ -9010,12 +6441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Assam (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 98000000,
-    "allocatedAmountCr": "9.80",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 98000000.0,
+    "allocatedAmountCr": "9.80"
   },
   {
     "id": "rs-101",
@@ -9025,11 +6452,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-102",
@@ -9038,12 +6461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Haryana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-103",
@@ -9052,12 +6471,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Haryana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 196000000,
-    "allocatedAmountCr": "19.60",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "92.0"
+    "allocatedAmountRaw": 196000000.0,
+    "allocatedAmountCr": "19.60"
   },
   {
     "id": "rs-104",
@@ -9066,12 +6481,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-105",
@@ -9080,12 +6491,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Mizoram (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 24500000,
-    "allocatedAmountCr": "2.45",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "74.5"
+    "allocatedAmountRaw": 24500000.0,
+    "allocatedAmountCr": "2.45"
   },
   {
     "id": "rs-106",
@@ -9095,11 +6502,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 235770091.81,
-    "allocatedAmountCr": "23.58",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "87.8"
+    "allocatedAmountCr": "23.58"
   },
   {
     "id": "rs-107",
@@ -9109,11 +6512,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49356476.5,
-    "allocatedAmountCr": "4.94",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "77.4"
+    "allocatedAmountCr": "4.94"
   },
   {
     "id": "rs-108",
@@ -9123,11 +6522,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 206278088.11,
-    "allocatedAmountCr": "20.63",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "80.3"
+    "allocatedAmountCr": "20.63"
   },
   {
     "id": "rs-109",
@@ -9136,12 +6531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-110",
@@ -9150,12 +6541,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Karnataka (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-111",
@@ -9164,12 +6551,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Rajasthan (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-112",
@@ -9178,12 +6561,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttarakhand (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-113",
@@ -9192,12 +6571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-114",
@@ -9207,11 +6582,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49063957.11,
-    "allocatedAmountCr": "4.91",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "77.1"
+    "allocatedAmountCr": "4.91"
   },
   {
     "id": "rs-115",
@@ -9221,11 +6592,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 235263957.11,
-    "allocatedAmountCr": "23.53",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "87.3"
+    "allocatedAmountCr": "23.53"
   },
   {
     "id": "rs-116",
@@ -9235,11 +6602,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-117",
@@ -9248,12 +6611,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Odisha (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-118",
@@ -9262,12 +6621,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Karnataka (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-119",
@@ -9277,11 +6632,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 171296045.11,
-    "allocatedAmountCr": "17.13",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "89.3"
+    "allocatedAmountCr": "17.13"
   },
   {
     "id": "rs-120",
@@ -9290,12 +6641,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-121",
@@ -9304,12 +6651,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-122",
@@ -9318,12 +6661,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-123",
@@ -9333,11 +6672,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-124",
@@ -9346,12 +6681,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-125",
@@ -9361,11 +6692,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-126",
@@ -9374,12 +6701,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-127",
@@ -9388,12 +6711,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Delhi (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 160837070,
-    "allocatedAmountCr": "16.08",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "78.8"
+    "allocatedAmountRaw": 160837070.0,
+    "allocatedAmountCr": "16.08"
   },
   {
     "id": "rs-128",
@@ -9402,12 +6721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Karnataka (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147450000,
-    "allocatedAmountCr": "14.74",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "87.5"
+    "allocatedAmountRaw": 147450000.0,
+    "allocatedAmountCr": "14.74"
   },
   {
     "id": "rs-129",
@@ -9417,11 +6732,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 222043184.71,
-    "allocatedAmountCr": "22.20",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "74.0"
+    "allocatedAmountCr": "22.20"
   },
   {
     "id": "rs-130",
@@ -9430,12 +6741,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-131",
@@ -9444,12 +6751,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Rajasthan (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-132",
@@ -9459,11 +6762,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 236483662.11,
-    "allocatedAmountCr": "23.65",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "88.5"
+    "allocatedAmountCr": "23.65"
   },
   {
     "id": "rs-133",
@@ -9472,12 +6771,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 122500000,
-    "allocatedAmountCr": "12.25",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "84.5"
+    "allocatedAmountRaw": 122500000.0,
+    "allocatedAmountCr": "12.25"
   },
   {
     "id": "rs-134",
@@ -9486,12 +6781,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-135",
@@ -9501,11 +6792,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 236312242.52,
-    "allocatedAmountCr": "23.63",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "88.3"
+    "allocatedAmountCr": "23.63"
   },
   {
     "id": "rs-136",
@@ -9514,12 +6801,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Kerala (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 122500000,
-    "allocatedAmountCr": "12.25",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "84.5"
+    "allocatedAmountRaw": 122500000.0,
+    "allocatedAmountCr": "12.25"
   },
   {
     "id": "rs-137",
@@ -9529,11 +6812,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 89248285.42,
-    "allocatedAmountCr": "8.92",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "73.2"
+    "allocatedAmountCr": "8.92"
   },
   {
     "id": "rs-138",
@@ -9543,11 +6822,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-139",
@@ -9556,12 +6831,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 98000000,
-    "allocatedAmountCr": "9.80",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 98000000.0,
+    "allocatedAmountCr": "9.80"
   },
   {
     "id": "rs-140",
@@ -9570,12 +6841,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-141",
@@ -9584,12 +6851,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Karnataka (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-142",
@@ -9599,11 +6862,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 178564551.09,
-    "allocatedAmountCr": "17.86",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "74.6"
+    "allocatedAmountCr": "17.86"
   },
   {
     "id": "rs-143",
@@ -9612,12 +6871,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-144",
@@ -9626,12 +6881,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49662892,
-    "allocatedAmountCr": "4.97",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "77.7"
+    "allocatedAmountRaw": 49662892.0,
+    "allocatedAmountCr": "4.97"
   },
   {
     "id": "rs-145",
@@ -9640,12 +6891,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Assam (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-146",
@@ -9655,11 +6902,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-147",
@@ -9669,11 +6912,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49356476.5,
-    "allocatedAmountCr": "4.94",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "77.4"
+    "allocatedAmountCr": "4.94"
   },
   {
     "id": "rs-148",
@@ -9683,11 +6922,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 260812242.52,
-    "allocatedAmountCr": "26.08",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "90.8"
+    "allocatedAmountCr": "26.08"
   },
   {
     "id": "rs-149",
@@ -9697,11 +6932,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 236312242.52,
-    "allocatedAmountCr": "23.63",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "88.3"
+    "allocatedAmountCr": "23.63"
   },
   {
     "id": "rs-150",
@@ -9711,11 +6942,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 237229207.25,
-    "allocatedAmountCr": "23.72",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "89.2"
+    "allocatedAmountCr": "23.72"
   },
   {
     "id": "rs-151",
@@ -9724,12 +6951,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-152",
@@ -9739,11 +6962,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 271174394.23,
-    "allocatedAmountCr": "27.12",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "79.2"
+    "allocatedAmountCr": "27.12"
   },
   {
     "id": "rs-153",
@@ -9752,12 +6971,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-154",
@@ -9766,12 +6981,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Tripura (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 122500000,
-    "allocatedAmountCr": "12.25",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "84.5"
+    "allocatedAmountRaw": 122500000.0,
+    "allocatedAmountCr": "12.25"
   },
   {
     "id": "rs-155",
@@ -9780,12 +6991,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Punjab (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-156",
@@ -9794,12 +7001,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-157",
@@ -9809,11 +7012,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 65673638.730000004,
-    "allocatedAmountCr": "6.57",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "93.7"
+    "allocatedAmountCr": "6.57"
   },
   {
     "id": "rs-158",
@@ -9822,12 +7021,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-159",
@@ -9837,11 +7032,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 174518577.11,
-    "allocatedAmountCr": "17.45",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "92.5"
+    "allocatedAmountCr": "17.45"
   },
   {
     "id": "rs-160",
@@ -9850,12 +7041,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-161",
@@ -9864,12 +7051,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-162",
@@ -9879,11 +7062,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-163",
@@ -9892,12 +7071,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-164",
@@ -9907,11 +7082,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 152732534.11,
-    "allocatedAmountCr": "15.27",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "92.7"
+    "allocatedAmountCr": "15.27"
   },
   {
     "id": "rs-165",
@@ -9921,11 +7092,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-166",
@@ -9935,11 +7102,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 170413583.79,
-    "allocatedAmountCr": "17.04",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "88.4"
+    "allocatedAmountCr": "17.04"
   },
   {
     "id": "rs-167",
@@ -9949,11 +7112,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 224621383.11,
-    "allocatedAmountCr": "22.46",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "76.6"
+    "allocatedAmountCr": "22.46"
   },
   {
     "id": "rs-168",
@@ -9962,12 +7121,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Gujarat (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-169",
@@ -9977,11 +7132,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 239763792.52,
-    "allocatedAmountCr": "23.98",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "91.8"
+    "allocatedAmountCr": "23.98"
   },
   {
     "id": "rs-170",
@@ -9991,11 +7142,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 292881856.49,
-    "allocatedAmountCr": "29.29",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "78.9"
+    "allocatedAmountCr": "29.29"
   },
   {
     "id": "rs-171",
@@ -10005,11 +7152,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 89248285.42,
-    "allocatedAmountCr": "8.92",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "73.2"
+    "allocatedAmountCr": "8.92"
   },
   {
     "id": "rs-172",
@@ -10018,12 +7161,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Goa (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-173",
@@ -10032,12 +7171,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Jammu And Kashmir (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-174",
@@ -10046,12 +7181,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-175",
@@ -10060,12 +7191,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 171500000,
-    "allocatedAmountCr": "17.15",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "89.5"
+    "allocatedAmountRaw": 171500000.0,
+    "allocatedAmountCr": "17.15"
   },
   {
     "id": "rs-176",
@@ -10074,12 +7201,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49063978,
-    "allocatedAmountCr": "4.91",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "77.1"
+    "allocatedAmountRaw": 49063978.0,
+    "allocatedAmountCr": "4.91"
   },
   {
     "id": "rs-177",
@@ -10089,11 +7212,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-178",
@@ -10102,12 +7221,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Haryana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-179",
@@ -10116,12 +7231,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 186200000,
-    "allocatedAmountCr": "18.62",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "82.2"
+    "allocatedAmountRaw": 186200000.0,
+    "allocatedAmountCr": "18.62"
   },
   {
     "id": "rs-180",
@@ -10131,11 +7242,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-181",
@@ -10144,12 +7251,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-182",
@@ -10159,11 +7262,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 184466426.11,
-    "allocatedAmountCr": "18.45",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "80.5"
+    "allocatedAmountCr": "18.45"
   },
   {
     "id": "rs-183",
@@ -10172,12 +7271,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 186200000,
-    "allocatedAmountCr": "18.62",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "82.2"
+    "allocatedAmountRaw": 186200000.0,
+    "allocatedAmountCr": "18.62"
   },
   {
     "id": "rs-184",
@@ -10187,11 +7282,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196359074.44000003,
-    "allocatedAmountCr": "19.64",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "92.4"
+    "allocatedAmountCr": "19.64"
   },
   {
     "id": "rs-185",
@@ -10200,12 +7291,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Jammu And Kashmir (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-186",
@@ -10215,11 +7302,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 235263957.11,
-    "allocatedAmountCr": "23.53",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "87.3"
+    "allocatedAmountCr": "23.53"
   },
   {
     "id": "rs-187",
@@ -10228,12 +7311,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Nominated by President",
     "house": "Rajya Sabha",
     "category": "Nominated MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-188",
@@ -10243,11 +7322,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 237168443.49,
-    "allocatedAmountCr": "23.72",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "89.2"
+    "allocatedAmountCr": "23.72"
   },
   {
     "id": "rs-189",
@@ -10256,12 +7331,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-190",
@@ -10270,12 +7341,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Haryana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-191",
@@ -10284,12 +7351,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Odisha (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-192",
@@ -10298,12 +7361,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Odisha (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-193",
@@ -10313,11 +7372,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-194",
@@ -10326,12 +7381,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Arunachal Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-195",
@@ -10340,12 +7391,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-196",
@@ -10354,12 +7401,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-197",
@@ -10368,12 +7411,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Assam (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-198",
@@ -10383,11 +7422,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 49356476.5,
-    "allocatedAmountCr": "4.94",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "77.4"
+    "allocatedAmountCr": "4.94"
   },
   {
     "id": "rs-199",
@@ -10396,12 +7431,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Nominated by President",
     "house": "Rajya Sabha",
     "category": "Nominated MP",
-    "allocatedAmountRaw": 73500000,
-    "allocatedAmountCr": "7.35",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "79.5"
+    "allocatedAmountRaw": 73500000.0,
+    "allocatedAmountCr": "7.35"
   },
   {
     "id": "rs-200",
@@ -10410,12 +7441,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Bihar (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-201",
@@ -10425,11 +7452,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Nominated MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-202",
@@ -10438,12 +7461,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-203",
@@ -10452,12 +7471,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-204",
@@ -10467,11 +7482,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-205",
@@ -10480,12 +7491,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Andhra Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-206",
@@ -10494,12 +7501,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Manipur (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-207",
@@ -10509,11 +7512,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196994373.87,
-    "allocatedAmountCr": "19.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "93.0"
+    "allocatedAmountCr": "19.70"
   },
   {
     "id": "rs-208",
@@ -10523,11 +7522,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-209",
@@ -10536,12 +7531,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-210",
@@ -10551,11 +7542,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 220563957.11,
-    "allocatedAmountCr": "22.06",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "72.6"
+    "allocatedAmountCr": "22.06"
   },
   {
     "id": "rs-211",
@@ -10564,12 +7551,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Chhattisgarh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-212",
@@ -10579,11 +7562,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 232524001.2,
-    "allocatedAmountCr": "23.25",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 22,
-    "completedWorks": 16,
-    "utilizationRate": "84.5"
+    "allocatedAmountCr": "23.25"
   },
   {
     "id": "rs-213",
@@ -10592,12 +7571,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 30,
-    "completedWorks": 25,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-214",
@@ -10606,12 +7581,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Maharashtra (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 33,
-    "completedWorks": 25,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-215",
@@ -10620,12 +7591,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Madhya Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 41,
-    "completedWorks": 29,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-216",
@@ -10635,11 +7602,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 215972051.45,
-    "allocatedAmountCr": "21.60",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 24,
-    "completedWorks": 20,
-    "utilizationRate": "90.0"
+    "allocatedAmountCr": "21.60"
   },
   {
     "id": "rs-217",
@@ -10649,11 +7612,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Nominated MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 27,
-    "completedWorks": 20,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-218",
@@ -10662,12 +7621,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Chhattisgarh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 49000000,
-    "allocatedAmountCr": "4.90",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 35,
-    "completedWorks": 29,
-    "utilizationRate": "77.0"
+    "allocatedAmountRaw": 49000000.0,
+    "allocatedAmountCr": "4.90"
   },
   {
     "id": "rs-219",
@@ -10677,11 +7632,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 89248285.42,
-    "allocatedAmountCr": "8.92",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 38,
-    "completedWorks": 29,
-    "utilizationRate": "73.2"
+    "allocatedAmountCr": "8.92"
   },
   {
     "id": "rs-220",
@@ -10691,11 +7642,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 246780257.87,
-    "allocatedAmountCr": "24.68",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 26,
-    "completedWorks": 18,
-    "utilizationRate": "76.8"
+    "allocatedAmountCr": "24.68"
   },
   {
     "id": "rs-221",
@@ -10704,12 +7651,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Haryana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 98000000,
-    "allocatedAmountCr": "9.80",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 29,
-    "completedWorks": 23,
-    "utilizationRate": "82.0"
+    "allocatedAmountRaw": 98000000.0,
+    "allocatedAmountCr": "9.80"
   },
   {
     "id": "rs-222",
@@ -10718,12 +7661,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Telangana (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 32,
-    "completedWorks": 24,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-223",
@@ -10733,11 +7672,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 206563957.11,
-    "allocatedAmountCr": "20.66",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 40,
-    "completedWorks": 32,
-    "utilizationRate": "80.6"
+    "allocatedAmountCr": "20.66"
   },
   {
     "id": "rs-224",
@@ -10746,12 +7681,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Uttar Pradesh (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 23,
-    "completedWorks": 18,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-225",
@@ -10760,12 +7691,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "West Bengal (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 31,
-    "completedWorks": 22,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-226",
@@ -10775,11 +7702,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 34,
-    "completedWorks": 27,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-227",
@@ -10789,11 +7712,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 173830159.11,
-    "allocatedAmountCr": "17.38",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 37,
-    "completedWorks": 27,
-    "utilizationRate": "91.8"
+    "allocatedAmountCr": "17.38"
   },
   {
     "id": "rs-228",
@@ -10802,12 +7721,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Rajasthan (Statewide)",
     "house": "Rajya Sabha",
     "category": "Elected MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 28,
-    "sanctionedWorks": 25,
-    "completedWorks": 22,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-229",
@@ -10816,12 +7731,8 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "constituency": "Nominated by President",
     "house": "Rajya Sabha",
     "category": "Nominated MP",
-    "allocatedAmountRaw": 147000000,
-    "allocatedAmountCr": "14.70",
-    "recommendedWorks": 33,
-    "sanctionedWorks": 28,
-    "completedWorks": 22,
-    "utilizationRate": "87.0"
+    "allocatedAmountRaw": 147000000.0,
+    "allocatedAmountCr": "14.70"
   },
   {
     "id": "rs-230",
@@ -10831,11 +7742,7 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196084721.4,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 38,
-    "sanctionedWorks": 36,
-    "completedWorks": 25,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   },
   {
     "id": "rs-231",
@@ -10845,10 +7752,6 @@ export const ALL_MPS_DATA: MPDetail[] = [
     "house": "Rajya Sabha",
     "category": "Elected MP",
     "allocatedAmountRaw": 196063957.11,
-    "allocatedAmountCr": "19.61",
-    "recommendedWorks": 43,
-    "sanctionedWorks": 39,
-    "completedWorks": 31,
-    "utilizationRate": "92.1"
+    "allocatedAmountCr": "19.61"
   }
 ];

@@ -1,7 +1,7 @@
 // ElevenLabs High-Fidelity Official Audio Briefing Service
 // Generates official voiceover briefings for executive evaluators and citizens
 
-const ELEVENLABS_API_KEY = import.meta.env.VITE_ELEVENLABS_API_KEY || '';
+const ELEVENLABS_API_KEY = import.meta.env.VITE_ELEVENLABS_API_KEY || 'sk_71023e1e74a9fc466a5049d6d59bee0fbe650a9c6e149f81';
 // Voice: "Rachel" (calm, formal, authoritative news/government tone)
 const DEFAULT_VOICE_ID = '21m00Tcm4TlvDq8ikWAM'; 
 

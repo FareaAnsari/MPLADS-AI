@@ -113,7 +113,7 @@ export const aiService = {
           category: 'Contractor',
           score: 76,
           weight: 0.15,
-          description: `Contractor ${contractor?.name || 'ABC Infrastructure'} has ${contractor?.delayedProjects || 5} delayed projects out of ${contractor?.activeContracts || 8} ongoing works.`,
+          description: `Contractor ${contractor?.name || project.contractorName || 'DARSH BUILDCON'} has ${contractor?.delayedProjects || 2} delayed projects out of ${contractor?.activeContracts || 4} ongoing works.`,
           evidenceCount: 3
         },
         {
@@ -142,7 +142,7 @@ export const aiService = {
         'Payment utilization is high compared with certified physical progress (74% vs 43%).',
         'Material cost for cement is significantly above comparable district schedule of rates (+33.3%).',
         'Contractor has multiple delayed projects in adjoining taluks and high concurrent work load.',
-        'Same vendor (Shree Cement Suppliers) appears across multiple high-variance projects.',
+        'High recurring payment concentration identified across single vendor records.',
         'Project timeline is 27 days behind AI predictive schedule based on masonry task dependencies.',
         'Cross-record inconsistency identified between Treasury Disbursal record and site measurement book.'
       ],

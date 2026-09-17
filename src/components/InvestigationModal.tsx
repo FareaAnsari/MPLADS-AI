@@ -73,14 +73,14 @@ export const InvestigationModal: React.FC<InvestigationModalProps> = ({ projectI
     setIsAuditing(true);
     try {
       const result = await groqAIService.generateRiskAudit({
-        projectId: project?.id || projectId || 'PRJ-MH-2024-001',
-        workName: project?.name || 'Solar Microgrid System & Battery Bank Installation',
-        financialProgress: 74,
-        physicalProgress: 43,
-        satelliteDelta: 'InSAR indicates -31% discrepancy from claimed earthwork',
-        contractorName: 'Apex Infrastructure Solutions Ltd',
-        delayMonths: 9,
-        sector: project?.category || 'Energy'
+        projectId: project?.id || projectId || 'Data Not Available',
+        workName: project?.name || 'Data Not Available',
+        financialProgress: project?.financialProgress || 100,
+        physicalProgress: project?.physicalProgress || 100,
+        satelliteDelta: project?.riskLevel === 'HIGH' ? 'InSAR indicates execution lag compared to benchmark' : 'No discrepancy recorded',
+        contractorName: project?.contractorName || 'Data Not Available',
+        delayMonths: project?.predictedDelayDays ? Math.round(project.predictedDelayDays / 30) : 0,
+        sector: project?.category || 'Data Not Available'
       });
       setGroqAudit(result);
     } finally {
@@ -308,7 +308,7 @@ export const InvestigationModal: React.FC<InvestigationModalProps> = ({ projectI
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600">Vendor:</span>
-                      <span className="font-medium text-slate-800">Shree Cement Suppliers</span>
+                      <span className="font-medium text-slate-800">{project?.vendorNames?.[0] || 'BHARGAV SUMANTRAI PATEL'}</span>
                     </div>
                     <p className="text-[10px] text-amber-700 font-medium mt-1">
                       Deviation exceeds allowable 10% contingency window.
@@ -711,14 +711,14 @@ export const InvestigationModal: React.FC<InvestigationModalProps> = ({ projectI
                 {/* Memo Metadata */}
                 <div className="flex justify-between items-start text-[11px] font-sans mb-4 border-b border-slate-200 pb-2">
                   <div>
-                    <p><strong>Memo No.:</strong> MoSPI/MPLADS/2026/INV-1452</p>
-                    <p><strong>District:</strong> Pune, Maharashtra</p>
-                    <p><strong>Hon'ble MP:</strong> Shri A. Khan (Pune Lok Sabha)</p>
+                    <p><strong>Memo No.:</strong> MoSPI/MPLADS/2026/INV-{project?.id ? project.id.replace(/[^a-zA-Z0-9]/g, '').slice(-4) : '1452'}</p>
+                    <p><strong>District:</strong> {project ? `${project.district}, ${project.state}` : 'Pune, Maharashtra'}</p>
+                    <p><strong>Hon'ble MP:</strong> {project?.mpName ? `${project.mpName} (${project.mpConstituency || project.district} Lok Sabha)` : 'Murlidhar Mohol (Pune Lok Sabha)'}</p>
                   </div>
                   <div className="text-right">
                     <p><strong>Date:</strong> 14 September 2026</p>
                     <p><strong>Classification:</strong> OFFICIAL / CONFIDENTIAL</p>
-                    <p><strong>AI Risk Engine Assessment:</strong> HIGH RISK (82/100)</p>
+                    <p><strong>AI Risk Engine Assessment:</strong> HIGH RISK ({project?.riskScore || 82}/100)</p>
                   </div>
                 </div>
 
@@ -729,7 +729,7 @@ export const InvestigationModal: React.FC<InvestigationModalProps> = ({ projectI
                   </div>
 
                   <p>
-                    1. <strong>Project Particulars:</strong> Construction of Community Hall at Wagholi, Haveli Block, District Pune. Sanctioned Amount: ₹20,00,000/-; Contract Value: ₹19,40,000/- awarded to M/s ABC Infrastructure Pvt. Ltd. (Registration No. PWD/CLASS1/2018/1442).
+                    1. <strong>Project Particulars:</strong> {project?.name || 'Developmental Civic Infrastructure'}, {project?.district || 'Pune'} District. Sanctioned Amount: ₹{(project?.sanctionedAmount || project?.estimatedCost || 2000000).toLocaleString('en-IN')}/-; Contract Value: ₹{(project?.contractValue || project?.sanctionedAmount || 1940000).toLocaleString('en-IN')}/- awarded to {project?.contractorName || 'DARSH BUILDCON'}.
                   </p>
 
                   <p>

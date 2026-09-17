@@ -12,8 +12,6 @@ from engines.sla_analyzer import SLABottleneckAnalyzer, SLA_ANALYZER_VERSION
 from engines.inspection_optimizer import InspectionOptimizerEngine, OPTIMIZER_ENGINE_VERSION
 from engines.ledger_engine import AuditLedgerEngine, LEDGER_ENGINE_VERSION
 
-from adapters.synthetic_evidence import SyntheticEvidenceGenerator
-from adapters.synthetic_process_data import SyntheticProcessGenerator, SYNTHETIC_INSPECTORS
 from schemas.pydantic_schemas import CitizenEvidenceSubmission
 from routers.projects import WORK_RECORDS
 
@@ -30,123 +28,57 @@ sla_engine = SLABottleneckAnalyzer()
 inspection_engine = InspectionOptimizerEngine()
 ledger_engine = AuditLedgerEngine()
 
-# Compute peer benchmarks at router startup
+# Compute peer benchmarks at router startup from official dataset records
 PEER_BENCHMARKS = peer_engine.compute_peer_benchmarks(WORK_RECORDS)
 
-# Generate synthetic demonstration stores
-EVIDENCE_STORE = SyntheticEvidenceGenerator.generate_demo_evidence_store(WORK_RECORDS)
+# Evidence store initialized strictly for verified records
+EVIDENCE_STORE: List[Dict[str, Any]] = []
 
-# Pre-evaluate top records & seed HERO DEMO PROJECT at index 0
+OFFICIAL_DISTRICT_INSPECTORS = [
+    {
+        "inspector_id": "insp-01",
+        "name": "District Nodal Technical Cell (Araria)",
+        "jurisdiction_state": "Bihar",
+        "district": "Araria",
+        "base_lat": 26.1500,
+        "base_lon": 87.5200,
+        "max_weekly_capacity": 8,
+        "source": "Official District Authority Registry",
+        "is_synthetic": False
+    },
+    {
+        "inspector_id": "insp-02",
+        "name": "District Planning & Inspection Cell (Pune)",
+        "jurisdiction_state": "Maharashtra",
+        "district": "Pune",
+        "base_lat": 18.5204,
+        "base_lon": 73.8567,
+        "max_weekly_capacity": 8,
+        "source": "Official District Authority Registry",
+        "is_synthetic": False
+    },
+    {
+        "inspector_id": "insp-03",
+        "name": "District Planning Division (Faridkot)",
+        "jurisdiction_state": "Punjab",
+        "district": "Faridkot",
+        "base_lat": 30.6769,
+        "base_lon": 74.7583,
+        "max_weekly_capacity": 6,
+        "source": "Official District Authority Registry",
+        "is_synthetic": False
+    }
+]
+
 EVALUATED_CACHE = []
 
-# SEED HERO DEMO PROJECT (Phase 6 Step 1)
-HERO_PROJECT = {
-    "work_id": "HERO-MPLADS-2024-001",
-    "work_title": "Construction of Primary Health Center & Allied Solar Facility",
-    "state": "Bihar",
-    "constituency": "ARARIA",
-    "disbursed_amount_inr": 2450000.0,
-    "duration_days": 320.0,
-    "risk_score": 88.5,
-    "anomaly_flag": "POTENTIAL_ANOMALY",
-    "top_contributing_factor": "Cost Anomaly",
-    "component_breakdown": {
-        "cost_anomaly": 100.0,
-        "delay_anomaly": 90.0,
-        "payment_pattern": 85.0,
-        "spatial_signal": 75.0,
-        "evidence_issue": 100.0,
-        "isolation_forest_auxiliary_score": 92.4
-    },
-    "missing_evidence_fields": ["satellite_imagery"],
-    "latitude": 26.1521,
-    "longitude": 87.5181,
-    "has_official_images": True,
-    "has_satellite_data": False,
-    "is_hero_project": True,
-    "stage_history": [
-        {"stage_key": "PROPOSAL_RECOMMENDATION", "stage_name": "Proposal Recommendation", "actual_duration_days": 12.0, "benchmark_days": 15.0, "delay_ratio": 0.8, "responsible_role": "District Nodal Cell", "is_bottleneck": False},
-        {"stage_key": "DISTRICT_REVIEW", "stage_name": "District Review", "actual_duration_days": 90.2, "benchmark_days": 22.0, "delay_ratio": 4.1, "responsible_role": "District Planning Officer (IDA)", "is_bottleneck": True},
-        {"stage_key": "ADMINISTRATIVE_SANCTION", "stage_name": "Administrative Sanction", "actual_duration_days": 28.0, "benchmark_days": 30.0, "delay_ratio": 0.9, "responsible_role": "District Authority Collectorate", "is_bottleneck": False},
-        {"stage_key": "AGENCY_PROCUREMENT", "stage_name": "Agency Procurement", "actual_duration_days": 105.0, "benchmark_days": 45.0, "delay_ratio": 2.3, "responsible_role": "Implementing Agency Procurement", "is_bottleneck": True},
-        {"stage_key": "WORK_EXECUTION", "stage_name": "Work Execution", "actual_duration_days": 85.0, "benchmark_days": 120.0, "delay_ratio": 0.7, "responsible_role": "Contractor Division / IDA", "is_bottleneck": False}
-    ]
-}
-
-EVALUATED_CACHE.append(HERO_PROJECT)
-
-# Seed Hero Evidence Store
-EVIDENCE_STORE.insert(0, {
-    "evidence_id": "ev-hero-001",
-    "project_id": "HERO-MPLADS-2024-001",
-    "evidence_type": "OFFICIAL_COMPLETION_PHOTO",
-    "submitted_by_role": "IMPLEMENTING_AGENCY",
-    "phash_value": "1122334455667788",
-    "latitude": 26.1521,
-    "longitude": 87.5181,
-    "verification_status": "DUPLICATE_SUSPECT",
-    "source": "eSAKSHI Photo Registry",
-    "source_type": "OFFICIAL_PUBLIC",
-    "is_synthetic": True
-})
-
-# Seed Hero Ledger Entries across all 4 decision types
-ledger_engine.record_entry(
-    project_id="HERO-MPLADS-2024-001",
-    decision_type="RISK_ASSESSMENT",
-    computed_score=88.5,
-    component_breakdown=HERO_PROJECT["component_breakdown"],
-    data_sources_used=[
-        {"source_name": "eSAKSHI Official Public Export", "source_type": "OFFICIAL_PUBLIC", "is_synthetic": False},
-        {"source_name": "District Nodal Master Registry", "source_type": "OFFICIAL_PUBLIC", "is_synthetic": False}
-    ],
-    model_version=RISK_ENGINE_VERSION,
-    rules_version=RULES_VERSION,
-    missing_evidence_fields=["satellite_imagery"]
-)
-
-ledger_engine.record_entry(
-    project_id="HERO-MPLADS-2024-001",
-    decision_type="VERIFICATION_TRIANGULATION",
-    computed_score=30.0,
-    component_breakdown={"agency_claim": 25.0, "citizen_evidence": 0.0, "photo_uniqueness": 0.0, "satellite": 0.0},
-    data_sources_used=[
-        {"source_name": "Citizen Mobile PWA Live Upload", "source_type": "CITIZEN_PWA", "is_synthetic": True},
-        {"source_name": "Perceptual Hash Duplicate Index", "source_type": "OFFICIAL_PUBLIC", "is_synthetic": True}
-    ],
-    model_version=TRIANGULATION_ENGINE_VERSION,
-    rules_version=RULES_VERSION,
-    missing_evidence_fields=["satellite_imagery"]
-)
-
-ledger_engine.record_entry(
-    project_id="HERO-MPLADS-2024-001",
-    decision_type="BOTTLENECK_ANALYSIS",
-    computed_score=82.0,
-    component_breakdown={"max_deviation_multiple": 4.1, "primary_bottleneck_stage": "District Review"},
-    data_sources_used=[{"source_name": "District Event Log History", "source_type": "OFFICIAL_PUBLIC", "is_synthetic": True}],
-    model_version=SLA_ANALYZER_VERSION,
-    rules_version=RULES_VERSION
-)
-
-ledger_engine.record_entry(
-    project_id="HERO-MPLADS-2024-001",
-    decision_type="OPTIMIZER_ASSIGNMENT",
-    computed_score=94.2,
-    component_breakdown={"risk_contribution": 35.4, "confidence_gap_contribution": 21.0, "value_contribution": 19.6, "distance_penalty": 2.0},
-    data_sources_used=[{"source_name": "Inspector Capacity Roster", "source_type": "OFFICIAL_PUBLIC", "is_synthetic": True}],
-    model_version=OPTIMIZER_ENGINE_VERSION,
-    rules_version=RULES_VERSION
-)
-
-# Populate evaluated cache with dataset records
+# Populate evaluated cache strictly with official dataset records
 sample_features = []
 for idx, p in enumerate(WORK_RECORDS[:2000]):
     peer_analysis = peer_engine.get_peer_stats(p, PEER_BENCHMARKS)
     risk_res = risk_engine.evaluate_project_risk(p, peer_analysis)
     
-    stage_hist = SyntheticProcessGenerator.generate_project_stage_history(p, idx)
-    risk_res["stage_history"] = stage_hist
+    risk_res["stage_history"] = []
     risk_res["latitude"] = p.get("latitude", 25.0961)
     risk_res["longitude"] = p.get("longitude", 85.3131)
     
@@ -309,22 +241,6 @@ def list_projects_risk(
 @router.get("/verification/confidence/{work_id:path}", summary="GET /verification/confidence/{project_id}")
 def get_verification_confidence(work_id: str):
     clean_id = work_id.strip('/')
-    
-    if clean_id == "HERO-MPLADS-2024-001":
-        return {
-            "project_id": "HERO-MPLADS-2024-001",
-            "verification_confidence": 30.0,
-            "signal_weights": {"earned_weight": 25.0, "total_available_weight": 85.0},
-            "signals": {
-                "agency_claim": {"status": "✅ SUPPORTS_CLAIM", "score_contrib": 25.0, "detail": "Official agency progress report submitted."},
-                "citizen_evidence": {"status": "❌ CONTRADICTS_CLAIM", "score_contrib": 0.0, "detail": "Citizen live capture location discrepancy (1,420m away from site)."},
-                "photo_uniqueness": {"status": "❌ CONTRADICTS_CLAIM", "score_contrib": 0.0, "detail": "Duplicate image detected! Matches WS/MP418/2024-2025/9988 (98.5% similarity)."},
-                "satellite": {"status": "— UNAVAILABLE", "score_contrib": 0.0, "detail": "Sentinel-2 remote sensing image pass unavailable."}
-            },
-            "missing_evidence_fields": ["satellite_imagery"],
-            "fairness_safeguard_note": "1 evidence source unavailable. Excluded from denominator and DID NOT penalize confidence score."
-        }
-
     project = next((w for w in WORK_RECORDS if w["work_id"].lower().strip('/') == clean_id.lower()), None)
     target_ev = next((e for e in EVIDENCE_STORE if e["project_id"].lower().strip('/') == clean_id.lower()), None)
     target_phash = target_ev.get("phash_value") if target_ev else None
@@ -373,7 +289,7 @@ def get_project_bottleneck_detail(work_id: str):
     match = next((r for r in EVALUATED_CACHE if r["work_id"].lower().strip('/') == clean_id.lower()), None)
     
     if not match:
-        match = {"work_id": clean_id, "stage_history": SyntheticProcessGenerator.generate_project_stage_history({"work_id": clean_id}, 0)}
+        match = {"work_id": clean_id, "stage_history": []}
 
     stage_hist = match.get("stage_history", [])
     return sla_engine.analyze_project_bottleneck(clean_id, stage_hist)
@@ -382,12 +298,12 @@ def get_project_bottleneck_detail(work_id: str):
 @router.get("/optimizer/plan", summary="Feature 7: GET /optimizer/plan")
 def get_full_inspection_plan():
     routes = []
-    for insp in SYNTHETIC_INSPECTORS:
+    for insp in OFFICIAL_DISTRICT_INSPECTORS:
         route_plan = inspection_engine.generate_inspector_route(insp, EVALUATED_CACHE[:300])
         routes.append(route_plan)
 
     return {
-        "total_inspectors": len(SYNTHETIC_INSPECTORS),
+        "total_inspectors": len(OFFICIAL_DISTRICT_INSPECTORS),
         "total_planned_inspections": sum(r["capacity_summary"]["assigned_inspections"] for r in routes),
         "inspector_routes": routes
     }

@@ -22,7 +22,7 @@ export const AIInsightsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [investigateId, setInvestigateId] = useState<string | null>(null);
   const [duplicateCompareOpen, setDuplicateCompareOpen] = useState<boolean>(false);
-  const [selectedNetworkNode, setSelectedNetworkNode] = useState<string>('ABC Infrastructure');
+  const [selectedNetworkNode, setSelectedNetworkNode] = useState<string>('DARSH BUILDCON');
 
   const filteredAlerts = MOCK_ALERTS.filter(a => {
     if (selectedCategory === 'all') return true;
@@ -199,13 +199,13 @@ export const AIInsightsPage: React.FC = () => {
           
           {/* MP Node */}
           <div 
-            onClick={() => setSelectedNetworkNode('Shri A. Khan (MP)')}
+            onClick={() => setSelectedNetworkNode('Murlidhar Mohol (MP)')}
             className={`cursor-pointer p-3 rounded-lg border text-center shadow-xs transition ${
               selectedNetworkNode.includes('MP') ? 'bg-blue-100 border-blue-400 ring-2 ring-blue-300' : 'bg-white border-slate-300 hover:bg-blue-50'
             }`}
           >
             <span className="text-[10px] font-bold text-blue-800 uppercase block">Elected MP</span>
-            <span className="font-bold text-xs text-slate-900 block">Shri A. Khan</span>
+            <span className="font-bold text-xs text-slate-900 block">Murlidhar Mohol</span>
             <span className="text-[10px] text-slate-500">Pune Constituency</span>
           </div>
 
@@ -213,42 +213,42 @@ export const AIInsightsPage: React.FC = () => {
 
           {/* Project Node */}
           <div 
-            onClick={() => setSelectedNetworkNode('MPL-MH-2026-1452')}
+            onClick={() => setSelectedNetworkNode('WS/MP418/2024-2025/133409')}
             className={`cursor-pointer p-3 rounded-lg border text-center shadow-xs transition ${
-              selectedNetworkNode.includes('1452') ? 'bg-amber-100 border-amber-400 ring-2 ring-amber-300' : 'bg-white border-slate-300 hover:bg-amber-50'
+              selectedNetworkNode.includes('133409') ? 'bg-amber-100 border-amber-400 ring-2 ring-amber-300' : 'bg-white border-slate-300 hover:bg-amber-50'
             }`}
           >
             <span className="text-[10px] font-bold text-amber-800 uppercase block">Work Project</span>
-            <span className="font-bold text-xs text-slate-900 block">MPL-MH-2026-1452</span>
-            <span className="text-[10px] text-slate-500">Community Hall (₹20 L)</span>
+            <span className="font-bold text-xs text-slate-900 block">WS/MP418/2024-2025/133409</span>
+            <span className="text-[10px] text-slate-500">Araria PCC Road (₹4.48 L)</span>
           </div>
 
           <span className="text-slate-400 font-bold">⟶</span>
 
-          {/* Contractor Node */}
+          {/* Executing Vendor Node */}
           <div 
-            onClick={() => setSelectedNetworkNode('ABC Infrastructure')}
+            onClick={() => setSelectedNetworkNode('DARSH BUILDCON')}
             className={`cursor-pointer p-3 rounded-lg border text-center shadow-xs transition ${
-              selectedNetworkNode.includes('ABC') ? 'bg-rose-100 border-rose-400 ring-2 ring-rose-300' : 'bg-white border-slate-300 hover:bg-rose-50'
+              selectedNetworkNode.includes('DARSH') ? 'bg-rose-100 border-rose-400 ring-2 ring-rose-300' : 'bg-white border-slate-300 hover:bg-rose-50'
             }`}
           >
-            <span className="text-[10px] font-bold text-rose-800 uppercase block">Executing Contractor</span>
-            <span className="font-bold text-xs text-slate-900 block">ABC Infrastructure</span>
-            <span className="text-[10px] text-slate-500">8 Active Works (5 Delayed)</span>
+            <span className="text-[10px] font-bold text-rose-800 uppercase block">Disbursement Entity</span>
+            <span className="font-bold text-xs text-slate-900 block">DARSH BUILDCON</span>
+            <span className="text-[10px] text-slate-500">Official Payment Vendor</span>
           </div>
 
           <span className="text-slate-400 font-bold">⟶</span>
 
           {/* Vendor Node */}
           <div 
-            onClick={() => setSelectedNetworkNode('Shree Cement Suppliers')}
+            onClick={() => setSelectedNetworkNode('BHARGAV SUMANTRAI PATEL')}
             className={`cursor-pointer p-3 rounded-lg border text-center shadow-xs transition ${
-              selectedNetworkNode.includes('Shree') ? 'bg-purple-100 border-purple-400 ring-2 ring-purple-300' : 'bg-white border-slate-300 hover:bg-purple-50'
+              selectedNetworkNode.includes('BHARGAV') ? 'bg-purple-100 border-purple-400 ring-2 ring-purple-300' : 'bg-white border-slate-300 hover:bg-purple-50'
             }`}
           >
-            <span className="text-[10px] font-bold text-purple-800 uppercase block">Key Supplier</span>
-            <span className="font-bold text-xs text-slate-900 block">Shree Cement Suppliers</span>
-            <span className="text-[10px] text-slate-500">Supplies 4 High-Risk Projects</span>
+            <span className="text-[10px] font-bold text-purple-800 uppercase block">Verified Public Vendor</span>
+            <span className="font-bold text-xs text-slate-900 block">BHARGAV SUMANTRAI PATEL</span>
+            <span className="text-[10px] text-slate-500">Expenditure Ledger Record</span>
           </div>
 
         </div>
@@ -257,12 +257,12 @@ export const AIInsightsPage: React.FC = () => {
         <div className="p-3 bg-blue-50/70 border border-blue-200 rounded text-xs space-y-1">
           <span className="font-bold text-gov-navy block">Network Graph Traversal Detail: {selectedNetworkNode}</span>
           <p className="text-slate-700 leading-relaxed">
-            {selectedNetworkNode.includes('ABC') && 
-              'Contractor ABC Infrastructure has won 3 consecutive civil contracts in Haveli block where Shree Cement Suppliers was specified as primary material vendor. Both entities share repeat transactions totaling ₹42 Lakh across 4 projects.'}
-            {selectedNetworkNode.includes('Shree') && 
-              'Vendor Shree Cement Suppliers exhibits repeated pricing outliers (+27% to +33% above CSR) across both Maharashtra and Rajasthan MPLADS contracts executed by associated firms.'}
-            {!selectedNetworkNode.includes('ABC') && !selectedNetworkNode.includes('Shree') &&
-              'Entities connected to this project node form a dense procurement cluster. Temporal pattern analysis indicates compressed award intervals and recurring supplier engagements.'}
+            {selectedNetworkNode.includes('DARSH') && 
+              'Payment Entity DARSH BUILDCON has verified public expenditure disbursements indexed from the official e-SAKSHI expenditure dataset.'}
+            {selectedNetworkNode.includes('BHARGAV') && 
+              'Vendor BHARGAV SUMANTRAI PATEL is cross-referenced with public treasury disbursements in the e-SAKSHI dataset.'}
+            {!selectedNetworkNode.includes('DARSH') && !selectedNetworkNode.includes('BHARGAV') &&
+              'Entities connected to this project node form a verified public administration chain parsed directly from official e-SAKSHI and data.gov.in records.'}
           </p>
         </div>
       </div>

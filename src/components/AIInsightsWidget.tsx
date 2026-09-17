@@ -63,7 +63,7 @@ export const AIInsightsWidget: React.FC<AIInsightsWidgetProps> = ({ onInvestigat
     {
       id: 'alt-5',
       title: 'Contractor Risk Score Increased',
-      desc: 'ABC Infrastructure Pvt. Ltd. flagged for multiple delays across works',
+      desc: 'DARSH BUILDCON flagged for execution variances across works',
       projectId: SHOWCASE_PROJECT_ID,
       time: '2 days ago',
       severity: 'MEDIUM',

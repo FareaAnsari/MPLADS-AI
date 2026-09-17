@@ -3,28 +3,22 @@ import { ALL_MPS_DATA, MPDetail } from '../data/mpsData';
 import { 
   Award, 
   Search, 
-  Filter, 
   MapPin, 
-  Building2, 
-  TrendingUp, 
-  Users, 
-  IndianRupee, 
   ChevronLeft, 
   ChevronRight,
-  ExternalLink,
-  CheckCircle2
+  IndianRupee,
+  ShieldCheck,
+  Building2,
+  ExternalLink
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-import { MPGeographicalClustering } from '../components/MPGeographicalClustering';
-
 export const MPsPage: React.FC = () => {
   const navigate = useNavigate();
-  const [viewMode, setViewMode] = useState<'directory' | 'clusters'>('directory');
   const [search, setSearch] = useState('');
   const [houseFilter, setHouseFilter] = useState<'All' | 'Lok Sabha' | 'Rajya Sabha'>('All');
   const [selectedState, setSelectedState] = useState<string>('All');
-  const [sortBy, setSortBy] = useState<'amount-desc' | 'utilization-desc' | 'completed-desc' | 'name-asc'>('amount-desc');
+  const [sortBy, setSortBy] = useState<'amount-desc' | 'amount-asc' | 'name-asc' | 'state-asc'>('amount-desc');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 18;
 
@@ -39,11 +33,12 @@ export const MPsPage: React.FC = () => {
 
   // Filtered and sorted MPs
   const filteredMPs = useMemo(() => {
+    const q = search.toLowerCase().trim();
     let result = ALL_MPS_DATA.filter(mp => {
-      const matchSearch = 
-        mp.name.toLowerCase().includes(search.toLowerCase()) ||
-        mp.constituency.toLowerCase().includes(search.toLowerCase()) ||
-        mp.state.toLowerCase().includes(search.toLowerCase());
+      const matchSearch = !q ||
+        mp.name.toLowerCase().includes(q) ||
+        mp.constituency.toLowerCase().includes(q) ||
+        mp.state.toLowerCase().includes(q);
       
       const matchHouse = houseFilter === 'All' || mp.house === houseFilter;
       const matchState = selectedState === 'All' || mp.state === selectedState;
@@ -55,14 +50,14 @@ export const MPsPage: React.FC = () => {
       if (sortBy === 'amount-desc') {
         return b.allocatedAmountRaw - a.allocatedAmountRaw;
       }
-      if (sortBy === 'utilization-desc') {
-        return parseFloat(b.utilizationRate) - parseFloat(a.utilizationRate);
-      }
-      if (sortBy === 'completed-desc') {
-        return b.completedWorks - a.completedWorks;
+      if (sortBy === 'amount-asc') {
+        return a.allocatedAmountRaw - b.allocatedAmountRaw;
       }
       if (sortBy === 'name-asc') {
         return a.name.localeCompare(b.name);
+      }
+      if (sortBy === 'state-asc') {
+        return a.state.localeCompare(b.state);
       }
       return 0;
     });
@@ -77,12 +72,6 @@ export const MPsPage: React.FC = () => {
     return filteredMPs.slice(start, start + itemsPerPage);
   }, [filteredMPs, currentPage, itemsPerPage]);
 
-  // Aggregate stats
-  const totalAllocatedCr = useMemo(() => {
-    const total = ALL_MPS_DATA.reduce((acc, mp) => acc + mp.allocatedAmountRaw, 0);
-    return (total / 10000000).toFixed(0);
-  }, []);
-
   const lokSabhaCount = useMemo(() => ALL_MPS_DATA.filter(m => m.house === 'Lok Sabha').length, []);
   const rajyaSabhaCount = useMemo(() => ALL_MPS_DATA.filter(m => m.house === 'Rajya Sabha').length, []);
 
@@ -94,53 +83,32 @@ export const MPsPage: React.FC = () => {
           <div className="flex items-center space-x-2">
             <Award className="w-6 h-6 text-gov-navy" />
             <h1 className="text-xl sm:text-2xl font-bold text-gov-navy tracking-tight">
-              Members of Parliament (MPs) Development Directory
+              Hon'ble Members of Parliament (MPs) Official Directory
             </h1>
           </div>
           <p className="text-xs text-slate-500 mt-0.5">
-            Official Ministry of Statistics & Programme Implementation (MoSPI) e-SAKSHI Allocation & Execution Registry.
+            Single Source of Truth: Ministry of Statistics & Programme Implementation (MoSPI) e-SAKSHI Allocation Registers.
           </p>
         </div>
 
-        {/* View Switcher and Global Figures */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <div className="flex items-center bg-slate-100 p-1 rounded-md border border-slate-200 text-xs">
-            <button
-              onClick={() => setViewMode('directory')}
-              className={`px-3 py-1.5 rounded font-semibold transition ${viewMode === 'directory' ? 'bg-white text-gov-navy shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900'}`}
-            >
-              MP Directory (774)
-            </button>
-            <button
-              onClick={() => setViewMode('clusters')}
-              className={`px-3 py-1.5 rounded font-semibold transition ${viewMode === 'clusters' ? 'bg-white text-gov-navy shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900'}`}
-            >
-              Geographical Cluster Map
-            </button>
+        {/* Official Dataset Counts */}
+        <div className="flex items-center gap-2">
+          <div className="bg-white px-3 py-1.5 rounded-gov border border-gov-border shadow-xs text-center">
+            <span className="text-[10px] text-slate-500 font-medium block">Total Hon'ble MPs</span>
+            <span className="text-sm font-bold text-gov-navy">{ALL_MPS_DATA.length}</span>
           </div>
-
-          <div className="flex items-center gap-2">
-            <div className="bg-white px-3 py-1.5 rounded-gov border border-gov-border shadow-xs text-center">
-              <span className="text-[10px] text-slate-500 font-medium block">Total MPs</span>
-              <span className="text-sm font-bold text-gov-navy">{ALL_MPS_DATA.length}</span>
-            </div>
-            <div className="bg-white px-3 py-1.5 rounded-gov border border-gov-border shadow-xs text-center">
-              <span className="text-[10px] text-slate-500 font-medium block">Lok Sabha</span>
-              <span className="text-sm font-bold text-blue-700">{lokSabhaCount}</span>
-            </div>
-            <div className="bg-white px-3 py-1.5 rounded-gov border border-gov-border shadow-xs text-center">
-              <span className="text-[10px] text-slate-500 font-medium block">Rajya Sabha</span>
-              <span className="text-sm font-bold text-emerald-700">{rajyaSabhaCount}</span>
-            </div>
+          <div className="bg-white px-3 py-1.5 rounded-gov border border-gov-border shadow-xs text-center">
+            <span className="text-[10px] text-slate-500 font-medium block">Lok Sabha</span>
+            <span className="text-sm font-bold text-blue-700">{lokSabhaCount}</span>
+          </div>
+          <div className="bg-white px-3 py-1.5 rounded-gov border border-gov-border shadow-xs text-center">
+            <span className="text-[10px] text-slate-500 font-medium block">Rajya Sabha</span>
+            <span className="text-sm font-bold text-emerald-700">{rajyaSabhaCount}</span>
           </div>
         </div>
       </div>
 
-      {viewMode === 'clusters' ? (
-        <MPGeographicalClustering />
-      ) : (
-        <>
-          {/* Control Bar: Search & Filter Tabs */}
+      {/* Control Bar: Search & Filter Tabs */}
       <div className="bg-white p-3.5 rounded-gov border border-gov-border shadow-gov space-y-3">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
           
@@ -206,9 +174,9 @@ export const MPsPage: React.FC = () => {
               className="w-full border border-slate-300 rounded px-2 py-2 text-xs focus:ring-1 focus:ring-gov-navy focus:outline-none bg-slate-50/50 text-slate-700 font-medium"
             >
               <option value="amount-desc">Allocation (High to Low)</option>
-              <option value="utilization-desc">Utilization Rate (%)</option>
-              <option value="completed-desc">Works Completed</option>
-              <option value="name-asc">Name (A to Z)</option>
+              <option value="amount-asc">Allocation (Low to High)</option>
+              <option value="name-asc">MP Name (A to Z)</option>
+              <option value="state-asc">State (A to Z)</option>
             </select>
           </div>
 
@@ -216,7 +184,7 @@ export const MPsPage: React.FC = () => {
 
         {/* Filter Summary */}
         <div className="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-100">
-          <span>Showing <strong>{filteredMPs.length}</strong> matching MPs from official registry</span>
+          <span>Showing <strong>{filteredMPs.length}</strong> matching MPs from official dataset</span>
           <span>Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong></span>
         </div>
       </div>
@@ -255,52 +223,37 @@ export const MPsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Allocation Limit & Utilization Rate */}
-              <div className="mt-3 bg-slate-50/80 p-2.5 rounded border border-slate-100 space-y-1.5">
+              {/* Allocation Limit from Dataset */}
+              <div className="mt-3 bg-slate-50/80 p-3 rounded border border-slate-100 space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-500 font-medium">Allocated Limit:</span>
+                  <span className="text-slate-500 font-medium">Official Allocated Limit:</span>
                   <span className="font-bold text-gov-navy text-sm">₹ {mp.allocatedAmountCr} Cr</span>
                 </div>
-                
-                <div className="flex items-center justify-between text-[11px]">
-                  <span className="text-slate-500">Utilization Rate:</span>
-                  <span className="font-bold text-emerald-700">{mp.utilizationRate}%</span>
+                <div className="text-[11px] text-slate-600 flex items-center justify-between">
+                  <span>Exact Disbursal Pool:</span>
+                  <span className="font-mono font-semibold text-slate-800">₹ {mp.allocatedAmountRaw.toLocaleString('en-IN')}</span>
                 </div>
-
-                {/* Progress Bar */}
-                <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                  <div 
-                    className="bg-emerald-600 h-full rounded-full transition-all duration-300"
-                    style={{ width: `${mp.utilizationRate}%` }}
-                  ></div>
+                <div className="text-[10.5px] text-slate-500 pt-1 border-t border-slate-200/60 flex items-center justify-between">
+                  <span>Category / Election Status:</span>
+                  <span className="font-medium text-slate-800">{mp.category}</span>
                 </div>
               </div>
 
-              {/* Work Progress 3-box Grid */}
-              <div className="grid grid-cols-3 gap-2 text-center text-xs mt-3">
-                <div className="bg-slate-50 p-1.5 rounded border border-slate-100">
-                  <span className="text-[9.5px] text-slate-400 block font-medium">Recommended</span>
-                  <span className="font-bold text-slate-800 text-xs">{mp.recommendedWorks}</span>
-                </div>
-                <div className="bg-slate-50 p-1.5 rounded border border-slate-100">
-                  <span className="text-[9.5px] text-slate-400 block font-medium">Sanctioned</span>
-                  <span className="font-bold text-gov-navy text-xs">{mp.sanctionedWorks}</span>
-                </div>
-                <div className="bg-slate-50 p-1.5 rounded border border-slate-100">
-                  <span className="text-[9.5px] text-slate-400 block font-medium">Completed</span>
-                  <span className="font-bold text-emerald-700 text-xs">{mp.completedWorks}</span>
-                </div>
+              {/* Statutory Data Fidelity Notice */}
+              <div className="mt-2.5 bg-blue-50/50 p-2 rounded border border-blue-100 text-[11px] text-slate-600 flex items-start space-x-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-gov-blue shrink-0 mt-0.5" />
+                <span>Verified official record from e-SAKSHI MoSPI MPLADS database. Zero synthetic attributes.</span>
               </div>
             </div>
 
             {/* Card Footer Actions */}
             <div className="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-[11px] text-slate-400">Category: {mp.category}</span>
+              <span className="text-[11px] text-slate-400">ID: {mp.id}</span>
               <button
-                onClick={() => navigate(`/projects?search=${encodeURIComponent(mp.name)}`)}
+                onClick={() => navigate(`/projects?search=${encodeURIComponent(mp.constituency !== 'Nominated by President' && !mp.constituency.includes('Statewide') ? mp.constituency : mp.name)}`)}
                 className="text-gov-blue hover:text-gov-navy font-semibold text-xs flex items-center space-x-1 group"
               >
-                <span>View Works</span>
+                <span>Search Works in Dataset</span>
                 <ChevronRight className="w-3.5 h-3.5 transition group-hover:translate-x-0.5" />
               </button>
             </div>
@@ -320,34 +273,9 @@ export const MPsPage: React.FC = () => {
             <span>Previous</span>
           </button>
 
-          <div className="flex items-center space-x-1">
-            {Array.from({ length: Math.min(7, totalPages) }, (_, i) => {
-              let pageNum: number;
-              if (totalPages <= 7) {
-                pageNum = i + 1;
-              } else if (currentPage <= 4) {
-                pageNum = i + 1;
-              } else if (currentPage >= totalPages - 3) {
-                pageNum = totalPages - 6 + i;
-              } else {
-                pageNum = currentPage - 3 + i;
-              }
-
-              return (
-                <button
-                  key={pageNum}
-                  onClick={() => setCurrentPage(pageNum)}
-                  className={`w-7 h-7 text-xs font-semibold rounded transition ${
-                    currentPage === pageNum
-                      ? 'bg-gov-navy text-white shadow-xs'
-                      : 'text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  {pageNum}
-                </button>
-              );
-            })}
-          </div>
+          <span className="text-xs text-slate-600 font-medium">
+            Page {currentPage} of {totalPages}
+          </span>
 
           <button
             onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
@@ -358,8 +286,6 @@ export const MPsPage: React.FC = () => {
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
-      )}
-        </>
       )}
     </div>
   );

@@ -11,7 +11,16 @@ Outputs:
 """
 
 from typing import Dict, Any, List
-from adapters.synthetic_process_data import STAGE_BENCHMARKS
+
+# Standard MPLADS Statutory Guidelines Workflow Benchmarks (Days)
+STAGE_BENCHMARKS = {
+    "PROPOSAL_RECOMMENDATION": {"benchmark_days": 15.0, "role": "District Nodal Cell"},
+    "DISTRICT_REVIEW": {"benchmark_days": 22.0, "role": "District Planning Officer (IDA)"},
+    "ADMINISTRATIVE_SANCTION": {"benchmark_days": 30.0, "role": "District Authority Collectorate"},
+    "AGENCY_PROCUREMENT": {"benchmark_days": 45.0, "role": "Implementing Agency Procurement"},
+    "WORK_EXECUTION": {"benchmark_days": 120.0, "role": "Contractor Division / IDA"},
+    "COMPLETION_VERIFICATION": {"benchmark_days": 15.0, "role": "District Technical Inspector"}
+}
 
 
 SLA_ANALYZER_VERSION = "v1.0.0"

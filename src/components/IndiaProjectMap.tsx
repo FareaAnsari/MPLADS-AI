@@ -91,7 +91,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 43,
       satelliteVerified: false,
       satelliteDelta: '⚠️ Discrepancy: Satellite SAR detects 43% ground structure vs 74% claimed payment',
-      mpName: 'Shri A. Khan (Pune)',
+      mpName: 'Murlidhar Mohol (Pune)',
       costCr: '₹0.20 Cr'
     },
     { 
@@ -109,7 +109,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 100,
       satelliteVerified: true,
       satelliteDelta: '✓ Verified: Rooftop solar & civil expansion 100% visible on Sentinel-2 optical feed',
-      mpName: 'Smt. P. Kulkarni (Mumbai North)',
+      mpName: 'Piyush Goyal (Mumbai North)',
       costCr: '₹0.45 Cr'
     },
     { 
@@ -127,7 +127,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 58,
       satelliteVerified: true,
       satelliteDelta: '✓ Verified: Pipeline trenching and overhead tank matched to ground GIS telemetry',
-      mpName: 'Shri H. Godse (Nashik)',
+      mpName: 'Rajabhau (Nashik)',
       costCr: '₹0.38 Cr'
     },
     { 
@@ -145,7 +145,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 31,
       satelliteVerified: false,
       satelliteDelta: '⚠️ Delay Alert: Structural roof framing stalled for past 45 days',
-      mpName: 'Shri N. Gadkari (Nagpur)',
+      mpName: 'Nitin Gadkari (Nagpur)',
       costCr: '₹0.85 Cr'
     },
     { 
@@ -163,7 +163,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 28,
       satelliteVerified: false,
       satelliteDelta: '⚠️ Excavation footprint lagged by 3 weeks against CPM schedule',
-      mpName: 'Shri S. Shinde (Satara)',
+      mpName: 'Udayanraje Bhonsle (Satara)',
       costCr: '₹0.25 Cr'
     },
     // Gujarat
@@ -182,7 +182,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 100,
       satelliteVerified: true,
       satelliteDelta: '✓ High-Res Cartosat-3 confirms 2.4 km tarred road stretch with street lighting',
-      mpName: 'Shri K. Patel (Ahmedabad West)',
+      mpName: 'Dineshbhai Makwana (Ahmedabad West)',
       costCr: '₹0.60 Cr'
     },
     { 
@@ -200,7 +200,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 52,
       satelliteVerified: true,
       satelliteDelta: '✓ Luminance night-band validation shows active grid lighting',
-      mpName: 'Shri M. Darshana (Surat)',
+      mpName: 'Mukeshkumar Dalal (Surat)',
       costCr: '₹0.32 Cr'
     },
     // Rajasthan
@@ -219,7 +219,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 100,
       satelliteVerified: true,
       satelliteDelta: '✓ Verified: 14 sanitation clusters geo-tagged with QR code validation',
-      mpName: 'Shri R. Sharma (Jaipur)',
+      mpName: 'Manju Sharma (Jaipur)',
       costCr: '₹0.28 Cr'
     },
     { 
@@ -237,7 +237,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 35,
       satelliteVerified: false,
       satelliteDelta: '🚨 Ghost Work Alert: Water body optical index shows no catchment bund wall constructed',
-      mpName: 'Shri G. Shekhawat (Jodhpur)',
+      mpName: 'Gajendra Singh Shekhawat (Jodhpur)',
       costCr: '₹0.50 Cr'
     },
     // Uttar Pradesh
@@ -256,7 +256,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 49,
       satelliteVerified: false,
       satelliteDelta: '⚠️ Material Price Spike: Rebar billed at +28% premium above UP PWD schedule',
-      mpName: 'Shri N. Modi (Varanasi)',
+      mpName: 'Narendra Modi (Varanasi)',
       costCr: '₹1.20 Cr'
     },
     { 
@@ -274,7 +274,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 62,
       satelliteVerified: true,
       satelliteDelta: '✓ Multi-story slab casting verified via Bhuvan 2.5m stereo pair',
-      mpName: 'Shri R. Singh (Lucknow)',
+      mpName: 'Rajnath Singh (Lucknow)',
       costCr: '₹0.95 Cr'
     },
     // Madhya Pradesh
@@ -293,7 +293,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 50,
       satelliteVerified: true,
       satelliteDelta: '✓ Foundation perimeter clear and aligned with cadastral survey',
-      mpName: 'Shri A. Sharma (Bhopal)',
+      mpName: 'Alok Sharma (Bhopal)',
       costCr: '₹0.40 Cr'
     },
     { 
@@ -311,7 +311,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 100,
       satelliteVerified: true,
       satelliteDelta: '✓ All 12 modular centers completed with child-friendly outdoor facilities',
-      mpName: 'Shri S. Lalwani (Indore)',
+      mpName: 'Shankar Lalwani (Indore)',
       costCr: '₹0.35 Cr'
     },
     // Karnataka
@@ -330,7 +330,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 100,
       satelliteVerified: true,
       satelliteDelta: '✓ Fully operational facility with solar backup and optical fiber connectivity',
-      mpName: 'Shri T. Surya (Bengaluru South)',
+      mpName: 'Tejasvi Surya (Bengaluru South)',
       costCr: '₹0.55 Cr'
     },
     { 
@@ -348,7 +348,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 38,
       satelliteVerified: true,
       satelliteDelta: '✓ Culvert concrete placement verified by ground drone photogrammetry',
-      mpName: 'Shri P. Joshi (Dharwad)',
+      mpName: 'Pralhad Joshi (Dharwad)',
       costCr: '₹0.48 Cr'
     },
     // Tamil Nadu
@@ -367,7 +367,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 100,
       satelliteVerified: true,
       satelliteDelta: '✓ Modern 2-story science wing operational and equipped',
-      mpName: 'Dr. K. Kalanidhi (Chennai North)',
+      mpName: 'Kalanidhi Veeraswamy (Chennai North)',
       costCr: '₹0.70 Cr'
     },
     { 
@@ -385,7 +385,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 68,
       satelliteVerified: true,
       satelliteDelta: '✓ Cement concrete pavement laying 68% complete across 4 panchayats',
-      mpName: 'Shri S. Venkatesan (Madurai)',
+      mpName: 'S. Venkatesan (Madurai)',
       costCr: '₹0.42 Cr'
     },
     // West Bengal & Bihar
@@ -404,7 +404,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 34,
       satelliteVerified: false,
       satelliteDelta: '⚠️ Monsoon waterlogging stalled pier foundation works',
-      mpName: 'Shri R. Prasad (Patna Sahib)',
+      mpName: 'Ravi Shankar Prasad (Patna Sahib)',
       costCr: '₹0.65 Cr'
     },
     { 
@@ -422,7 +422,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 45,
       satelliteVerified: false,
       satelliteDelta: '⚠️ Vendor Nexus: Brick and steel supplier linked to blacklisted entity',
-      mpName: 'Smt. M. Banerjee (Kolkata South)',
+      mpName: 'Mala Roy (Kolkata Dakshin)',
       costCr: '₹0.52 Cr'
     },
     // Northern / Southern hubs
@@ -441,7 +441,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 100,
       satelliteVerified: true,
       satelliteDelta: '✓ 100% Commissioned with 40 computer terminals and solar rooftop',
-      mpName: 'Smt. B. Swaraj (New Delhi)',
+      mpName: 'Bansuri Swaraj (New Delhi)',
       costCr: '₹0.75 Cr'
     },
     { 
@@ -459,7 +459,7 @@ export const IndiaProjectMap: React.FC<IndiaProjectMapProps> = ({ onStateSelect 
       physicalProgress: 56,
       satelliteVerified: true,
       satelliteDelta: '✓ Pipeline laying and chlorination unit inspection passed',
-      mpName: 'Shri K. Srinivas (Vijayawada)',
+      mpName: 'Sivanath Kesineni (Vijayawada)',
       costCr: '₹0.44 Cr'
     },
   ];

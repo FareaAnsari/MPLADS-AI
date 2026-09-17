@@ -39,7 +39,7 @@ export const CitizenPage: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Enter your Village, District, or MP name (e.g. Pune, Wagholi, Khan)..."
+              placeholder="Enter your Village, District, or MP name (e.g. Pune, Murlidhar Mohol, Araria, Pradeep Kumar Singh)..."
               className="w-full pl-9 pr-4 py-2 bg-white text-slate-800 text-xs rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
             />
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />

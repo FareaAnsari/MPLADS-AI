@@ -105,7 +105,7 @@ export const PILOT_LGD_VILLAGES: LGDVillage[] = [
     sectorsPresent: ['Community Infrastructure', 'Drinking Water', 'Roads & Pathways'],
     provenance: DEMO_BENCHMARK_PROVENANCE,
     projects: [
-      createProject('WS/MP418/2024/133409', 'Construction of Multipurpose Civic Hall with Solar Power', 'Community Infrastructure', '2024-05-10', '2024-08-15', '2024-10-01', '2025-06-30', null, 'DELAYED', 2000000, 78, 'ABC Infrastructure Pvt. Ltd.', 'Shree Cement Suppliers', []),
+      createProject('WS/MP418/2024/133409', 'Construction of Multipurpose Civic Hall with Solar Power', 'Community Infrastructure', '2024-05-10', '2024-08-15', '2024-10-01', '2025-06-30', null, 'DELAYED', 2000000, 78, 'DARSH BUILDCON', 'BHARGAV SUMANTRAI PATEL', []),
       createProject('WS/MP418/2024/134210', 'Installation of Community RO Drinking Water Plant (1000 LPH)', 'Drinking Water', '2024-06-20', '2024-09-02', '2024-10-15', '2025-03-31', '2025-04-10', 'COMPLETED', 850000, 24, 'Aquafresh Engineering Systems', 'Jindal Pipes Ltd.', []),
       createProject('WS/MP418/2023/118942', 'Paver Block Pathway & Drain along Zilla Parishad School Road', 'Roads & Pathways', '2023-11-05', '2024-02-14', '2024-03-01', '2024-11-30', '2024-11-15', 'COMPLETED', 1200000, 18, 'Samarth Constructions Pune', null, ['Vendor Name']),
       createProject('WS/MP418/2025/140102', 'Upgradation of Crematorium Shed and Solar Streetlights', 'Community Infrastructure', '2025-01-14', '2025-03-22', '2025-04-05', '2025-12-31', null, 'IN PROGRESS', 800000, 35, null, null, ['Contractor Name', 'Vendor Name'])

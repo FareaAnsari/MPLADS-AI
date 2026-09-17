@@ -642,7 +642,7 @@ export const OPPORTUNITIES_DATA: OpportunityRecord[] = [
       last_verified: '14-Mar-2026 11:00 IST'
     },
     verificationStatus: 'Verified',
-    verificationNote: 'Awarded to ABC Infrastructure Pvt. Ltd.; physical execution 43% completed.',
+    verificationNote: 'Awarded to DARSH BUILDCON; physical execution under verification.',
     timelineStages: buildTimeline('2024-05-10', '2024-08-15', '2024-09-02', '2024-10-15', '2024-12-10', null, 'Work in Progress')
   },
   {

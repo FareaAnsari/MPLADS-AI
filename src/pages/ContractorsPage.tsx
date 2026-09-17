@@ -64,7 +64,7 @@ export const ContractorsPage: React.FC = () => {
                 </div>
                 <h2 className="text-xl font-bold text-gov-navy">{selectedContractor.name}</h2>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  CIN / PAN: <span className="font-mono font-medium">{selectedContractor.cinOrPan}</span> • Estd: {selectedContractor.establishedYear}
+                  CIN / PAN: <span className="font-mono font-medium">{selectedContractor.cinOrPan && selectedContractor.cinOrPan !== 'Data Not Available' ? selectedContractor.cinOrPan : 'Data Not Available'}</span> • Registered Region: {selectedContractor.address || 'Data Not Available'}
                 </p>
               </div>
 
