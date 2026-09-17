@@ -1,1 +1,0 @@
-# Pratyaksh Backend Package
