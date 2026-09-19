@@ -6,7 +6,23 @@ from adapters.dataset_adapter import DatasetAdapter
 router = APIRouter(prefix="/projects", tags=["MPLADS Projects & Works"])
 
 # Instantiate DatasetAdapter pointing to Dataset directory
-DATASET_DIR = os.getenv("DATASET_DIR", "Dataset")
+def _resolve_dataset_dir() -> str:
+    env_dir = os.getenv("DATASET_DIR")
+    if env_dir and os.path.exists(env_dir):
+        return env_dir
+    candidates = [
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "Dataset")),
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "Dataset")),
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Dataset")),
+        "Dataset",
+        "../Dataset",
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return "Dataset"
+
+DATASET_DIR = _resolve_dataset_dir()
 adapter = DatasetAdapter(dataset_dir=DATASET_DIR)
 
 # In-memory cached dataset records for fast prototype API queries

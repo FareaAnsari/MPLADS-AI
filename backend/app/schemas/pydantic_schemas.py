@@ -66,12 +66,12 @@ class RiskAssessmentResult(BaseModel):
 # Feature 3 & 4: Evidence & Citizen Verification Schemas
 # -----------------------------------------------------------------------------
 class CitizenEvidenceSubmission(BaseModel):
-    project_id: str
-    latitude: float
-    longitude: float
+    project_id: str = Field(..., min_length=3, max_length=100)
+    latitude: float = Field(..., ge=-90.0, le=90.0, description="Latitude between -90 and 90")
+    longitude: float = Field(..., ge=-180.0, le=180.0, description="Longitude between -180 and 180")
     timestamp_captured: datetime
     is_live_camera_capture: bool
-    image_base64: Optional[str] = None
+    image_base64: Optional[str] = Field(None, max_length=10000000, description="Base64 encoded photo payload max 10MB")
 
 class EvidenceVerificationResult(BaseModel):
     evidence_id: str

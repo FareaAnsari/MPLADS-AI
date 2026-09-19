@@ -11,7 +11,7 @@ if backend_dir not in sys.path:
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import projects, intelligence, national_data
+from routers import projects, intelligence, national_data, auth, notifications, mp, contractor
 from config import config
 
 app = FastAPI(
@@ -31,8 +31,25 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Attach Security Response Headers Middleware
+@app.middleware("http")
+async def add_security_headers(request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    if config.ENVIRONMENT == "production":
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    return response
+
+app.include_router(auth.router, prefix="/api/v1")
+app.include_router(auth.router) # Also expose directly at /auth for standard OAuth/REST consumers
+app.include_router(notifications.router, prefix="/api/v1")
 app.include_router(intelligence.router, prefix="/api/v1")
 app.include_router(projects.router, prefix="/api/v1")
+app.include_router(mp.router, prefix="/api/v1")
+app.include_router(contractor.router, prefix="/api/v1")
 app.include_router(national_data.router) # Exposes /api/national-data, /api/states, etc.
 
 @app.get("/")

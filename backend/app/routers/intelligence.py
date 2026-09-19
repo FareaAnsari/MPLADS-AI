@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Query, Body
+from fastapi import APIRouter, HTTPException, Query, Body, Depends
 from typing import List, Dict, Any, Optional
 import numpy as np
 
@@ -148,16 +148,88 @@ def get_single_ledger_entry(entry_id: str):
     return entry
 
 
+from auth.dependencies import get_current_user, require_permission, require_role
+from schemas.auth_schemas import UserRole, UserModel
+
 @router.post("/ledger/entry/{entry_id}/decision", summary="Feature 8: POST /ledger/entry/{entry_id}/decision")
 def record_officer_human_decision(
     entry_id: str,
     human_decision: str = Body(..., embed=True),
-    outcome_notes: Optional[str] = Body(None, embed=True)
+    outcome_notes: Optional[str] = Body(None, embed=True),
+    current_user: UserModel = Depends(require_permission("ledger:decision"))
 ):
     updated = ledger_engine.update_human_decision(entry_id, human_decision, outcome_notes)
     if not updated:
         raise HTTPException(status_code=404, detail=f"Ledger entry '{entry_id}' not found.")
     return {"status": "SUCCESS", "updated_entry": updated}
+
+
+@router.post("/citizen/evidence", summary="Feature 4: POST /citizen/evidence")
+def submit_citizen_evidence(
+    submission: CitizenEvidenceSubmission,
+    current_user: UserModel = Depends(require_permission("evidence:submit"))
+):
+    """
+    Submits geotagged physical evidence with live camera verification.
+    Requires authenticated evidence:submit permission (Citizen/Contractor/Officer).
+    """
+    project = next((w for w in WORK_RECORDS if w["work_id"].lower() == submission.project_id.lower()), None)
+    
+    project_lat = project.get("latitude", 25.0961) if project else 25.0961
+    project_lon = project.get("longitude", 85.3131) if project else 85.3131
+
+    verification_res = citizen_engine.verify_citizen_submission(
+        citizen_lat=submission.latitude,
+        citizen_lon=submission.longitude,
+        project_lat=project_lat,
+        project_lon=project_lon,
+        is_live_camera_capture=submission.is_live_camera_capture
+    )
+
+    phash = None
+    if submission.image_base64:
+        phash = photo_engine.compute_phash_from_base64(submission.image_base64)
+
+    evidence_entry = {
+        "evidence_id": f"ev-{len(EVIDENCE_STORE) + 1}",
+        "project_id": submission.project_id,
+        "submitter_user_id": current_user.id,
+        "latitude": submission.latitude,
+        "longitude": submission.longitude,
+        "is_live_camera_capture": submission.is_live_camera_capture,
+        "phash_value": phash,
+        "timestamp_captured": submission.timestamp_captured.isoformat(),
+        "verification_result": verification_res
+    }
+    EVIDENCE_STORE.append(evidence_entry)
+
+    return {
+        "status": "RECORDED",
+        "evidence_id": evidence_entry["evidence_id"],
+        "project_id": submission.project_id,
+        "distance_to_project_meters": verification_res["distance_to_project_meters"],
+        "location_verified": verification_res["verified"],
+        "verification_status": verification_res["signal_code"]
+    }
+
+
+@router.get("/citizen/evidence", summary="GET /citizen/evidence - List submitted citizen evidence")
+def list_citizen_evidence(
+    project_id: Optional[str] = None,
+    current_user: UserModel = Depends(require_permission("evidence:submit"))
+):
+    """
+    Lists submitted evidence records. Citizens only see their own submissions; officers can see all.
+    """
+    results = EVIDENCE_STORE
+    if current_user.role == UserRole.CITIZEN:
+        results = [e for e in results if e.get("submitter_user_id") == current_user.id]
+    if project_id:
+        results = [e for e in results if e.get("project_id", "").lower() == project_id.lower()]
+    return {
+        "count": len(results),
+        "evidence": results
+    }
 
 
 @router.get("/fairness/test-summary", summary="Feature 9: GET /fairness/test-summary")
@@ -307,3 +379,195 @@ def get_full_inspection_plan():
         "total_planned_inspections": sum(r["capacity_summary"]["assigned_inspections"] for r in routes),
         "inspector_routes": routes
     }
+
+
+# -----------------------------------------------------------------------------
+# DISTRICT OFFICER OPERATIONAL REST ENDPOINTS
+# -----------------------------------------------------------------------------
+
+OFFICER_INSPECTION_UPDATES: Dict[str, Any] = {}
+
+from datetime import datetime
+
+@router.get("/officer/dashboard", summary="District Officer Operational Dashboard & Jurisdiction Metrics")
+def get_officer_dashboard(
+    current_user: UserModel = Depends(require_role([UserRole.DISTRICT_OFFICER]))
+):
+    """
+    Returns operational summary strictly scoped to the officer's jurisdiction.
+    """
+    state_scope = (current_user.jurisdiction_state or "").lower()
+    district_scope = (current_user.jurisdiction_district or "").lower()
+
+    # Filter projects in officer jurisdiction
+    jurisdiction_projects = [
+        p for p in WORK_RECORDS
+        if (not state_scope or state_scope in p.get("state", "").lower())
+        and (not district_scope or district_scope in p.get("constituency", "").lower() or district_scope in p.get("ida_office", "").lower())
+    ]
+    if not jurisdiction_projects and state_scope:
+        jurisdiction_projects = [p for p in WORK_RECORDS if state_scope in p.get("state", "").lower()]
+
+    jurisdiction_project_ids = set(p["work_id"].lower() for p in jurisdiction_projects)
+
+    # Scoped risk assessments
+    scoped_risks = [r for r in EVALUATED_CACHE if r["work_id"].lower() in jurisdiction_project_ids]
+    high_risk_count = len([r for r in scoped_risks if r.get("risk_score", 0) >= 70.0])
+
+    # Pending evidence in jurisdiction
+    pending_evidence = [
+        e for e in EVIDENCE_STORE
+        if e.get("project_id", "").lower() in jurisdiction_project_ids
+        and e.get("review_status") is None
+    ]
+
+    # SLA bottlenecks in jurisdiction
+    bottlenecks = [
+        p for p in scoped_risks
+        if p.get("component_breakdown", {}).get("delay_anomaly", 0) > 40
+    ]
+
+    # Assigned inspection route
+    assigned_inspector = next(
+        (i for i in OFFICIAL_DISTRICT_INSPECTORS if i["inspector_id"] == current_user.inspector_id),
+        OFFICIAL_DISTRICT_INSPECTORS[0]
+    )
+    inspector_route = inspection_engine.generate_inspector_route(assigned_inspector, EVALUATED_CACHE[:300])
+
+    return {
+        "officer": {
+            "id": current_user.id,
+            "full_name": current_user.full_name,
+            "role": current_user.role,
+            "jurisdiction_state": current_user.jurisdiction_state,
+            "jurisdiction_district": current_user.jurisdiction_district,
+            "inspector_id": current_user.inspector_id,
+        },
+        "metrics": {
+            "total_district_projects": len(jurisdiction_projects),
+            "in_progress_count": len([p for p in jurisdiction_projects if "PROGRESS" in p.get("current_stage", "")]),
+            "completed_count": len([p for p in jurisdiction_projects if "COMPLETION" in p.get("current_stage", "")]),
+            "high_risk_count": high_risk_count,
+            "pending_evidence_count": len(pending_evidence),
+            "sla_bottlenecks_count": len(bottlenecks),
+        },
+        "assigned_route": inspector_route,
+        "pending_evidence_queue": pending_evidence[:10],
+    }
+
+
+@router.get("/officer/projects", summary="List Projects Scoped to Officer Jurisdiction")
+def list_officer_projects(
+    search: Optional[str] = None,
+    work_category: Optional[str] = None,
+    limit: int = Query(50, le=500),
+    offset: int = 0,
+    current_user: UserModel = Depends(require_role([UserRole.DISTRICT_OFFICER]))
+):
+    state_scope = (current_user.jurisdiction_state or "").lower()
+    district_scope = (current_user.jurisdiction_district or "").lower()
+
+    filtered = [
+        p for p in WORK_RECORDS
+        if (not state_scope or state_scope in p.get("state", "").lower())
+        and (not district_scope or district_scope in p.get("constituency", "").lower() or district_scope in p.get("ida_office", "").lower())
+    ]
+    if not filtered and state_scope:
+        filtered = [p for p in WORK_RECORDS if state_scope in p.get("state", "").lower()]
+
+    if search:
+        q = search.lower()
+        filtered = [
+            p for p in filtered
+            if q in p.get("work_title", "").lower() or q in p.get("work_id", "").lower()
+        ]
+    if work_category:
+        filtered = [p for p in filtered if work_category.lower() in p.get("work_category", "").lower()]
+
+    paginated = filtered[offset : offset + limit]
+    return {
+        "total": len(filtered),
+        "limit": limit,
+        "offset": offset,
+        "jurisdiction": f"{current_user.jurisdiction_district}, {current_user.jurisdiction_state}",
+        "projects": paginated,
+    }
+
+
+@router.post("/officer/evidence/{evidence_id}/review", summary="Review and decide on citizen evidence")
+def review_citizen_evidence(
+    evidence_id: str,
+    decision: str = Body(..., embed=True),
+    review_notes: Optional[str] = Body(None, embed=True),
+    current_user: UserModel = Depends(require_permission("evidence:review"))
+):
+    target = next((e for e in EVIDENCE_STORE if e.get("evidence_id") == evidence_id), None)
+    if not target:
+        raise HTTPException(status_code=404, detail=f"Evidence '{evidence_id}' not found.")
+
+    # Jurisdiction validation
+    project_id = target.get("project_id", "")
+    project = next((w for w in WORK_RECORDS if w["work_id"].lower() == project_id.lower()), None)
+    if project:
+        state_scope = (current_user.jurisdiction_state or "").lower()
+        district_scope = (current_user.jurisdiction_district or "").lower()
+        if state_scope and state_scope not in project.get("state", "").lower():
+            raise HTTPException(status_code=403, detail="Access forbidden: Evidence project is outside your jurisdiction state.")
+        if district_scope and (district_scope not in project.get("constituency", "").lower() and district_scope not in project.get("ida_office", "").lower()):
+            raise HTTPException(status_code=403, detail="Access forbidden: Evidence project is outside your district jurisdiction.")
+
+    target["review_status"] = decision.upper()
+    target["reviewer_officer_id"] = current_user.id
+    target["reviewer_name"] = current_user.full_name
+    target["review_notes"] = review_notes
+    target["reviewed_at"] = datetime.utcnow().isoformat()
+
+    return {
+        "status": "SUCCESS",
+        "evidence_id": evidence_id,
+        "review_status": target["review_status"],
+        "reviewer": current_user.full_name,
+        "reviewed_at": target["reviewed_at"],
+    }
+
+
+@router.post("/officer/inspections/{work_id}/update", summary="Record officer site inspection update")
+def update_officer_inspection(
+    work_id: str,
+    inspection_status: str = Body(..., embed=True),
+    observations: str = Body(..., embed=True),
+    physical_progress_percent: Optional[float] = Body(None, embed=True),
+    current_user: UserModel = Depends(require_permission("inspections:update"))
+):
+    # Bounds check on progress percentage
+    if physical_progress_percent is not None:
+        if physical_progress_percent < 0.0 or physical_progress_percent > 100.0:
+            raise HTTPException(status_code=422, detail="Physical progress percent must be between 0.0 and 100.0.")
+
+    # Jurisdiction validation
+    project = next((w for w in WORK_RECORDS if w["work_id"].lower() == work_id.lower()), None)
+    if not project:
+        raise HTTPException(status_code=404, detail=f"Project record '{work_id}' not found.")
+
+    state_scope = (current_user.jurisdiction_state or "").lower()
+    district_scope = (current_user.jurisdiction_district or "").lower()
+    if state_scope and state_scope not in project.get("state", "").lower():
+        raise HTTPException(status_code=403, detail="Access forbidden: Project is outside your jurisdiction state.")
+    if district_scope and (district_scope not in project.get("constituency", "").lower() and district_scope not in project.get("ida_office", "").lower()):
+        raise HTTPException(status_code=403, detail="Access forbidden: Project is outside your district jurisdiction.")
+
+    record = {
+        "work_id": work_id,
+        "inspector_id": current_user.inspector_id or current_user.id,
+        "officer_name": current_user.full_name,
+        "inspection_status": inspection_status,
+        "observations": observations,
+        "physical_progress_percent": physical_progress_percent,
+        "recorded_at": datetime.utcnow().isoformat(),
+    }
+    OFFICER_INSPECTION_UPDATES[work_id] = record
+    return {
+        "status": "RECORDED",
+        "record": record
+    }
+

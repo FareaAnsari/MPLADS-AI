@@ -2,7 +2,7 @@
 // Powered by LLaMA-3.3-70B-Versatile on Groq LPUs
 // Provides real-time objective forensic audits, risk explanations, and village priority reasoning.
 
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || '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';
+const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || '';
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 const DEFAULT_MODEL = 'llama-3.3-70b-versatile';
 
