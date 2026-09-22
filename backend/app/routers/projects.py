@@ -106,3 +106,38 @@ def get_project_by_id(work_id: str):
         "project": match,
         "expenditures": related_exps
     }
+
+
+@router.patch("/{work_id}/stage", summary="Update project execution stage on Kanban Board")
+def update_project_stage(
+    work_id: str,
+    new_stage: str = Query(..., description="Target Kanban stage: TODO | IN_PROGRESS | DONE | BLOCKED"),
+    notes: Optional[str] = None
+):
+    """
+    Updates the execution stage of an MPLADS project and records the transition in audit memory.
+    """
+    valid_stages = ["TODO", "IN_PROGRESS", "DONE", "BLOCKED", "RECOMMENDED", "SANCTIONED", "COMPLETION_REPORTED"]
+    normalized_stage = new_stage.upper().strip()
+    if normalized_stage not in valid_stages:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid stage '{new_stage}'. Must be one of: {valid_stages}"
+        )
+
+    match = next((w for w in WORK_RECORDS if w["work_id"].lower() == work_id.lower()), None)
+    if not match:
+        raise HTTPException(status_code=404, detail=f"Work record with ID '{work_id}' not found.")
+
+    old_stage = match.get("current_stage", "RECOMMENDED")
+    match["current_stage"] = normalized_stage
+    match["last_updated_stage"] = normalized_stage
+
+    return {
+        "status": "SUCCESS",
+        "work_id": match["work_id"],
+        "old_stage": old_stage,
+        "new_stage": normalized_stage,
+        "notes": notes or "Updated via Project Execution Kanban Board"
+    }
+

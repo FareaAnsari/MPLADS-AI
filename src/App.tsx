@@ -27,6 +27,8 @@ import { ContractorInterestPage } from './pages/ContractorInterestPage';
 import { ContractorDashboardPage } from './pages/ContractorDashboardPage';
 import { TenderSourcesPage } from './pages/TenderSourcesPage';
 import { NationalDataPage } from './pages/NationalDataPage';
+import { ProjectBoardPage } from './pages/ProjectBoardPage';
+import { PreSanctionSandboxPage } from './pages/PreSanctionSandboxPage';
 
 export const App: React.FC = () => {
   return (
@@ -41,7 +43,9 @@ export const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<DashboardPage />} />
               <Route path="/projects" element={<ProjectsListPage />} />
+              <Route path="/projects/board" element={<ProjectBoardPage />} />
               <Route path="/projects/:id" element={<ProjectDetailPage />} />
+              <Route path="/sandbox" element={<PreSanctionSandboxPage />} />
               <Route path="/investigate/:id" element={<InvestigationPage />} />
               <Route path="/ai-insights" element={<AIInsightsPage />} />
               <Route path="/contractors" element={<ContractorsPage />} />
@@ -67,6 +71,7 @@ export const App: React.FC = () => {
               <Route path="/opportunities/:id" element={<OpportunityDetailPage />} />
               <Route path="/contractor-interest" element={<ContractorInterestPage />} />
               <Route path="/contractor-dashboard" element={<ContractorDashboardPage />} />
+              <Route path="/contractor-portal" element={<ContractorDashboardPage />} />
               <Route path="/tender-sources" element={<TenderSourcesPage />} />
 
               {/* National Data Ingestion & Verification Pipeline */}

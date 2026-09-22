@@ -86,11 +86,11 @@ describe('Phase 14 — Mobile Security Hardening & Isolation Suite', () => {
       });
 
       const handled = NotificationService.handleNotificationNavigation({
-        deepLink: 'mplads://officer/risk/WRK-001',
+        entityType: 'PROJECT',
+        entityId: 'PRJ-1',
       });
-
       expect(handled).toBe(false);
-      expect(router.push).toHaveBeenCalledWith('/(auth)/login');
+      expect(router.push).toHaveBeenCalledWith('/(auth)');
     });
 
     it('should BLOCK Citizen from opening privileged District Officer deep links', () => {

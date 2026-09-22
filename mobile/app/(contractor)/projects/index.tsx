@@ -66,7 +66,12 @@ export default function ContractorProjectsListScreen() {
 
     return (
       <TouchableOpacity
-        onPress={() => router.push(`/(contractor)/projects/${item.workId}` as any)}
+        onPress={() =>
+          router.push({
+            pathname: '/(contractor)/projects/[...id]',
+            params: { id: item.workId },
+          } as any)
+        }
         activeOpacity={0.7}
         accessibilityRole="button"
         accessibilityLabel={`${item.workTitle}, Category: ${item.workCategory}, Sanctioned: ${formatCurrency(

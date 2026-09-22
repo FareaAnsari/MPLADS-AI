@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Pratyaksh MPLADS",
-    "slug": "pratyaksh-mplads",
+    "name": "Members of Parliament Local Area Development Scheme (MPLADS)",
+    "slug": "mplads-ai",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

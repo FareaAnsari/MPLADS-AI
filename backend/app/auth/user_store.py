@@ -48,17 +48,19 @@ class UserDatabase:
         # 3. Verified Citizen
         u3 = UserModel(
             id="usr-citizen-001",
-            username="citizen_ramesh",
+            username="548912345678",
             email="ramesh.kumar@gmail.com",
-            full_name="Ramesh Kumar (Panchayat Citizen)",
+            full_name="Ramesh Kumar (Aadhaar Verified Citizen)",
             password_hash=hash_password("CitizenPass@2026"),
             role=UserRole.CITIZEN,
             permissions=ROLE_PERMISSIONS[UserRole.CITIZEN.value],
             jurisdiction_state="Bihar",
             jurisdiction_district="Araria",
+            aadhaar_masked="XXXX-XXXX-5678",
             is_active=True,
         )
         self.users[u3.username] = u3
+        self.users["citizen_ramesh"] = u3
 
         # 4. Registered Contractor
         u4 = UserModel(
@@ -88,7 +90,49 @@ class UserDatabase:
         self.users[u5.username] = u5
 
     def get_by_username(self, username: str) -> Optional[UserModel]:
-        return self.users.get(username)
+        clean_key = username.replace(" ", "").replace("-", "")
+        return self.users.get(clean_key) or self.users.get(username)
+
+    def get_by_aadhaar(self, aadhaar_digits: str) -> Optional[UserModel]:
+        clean_aadhaar = aadhaar_digits.replace(" ", "").replace("-", "")
+        for u in self.users.values():
+            if u.username == clean_aadhaar or (u.aadhaar_masked and u.aadhaar_masked.endswith(clean_aadhaar[-4:])):
+                return u
+        return None
+
+    def register_or_get_citizen_by_aadhaar(
+        self,
+        aadhaar_digits: str,
+        full_name: str,
+        state: str = "Bihar",
+        district: str = "Araria",
+    ) -> UserModel:
+        clean_aadhaar = aadhaar_digits.replace(" ", "").replace("-", "")
+        existing = self.get_by_aadhaar(clean_aadhaar)
+        if existing:
+            if full_name and existing.full_name != full_name:
+                existing.full_name = full_name
+            return existing
+
+        last_4 = clean_aadhaar[-4:] if len(clean_aadhaar) >= 4 else "0000"
+        masked = f"XXXX-XXXX-{last_4}"
+        user_id = f"usr-citizen-{last_4}"
+
+        new_user = UserModel(
+            id=user_id,
+            username=clean_aadhaar,
+            email=f"citizen.{last_4}@uidai.in",
+            full_name=full_name or f"Verified Citizen ({masked})",
+            password_hash=hash_password("CitizenPass@2026"),
+            role=UserRole.CITIZEN,
+            permissions=ROLE_PERMISSIONS[UserRole.CITIZEN.value],
+            jurisdiction_state=state or "Bihar",
+            jurisdiction_district=district or "Araria",
+            aadhaar_masked=masked,
+            is_active=True,
+        )
+        self.users[clean_aadhaar] = new_user
+        return new_user
 
     def get_by_id(self, user_id: str) -> Optional[UserModel]:
         return next((u for u in self.users.values() if u.id == user_id), None)
@@ -101,3 +145,4 @@ class UserDatabase:
 
 
 user_db = UserDatabase()
+

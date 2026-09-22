@@ -112,7 +112,7 @@ export class SQLiteLocalDataSource
             id, user_id, role, jurisdiction_district, work_id, work_title,
             work_category, work_description, mp_name, ida_office, state,
             constituency, sanctioned_amount_inr, disbursed_amount_inr,
-            current_stage, has_official_images, source, sourceType, updated_at
+            current_stage, has_official_images, source, source_type, updated_at
           ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
           [
             p.id || p.workId,

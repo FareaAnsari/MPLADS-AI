@@ -9,15 +9,20 @@ import {
   Button,
   EmptyState,
   ErrorState,
+  LinearBottomTabs,
 } from '../../../src/ui/components';
-import { Colors, Spacing } from '../../../src/ui/theme';
+import { Colors, Spacing, Radii } from '../../../src/ui/theme';
 import { useTranslation } from '../../../src/i18n';
 import { useCitizenEvidenceHistoryQuery } from '../../../src/features/citizen/queries';
 import { formatDateIN } from '../../../src/utils/formatters';
 
+import { useAuthStore } from '../../../src/store/authStore';
+
 export default function CitizenEvidenceHubScreen() {
   const router = useRouter();
   const { t, isHindi } = useTranslation();
+  const { user, status } = useAuthStore();
+  const isAuthenticated = status === 'AUTHENTICATED' && user !== null;
 
   const {
     data,
@@ -29,8 +34,85 @@ export default function CitizenEvidenceHubScreen() {
 
   const evidenceList = data?.evidence || [];
 
+  if (!isAuthenticated) {
+    return (
+      <Screen>
+        <View style={styles.container}>
+          <View style={styles.header}>
+            <Text variant="h2" color={Colors.primaryDark} style={styles.title}>
+              {t('citizen.evidenceHub')}
+            </Text>
+            <Text variant="body" color={Colors.textSecondary}>
+              {t('citizen.evidenceHubDesc')}
+            </Text>
+          </View>
+
+          <Card style={styles.authGateCard}>
+            <View style={styles.lockIconCircle}>
+              <Text variant="h2">🔒</Text>
+            </View>
+            <Text variant="title" color={Colors.primaryDark} style={styles.authGateTitle}>
+              {isHindi ? 'नागरिक पंजीकरण एवं लॉगिन अनिवार्य' : 'Citizen Registration & Login Required'}
+            </Text>
+            <Text variant="bodySmall" color={Colors.textSecondary} style={styles.authGateDesc}>
+              {isHindi
+                ? 'MoSPI नियमों और धोखाधड़ी-रोधी सुरक्षा के तहत, भू-सत्यापन और भौतिक साक्ष्य केवल पंजीकृत और सत्यापित नागरिकों द्वारा ही प्रस्तुत किए जा सकते हैं।'
+                : 'Under MoSPI anti-tampering norms and statutory auditing rules, citizen verification and geotagged evidence can only be submitted by registered and authenticated citizens.'}
+            </Text>
+            <Button
+              title={isHindi ? 'नागरिक लॉगिन / पंजीकरण करें' : 'Login / Register as Citizen'}
+              variant="primary"
+              onPress={() => router.push('/(auth)')}
+              style={styles.authGateBtn}
+            />
+          </Card>
+
+          <Button
+            title={t('common.back')}
+            variant="ghost"
+            onPress={() => router.back()}
+            style={{ marginTop: Spacing.md }}
+          />
+        </View>
+      </Screen>
+    );
+  }
+
   return (
-    <Screen scrollable={false}>
+    <Screen
+      scrollable={false}
+      footer={
+        <LinearBottomTabs
+          activeTabKey="evidence"
+          tabs={[
+            {
+              key: 'overview',
+              label: isHindi ? 'अवलोकन' : 'Overview',
+              icon: '🏛',
+              onPress: () => router.push('/(citizen)'),
+            },
+            {
+              key: 'projects',
+              label: isHindi ? 'परियोजनाएं' : 'Projects',
+              icon: '📋',
+              onPress: () => router.push('/(citizen)/projects'),
+            },
+            {
+              key: 'evidence',
+              label: isHindi ? 'सत्यापन' : 'Verify',
+              icon: '📷',
+              onPress: () => router.push('/(citizen)/evidence'),
+            },
+            {
+              key: 'auth',
+              label: isHindi ? 'आधार' : 'Aadhaar',
+              icon: '🔐',
+              onPress: () => router.push('/(auth)'),
+            },
+          ]}
+        />
+      }
+    >
       <View style={styles.container}>
         <View style={styles.header}>
           <Text variant="h2" color={Colors.primaryDark} style={styles.title}>
@@ -69,15 +151,15 @@ export default function CitizenEvidenceHubScreen() {
           />
         ) : evidenceList.length === 0 ? (
           <EmptyState
-            title={t('citizen.noEvidenceRecords')}
-            description={t('citizen.noEvidenceRecordsDesc')}
+            title={t('evidence.noEvidenceTitle')}
+            description={t('evidence.noEvidenceDesc')}
             actionLabel={t('evidence.submitEvidence')}
             onAction={() => router.push('/(citizen)/evidence/submit')}
           />
         ) : (
           <FlatList
             data={evidenceList}
-            keyExtractor={(item) => item.evidence_id || item.id || String(Math.random())}
+            keyExtractor={(item) => item.evidence_id || item.project_id}
             contentContainerStyle={styles.listContent}
             onRefresh={refetch}
             refreshing={isRefetching}
@@ -181,5 +263,35 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: Spacing.xl,
+  },
+  authGateCard: {
+    padding: Spacing.xl,
+    alignItems: 'center',
+    backgroundColor: Colors.surface,
+    borderWidth: 1,
+    borderColor: Colors.borderDark,
+    borderRadius: Radii.lg,
+    marginTop: Spacing.md,
+  },
+  lockIconCircle: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: Colors.riskHighBg,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: Spacing.md,
+  },
+  authGateTitle: {
+    textAlign: 'center',
+    marginBottom: Spacing.xs,
+  },
+  authGateDesc: {
+    textAlign: 'center',
+    lineHeight: 18,
+    marginBottom: Spacing.lg,
+  },
+  authGateBtn: {
+    width: '100%',
   },
 });

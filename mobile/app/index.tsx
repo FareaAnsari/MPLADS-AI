@@ -4,10 +4,12 @@ import { useRouter } from 'expo-router';
 import { Screen, Text, Button, Card, Badge, LanguageSelector } from '../src/ui/components';
 import { Colors, Spacing } from '../src/ui/theme';
 import { useTranslation } from '../src/i18n';
+import { useAuthStore } from '../src/store/authStore';
 
 export default function HomeScreen() {
   const router = useRouter();
   const { t, isHindi } = useTranslation();
+  const { loginAsRole } = useAuthStore();
 
   return (
     <Screen>
@@ -29,19 +31,6 @@ export default function HomeScreen() {
         </Text>
       </View>
 
-      <Card style={styles.statusCard}>
-        <View style={styles.row}>
-          <Text variant="title">
-            {isHindi ? 'साझा यूआई और स्थानीयकरण प्रणाली' : 'Shared UI & Localization Layer'}
-          </Text>
-          <Badge label={isHindi ? 'सक्रिय' : 'Phase 5 Ready'} variant="success" size="sm" />
-        </View>
-        <Text variant="bodySmall" color={Colors.textSecondary} style={styles.cardDesc}>
-          {isHindi
-            ? 'द्विभाषी सहायता (अंग्रेजी/हिंदी), पूर्ण सुगम्यता (Accessibility), और MoSPI डिजाइन टोकन सक्रिय हैं।'
-            : 'Bilingual support (en-IN / hi-IN), centralized accessibility foundations, and MoSPI design tokens active.'}
-        </Text>
-      </Card>
 
       <Text variant="title" style={styles.sectionHeading}>
         {isHindi ? 'भूमिका नेविगेशन मॉड्यूल' : 'Role Navigation Modules'}
@@ -51,7 +40,9 @@ export default function HomeScreen() {
         <Button
           title={t('navigation.citizenPortal')}
           variant="primary"
-          onPress={() => router.push('/(citizen)')}
+          onPress={() => {
+            router.push('/(citizen)');
+          }}
           style={styles.navButton}
           accessibilityLabel={t('navigation.citizenPortal')}
           accessibilityHint="Navigates to public Citizen Transparency Portal"
@@ -59,7 +50,10 @@ export default function HomeScreen() {
         <Button
           title={t('navigation.districtOfficer')}
           variant="secondary"
-          onPress={() => router.push('/(officer)')}
+          onPress={async () => {
+            await loginAsRole('DISTRICT_OFFICER');
+            router.push('/(officer)');
+          }}
           style={styles.navButton}
           accessibilityLabel={t('navigation.districtOfficer')}
           accessibilityHint="Navigates to District Officer Inspection Console"
@@ -67,7 +61,10 @@ export default function HomeScreen() {
         <Button
           title={t('navigation.mpOffice')}
           variant="outline"
-          onPress={() => router.push('/(mp)')}
+          onPress={async () => {
+            await loginAsRole('MP_OFFICE');
+            router.push('/(mp)');
+          }}
           style={styles.navButton}
           accessibilityLabel={t('navigation.mpOffice')}
           accessibilityHint="Navigates to Member of Parliament Constituency Intelligence"
@@ -75,7 +72,10 @@ export default function HomeScreen() {
         <Button
           title={t('navigation.contractorPortal')}
           variant="outline"
-          onPress={() => router.push('/(contractor)')}
+          onPress={async () => {
+            await loginAsRole('CONTRACTOR');
+            router.push('/(contractor)');
+          }}
           style={styles.navButton}
           accessibilityLabel={t('navigation.contractorPortal')}
           accessibilityHint="Navigates to Contractor Opportunities Module"

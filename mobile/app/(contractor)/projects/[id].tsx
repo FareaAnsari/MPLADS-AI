@@ -49,6 +49,9 @@ export default function ContractorProjectDetailScreen() {
   const router = useRouter();
   const { t } = useTranslation();
 
+  const rawId = Array.isArray(id) ? id[0] : (id || '');
+  const workId = decodeURIComponent(rawId);
+
   const {
     data: detail,
     isLoading,
@@ -56,7 +59,7 @@ export default function ContractorProjectDetailScreen() {
     error,
     refetch,
     isRefetching,
-  } = useContractorProjectDetailQuery(id || '');
+  } = useContractorProjectDetailQuery(workId);
 
   const submitProgressMutation = useSubmitProgressUpdateMutation();
   const reportIssueMutation = useReportIssueMutation();

@@ -15,6 +15,7 @@ import {
   EmptyState,
   ErrorState,
   OfflineBanner,
+  LinearBottomTabs,
 } from '../../src/ui/components';
 import { Colors, Spacing, Radii } from '../../src/ui/theme';
 import { useMPDashboardQuery } from '../../src/features/mp';
@@ -306,6 +307,36 @@ export default function MPDashboardScreen() {
           </>
         )}
       </ScrollView>
+
+      <LinearBottomTabs
+        activeTabKey="overview"
+        tabs={[
+          {
+            key: 'overview',
+            label: isHindi ? 'निर्वाचन क्षेत्र' : 'Constituency',
+            icon: '🏛',
+            onPress: () => router.push('/(mp)'),
+          },
+          {
+            key: 'projects',
+            label: isHindi ? 'विकास कार्य' : 'Works',
+            icon: '📁',
+            onPress: () => router.push('/(mp)/projects'),
+          },
+          {
+            key: 'risk',
+            label: isHindi ? 'जोखिम रडार' : 'Risk Radar',
+            icon: '⚠️',
+            onPress: () => router.push('/(mp)/risk'),
+          },
+          {
+            key: 'auth',
+            label: isHindi ? 'पोर्टल' : 'Portal',
+            icon: '⚙️',
+            onPress: () => router.push('/(auth)'),
+          },
+        ]}
+      />
     </Screen>
   );
 }

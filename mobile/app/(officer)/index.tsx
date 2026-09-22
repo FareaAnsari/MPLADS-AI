@@ -8,6 +8,7 @@ import {
   Card,
   Badge,
   ErrorState,
+  LinearBottomTabs,
 } from '../../src/ui/components';
 import { Colors, Spacing, Radii } from '../../src/ui/theme';
 import { useTranslation } from '../../src/i18n';
@@ -45,7 +46,40 @@ export default function OfficerDashboardScreen() {
   };
 
   return (
-    <Screen scrollable>
+    <Screen
+      scrollable
+      footer={
+        <LinearBottomTabs
+          activeTabKey="dashboard"
+          tabs={[
+            {
+              key: 'dashboard',
+              label: isHindi ? 'कंसोल' : 'Console',
+              icon: '📊',
+              onPress: () => router.push('/(officer)'),
+            },
+            {
+              key: 'inspections',
+              label: isHindi ? 'निरीक्षण' : 'Inspect',
+              icon: '🗺',
+              onPress: () => router.push('/(officer)/inspections'),
+            },
+            {
+              key: 'evidence',
+              label: isHindi ? 'समीक्षा' : 'Review',
+              icon: '⚖',
+              onPress: () => router.push('/(officer)/evidence'),
+            },
+            {
+              key: 'sla',
+              label: isHindi ? 'एस एल ए' : 'SLA',
+              icon: '⏱',
+              onPress: () => router.push('/(officer)/sla'),
+            },
+          ]}
+        />
+      }
+    >
       {/* Jurisdiction & Officer Header */}
       <View style={styles.header}>
         <Badge
@@ -65,11 +99,11 @@ export default function OfficerDashboardScreen() {
       {/* District Operational Metrics Card */}
       <Card style={styles.metricsCard}>
         <View style={styles.metricsHeader}>
-          <Text variant="title">
+          <Text variant="title" style={styles.metricsTitle}>
             {isHindi ? 'जिला परिचालन अवलोकन' : 'District Operational Metrics'}
           </Text>
           <Badge
-            label={officer.inspectorId ? `${t('officer.assignedInspectorId')}: ${officer.inspectorId}` : t('common.online')}
+            label={officer.inspectorId ? `Insp: ${officer.inspectorId}` : t('common.online')}
             variant="secondary"
             size="sm"
           />
@@ -287,7 +321,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: Spacing.xs,
     marginBottom: Spacing.md,
+  },
+  metricsTitle: {
+    flexShrink: 1,
+    maxWidth: '75%',
   },
   gridContainer: {
     flexDirection: 'row',

@@ -16,7 +16,7 @@ describe('Phase 5 — Localization & Accessibility Infrastructure Tests', () => 
 
   describe('Localization & Translation Engine', () => {
     it('loads English (en-IN) translations accurately', () => {
-      expect(t('common.appName')).toBe('Pratyaksh');
+      expect(t('common.appName')).toBe('Members of Parliament Local Area Development Scheme (MPLADS)');
       expect(t('common.governmentOfIndia')).toBe('Government of India');
       expect(t('auth.title')).toBe('Statutory Access Gateway');
       expect(t('navigation.citizenPortal')).toBe('Citizen Transparency Portal');
@@ -25,7 +25,7 @@ describe('Phase 5 — Localization & Accessibility Infrastructure Tests', () => 
 
     it('loads Hindi (hi-IN) translations when language is set to Hindi', () => {
       useAppStore.setState({ language: 'hi' });
-      expect(t('common.appName')).toBe('प्रत्यक्ष');
+      expect(t('common.appName')).toBe('Members of Parliament Local Area Development Scheme (MPLADS)');
       expect(t('common.governmentOfIndia')).toBe('भारत सरकार');
       expect(t('auth.title')).toBe('वैधानिक पहुंच प्रवेश द्वार');
       expect(t('navigation.citizenPortal')).toBe('नागरिक पारदर्शिता पोर्टल');

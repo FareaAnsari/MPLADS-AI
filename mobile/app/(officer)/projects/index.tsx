@@ -42,7 +42,12 @@ export default function OfficerProjectsListScreen() {
   const renderProjectItem = ({ item }: { item: ProjectEntity }) => (
     <Card
       interactive
-      onPress={() => router.push(`/(officer)/projects/${item.workId}` as any)}
+      onPress={() =>
+        router.push({
+          pathname: '/(officer)/projects/[...id]',
+          params: { id: item.workId },
+        } as any)
+      }
       style={styles.projectCard}
       accessibilityRole="button"
       accessibilityLabel={`${item.workTitle}, ${item.workId}`}

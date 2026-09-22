@@ -193,7 +193,7 @@ describe('Phase 11 — Notifications & Deep-Link Security', () => {
       });
 
       expect(handled).toBe(false);
-      expect(router.push).toHaveBeenCalledWith('/(auth)/login');
+      expect(router.push).toHaveBeenCalledWith('/(auth)');
     });
 
     it('should allow Citizen to navigate to citizen project deep links', () => {

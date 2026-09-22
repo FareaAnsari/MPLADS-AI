@@ -15,6 +15,7 @@ import {
   EmptyState,
   ErrorState,
   OfflineBanner,
+  LinearBottomTabs,
 } from '../../src/ui/components';
 import { Colors, Spacing, Radii } from '../../src/ui/theme';
 import { useContractorDashboardQuery } from '../../src/features/contractor';
@@ -250,6 +251,36 @@ export default function ContractorDashboardScreen() {
           </>
         )}
       </ScrollView>
+
+      <LinearBottomTabs
+        activeTabKey="dashboard"
+        tabs={[
+          {
+            key: 'dashboard',
+            label: isHindi ? 'डैशबोर्ड' : 'Dashboard',
+            icon: '🏗️',
+            onPress: () => router.push('/(contractor)'),
+          },
+          {
+            key: 'projects',
+            label: isHindi ? 'मेरे कार्य' : 'My Works',
+            icon: '📑',
+            onPress: () => router.push('/(contractor)/projects'),
+          },
+          {
+            key: 'opportunities',
+            label: isHindi ? 'निविदाएं' : 'Tenders',
+            icon: '💼',
+            onPress: () => router.push('/(contractor)/opportunities'),
+          },
+          {
+            key: 'auth',
+            label: isHindi ? 'पोर्टल' : 'Portal',
+            icon: '🔐',
+            onPress: () => router.push('/(auth)'),
+          },
+        ]}
+      />
     </Screen>
   );
 }

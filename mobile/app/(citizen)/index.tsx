@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Screen, Text, Button, Card, Badge, ErrorState } from '../../src/ui/components';
+import { Screen, Text, Button, Card, Badge, ErrorState, LinearBottomTabs } from '../../src/ui/components';
 import { Colors, Spacing, Radii } from '../../src/ui/theme';
 import { useTranslation } from '../../src/i18n';
 import { useAuthStore } from '../../src/store/authStore';
@@ -11,7 +11,7 @@ import { formatINR, formatNumberIN } from '../../src/utils/formatters';
 export default function CitizenHomeScreen() {
   const router = useRouter();
   const { t, isHindi } = useTranslation();
-  const { user } = useAuthStore();
+  const { user, status } = useAuthStore();
 
   const {
     data: summary,
@@ -34,7 +34,46 @@ export default function CitizenHomeScreen() {
   const isRefreshing = isSummaryLoading || isProjectsLoading;
 
   return (
-    <Screen scrollable>
+    <Screen
+      scrollable
+      footer={
+        <LinearBottomTabs
+          activeTabKey="overview"
+          tabs={[
+            {
+              key: 'overview',
+              label: isHindi ? 'अवलोकन' : 'Overview',
+              icon: '🏛',
+              onPress: () => router.push('/(citizen)'),
+            },
+            {
+              key: 'projects',
+              label: isHindi ? 'परियोजनाएं' : 'Projects',
+              icon: '📋',
+              onPress: () => router.push('/(citizen)/projects'),
+            },
+            {
+              key: 'evidence',
+              label: isHindi ? 'सत्यापन' : 'Verify',
+              icon: '📷',
+              onPress: () => {
+                if (status !== 'AUTHENTICATED' || !user) {
+                  router.push('/(auth)');
+                } else {
+                  router.push('/(citizen)/evidence');
+                }
+              },
+            },
+            {
+              key: 'auth',
+              label: isHindi ? 'आधार' : 'Aadhaar',
+              icon: '🔐',
+              onPress: () => router.push('/(auth)'),
+            },
+          ]}
+        />
+      }
+    >
       <View style={styles.header}>
         <Badge
           label={t('common.ministry')}
@@ -126,7 +165,13 @@ export default function CitizenHomeScreen() {
 
         <Card
           interactive
-          onPress={() => router.push('/(citizen)/evidence')}
+          onPress={() => {
+            if (status !== 'AUTHENTICATED' || !user) {
+              router.push('/(auth)');
+            } else {
+              router.push('/(citizen)/evidence');
+            }
+          }}
           style={styles.actionCard}
           accessibilityLabel={t('citizen.evidenceHub')}
           accessibilityHint={t('citizen.evidenceHubDesc')}
@@ -136,9 +181,14 @@ export default function CitizenHomeScreen() {
               <Text variant="h3">📷</Text>
             </View>
             <View style={styles.actionCardContent}>
-              <Text variant="title" color={Colors.primaryDark}>
-                {t('citizen.evidenceHub')}
-              </Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                <Text variant="title" color={Colors.primaryDark}>
+                  {t('citizen.evidenceHub')}
+                </Text>
+                {status !== 'AUTHENTICATED' && (
+                  <Badge label="Login Required" variant="warning" size="sm" />
+                )}
+              </View>
               <Text variant="bodySmall" color={Colors.textSecondary}>
                 {t('citizen.evidenceHubDesc')}
               </Text>
@@ -166,7 +216,12 @@ export default function CitizenHomeScreen() {
             <Card
               key={proj.workId}
               interactive
-              onPress={() => router.push(`/(citizen)/projects/${proj.workId}` as any)}
+              onPress={() =>
+                router.push({
+                  pathname: '/(citizen)/projects/[...id]',
+                  params: { id: proj.workId },
+                } as any)
+              }
               style={styles.projectCard}
               accessibilityLabel={`${proj.workTitle}, ${proj.workId}`}
             >
@@ -199,8 +254,15 @@ export default function CitizenHomeScreen() {
       <Button
         title={t('common.back')}
         variant="ghost"
-        onPress={() => router.replace('/')}
+        onPress={() => {
+          if (router.canGoBack()) {
+            router.back();
+          } else {
+            router.replace('/');
+          }
+        }}
         style={styles.backButton}
+        accessibilityLabel={t('common.back')}
       />
     </Screen>
   );

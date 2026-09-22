@@ -10,6 +10,7 @@ import {
   EmptyState,
   ErrorState,
   Button,
+  LinearBottomTabs,
 } from '../../../src/ui/components';
 import { Colors, Spacing, Radii } from '../../../src/ui/theme';
 import { useTranslation } from '../../../src/i18n';
@@ -54,7 +55,12 @@ export default function CitizenProjectsListScreen() {
   const renderProjectItem = ({ item }: { item: ProjectEntity }) => (
     <Card
       interactive
-      onPress={() => router.push(`/(citizen)/projects/${item.workId}` as any)}
+      onPress={() =>
+        router.push({
+          pathname: '/(citizen)/projects/[...id]',
+          params: { id: item.workId },
+        } as any)
+      }
       style={styles.projectCard}
       accessibilityRole="button"
       accessibilityLabel={`${item.workTitle}, ${item.workId}, ${item.state}`}
@@ -110,7 +116,40 @@ export default function CitizenProjectsListScreen() {
   );
 
   return (
-    <Screen scrollable={false}>
+    <Screen
+      scrollable={false}
+      footer={
+        <LinearBottomTabs
+          activeTabKey="projects"
+          tabs={[
+            {
+              key: 'overview',
+              label: isHindi ? 'अवलोकन' : 'Overview',
+              icon: '🏛',
+              onPress: () => router.push('/(citizen)'),
+            },
+            {
+              key: 'projects',
+              label: isHindi ? 'परियोजनाएं' : 'Projects',
+              icon: '📋',
+              onPress: () => router.push('/(citizen)/projects'),
+            },
+            {
+              key: 'evidence',
+              label: isHindi ? 'सत्यापन' : 'Verify',
+              icon: '📷',
+              onPress: () => router.push('/(citizen)/evidence'),
+            },
+            {
+              key: 'auth',
+              label: isHindi ? 'आधार' : 'Aadhaar',
+              icon: '🔐',
+              onPress: () => router.push('/(auth)'),
+            },
+          ]}
+        />
+      }
+    >
       <View style={styles.container}>
         {/* Search Bar */}
         <TextField

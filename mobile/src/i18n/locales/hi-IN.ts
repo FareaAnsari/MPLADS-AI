@@ -2,7 +2,7 @@ import { TranslationDictionary } from '../types';
 
 export const hiIN: TranslationDictionary = {
   common: {
-    appName: 'प्रत्यक्ष',
+    appName: 'Members of Parliament Local Area Development Scheme (MPLADS)',
     tagline: 'एआई-संचालित वैधानिक एमपीलैड्स निगरानी खुफिया प्रणाली',
     governmentOfIndia: 'भारत सरकार',
     ministry: 'सांख्यिकी और कार्यक्रम कार्यान्वयन मंत्रालय (MoSPI)',
@@ -47,7 +47,7 @@ export const hiIN: TranslationDictionary = {
   navigation: {
     home: 'होम',
     citizenPortal: 'नागरिक पारदर्शिता पोर्टल',
-    districtOfficer: 'जिला अधिकारी निरीक्षण कंसोल',
+    districtOfficer: 'जिला अधिकारी कंसोल',
     mpOffice: 'सांसद निर्वाचन क्षेत्र खुफिया',
     contractorPortal: 'ठेकेदार एवं विक्रेता पोर्टल',
     profile: 'प्रोफ़ाइल',

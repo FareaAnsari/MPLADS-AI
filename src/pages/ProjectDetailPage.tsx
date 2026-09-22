@@ -674,8 +674,89 @@ export const ProjectDetailPage: React.FC = () => {
           </div>
         )}
 
+        {/* TAB 10: CITIZEN PLAIN-LANGUAGE PROGRESS REPORT */}
+        {activeTab === 'progress' && (
+          <div className="space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100">
+              <div>
+                <h3 className="text-base font-bold text-gov-navy flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                  <span>Citizen Progress Report & Milestone Narrative</span>
+                </h3>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  Plain-language public progress summary derived from verified ground measurement books and milestone records.
+                </p>
+              </div>
+              <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-500 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
+                <Calendar className="w-3.5 h-3.5 text-primary" />
+                <span>Last Updated: 20 Sep 2024</span>
+              </div>
+            </div>
+
+            {/* Plain-Language Narrative Summary Card */}
+            <div className="p-5 bg-gradient-to-r from-blue-50/70 to-slate-50 border border-blue-200/80 rounded-xl space-y-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-gov-navy block">
+                Executive Status Narrative
+              </span>
+              <p className="text-sm text-slate-800 leading-relaxed">
+                This project was sanctioned on <strong>15 Jan 2024</strong>. As of <strong>20 Sep 2024</strong>, it is <strong>68% physically complete</strong>. The most recent verified milestone was <strong>"Sub-base Concrete Layer Laid"</strong> recorded on <strong>12 Aug 2024</strong>. This work is currently proceeding under routine execution standards in accordance with statutory district guidelines.
+              </p>
+            </div>
+
+            {/* Visual Progress Bar */}
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Overall Physical Progress</span>
+                <span className="text-sm font-extrabold text-gov-navy">68% Complete</span>
+              </div>
+              <div className="w-full h-3.5 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                <div 
+                  className="h-full bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full transition-all duration-500"
+                  style={{ width: '68%' }}
+                />
+              </div>
+              <div className="flex justify-between text-[10px] text-slate-400 pt-1 font-semibold">
+                <span>Sanction (0%)</span>
+                <span>Sub-base (50%)</span>
+                <span>Final Certification (100%)</span>
+              </div>
+            </div>
+
+            {/* Verified Milestone Timeline */}
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-4">
+              <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                Chronological Milestone Verification Timeline
+              </h4>
+
+              <div className="space-y-4 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-slate-200">
+                {[
+                  { title: "Administrative Sanction Issued", date: "15 Jan 2024", status: "COMPLETED", note: "Formal sanction approved by District Authority." },
+                  { title: "Site Mobilization & Excavation", date: "28 Feb 2024", status: "COMPLETED", note: "Ground clearing and foundation boundary marked." },
+                  { title: "Sub-base Concrete Layer Laid", date: "12 Aug 2024", status: "COMPLETED", note: "Civil pavement sub-base completed and verified by technical cell." },
+                  { title: "Top Surface Paving & Drainage Curing", date: "Target: 15 Oct 2024", status: "IN_PROGRESS", note: "Bituminous wearing course application in progress." },
+                  { title: "Final Public Commissioning & Joint Inspection", date: "Target: 30 Nov 2024", status: "UPCOMING", note: "Formal handover to Gram Panchayat." }
+                ].map((item, idx) => (
+                  <div key={idx} className="relative flex items-start gap-4 pl-8">
+                    <div className={`absolute left-2 top-0.5 w-3.5 h-3.5 rounded-full border-2 bg-white ${
+                      item.status === 'COMPLETED' ? 'border-emerald-500 bg-emerald-500' :
+                      item.status === 'IN_PROGRESS' ? 'border-blue-600 bg-blue-600' : 'border-slate-300'
+                    }`} />
+                    <div className="flex-1 bg-slate-50 p-3.5 rounded-lg border border-slate-200 text-xs">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                        <span className="font-bold text-slate-900">{item.title}</span>
+                        <span className="text-[11px] font-mono text-slate-500 font-semibold">{item.date}</span>
+                      </div>
+                      <p className="text-slate-600">{item.note}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* OTHER TABS FALLBACK CONTENT */}
-        {(activeTab === 'tender' || activeTab === 'contract' || activeTab === 'vendors' || activeTab === 'progress' || activeTab === 'ai-analysis') && (
+        {(activeTab === 'tender' || activeTab === 'contract' || activeTab === 'vendors' || activeTab === 'ai-analysis') && (
           <div className="space-y-4">
             <div className="flex items-center justify-between pb-2 border-b border-slate-100">
               <h3 className="text-sm font-bold text-slate-800 capitalize">

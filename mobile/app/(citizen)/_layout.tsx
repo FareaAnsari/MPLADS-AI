@@ -26,7 +26,24 @@ export default function CitizenLayout() {
         name="index"
         options={{
           title: t('navigation.citizenPortal'),
-          headerBackVisible: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                if (router.canGoBack()) {
+                  router.back();
+                } else {
+                  router.replace('/');
+                }
+              }}
+              style={styles.headerLeftBtn}
+              accessibilityLabel={t('common.back')}
+              accessibilityRole="button"
+            >
+              <Text variant="bodyMedium" color={Colors.textInverse} style={styles.backText}>
+                ‹ {t('common.back')}
+              </Text>
+            </TouchableOpacity>
+          ),
         }}
       />
       <Stack.Screen
@@ -37,6 +54,12 @@ export default function CitizenLayout() {
       />
       <Stack.Screen
         name="projects/[id]"
+        options={{
+          title: t('projects.title'),
+        }}
+      />
+      <Stack.Screen
+        name="projects/[...id]"
         options={{
           title: t('projects.title'),
         }}
@@ -60,5 +83,14 @@ export default function CitizenLayout() {
 const styles = StyleSheet.create({
   headerRight: {
     marginRight: Spacing.xs,
+  },
+  headerLeftBtn: {
+    paddingVertical: Spacing.xs,
+    paddingRight: Spacing.sm,
+    justifyContent: 'center',
+  },
+  backText: {
+    fontWeight: '700',
+    fontSize: 16,
   },
 });

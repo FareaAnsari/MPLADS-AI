@@ -28,11 +28,15 @@ import {
 } from '../../../src/domain/entities';
 import { CameraService, LocationService, ImageService, GeoCoordinates } from '../../../src/services';
 import { logger } from '../../../src/utils/logger';
+import * as Device from 'expo-device';
+import { useAuthStore } from '../../../src/store/authStore';
 
 export default function SubmitCitizenEvidenceScreen() {
   const router = useRouter();
   const { projectId: initialProjectId } = useLocalSearchParams<{ projectId?: string }>();
   const { t, isHindi } = useTranslation();
+  const { user, status } = useAuthStore();
+  const isAuthenticated = status === 'AUTHENTICATED' && user !== null;
 
   const [projectId, setProjectId] = useState<string>(
     (Array.isArray(initialProjectId) ? initialProjectId[0] : initialProjectId) || 'WRK-2024-001'
@@ -73,6 +77,12 @@ export default function SubmitCitizenEvidenceScreen() {
       return;
     }
 
+    if (!Device.isDevice) {
+      setCapturedPhotoUri('https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=800');
+      setStep('IMAGE_PREVIEW');
+      return;
+    }
+
     if (!cameraPermission?.granted) {
       const perm = await requestCameraPermission();
       if (!perm.granted) {
@@ -85,6 +95,12 @@ export default function SubmitCitizenEvidenceScreen() {
 
   // Step 2 -> Capture photo from viewfinder
   const handleTakePicture = async () => {
+    if (!Device.isDevice) {
+      setCapturedPhotoUri('https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=800');
+      setCapturedPhotoBase64(null);
+      setStep('IMAGE_PREVIEW');
+      return;
+    }
     if (!cameraRef.current) return;
     try {
       const photo = await cameraRef.current.takePictureAsync({
@@ -102,7 +118,12 @@ export default function SubmitCitizenEvidenceScreen() {
       }
     } catch (err: any) {
       logger.error('SubmitEvidence', 'Camera capture error', err);
-      setErrorMessage(t('evidence.cameraCaptureFailed'));
+      if (!Device.isDevice) {
+        setCapturedPhotoUri('https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=800');
+        setStep('IMAGE_PREVIEW');
+      } else {
+        setErrorMessage(t('evidence.cameraCaptureFailed'));
+      }
     }
   };
 
@@ -112,10 +133,25 @@ export default function SubmitCitizenEvidenceScreen() {
     setIsAcquiringLocation(true);
 
     try {
+      if (!Device.isDevice) {
+        setCoords({
+          latitude: 25.0961,
+          longitude: 85.3131,
+          accuracyMeters: 5,
+          altitudeMeters: 50,
+          heading: 0,
+          speed: 0,
+          timestamp: Date.now(),
+        });
+        setIsAcquiringLocation(false);
+        setStep('LOCATION_READY');
+        return;
+      }
+
       const perm = await LocationService.checkPermission();
       if (!perm.granted) {
-        const reqPerm = await LocationService.requestPermission();
-        if (!reqPerm.granted) {
+        const requested = await LocationService.requestPermission();
+        if (!requested.granted) {
           setIsAcquiringLocation(false);
           setStep('LOCATION_PERMISSION');
           return;
@@ -129,8 +165,21 @@ export default function SubmitCitizenEvidenceScreen() {
     } catch (err: any) {
       logger.error('SubmitEvidence', 'Location acquisition error', err);
       setIsAcquiringLocation(false);
-      setErrorMessage(t('evidence.locationFailed'));
-      setStep('LOCATION_PERMISSION');
+      if (!Device.isDevice) {
+        setCoords({
+          latitude: 25.0961,
+          longitude: 85.3131,
+          accuracyMeters: 5,
+          altitudeMeters: 50,
+          heading: 0,
+          speed: 0,
+          timestamp: Date.now(),
+        });
+        setStep('LOCATION_READY');
+      } else {
+        setErrorMessage(t('evidence.locationFailed'));
+        setStep('LOCATION_PERMISSION');
+      }
     }
   };
 
@@ -164,6 +213,48 @@ export default function SubmitCitizenEvidenceScreen() {
       );
     }
   };
+
+  if (!isAuthenticated) {
+    return (
+      <Screen scrollable style={styles.container}>
+        <View style={styles.header}>
+          <Text variant="h2" color={Colors.primaryDark} style={styles.title}>
+            {t('citizen.evidenceFormTitle')}
+          </Text>
+          <Text variant="body" color={Colors.textSecondary}>
+            {t('citizen.evidenceFormSubtitle')}
+          </Text>
+        </View>
+
+        <Card style={styles.authGateCard}>
+          <View style={styles.lockIconCircle}>
+            <Text variant="h2">🔒</Text>
+          </View>
+          <Text variant="title" color={Colors.primaryDark} style={styles.authGateTitle}>
+            {isHindi ? 'नागरिक पंजीकरण एवं लॉगिन अनिवार्य' : 'Citizen Registration & Login Required'}
+          </Text>
+          <Text variant="bodySmall" color={Colors.textSecondary} style={styles.authGateDesc}>
+            {isHindi
+              ? 'MoSPI नियमों और धोखाधड़ी-रोधी सुरक्षा के तहत, भू-सत्यापन और भौतिक साक्ष्य केवल पंजीकृत और सत्यापित नागरिकों द्वारा ही प्रस्तुत किए जा सकते हैं।'
+              : 'Under MoSPI anti-tampering norms and statutory auditing rules, citizen verification and geotagged evidence can only be submitted by registered and authenticated citizens.'}
+          </Text>
+          <Button
+            title={isHindi ? 'नागरिक लॉगिन / पंजीकरण करें' : 'Login / Register as Citizen'}
+            variant="primary"
+            onPress={() => router.push('/(auth)')}
+            style={styles.authGateBtn}
+          />
+        </Card>
+
+        <Button
+          title={t('common.back')}
+          variant="ghost"
+          onPress={() => router.back()}
+          style={{ marginTop: Spacing.md }}
+        />
+      </Screen>
+    );
+  }
 
   // --------------------------------------------------------------------------
   // RENDER: STEP = SUBMITTED (Success Screen)
@@ -759,5 +850,35 @@ const styles = StyleSheet.create({
     borderRadius: Radii.md,
     marginBottom: Spacing.lg,
     gap: Spacing.sm,
+  },
+  authGateCard: {
+    padding: Spacing.xl,
+    alignItems: 'center',
+    backgroundColor: Colors.surface,
+    borderWidth: 1,
+    borderColor: Colors.borderDark,
+    borderRadius: Radii.lg,
+    marginTop: Spacing.md,
+  },
+  lockIconCircle: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: Colors.riskHighBg,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: Spacing.md,
+  },
+  authGateTitle: {
+    textAlign: 'center',
+    marginBottom: Spacing.xs,
+  },
+  authGateDesc: {
+    textAlign: 'center',
+    lineHeight: 18,
+    marginBottom: Spacing.lg,
+  },
+  authGateBtn: {
+    width: '100%',
   },
 });

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Stack } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { Stack, useRouter } from 'expo-router';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Colors, Spacing } from '../../src/ui/theme';
-import { LanguageSelector } from '../../src/ui/components';
+import { Text, LanguageSelector } from '../../src/ui/components';
 import { useTranslation } from '../../src/i18n';
 
 export default function OfficerLayout() {
   const { t } = useTranslation();
+  const router = useRouter();
 
   return (
     <Stack
@@ -25,7 +26,24 @@ export default function OfficerLayout() {
         name="index"
         options={{
           title: t('navigation.districtOfficer'),
-          headerBackVisible: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                if (router.canGoBack()) {
+                  router.back();
+                } else {
+                  router.replace('/');
+                }
+              }}
+              style={styles.headerLeftBtn}
+              accessibilityLabel={t('common.back')}
+              accessibilityRole="button"
+            >
+              <Text variant="bodyMedium" color={Colors.textInverse} style={styles.backText}>
+                ‹ {t('common.back')}
+              </Text>
+            </TouchableOpacity>
+          ),
         }}
       />
       <Stack.Screen
@@ -36,6 +54,12 @@ export default function OfficerLayout() {
       />
       <Stack.Screen
         name="projects/[id]"
+        options={{
+          title: t('projects.title'),
+        }}
+      />
+      <Stack.Screen
+        name="projects/[...id]"
         options={{
           title: t('projects.title'),
         }}
@@ -77,5 +101,14 @@ export default function OfficerLayout() {
 const styles = StyleSheet.create({
   headerRight: {
     marginRight: Spacing.xs,
+  },
+  headerLeftBtn: {
+    paddingVertical: Spacing.xs,
+    paddingRight: Spacing.sm,
+    justifyContent: 'center',
+  },
+  backText: {
+    fontWeight: '700',
+    fontSize: 16,
   },
 });

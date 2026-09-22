@@ -70,7 +70,12 @@ export default function MPProjectsListScreen() {
 
     return (
       <TouchableOpacity
-        onPress={() => router.push(`/(mp)/projects/${item.workId}` as any)}
+        onPress={() =>
+          router.push({
+            pathname: '/(mp)/projects/[...id]',
+            params: { id: item.workId },
+          } as any)
+        }
         activeOpacity={0.7}
         accessibilityRole="button"
         accessibilityLabel={`${item.workTitle}, Category: ${item.workCategory}, Sanctioned: ${formatCurrency(

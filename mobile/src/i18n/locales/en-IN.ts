@@ -2,7 +2,7 @@ import { TranslationDictionary } from '../types';
 
 export const enIN: TranslationDictionary = {
   common: {
-    appName: 'Pratyaksh',
+    appName: 'Members of Parliament Local Area Development Scheme (MPLADS)',
     tagline: 'AI-Powered Statutory MPLADS Monitoring Intelligence Layer',
     governmentOfIndia: 'Government of India',
     ministry: 'Ministry of Statistics & Programme Implementation (MoSPI)',
@@ -47,7 +47,7 @@ export const enIN: TranslationDictionary = {
   navigation: {
     home: 'Home',
     citizenPortal: 'Citizen Transparency Portal',
-    districtOfficer: 'District Officer Inspection Console',
+    districtOfficer: 'District Officer Console',
     mpOffice: 'MP Constituency Intelligence',
     contractorPortal: 'Contractor & Vendor Portal',
     profile: 'Profile',

@@ -195,7 +195,7 @@ export class NotificationService {
 
     if (!isAuthenticated || !currentUser) {
       logger.warn('NotificationRouter', 'Notification tap rejected - user not authenticated. Redirecting to login.');
-      router.push('/(auth)/login');
+      router.push('/(auth)');
       return false;
     }
 

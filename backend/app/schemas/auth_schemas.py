@@ -65,6 +65,7 @@ class UserModel(BaseModel):
     jurisdiction_district: Optional[str] = None
     constituency: Optional[str] = None
     inspector_id: Optional[str] = None
+    aadhaar_masked: Optional[str] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
@@ -81,11 +82,12 @@ class UserProfileResponse(BaseModel):
     jurisdiction_district: Optional[str] = None
     constituency: Optional[str] = None
     inspector_id: Optional[str] = None
+    aadhaar_masked: Optional[str] = None
 
 
 class LoginRequest(BaseModel):
-    username: str = Field(..., description="Username, Email, or Officer ID")
-    password: str = Field(..., description="User secret password")
+    username: str = Field(..., description="Username, Email, Officer ID, or 12-digit Aadhaar Number")
+    password: str = Field(..., description="User secret password or Aadhaar OTP")
 
 
 class TokenResponse(BaseModel):
@@ -98,3 +100,23 @@ class TokenResponse(BaseModel):
 
 class RefreshTokenRequest(BaseModel):
     refresh_token: str
+
+
+class AadhaarSendOtpRequest(BaseModel):
+    aadhaar_number: str = Field(..., description="12-digit Aadhaar number")
+
+
+class AadhaarSendOtpResponse(BaseModel):
+    success: bool = True
+    message: str
+    masked_mobile: str
+    session_id: str
+
+
+class AadhaarVerifyOtpRequest(BaseModel):
+    aadhaar_number: str = Field(..., description="12-digit Aadhaar number")
+    otp: str = Field(..., description="6-digit UIDAI verification OTP")
+    full_name: Optional[str] = None
+    jurisdiction_state: Optional[str] = "Bihar"
+    jurisdiction_district: Optional[str] = "Araria"
+

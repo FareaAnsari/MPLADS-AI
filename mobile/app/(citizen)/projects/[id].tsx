@@ -21,7 +21,8 @@ export default function CitizenProjectDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t, isHindi } = useTranslation();
 
-  const workId = Array.isArray(id) ? id[0] : id;
+  const rawId = Array.isArray(id) ? id[0] : (id || '');
+  const workId = decodeURIComponent(rawId);
 
   const {
     data: project,

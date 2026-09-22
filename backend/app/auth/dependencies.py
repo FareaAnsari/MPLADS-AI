@@ -9,6 +9,7 @@ from typing import List, Callable
 from schemas.auth_schemas import UserModel, UserRole
 from auth.security import verify_jwt_token
 from auth.user_store import user_db
+from config import config
 
 bearer_scheme = HTTPBearer(auto_error=False)
 
@@ -29,6 +30,41 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(bearer_
             detail="Token has been revoked upon logout.",
             headers={"WWW-Authenticate": "Bearer"},
         )
+
+    # Dev token resolution in non-production mode
+    if config.ENVIRONMENT != "production" and token.startswith("dev_jwt_token_"):
+        # Format: dev_jwt_token_{userId}_{timestamp} or dev_jwt_token_{role}
+        parts = token.split("_")
+        dev_id = parts[3] if len(parts) >= 4 else (parts[2] if len(parts) >= 3 else "")
+        id_map = {
+            "usr-off-001": "usr-officer-001",
+            "usr-officer-001": "usr-officer-001",
+            "usr-mp-001": "usr-mp-001",
+            "usr-ctr-001": "usr-contractor-001",
+            "usr-contractor-001": "usr-contractor-001",
+            "usr-cit-001": "usr-citizen-001",
+            "usr-citizen-001": "usr-citizen-001",
+            "district_officer": "usr-officer-001",
+            "officer": "usr-officer-001",
+            "mp": "usr-mp-001",
+            "mp_office": "usr-mp-001",
+            "contractor": "usr-contractor-001",
+            "citizen": "usr-citizen-001",
+        }
+        resolved_id = id_map.get(dev_id.lower(), dev_id)
+        user = user_db.get_by_id(resolved_id) or user_db.get_by_username(resolved_id)
+        if not user:
+            # Fallback based on dev_id role hint
+            if "off" in dev_id or "officer" in dev_id:
+                user = user_db.get_by_id("usr-officer-001")
+            elif "mp" in dev_id:
+                user = user_db.get_by_id("usr-mp-001")
+            elif "ctr" in dev_id or "contractor" in dev_id:
+                user = user_db.get_by_id("usr-contractor-001")
+            else:
+                user = user_db.get_by_id("usr-citizen-001")
+        if user and user.is_active:
+            return user
 
     payload = verify_jwt_token(token)
     if not payload:

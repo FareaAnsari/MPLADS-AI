@@ -111,6 +111,25 @@ class TestBackendAuth(unittest.TestCase):
         user_db.revoke_token(token)
         self.assertTrue(user_db.is_token_revoked(token))
 
+    def test_08_aadhaar_citizen_registration_and_lookup(self):
+        aadhaar = "987654321098"
+        citizen = user_db.register_or_get_citizen_by_aadhaar(
+            aadhaar_digits=aadhaar,
+            full_name="Priya Sharma",
+            state="Bihar",
+            district="Araria",
+        )
+        self.assertIsNotNone(citizen)
+        self.assertEqual(citizen.role, UserRole.CITIZEN)
+        self.assertEqual(citizen.aadhaar_masked, "XXXX-XXXX-1098")
+        self.assertIn("evidence:submit", citizen.permissions)
+
+        # Lookup by formatted Aadhaar
+        looked_up = user_db.get_by_aadhaar("9876 5432 1098")
+        self.assertIsNotNone(looked_up)
+        self.assertEqual(looked_up.id, citizen.id)
+
 
 if __name__ == '__main__':
     unittest.main()
+

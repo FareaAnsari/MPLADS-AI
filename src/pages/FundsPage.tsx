@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MOCK_STATES_DATA, MONTHLY_UTILIZATION_DATA } from '../data/mockData';
-import { IndianRupee, TrendingUp, ShieldAlert, CheckCircle } from 'lucide-react';
+import { IndianRupee, TrendingUp, ShieldAlert, CheckCircle, Layers } from 'lucide-react';
+import { FundFlowSankey } from '../components/FundFlowSankey';
 import { 
   BarChart, 
   Bar, 
@@ -13,6 +14,7 @@ import {
 } from 'recharts';
 
 export const FundsPage: React.FC = () => {
+  const [selectedState, setSelectedState] = useState<string>('All');
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
       {/* Title */}
@@ -48,6 +50,9 @@ export const FundsPage: React.FC = () => {
           <span className="text-[11px] text-amber-600 font-semibold">20.3% pending milestone certification</span>
         </div>
       </div>
+
+      {/* Interactive Hop-by-Hop PFMS Fund Flow Sankey Diagram */}
+      <FundFlowSankey />
 
       {/* Monthly Chart */}
       <div className="bg-white p-5 rounded-gov border border-gov-border shadow-gov">

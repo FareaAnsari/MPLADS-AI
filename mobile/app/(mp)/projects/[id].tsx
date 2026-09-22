@@ -24,6 +24,9 @@ export default function MPProjectDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t } = useTranslation();
 
+  const rawId = Array.isArray(id) ? id[0] : (id || '');
+  const workId = decodeURIComponent(rawId);
+
   const {
     data,
     isLoading,
@@ -31,7 +34,7 @@ export default function MPProjectDetailScreen() {
     error,
     refetch,
     isRefetching,
-  } = useMPProjectDetailQuery(id || '');
+  } = useMPProjectDetailQuery(workId);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {

@@ -12,6 +12,7 @@ import { Colors, Spacing } from '../theme';
 
 export interface ScreenProps {
   children: React.ReactNode;
+  footer?: React.ReactNode;
   scrollable?: boolean;
   backgroundColor?: string;
   style?: ViewStyle;
@@ -20,6 +21,7 @@ export interface ScreenProps {
 
 export const Screen: React.FC<ScreenProps> = ({
   children,
+  footer,
   scrollable = true,
   backgroundColor = Colors.background,
   style,
@@ -46,15 +48,22 @@ export const Screen: React.FC<ScreenProps> = ({
       {scrollable ? (
         <ScrollView
           style={styles.scroll}
-          contentContainerStyle={[styles.content, contentContainerStyle]}
+          contentContainerStyle={[
+            styles.content,
+            footer ? { paddingBottom: 80 } : undefined,
+            contentContainerStyle,
+          ]}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
         >
           {children}
         </ScrollView>
       ) : (
-        <View style={[styles.content, contentContainerStyle]}>{children}</View>
+        <View style={[styles.scroll, styles.content, footer ? { paddingBottom: 80 } : undefined, contentContainerStyle]}>
+          {children}
+        </View>
       )}
+      {footer}
     </View>
   );
 };

@@ -10,6 +10,26 @@ interface AuthState {
   session: SessionEntity | null;
   lastActiveTimestamp: number;
   loginAsRole: (role: UserRole) => Promise<void>;
+  loginWithIdentifier: (identifier: string, role?: UserRole) => Promise<void>;
+  sendAadhaarOtp: (aadhaarNumber: string) => Promise<{
+    success: boolean;
+    message: string;
+    maskedMobile: string;
+    sessionId: string;
+  }>;
+  verifyAadhaarOtp: (data: {
+    aadhaarNumber: string;
+    otp: string;
+    name?: string;
+    jurisdictionState?: string;
+    jurisdictionDistrict?: string;
+  }) => Promise<void>;
+  registerCitizen: (data: {
+    name: string;
+    identifier: string;
+    jurisdictionState?: string;
+    jurisdictionDistrict?: string;
+  }) => Promise<void>;
   logout: () => Promise<void>;
   restoreSession: () => Promise<void>;
   recordUserActivity: () => void;
@@ -24,6 +44,32 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   session: null,
   lastActiveTimestamp: Date.now(),
+
+  sendAadhaarOtp: async (aadhaarNumber: string) => {
+    return await authRepository.sendAadhaarOtp(aadhaarNumber);
+  },
+
+  verifyAadhaarOtp: async (data: {
+    aadhaarNumber: string;
+    otp: string;
+    name?: string;
+    jurisdictionState?: string;
+    jurisdictionDistrict?: string;
+  }) => {
+    try {
+      const result = await authRepository.verifyAadhaarOtp(data);
+      set({
+        status: 'AUTHENTICATED',
+        user: result.user,
+        session: result.session,
+        lastActiveTimestamp: Date.now(),
+      });
+      logger.info('useAuthStore', `Authenticated citizen via Aadhaar e-KYC: ${result.user.name}`);
+    } catch (error) {
+      logger.error('useAuthStore', 'Aadhaar verification failed', error);
+      throw error;
+    }
+  },
 
   loginAsRole: async (role: UserRole) => {
     try {
@@ -43,6 +89,49 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     } catch (error) {
       logger.error('useAuthStore', 'Login failed', error);
       set({ status: 'UNAUTHENTICATED', user: null, session: null });
+    }
+  },
+
+  loginWithIdentifier: async (identifier: string, role: UserRole = 'CITIZEN') => {
+    try {
+      const result = await authRepository.login({
+        identifier,
+        credential: 'citizen_credential',
+        roleHint: role,
+      });
+
+      set({
+        status: 'AUTHENTICATED',
+        user: result.user,
+        session: result.session,
+        lastActiveTimestamp: Date.now(),
+      });
+      logger.info('useAuthStore', `Authenticated as citizen: ${result.user.name}`);
+    } catch (error) {
+      logger.error('useAuthStore', 'Citizen login failed', error);
+      set({ status: 'UNAUTHENTICATED', user: null, session: null });
+      throw error;
+    }
+  },
+
+  registerCitizen: async (data: {
+    name: string;
+    identifier: string;
+    jurisdictionState?: string;
+    jurisdictionDistrict?: string;
+  }) => {
+    try {
+      const result = await authRepository.registerCitizen(data);
+      set({
+        status: 'AUTHENTICATED',
+        user: result.user,
+        session: result.session,
+        lastActiveTimestamp: Date.now(),
+      });
+      logger.info('useAuthStore', `Registered & authenticated citizen: ${result.user.name}`);
+    } catch (error) {
+      logger.error('useAuthStore', 'Citizen registration failed', error);
+      throw error;
     }
   },
 

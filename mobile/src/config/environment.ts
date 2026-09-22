@@ -15,8 +15,26 @@ const getEnvType = (): EnvironmentType => {
 };
 
 const getApiBaseUrl = (): string => {
-  // Configured public URL or local default
-  return process.env.EXPO_PUBLIC_API_BASE_URL || 'https://pratyaksh-mplads.vercel.app';
+  if (process.env.EXPO_PUBLIC_API_BASE_URL) {
+    return process.env.EXPO_PUBLIC_API_BASE_URL;
+  }
+  try {
+    // Dynamic require so Jest CommonJS runtime doesn't fail on ESM Constants
+    const Constants = require('expo-constants')?.default;
+    const hostUri =
+      Constants?.expoConfig?.hostUri ||
+      Constants?.manifest?.debuggerHost ||
+      Constants?.manifest2?.extra?.expoGo?.debuggerHost;
+    if (hostUri) {
+      const ip = hostUri.split(':')[0];
+      if (ip) {
+        return `http://${ip}:8000`;
+      }
+    }
+  } catch {
+    // Standalone fallback
+  }
+  return 'http://192.168.0.103:8000';
 };
 
 export const Config: AppEnvironmentConfig = {
