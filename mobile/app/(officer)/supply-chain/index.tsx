@@ -3,11 +3,11 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Screen, Text, Card, Badge, SupplyChainStepper, Button } from '../../../src/ui/components';
 import { Colors, Spacing, Radii } from '../../../src/ui/theme';
-import { useAuthStore } from '../../../src/store/authStore';
+import { useTranslation } from '../../../src/i18n';
 
 export default function OfficerSupplyChainScreen() {
   const router = useRouter();
-  const { isHindi } = useAuthStore();
+  const { isHindi } = useTranslation();
 
   return (
     <Screen style={styles.container}>
@@ -47,7 +47,7 @@ export default function OfficerSupplyChainScreen() {
         {/* Back to Officer Console */}
         <Button
           variant="outline"
-          label={isHindi ? 'वापस जाएं' : 'Back to Officer Dashboard'}
+          title={isHindi ? 'वापस जाएं' : 'Back to Officer Dashboard'}
           onPress={() => router.back()}
           style={styles.backBtn}
         />
@@ -59,7 +59,7 @@ export default function OfficerSupplyChainScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.neutral[50],
+    backgroundColor: Colors.background,
   },
   scrollContent: {
     padding: Spacing.md,
@@ -71,38 +71,38 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
     marginTop: Spacing.xs,
   },
   subtitle: {
     fontSize: 12,
-    color: Colors.neutral[600],
+    color: Colors.textSecondary,
     marginTop: 2,
     lineHeight: 18,
   },
   projectCard: {
     padding: Spacing.md,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.surface,
     borderRadius: Radii.lg,
     marginBottom: Spacing.sm,
     borderLeftWidth: 4,
-    borderLeftColor: Colors.primary[600],
+    borderLeftColor: Colors.primary,
   },
   projectLabel: {
     fontSize: 10,
-    color: Colors.neutral[500],
+    color: Colors.textMuted,
     fontWeight: 'bold',
     textTransform: 'uppercase',
   },
   projectName: {
     fontSize: 13,
     fontWeight: 'bold',
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
     marginTop: 2,
   },
   projectCode: {
     fontSize: 11,
-    color: Colors.neutral[600],
+    color: Colors.textSecondary,
     marginTop: 2,
   },
   backBtn: {

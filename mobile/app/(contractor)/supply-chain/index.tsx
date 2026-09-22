@@ -3,11 +3,11 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Screen, Text, Card, Badge, SupplyChainStepper, Button } from '../../../src/ui/components';
 import { Colors, Spacing, Radii } from '../../../src/ui/theme';
-import { useAuthStore } from '../../../src/store/authStore';
+import { useTranslation } from '../../../src/i18n';
 
 export default function ContractorSupplyChainScreen() {
   const router = useRouter();
-  const { isHindi } = useAuthStore();
+  const { isHindi } = useTranslation();
 
   return (
     <Screen style={styles.container}>
@@ -37,11 +37,11 @@ export default function ContractorSupplyChainScreen() {
               <Text style={styles.kpiLabel}>On-Time Delivery</Text>
             </View>
             <View style={styles.kpiBox}>
-              <Text style={[styles.kpiValue, { color: Colors.primary[600] }]}>-2.8%</Text>
+              <Text style={[styles.kpiValue, { color: Colors.info }]}>-2.8%</Text>
               <Text style={styles.kpiLabel}>Avg Variance</Text>
             </View>
             <View style={styles.kpiBox}>
-              <Text style={[styles.kpiValue, { color: Colors.success[600] }]}>88/100</Text>
+              <Text style={[styles.kpiValue, { color: Colors.success }]}>88/100</Text>
               <Text style={styles.kpiLabel}>Vendor Standing</Text>
             </View>
           </View>
@@ -57,7 +57,7 @@ export default function ContractorSupplyChainScreen() {
         {/* Back */}
         <Button
           variant="outline"
-          label={isHindi ? 'वापस जाएं' : 'Back to Contractor Dashboard'}
+          title={isHindi ? 'वापस जाएं' : 'Back to Contractor Dashboard'}
           onPress={() => router.back()}
           style={styles.backBtn}
         />
@@ -69,7 +69,7 @@ export default function ContractorSupplyChainScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.neutral[50],
+    backgroundColor: Colors.background,
   },
   scrollContent: {
     padding: Spacing.md,
@@ -81,18 +81,18 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
     marginTop: Spacing.xs,
   },
   subtitle: {
     fontSize: 12,
-    color: Colors.neutral[600],
+    color: Colors.textSecondary,
     marginTop: 2,
     lineHeight: 18,
   },
   vendorCard: {
     padding: Spacing.md,
-    backgroundColor: Colors.neutral[900],
+    backgroundColor: '#0F172A',
     borderRadius: Radii.lg,
     marginBottom: Spacing.sm,
   },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   },
   kpiLabel: {
     fontSize: 10,
-    color: Colors.neutral[400],
+    color: '#94A3B8',
     marginTop: 2,
   },
   backBtn: {

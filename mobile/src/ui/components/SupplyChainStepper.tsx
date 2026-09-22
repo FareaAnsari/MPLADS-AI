@@ -5,7 +5,6 @@ import { Card } from './Card';
 import { Badge } from './Badge';
 import { Button } from './Button';
 import { Colors, Spacing, Radii } from '../theme';
-import { formatINR } from '../../utils/formatters';
 
 export interface MobileSupplyMaterial {
   id: string;
@@ -163,7 +162,7 @@ export const SupplyChainStepper: React.FC<SupplyChainStepperProps> = ({
         {/* Stage 1: Procurement */}
         <View style={styles.stepItem}>
           <View style={styles.stepIndicator}>
-            <View style={[styles.stepDot, { backgroundColor: Colors.primary[600] }]} />
+            <View style={[styles.stepDot, { backgroundColor: Colors.primaryDark }]} />
             <View style={styles.stepLine} />
           </View>
           <View style={styles.stepContent}>
@@ -176,7 +175,7 @@ export const SupplyChainStepper: React.FC<SupplyChainStepperProps> = ({
         {/* Stage 2: Dispatch */}
         <View style={styles.stepItem}>
           <View style={styles.stepIndicator}>
-            <View style={[styles.stepDot, { backgroundColor: Colors.accent[600] }]} />
+            <View style={[styles.stepDot, { backgroundColor: Colors.secondary }]} />
             <View style={styles.stepLine} />
           </View>
           <View style={styles.stepContent}>
@@ -189,7 +188,7 @@ export const SupplyChainStepper: React.FC<SupplyChainStepperProps> = ({
         {/* Stage 3: Site Delivery */}
         <View style={styles.stepItem}>
           <View style={styles.stepIndicator}>
-            <View style={[styles.stepDot, { backgroundColor: '#0284c7' }]} />
+            <View style={[styles.stepDot, { backgroundColor: Colors.info }]} />
             <View style={styles.stepLine} />
           </View>
           <View style={styles.stepContent}>
@@ -202,7 +201,7 @@ export const SupplyChainStepper: React.FC<SupplyChainStepperProps> = ({
         {/* Stage 4: Installation */}
         <View style={styles.stepItem}>
           <View style={styles.stepIndicator}>
-            <View style={[styles.stepDot, { backgroundColor: '#d97706' }]} />
+            <View style={[styles.stepDot, { backgroundColor: Colors.warning }]} />
             <View style={styles.stepLine} />
           </View>
           <View style={styles.stepContent}>
@@ -217,13 +216,13 @@ export const SupplyChainStepper: React.FC<SupplyChainStepperProps> = ({
           <View style={styles.stepIndicator}>
             <View style={[
               styles.stepDot, 
-              { backgroundColor: current.reconciliationStatus === 'MATCHED' ? Colors.success[600] : Colors.danger[600] }
+              { backgroundColor: current.reconciliationStatus === 'MATCHED' ? Colors.success : Colors.danger }
             ]} />
           </View>
           <View style={styles.stepContent}>
             <Text style={styles.stepTitle}>5. {isHindi ? 'मात्रा समाधान (ऑडिट)' : 'Reconciliation (Audit Engine)'}</Text>
             <Text style={styles.stepDetail}>
-              Variance: <Text style={{ fontWeight: 'bold', color: current.variancePct < -10 ? Colors.danger[600] : Colors.success[600] }}>
+              Variance: <Text style={{ fontWeight: 'bold', color: current.variancePct < -10 ? Colors.danger : Colors.success }}>
                 {current.variancePct}%
               </Text> (Statutory Limit: ±10%)
             </Text>
@@ -240,7 +239,7 @@ export const SupplyChainStepper: React.FC<SupplyChainStepperProps> = ({
       {!showDeliveryForm ? (
         <Button
           variant="primary"
-          label={isHindi ? '📷 साइट पर डिलीवरी रसीद दर्ज करें' : '📷 Confirm Site Delivery Receipt'}
+          title={isHindi ? '📷 साइट पर डिलीवरी रसीद दर्ज करें' : '📷 Confirm Site Delivery Receipt'}
           onPress={() => setShowDeliveryForm(true)}
           style={styles.actionBtn}
         />
@@ -277,13 +276,13 @@ export const SupplyChainStepper: React.FC<SupplyChainStepperProps> = ({
           <View style={styles.formBtnRow}>
             <Button
               variant="outline"
-              label="Cancel"
+              title="Cancel"
               onPress={() => setShowDeliveryForm(false)}
               style={{ flex: 1, marginRight: Spacing.sm }}
             />
             <Button
               variant="primary"
-              label="Submit with GPS Lock"
+              title="Submit with GPS Lock"
               onPress={handleConfirmDelivery}
               style={{ flex: 2 }}
             />
@@ -300,7 +299,7 @@ const styles = StyleSheet.create({
   },
   headerCard: {
     padding: Spacing.md,
-    backgroundColor: Colors.neutral[900],
+    backgroundColor: '#0F172A',
     borderRadius: Radii.lg,
     marginBottom: Spacing.sm,
   },
@@ -317,7 +316,7 @@ const styles = StyleSheet.create({
     marginTop: Spacing.xs,
   },
   headerSub: {
-    color: Colors.neutral[400],
+    color: '#94A3B8',
     fontSize: 11,
     marginTop: 2,
   },
@@ -325,23 +324,23 @@ const styles = StyleSheet.create({
     marginTop: Spacing.sm,
   },
   chip: {
-    backgroundColor: Colors.neutral[800],
+    backgroundColor: '#1E293B',
     paddingHorizontal: Spacing.md,
     paddingVertical: Spacing.xs,
     borderRadius: Radii.full,
     marginRight: Spacing.sm,
     borderWidth: 1,
-    borderColor: Colors.neutral[700],
+    borderColor: '#334155',
   },
   chipActive: {
-    backgroundColor: Colors.primary[700],
-    borderColor: Colors.primary[500],
+    backgroundColor: Colors.primary,
+    borderColor: Colors.primaryLight,
   },
   chipFlagged: {
-    borderColor: Colors.danger[500],
+    borderColor: Colors.danger,
   },
   chipText: {
-    color: Colors.neutral[300],
+    color: '#CBD5E1',
     fontSize: 11,
     fontWeight: '600',
   },
@@ -362,12 +361,12 @@ const styles = StyleSheet.create({
     marginBottom: Spacing.md,
     paddingBottom: Spacing.sm,
     borderBottomWidth: 1,
-    borderBottomColor: Colors.neutral[200],
+    borderBottomColor: Colors.borderLight,
   },
   materialName: {
     fontSize: 13,
     fontWeight: 'bold',
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
     flex: 1,
     marginRight: Spacing.sm,
   },
@@ -388,7 +387,7 @@ const styles = StyleSheet.create({
   stepLine: {
     width: 2,
     flex: 1,
-    backgroundColor: Colors.neutral[300],
+    backgroundColor: Colors.borderDark,
     marginVertical: 2,
   },
   stepContent: {
@@ -398,22 +397,22 @@ const styles = StyleSheet.create({
   stepTitle: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
   },
   stepDetail: {
     fontSize: 11,
-    color: Colors.neutral[600],
+    color: Colors.textSecondary,
     marginTop: 1,
   },
   stepMetric: {
     fontSize: 11,
     fontWeight: '600',
-    color: Colors.neutral[800],
+    color: Colors.textPrimary,
     marginTop: 1,
   },
   leakageText: {
     fontSize: 11,
-    color: Colors.danger[700],
+    color: Colors.danger,
     fontWeight: 'bold',
     marginTop: 2,
   },
@@ -425,46 +424,46 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderRadius: Radii.lg,
     borderWidth: 1,
-    borderColor: Colors.primary[300],
+    borderColor: Colors.borderDark,
     marginTop: Spacing.xs,
   },
   formTitle: {
     fontSize: 13,
     fontWeight: 'bold',
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
   },
   formSub: {
     fontSize: 11,
-    color: Colors.neutral[500],
+    color: Colors.textMuted,
     marginBottom: Spacing.sm,
   },
   successBanner: {
-    backgroundColor: Colors.success[50],
+    backgroundColor: Colors.successLight,
     padding: Spacing.sm,
     borderRadius: Radii.sm,
     marginBottom: Spacing.sm,
   },
   successText: {
-    color: Colors.success[800],
+    color: Colors.success,
     fontSize: 11,
     fontWeight: 'bold',
   },
   inputLabel: {
     fontSize: 11,
     fontWeight: '600',
-    color: Colors.neutral[700],
+    color: Colors.textSecondary,
     marginBottom: 2,
     marginTop: Spacing.xs,
   },
   textInput: {
-    backgroundColor: Colors.neutral[50],
+    backgroundColor: Colors.borderLight,
     borderWidth: 1,
-    borderColor: Colors.neutral[300],
+    borderColor: Colors.borderDark,
     borderRadius: Radii.md,
     paddingHorizontal: Spacing.sm,
     paddingVertical: Spacing.xs,
     fontSize: 12,
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
   },
   formBtnRow: {
     flexDirection: 'row',

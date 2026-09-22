@@ -24,7 +24,7 @@ import { ProjectEntity } from '../../src/domain/entities';
 
 export default function ContractorDashboardScreen() {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t, isHindi } = useTranslation();
   const {
     data: dashboard,
     isLoading,

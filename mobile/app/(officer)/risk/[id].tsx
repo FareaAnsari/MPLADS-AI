@@ -367,7 +367,7 @@ export default function ProjectRiskIntelligenceDetailScreen() {
         </View>
 
         {/* Supply Chain & Field Inspection Triggers */}
-        <View style={{ borderTopWidth: 1, borderTopColor: Colors.neutral[200], paddingTop: Spacing.sm, gap: Spacing.xs }}>
+        <View style={{ borderTopWidth: 1, borderTopColor: Colors.borderLight, paddingTop: Spacing.sm, gap: Spacing.xs }}>
           <Button
             title={isHindi ? '🚚 सामग्री आपूर्ति श्रृंखला एवं समाधान देखें' : '🚚 Inspect Supply Chain & Material Custody'}
             variant="primary"
@@ -393,7 +393,7 @@ export default function ProjectRiskIntelligenceDetailScreen() {
       {/* Statutory Decision Modal with Mandatory Notes */}
       {decisionModal && (
         <Card style={styles.decisionModalCard}>
-          <Text variant="title" style={{ color: Colors.neutral[900], marginBottom: 4 }}>
+          <Text variant="title" style={{ color: Colors.textPrimary, marginBottom: 4 }}>
             {decisionModal === 'CONFIRM_ISSUE' && (isHindi ? 'समस्या की पुष्टि करें' : 'Confirm Fraud / Non-Compliance Issue')}
             {decisionModal === 'REQUEST_MORE_EVIDENCE' && (isHindi ? 'साक्ष्य का अनुरोध' : 'Issue Statutory Notice for Evidence')}
             {decisionModal === 'FALSE_ALARM' && (isHindi ? 'झूठा अलार्म औचित्य' : 'Nodal Officer False Alarm Justification')}
@@ -403,8 +403,8 @@ export default function ProjectRiskIntelligenceDetailScreen() {
           </Text>
 
           {decisionSuccess ? (
-            <View style={{ backgroundColor: Colors.success[50], padding: Spacing.sm, borderRadius: Radii.md, marginVertical: Spacing.sm }}>
-              <Text variant="bodySmall" style={{ color: Colors.success[800], fontWeight: 'bold' }}>
+            <View style={{ backgroundColor: '#F0FDF4', padding: Spacing.sm, borderRadius: Radii.md, marginVertical: Spacing.sm }}>
+              <Text variant="bodySmall" style={{ color: Colors.success, fontWeight: 'bold' }}>
                 ✓ Decision recorded into immutable statutory audit ledger!
               </Text>
             </View>
@@ -422,7 +422,7 @@ export default function ProjectRiskIntelligenceDetailScreen() {
                 style={styles.notesInput}
               />
               {decisionError ? (
-                <Text variant="caption" style={{ color: Colors.danger[600], marginTop: 2, fontWeight: 'bold' }}>
+                <Text variant="caption" style={{ color: Colors.danger, marginTop: 2, fontWeight: 'bold' }}>
                   {decisionError}
                 </Text>
               ) : null}
@@ -560,19 +560,19 @@ const styles = StyleSheet.create({
   decisionModalCard: {
     padding: Spacing.md,
     backgroundColor: '#ffffff',
-    borderColor: Colors.primary[400],
+    borderColor: Colors.primary,
     borderWidth: 1.5,
     borderRadius: Radii.lg,
     marginBottom: Spacing.lg,
   },
   notesInput: {
-    backgroundColor: Colors.neutral[50],
-    borderColor: Colors.neutral[300],
+    backgroundColor: Colors.borderLight,
+    borderColor: Colors.borderDark,
     borderWidth: 1,
     borderRadius: Radii.md,
     padding: Spacing.sm,
     fontSize: 12,
-    color: Colors.neutral[900],
+    color: Colors.textPrimary,
     minHeight: 60,
     textAlignVertical: 'top',
   },
