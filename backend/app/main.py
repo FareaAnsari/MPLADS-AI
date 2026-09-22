@@ -11,7 +11,7 @@ if backend_dir not in sys.path:
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import projects, intelligence, national_data, auth, notifications, mp, contractor, supply_chain
+from routers import projects, intelligence, national_data, auth, notifications, mp, contractor, supply_chain, tenders
 from config import config
 
 app = FastAPI(
@@ -51,6 +51,7 @@ app.include_router(projects.router, prefix="/api/v1")
 app.include_router(mp.router, prefix="/api/v1")
 app.include_router(contractor.router, prefix="/api/v1")
 app.include_router(supply_chain.router, prefix="/api/v1")
+app.include_router(tenders.router, prefix="/api/v1")
 app.include_router(national_data.router) # Exposes /api/national-data, /api/states, etc.
 
 @app.get("/")
