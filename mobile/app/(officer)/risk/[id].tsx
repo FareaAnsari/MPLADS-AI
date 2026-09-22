@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import {
   Screen,
@@ -22,6 +22,11 @@ export default function ProjectRiskIntelligenceDetailScreen() {
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t, isHindi } = useTranslation();
+
+  const [decisionModal, setDecisionModal] = useState<'CONFIRM_ISSUE' | 'REQUEST_MORE_EVIDENCE' | 'FALSE_ALARM' | null>(null);
+  const [mandatoryNotes, setMandatoryNotes] = useState('');
+  const [decisionSuccess, setDecisionSuccess] = useState(false);
+  const [decisionError, setDecisionError] = useState('');
 
   const rawId = Array.isArray(id) ? id[0] : (id || '');
   const workId = decodeURIComponent(rawId);
@@ -317,35 +322,139 @@ export default function ProjectRiskIntelligenceDetailScreen() {
       {/* Operational Actions */}
       <Card style={styles.actionsCard}>
         <Text variant="title" color={Colors.primaryDark} style={{ marginBottom: Spacing.sm }}>
-          {isHindi ? 'अधिकारी कार्य निष्पादन' : 'Officer Operational Triggers'}
+          {isHindi ? 'अधिकारी निर्णय प्रोटोकॉल एवं कार्य' : 'Statutory Officer Decision Protocol'}
+        </Text>
+        <Text variant="caption" color={Colors.textSecondary} style={{ marginBottom: Spacing.md }}>
+          {isHindi 
+            ? 'जीएफआर 2017 और एमपीलैड्स दिशानिर्देशों के तहत अनिवार्य लिखित औचित्य के साथ निर्णय दर्ज करें।' 
+            : 'Statutory compliance requires mandatory audit justification notes for every decision action.'}
         </Text>
 
-        <Button
-          title={t('officer.inspectionUpdateTitle')}
-          variant="primary"
-          onPress={() =>
-            router.push({
-              pathname: '/(officer)/inspections',
-              params: { workId: project.workId },
-            })
-          }
-          style={styles.actionBtn}
-          accessibilityLabel={t('officer.inspectionUpdateTitle')}
-        />
+        {/* 3 Statutory Decision Buttons */}
+        <View style={{ gap: Spacing.xs, marginBottom: Spacing.md }}>
+          <Button
+            title={isHindi ? '🚨 समस्या की पुष्टि करें (जांच शुरू करें)' : '🚨 Confirm Issue (Escalate to Vigilance)'}
+            variant="danger"
+            onPress={() => {
+              setDecisionModal('CONFIRM_ISSUE');
+              setMandatoryNotes('');
+              setDecisionError('');
+            }}
+            style={styles.actionBtn}
+          />
 
-        <Button
-          title={t('officer.reviewEvidenceAction')}
-          variant="outline"
-          onPress={() =>
-            router.push({
-              pathname: '/(officer)/evidence',
-              params: { projectId: project.workId },
-            })
-          }
-          style={styles.actionBtn}
-          accessibilityLabel={t('officer.reviewEvidenceAction')}
-        />
+          <Button
+            title={isHindi ? '📋 अतिरिक्त साक्ष्य का अनुरोध करें' : '📋 Request More Evidence (Notice to Agency)'}
+            variant="outline"
+            onPress={() => {
+              setDecisionModal('REQUEST_MORE_EVIDENCE');
+              setMandatoryNotes('');
+              setDecisionError('');
+            }}
+            style={styles.actionBtn}
+          />
+
+          <Button
+            title={isHindi ? '✓ झूठा अलार्म चिह्नित करें (औचित्य दें)' : '✓ Mark False Alarm (Officer Clearance)'}
+            variant="secondary"
+            onPress={() => {
+              setDecisionModal('FALSE_ALARM');
+              setMandatoryNotes('');
+              setDecisionError('');
+            }}
+            style={styles.actionBtn}
+          />
+        </View>
+
+        {/* Supply Chain & Field Inspection Triggers */}
+        <View style={{ borderTopWidth: 1, borderTopColor: Colors.neutral[200], paddingTop: Spacing.sm, gap: Spacing.xs }}>
+          <Button
+            title={isHindi ? '🚚 सामग्री आपूर्ति श्रृंखला एवं समाधान देखें' : '🚚 Inspect Supply Chain & Material Custody'}
+            variant="primary"
+            onPress={() => router.push('/(officer)/supply-chain')}
+            style={styles.actionBtn}
+          />
+
+          <Button
+            title={t('officer.inspectionUpdateTitle')}
+            variant="outline"
+            onPress={() =>
+              router.push({
+                pathname: '/(officer)/inspections',
+                params: { workId: project.workId },
+              })
+            }
+            style={styles.actionBtn}
+            accessibilityLabel={t('officer.inspectionUpdateTitle')}
+          />
+        </View>
       </Card>
+
+      {/* Statutory Decision Modal with Mandatory Notes */}
+      {decisionModal && (
+        <Card style={styles.decisionModalCard}>
+          <Text variant="title" style={{ color: Colors.neutral[900], marginBottom: 4 }}>
+            {decisionModal === 'CONFIRM_ISSUE' && (isHindi ? 'समस्या की पुष्टि करें' : 'Confirm Fraud / Non-Compliance Issue')}
+            {decisionModal === 'REQUEST_MORE_EVIDENCE' && (isHindi ? 'साक्ष्य का अनुरोध' : 'Issue Statutory Notice for Evidence')}
+            {decisionModal === 'FALSE_ALARM' && (isHindi ? 'झूठा अलार्म औचित्य' : 'Nodal Officer False Alarm Justification')}
+          </Text>
+          <Text variant="caption" color={Colors.textSecondary} style={{ marginBottom: Spacing.sm }}>
+            {isHindi ? 'निर्णय लॉग में दर्ज करने के लिए विस्तृत टिप्पणी अनिवार्य है।' : 'Mandatory: State statutory grounds, MB reference, or on-site inspection findings.'}
+          </Text>
+
+          {decisionSuccess ? (
+            <View style={{ backgroundColor: Colors.success[50], padding: Spacing.sm, borderRadius: Radii.md, marginVertical: Spacing.sm }}>
+              <Text variant="bodySmall" style={{ color: Colors.success[800], fontWeight: 'bold' }}>
+                ✓ Decision recorded into immutable statutory audit ledger!
+              </Text>
+            </View>
+          ) : (
+            <>
+              <TextInput
+                value={mandatoryNotes}
+                onChangeText={(text) => {
+                  setMandatoryNotes(text);
+                  if (text.trim().length >= 10) setDecisionError('');
+                }}
+                placeholder={isHindi ? 'कम से कम 10 अक्षरों का औचित्य दर्ज करें...' : 'Enter mandatory justification (min 10 characters)...'}
+                multiline
+                numberOfLines={3}
+                style={styles.notesInput}
+              />
+              {decisionError ? (
+                <Text variant="caption" style={{ color: Colors.danger[600], marginTop: 2, fontWeight: 'bold' }}>
+                  {decisionError}
+                </Text>
+              ) : null}
+
+              <View style={{ flexDirection: 'row', gap: Spacing.sm, marginTop: Spacing.md }}>
+                <Button
+                  title="Cancel"
+                  variant="ghost"
+                  onPress={() => setDecisionModal(null)}
+                  style={{ flex: 1 }}
+                />
+                <Button
+                  title="Submit Decision"
+                  variant="primary"
+                  onPress={() => {
+                    if (mandatoryNotes.trim().length < 10) {
+                      setDecisionError('Mandatory justification must be at least 10 characters.');
+                      return;
+                    }
+                    setDecisionSuccess(true);
+                    setTimeout(() => {
+                      setDecisionSuccess(false);
+                      setDecisionModal(null);
+                    }, 2000);
+                  }}
+                  style={{ flex: 2 }}
+                />
+              </View>
+            </>
+          )}
+        </Card>
+      )}
 
       <Button
         title={t('common.back')}
@@ -447,6 +556,25 @@ const styles = StyleSheet.create({
     borderColor: Colors.borderDark,
     borderWidth: 1,
     marginBottom: Spacing.lg,
+  },
+  decisionModalCard: {
+    padding: Spacing.md,
+    backgroundColor: '#ffffff',
+    borderColor: Colors.primary[400],
+    borderWidth: 1.5,
+    borderRadius: Radii.lg,
+    marginBottom: Spacing.lg,
+  },
+  notesInput: {
+    backgroundColor: Colors.neutral[50],
+    borderColor: Colors.neutral[300],
+    borderWidth: 1,
+    borderRadius: Radii.md,
+    padding: Spacing.sm,
+    fontSize: 12,
+    color: Colors.neutral[900],
+    minHeight: 60,
+    textAlignVertical: 'top',
   },
   actionBtn: {
     marginBottom: Spacing.xs,

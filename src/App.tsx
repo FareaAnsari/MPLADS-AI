@@ -29,6 +29,7 @@ import { TenderSourcesPage } from './pages/TenderSourcesPage';
 import { NationalDataPage } from './pages/NationalDataPage';
 import { ProjectBoardPage } from './pages/ProjectBoardPage';
 import { PreSanctionSandboxPage } from './pages/PreSanctionSandboxPage';
+import { SupplyChainPage } from './pages/SupplyChainPage';
 
 export const App: React.FC = () => {
   return (
@@ -72,6 +73,7 @@ export const App: React.FC = () => {
               <Route path="/contractor-interest" element={<ContractorInterestPage />} />
               <Route path="/contractor-dashboard" element={<ContractorDashboardPage />} />
               <Route path="/contractor-portal" element={<ContractorDashboardPage />} />
+              <Route path="/supply-chain" element={<SupplyChainPage />} />
               <Route path="/tender-sources" element={<TenderSourcesPage />} />
 
               {/* National Data Ingestion & Verification Pipeline */}
