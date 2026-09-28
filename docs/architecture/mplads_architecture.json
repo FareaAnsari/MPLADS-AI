@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "MPLADS AI MPLADS-AI System Architecture",
+    "output": "docs/architecture/mplads_architecture.html",
+    "visual_preset": "blueprint",
+    "animation": "trace",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "primary-verification-flow",
+        "label": "Primary Verification & Inspection Flow",
+        "focus": ["web_portal", "mobile_client", "fastapi_server", "api_routers", "ai_suite", "data_store"],
+        "note": "Citizen and Officer field inspection workflow routed through FastAPI into composite AI fraud & SLA engines."
+      },
+      {
+        "id": "security-and-rbac",
+        "label": "Authentication & RBAC Trust Boundary",
+        "focus": ["auth_security", "fastapi_server", "api_routers"],
+        "note": "PBKDF2-HMAC-SHA256 password hashing with HMAC-SHA256 JWT tokens enforcing 4 distinct roles."
+      },
+      {
+        "id": "mobile-offline-and-sensors",
+        "label": "Mobile Hardware & Offline Field Sync",
+        "focus": ["mobile_client", "device_sensors", "offline_queue", "fastapi_server"],
+        "note": "EXIF-geotagged camera evidence ingestion with local SQLite offline queue reconciliation."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "web_portal",
+      "type": "frontend",
+      "label": "Web Portal",
+      "sublabel": "React 19 / Vite / Tailwind",
+      "pos": [40, 180],
+      "size": [145, 62],
+      "tag": ":5173"
+    },
+    {
+      "id": "mobile_client",
+      "type": "frontend",
+      "label": "Mobile App",
+      "sublabel": "Expo / React Native",
+      "pos": [40, 340],
+      "size": [145, 62],
+      "tag": "iOS & Android"
+    },
+    {
+      "id": "device_sensors",
+      "type": "external",
+      "label": "Device Sensors",
+      "sublabel": "Camera & GPS (Expo)",
+      "pos": [40, 500],
+      "size": [145, 62],
+      "tag": "EXIF geotag"
+    },
+    {
+      "id": "auth_security",
+      "type": "security",
+      "label": "Auth & RBAC",
+      "sublabel": "JWT / PBKDF2 (100k)",
+      "pos": [260, 90],
+      "size": [155, 62],
+      "tag": "4 user roles"
+    },
+    {
+      "id": "fastapi_server",
+      "type": "backend",
+      "label": "FastAPI Server",
+      "sublabel": "Uvicorn ASGI :8000",
+      "pos": [260, 260],
+      "size": [155, 66],
+      "tag": "Gateway"
+    },
+    {
+      "id": "offline_queue",
+      "type": "backend",
+      "label": "Offline Sync",
+      "sublabel": "SQLite / Local Storage",
+      "pos": [260, 460],
+      "size": [155, 62],
+      "tag": "Sync Engine"
+    },
+    {
+      "id": "api_routers",
+      "type": "backend",
+      "label": "API Routers",
+      "sublabel": "/api/v1 (Projects/Tenders)",
+      "pos": [490, 260],
+      "size": [160, 66],
+      "tag": "Dispatch"
+    },
+    {
+      "id": "ai_suite",
+      "type": "backend",
+      "label": "AI Engines Suite",
+      "sublabel": "Risk, SLA, PhotoHash",
+      "pos": [730, 150],
+      "size": [170, 70],
+      "tag": "11 Python Engines"
+    },
+    {
+      "id": "data_store",
+      "type": "database",
+      "label": "Dataset & Store",
+      "sublabel": "e-SAKSHI JSON / SQLite",
+      "pos": [730, 370],
+      "size": [170, 70],
+      "tag": "543 MP Records"
+    },
+    {
+      "id": "esakshi_portal",
+      "type": "external",
+      "label": "MoSPI e-SAKSHI",
+      "sublabel": "National Data Adapter",
+      "pos": [730, 520],
+      "size": [170, 62],
+      "tag": "Gov Pipeline"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Client Presentation & Field Capture Layer",
+      "wraps": ["web_portal", "mobile_client", "device_sensors"],
+      "pad": 18
+    },
+    {
+      "kind": "region",
+      "label": "Backend Application & AI Services Host (:8000)",
+      "wraps": ["auth_security", "fastapi_server", "offline_queue", "api_routers", "ai_suite", "data_store"],
+      "pad": 18
+    },
+    {
+      "kind": "security-group",
+      "label": "Protected AI & Ingestion Services",
+      "wraps": ["auth_security", "fastapi_server", "api_routers", "ai_suite", "data_store"],
+      "pad": 14
+    }
+  ],
+  "connections": [
+    {
+      "id": "web-to-fastapi",
+      "from": "web_portal",
+      "to": "fastapi_server",
+      "label": "HTTPS / REST",
+      "variant": "emphasis"
+    },
+    {
+      "id": "mobile-to-fastapi",
+      "from": "mobile_client",
+      "to": "fastapi_server",
+      "label": "REST (Axios)",
+      "variant": "emphasis"
+    },
+    {
+      "id": "sensors-to-mobile",
+      "from": "device_sensors",
+      "to": "mobile_client",
+      "label": "GPS & Photos",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "mobile-to-queue",
+      "from": "mobile_client",
+      "to": "offline_queue",
+      "label": "Local Queue",
+      "variant": "dashed"
+    },
+    {
+      "id": "queue-to-fastapi",
+      "from": "offline_queue",
+      "to": "fastapi_server",
+      "label": "Background Sync",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "labelDy": -20
+    },
+    {
+      "id": "auth-validation",
+      "from": "auth_security",
+      "to": "fastapi_server",
+      "label": "JWT Validation",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 28
+    },
+    {
+      "id": "fastapi-to-routers",
+      "from": "fastapi_server",
+      "to": "api_routers",
+      "label": "Route Dispatch"
+    },
+    {
+      "id": "routers-to-ai",
+      "from": "api_routers",
+      "to": "ai_suite",
+      "label": "Fraud & Risk Analysis",
+      "variant": "emphasis",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "id": "routers-to-data",
+      "from": "api_routers",
+      "to": "data_store",
+      "label": "Query & Mutations",
+      "fromSide": "bottom",
+      "toSide": "left"
+    },
+    {
+      "id": "ai-to-data",
+      "from": "ai_suite",
+      "to": "data_store",
+      "label": "Read History",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 36
+    },
+    {
+      "id": "esakshi-to-data",
+      "from": "esakshi_portal",
+      "to": "data_store",
+      "label": "Ingestion Adapters",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Client Interfaces",
+      "items": [
+        "Web Portal in React 19 + Vite with interactive Constituency and Rajya Sabha cartogram maps",
+        "Mobile Application built on Expo SDK with clean architecture and role-based navigation",
+        "Hardware sensor integration capturing EXIF-geotagged inspection evidence"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Backend Core",
+      "items": [
+        "FastAPI gateway with strict CORS, security headers, and Uvicorn ASGI server",
+        "Modular routers covering /api/v1/projects, intelligence, supply-chain, tenders, and mp",
+        "Offline synchronization queue persisting field inspections to local storage before API dispatch"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "AI & Anti-Fraud Engines",
+      "items": [
+        "Composite Risk Scoring Engine calculating weighted contractor/work anomaly scores (0-100)",
+        "Photo Duplication Engine with perceptual hashing (dHash/pHash) and EXIF temporal validation",
+        "Evidence Triangulation cross-referencing contractor bills, citizen photos, and ground progress",
+        "Rate Benchmark & DPR similarity engines detecting bid collusion and supply deviations"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Security & Government Data",
+      "items": [
+        "PBKDF2-HMAC-SHA256 password hashing (100k iterations) with HMAC-SHA256 JWT tokens",
+        "4-Role RBAC: District Officer, MP Office, Contractor, and Citizen",
+        "MoSPI e-SAKSHI data adapters mapping 543 Lok Sabha constituencies and 36 States/UTs"
+      ]
+    }
+  ]
+}
