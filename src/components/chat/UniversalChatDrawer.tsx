@@ -145,7 +145,7 @@ export const UniversalChatDrawer: React.FC<UniversalChatDrawerProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-slate-900/40 backdrop-blur-[2px] animate-fadeIn transition-opacity">
+    <div className="fixed inset-0 z-[99999] flex justify-end bg-slate-900/60 backdrop-blur-xs animate-fadeIn transition-opacity">
       <div 
         role="dialog"
         aria-modal="true"
