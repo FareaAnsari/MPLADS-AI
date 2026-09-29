@@ -2,6 +2,8 @@
 ### Government of India | Ministry of Statistics & Programme Implementation (MoSPI)
 *AI-Powered Monitoring, Rural Village Intelligence, and National Data Pipeline Layer ON TOP of e-SAKSHI*
 
+🌐 **Live Production Deployment**: [https://mplads-ai-pratyaksh.vercel.app/](https://mplads-ai-pratyaksh.vercel.app/)
+
 ---
 
 ## 🏛️ STRICT DATASET-ONLY RULE & CORE GOVERNANCE
