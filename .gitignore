@@ -47,3 +47,11 @@ htmlcov/
 
 .vercel
 .env*
+
+# Video & Media artifacts (kept local, excluded from GitHub)
+artifacts_media/*.mp4
+artifacts_media/*.mp3
+artifacts_media/*.wav
+artifacts_media/raw_recordings/
+artifacts_media/hinglish_audio/
+
