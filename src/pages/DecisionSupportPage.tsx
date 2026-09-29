@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 import { MOCK_PROJECTS, MOCK_STATES_DATA, ESAKSHI_OFFICIAL_METRICS, SHOWCASE_PROJECT_ID } from '../data/mockData';
 import { InvestigationModal } from '../components/InvestigationModal';
+import { SEOHead } from '../components/SEOHead';
 
 type AdministrativeRole = 'MP' | 'STATE' | 'DISTRICT' | 'MINISTRY';
 type GovernanceTab = 'overview' | 'overruns' | 'quotas' | 'delays' | 'splitting';
@@ -153,6 +154,12 @@ export const DecisionSupportPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 space-y-6">
+      <SEOHead
+        title="Statutory Decision Support & Governance Command | MPLADS-AI"
+        description="Role-specific statutory portals for MPs, State Authorities, District Collectors, and the Ministry with automated compliance checks for 75-day sanction SLAs and SC/ST quotas."
+        canonicalPath="/decision-support"
+        noindex={true}
+      />
       
       {/* 1. TOP HEADER BANNER */}
       <div className="bg-gradient-to-r from-[#0b2e59] via-[#14437a] to-[#1b4d89] text-white p-5 rounded-gov shadow-gov border-b-4 border-amber-500">

@@ -101,13 +101,20 @@ export interface PeerComparisonData {
 
 async function requestApi<T>(path: string, options?: RequestInit): Promise<T> {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  const urlsToTry = [
-    `${API_BASE}${cleanPath}`,
-    `http://localhost:8000${cleanPath}`,
-    `http://127.0.0.1:8000${cleanPath}`,
-    `${API_BASE}/api/v1${cleanPath.replace('/api', '')}`,
-    `http://localhost:8000/api/v1${cleanPath.replace('/api', '')}`
-  ];
+  const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+  const urlsToTry: string[] = [];
+
+  if (API_BASE) {
+    urlsToTry.push(`${API_BASE}${cleanPath}`);
+    urlsToTry.push(`${API_BASE}/api/v1${cleanPath.replace('/api', '')}`);
+  }
+  urlsToTry.push(`/api/v1${cleanPath.replace('/api', '')}`);
+  urlsToTry.push(cleanPath);
+
+  if (isLocal) {
+    urlsToTry.push(`http://localhost:8000${cleanPath}`);
+    urlsToTry.push(`http://localhost:8000/api/v1${cleanPath.replace('/api', '')}`);
+  }
 
   let lastError: any = null;
   for (const url of urlsToTry) {

@@ -16,6 +16,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SEOHead } from '../components/SEOHead';
 
 export const AIInsightsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -35,6 +36,15 @@ export const AIInsightsPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
+      <SEOHead
+        title="AI Insights & Forensic Anomaly Command Centre | MPLADS-AI"
+        description="Automated multi-record anomaly detection, payment-progress mismatch analysis, material price outlier tracking, and duplicate proposal clustering for MPLADS works."
+        canonicalPath="/ai-insights"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'AI Anomaly Insights', url: '/ai-insights' }
+        ]}
+      />
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gov-border">
         <div>

@@ -3,7 +3,7 @@
 **SIH Problem Statement:** SIH26102 — Development of an AI-powered system to detect anomalies, fraud, and inefficiencies in MPLAD Scheme implementation  
 **Nodal Ministry:** Ministry of Statistics and Programme Implementation (MoSPI)  
 **Target Video / Pitch Duration:** 5 Minutes 30 Seconds (Max 6:00)  
-**Live Production URL:** [mplads-ai-pratyaksh.vercel.app](https://mplads-ai-pratyaksh.vercel.app)
+**Live Production URL:** [mplads-ai.vercel.app](https://mplads-ai.vercel.app)
 
 ---
 
@@ -45,7 +45,7 @@ This demo script is grounded exclusively in verified capabilities present within
 ## 3. Screen-by-Screen Presenter Narration Script
 
 ### Scene 1 — The Core Governance Challenge (00:00 – 00:30)
-* **Screen:** Browser on `http://localhost:5173/` or `https://mplads-ai-pratyaksh.vercel.app/`
+* **Screen:** Browser on `http://localhost:5173/` or `https://mplads-ai.vercel.app/`
 * **Visual Focus:** Government Header with Ashoka Lion Emblem, e-SAKSHI Data Trust badge.
 * **Click / Action:** No click yet. Move cursor smoothly over the banner.
 
@@ -172,7 +172,7 @@ This demo script is grounded exclusively in verified capabilities present within
 └─────────────────────────────────────────────────────────────────────────────┘
 
 [00:00] 1. Open Google Chrome in full-screen (Zoom 100%).
-        2. Navigate to: https://mplads-ai-pratyaksh.vercel.app/ (or localhost:5173).
+        2. Navigate to: https://mplads-ai.vercel.app/ (or localhost:5173).
         3. Confirm Data Trust Panel reads: "Tier 1 Official MoSPI Data".
 
 [00:30] 4. Hover cursor over the "Tier 1 Verified" badge on the Data Trust Panel.

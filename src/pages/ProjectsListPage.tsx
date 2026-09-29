@@ -13,6 +13,7 @@ import {
   ArrowRight,
   SlidersHorizontal
 } from 'lucide-react';
+import { SEOHead } from '../components/SEOHead';
 
 export const ProjectsListPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -24,6 +25,8 @@ export const ProjectsListPage: React.FC = () => {
   const [selectedRisk, setSelectedRisk] = useState(searchParams.get('risk') || 'All Risks');
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [investigatingId, setInvestigatingId] = useState<string | null>(null);
+
+  const isFilteredSearch = !!(searchParams.get('search') || searchParams.get('state') || searchParams.get('status'));
 
   // Dynamically extract distinct values from actual dataset records
   const availableStatuses = React.useMemo(() => {
@@ -93,6 +96,16 @@ export const ProjectsListPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
+      <SEOHead
+        title={searchQuery ? `Search: "${searchQuery}" | MPLADS Projects` : 'National Works Registry & Projects Database | MPLADS-AI'}
+        description="Search, filter, and inspect thousands of MPLADS public infrastructure works across states, districts, implementing agencies, and progress stages."
+        canonicalPath="/projects"
+        noindex={isFilteredSearch}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Projects Registry', url: '/projects' }
+        ]}
+      />
       {/* Page Title & Stats */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gov-border">
         <div>

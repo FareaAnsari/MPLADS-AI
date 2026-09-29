@@ -18,6 +18,7 @@ import {
   Clock,
   Briefcase
 } from 'lucide-react';
+import { SEOHead } from '../components/SEOHead';
 import { 
   VERIFIED_REAL_PROJECTS, 
   OFFICIAL_DATA_SOURCES, 
@@ -112,7 +113,27 @@ export const NationalDataPage: React.FC = () => {
 
   return (
     <div className="space-y-5 px-4 sm:px-6 py-6 max-w-7xl mx-auto">
-      
+      <SEOHead
+        title="National Data Pipeline & Quality Verification | MPLADS-AI"
+        description="Authoritative public dataset registry consolidating real MPLADS works, expenditure ledgers, LGD administrative linkages, and data provenance quality reports."
+        canonicalPath="/national-data"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'National Data Pipeline', url: '/national-data' }
+        ]}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'Dataset',
+          name: 'MPLADS National Works & Expenditure Dataset',
+          description: 'Consolidated public records of developmental works sanctioned and completed under the MPLAD Scheme.',
+          url: 'https://mplads-ai.vercel.app/national-data',
+          creator: {
+            '@type': 'GovernmentOrganization',
+            name: 'Ministry of Statistics and Programme Implementation (MoSPI)'
+          },
+          license: 'https://data.gov.in/open-government-data-ogd-platform-india'
+        }}
+      />
       {/* 1. Header & Quick Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gov-border pb-4">
         <div>

@@ -415,8 +415,9 @@ export const ProjectKanbanBoard: React.FC<ProjectKanbanBoardProps> = ({
         })
       );
 
-      // Backend API sync
-      await fetch(`http://localhost:8000/api/v1/projects/${encodeURIComponent(id)}/stage?new_stage=${targetCol}`, {
+      // Backend API sync with offline fallback
+      const apiBase = (import.meta as any).env?.VITE_API_URL || '';
+      await fetch(`${apiBase}/api/v1/projects/${encodeURIComponent(id)}/stage?new_stage=${targetCol}`, {
         method: 'PATCH',
       });
     } catch {

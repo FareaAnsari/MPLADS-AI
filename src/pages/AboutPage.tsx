@@ -1,9 +1,19 @@
 import React from 'react';
 import { Landmark, FileText, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
+import { SEOHead } from '../components/SEOHead';
 
 export const AboutPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+      <SEOHead
+        title="About Scheme & Platform | MPLADS-AI"
+        description="Learn about the Members of Parliament Local Area Development Scheme (MPLADS), statutory guidelines, administrative sanction workflows, and AI-driven monitoring."
+        canonicalPath="/about"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'About Scheme', url: '/about' }
+        ]}
+      />
       <div className="bg-white p-6 rounded-gov border border-gov-border shadow-gov space-y-4">
         <div className="flex items-center space-x-2 border-b border-slate-200 pb-3">
           <Landmark className="w-6 h-6 text-gov-navy" />

@@ -18,6 +18,7 @@ import {
   Check, 
   Search
 } from 'lucide-react';
+import { SEOHead } from '../components/SEOHead';
 
 // Semicircular Speedometer Gauge Component calibrated precisely to actual Utilization %
 const SpeedometerGauge: React.FC<{ value: number }> = ({ value }) => {
@@ -167,7 +168,30 @@ export const MPDetailPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 space-y-5 font-sans">
-      
+      <SEOHead
+        title={`${mp.name} (${mp.constituency}, ${mp.state}) | MPLADS-AI`}
+        description={`Official parliamentary profile and MPLADS fund utilization record for ${mp.name}, Member of Parliament representing ${mp.constituency}, ${mp.state}. Total allocation: ₹${mp.allocatedAmountCr} Cr, Total expenditure: ₹${mp.recordedExpenditureCr} Cr (${expRate}% utilization).`}
+        canonicalPath={`/mps/${encodeURIComponent(mp.id)}`}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'MPs Directory', url: '/mps' },
+          { name: mp.name, url: `/mps/${encodeURIComponent(mp.id)}` }
+        ]}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: mp.name,
+          jobTitle: `Member of Parliament (${mp.house})`,
+          affiliation: {
+            '@type': 'GovernmentOrganization',
+            name: 'Parliament of India'
+          },
+          workLocation: {
+            '@type': 'AdministrativeArea',
+            name: `${mp.constituency}, ${mp.state}`
+          }
+        }}
+      />
       {/* 1. Back Navigation Button */}
       <div>
         <button 

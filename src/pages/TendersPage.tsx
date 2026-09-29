@@ -18,6 +18,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { tenderService, Tender, Contract } from '../services/tenderService';
 import { BidderScrutinyPanel } from '../components/BidderScrutinyPanel';
+import { SEOHead } from '../components/SEOHead';
 
 export const TendersPage: React.FC = () => {
   const navigate = useNavigate();
@@ -81,6 +82,15 @@ export const TendersPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
+      <SEOHead
+        title="E-Procurement, Tenders & Contract Registry | MPLADS-AI"
+        description="Public tendering oversight, bidder scrutiny anomaly detection, and contract execution registers for MPLADS infrastructure packages under GFR 2017 standards."
+        canonicalPath="/tenders"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Tenders & Contracts', url: '/tenders' }
+        ]}
+      />
       {/* Statutory Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gov-border">
         <div>

@@ -13,6 +13,7 @@ import { ALL_MPS_DATA, getMPById } from '../data/mpsData';
 import { Project, DocumentRecord } from '../types';
 import { InvestigationModal } from '../components/InvestigationModal';
 import { GovernmentTransparencyBadge } from '../components/GovernmentTransparencyBadge';
+import { SEOHead } from '../components/SEOHead';
 import { 
   AlertTriangle, 
   Building2, 
@@ -360,6 +361,32 @@ This is a tamper-evident digital record certified under the Central MPLADS Trans
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
+      <SEOHead
+        title={`${project.name} | ${project.code || project.id}`}
+        description={`Official MPLADS development project in ${project.district}, ${project.state} recommended by ${project.mpName}. Sanctioned amount: ₹${(project.sanctionedAmount || 0).toLocaleString('en-IN')}, Status: ${project.status}.`}
+        canonicalPath={`/projects/${encodeURIComponent(project.id)}`}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Projects', url: '/projects' },
+          { name: project.state || 'State', url: `/projects?state=${encodeURIComponent(project.state || '')}` },
+          { name: project.district || 'District', url: `/projects?district=${encodeURIComponent(project.district || '')}` },
+          { name: project.code || project.id, url: `/projects/${encodeURIComponent(project.id)}` }
+        ]}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'GovernmentService',
+          name: project.name,
+          serviceType: 'MPLADS Public Infrastructure Project',
+          provider: {
+            '@type': 'GovernmentOrganization',
+            name: `District Planning Office, ${project.district}`
+          },
+          areaServed: {
+            '@type': 'AdministrativeArea',
+            name: `${project.district}, ${project.state}`
+          }
+        }}
+      />
       {/* Back button and quick breadcrumb */}
       <div className="flex items-center justify-between">
         <button

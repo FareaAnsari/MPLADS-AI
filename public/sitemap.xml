@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Core Public Hubs -->
+  <url>
+    <loc>https://mplads-ai.vercel.app/</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/about</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/projects</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/projects/WS-1</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/projects/WS/MP418/2024-2025/133409</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/projects/WS/MP18152/2024-2025/133691</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/mps</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/ai-insights</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/decision-support</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/national-data</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/rural-intelligence</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/village-explorer</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/village-priority</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/village-data-quality</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/opportunities</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/tenders</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/vendors</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/contractors</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/funds</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/reports</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mplads-ai.vercel.app/citizen</loc>
+    <lastmod>2026-09-29T21:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

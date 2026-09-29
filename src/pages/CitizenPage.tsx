@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { sanitizeText, secureStorage, maskPII } from '../security';
+import { SEOHead } from '../components/SEOHead';
 
 
 interface CitizenSubmission {
@@ -111,6 +112,15 @@ export const CitizenPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-5">
+      <SEOHead
+        title="Citizen Transparency & Public Accountability Portal | MPLADS-AI"
+        description="Public tracking and citizen feedback portal for developmental projects recommended under the MPLADS Scheme in your village, block, and district."
+        canonicalPath="/citizen"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Citizen Portal', url: '/citizen' }
+        ]}
+      />
       {/* Citizen Banner */}
       <div className="bg-gradient-to-r from-emerald-800 to-teal-900 text-white p-6 rounded-gov shadow-sm space-y-2">
         <div className="flex items-center justify-between">

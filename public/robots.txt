@@ -1,0 +1,32 @@
+# robots.txt for MPLADS-AI National Governance Platform
+# Compliant with Googlebot and Bingbot indexing standards
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /projects
+Allow: /projects/*
+Allow: /mps
+Allow: /mps/*
+Allow: /reports
+Allow: /national-data
+Allow: /citizen
+Allow: /rural-intelligence
+Allow: /village-explorer
+Allow: /opportunities
+Allow: /tenders
+Allow: /vendors
+Allow: /contractors
+Allow: /funds
+Allow: /ai-insights
+Allow: /decision-support
+
+# Protect private admin, internal API endpoints, and sandbox simulation
+Disallow: /api/
+Disallow: /sandbox
+Disallow: /investigate/
+Disallow: /*?*token=*
+Disallow: /*?*key=*
+
+# Production XML Sitemap Location
+Sitemap: https://mplads-ai.vercel.app/sitemap.xml

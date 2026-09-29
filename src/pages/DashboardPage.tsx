@@ -15,6 +15,7 @@ import { ShieldCheck, Info, CheckCircle2, AlertTriangle, ArrowRight, Sparkles } 
 import { useNavigate } from 'react-router-dom';
 import { DataTrustPanel } from '../components/national/DataTrustPanel';
 import { getDataTrustMetadata } from '../services/nationalDataPipelineService';
+import { SEOHead } from '../components/SEOHead';
 
 export const DashboardPage: React.FC = () => {
   const [investigatingProjectId, setInvestigatingProjectId] = useState<string | null>(null);
@@ -33,6 +34,12 @@ export const DashboardPage: React.FC = () => {
 
   return (
     <div className="space-y-4">
+      <SEOHead
+        title="MPLADS-AI | National Project Lifecycle Intelligence & Governance Platform"
+        description="Official national monitoring and explainable AI anomaly detection platform for the MPLAD Scheme. Monitoring 38,416+ works across 543 parliamentary constituencies."
+        canonicalPath="/"
+        breadcrumbs={[{ name: 'Home', url: '/' }]}
+      />
       {/* JUDICIAL DATA TRUST PANEL */}
       <DataTrustPanel 
         metadata={trustMetadata} 

@@ -18,6 +18,7 @@ import {
   Layers,
   FileSpreadsheet
 } from 'lucide-react';
+import { SEOHead } from '../components/SEOHead';
 
 interface ReportItem {
   id: string;
@@ -88,6 +89,15 @@ export const ReportsPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 space-y-5 font-sans">
+      <SEOHead
+        title="Statutory Reports & Audit Intelligence Repository | MPLADS-AI"
+        description="Public audit repository of national project risk compendiums, district scrutiny performance metrics, contractor workload analyses, and PFMS fund reconciliations."
+        canonicalPath="/reports"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Reports & Audits', url: '/reports' }
+        ]}
+      />
       
       {/* 1. Header Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-gov-border">

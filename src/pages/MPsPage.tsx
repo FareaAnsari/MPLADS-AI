@@ -12,6 +12,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SEOHead } from '../components/SEOHead';
 
 export const MPsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -77,6 +78,15 @@ export const MPsPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 space-y-5">
+      <SEOHead
+        title="Members of Parliament (MPs) Official Directory | MPLADS-AI"
+        description="National parliamentary directory of Hon'ble Lok Sabha and Rajya Sabha Members of Parliament with MPLADS entitlement, recommended works, and fund utilization tracking."
+        canonicalPath="/mps"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'MPs Directory', url: '/mps' }
+        ]}
+      />
       {/* Title & Stats Ribbon */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gov-border">
         <div>

@@ -1,7 +1,7 @@
 # ARCHITECTURE AUDIT & SYSTEM SPECIFICATION
 ## Universal MPLADS Intelligence Agent (Audit-First Build)
 **Role:** Senior Staff / Principal AI/ML Systems Architect  
-**Project:** MPLADS AI / Pratyaksh ([Live Deployment](https://mplads-ai-pratyaksh.vercel.app/))  
+**Project:** MPLADS-AI ([Live Deployment](https://mplads-ai.vercel.app/))  
 **Target Repository:** `/Users/themonishnawaz/Downloads/MPLADS/mplads-fix`  
 **Date:** September 2026  
 **Status:** Approved Architectural Blueprint (Phase 1 Deliverable)

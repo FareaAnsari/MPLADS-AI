@@ -17,6 +17,7 @@ import { VillageComparisonModal } from '../components/rural/VillageComparisonMod
 import { SectorGapView } from '../components/rural/SectorGapView';
 import { DataProvenanceBadge } from '../components/rural/DataProvenanceBadge';
 import { MissingDataNotice } from '../components/rural/MissingDataNotice';
+import { SEOHead } from '../components/SEOHead';
 import { 
   Building2, 
   AlertCircle, 
@@ -127,6 +128,15 @@ export const RuralIntelligencePage: React.FC = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-4 space-y-5">
+      <SEOHead
+        title="Rural Village Development Intelligence | MPLADS-AI"
+        description="Data-driven exploration of MPLADS developmental infrastructure works across rural villages, Local Government Directory (LGD) units, and gram panchayats."
+        canonicalPath="/rural-intelligence"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Rural Intelligence', url: '/rural-intelligence' }
+        ]}
+      />
       
       {/* 1. Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-gov-border pb-3">

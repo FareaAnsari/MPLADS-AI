@@ -37,6 +37,7 @@ import { UniversalChatDrawer } from './components/chat/UniversalChatDrawer';
 import { RoleSelector } from './components/RoleSelector';
 import { UserRole } from './types';
 import { SecurityProvider, useSecurity } from './security';
+import { NotFoundPage } from './pages/NotFoundPage';
 import { Sparkles, Bot } from 'lucide-react';
 
 const RoleSelectorNav: React.FC = () => {
@@ -171,7 +172,7 @@ export const App: React.FC = () => {
                 {/* National Data Ingestion & Verification Pipeline */}
                 <Route path="/national-data" element={<NationalDataPage />} />
 
-                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </main>
 

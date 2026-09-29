@@ -62,7 +62,7 @@ export interface Contract {
   data_provenance: string;
 }
 
-const API_BASE = (import.meta as any).env?.VITE_API_URL || 'http://localhost:8000/api/v1';
+const API_BASE = (import.meta as any).env?.VITE_API_URL || '/api/v1';
 
 export const tenderService = {
   async getTenders(filters?: { status?: string; district?: string; tender_type?: string }): Promise<Tender[]> {
