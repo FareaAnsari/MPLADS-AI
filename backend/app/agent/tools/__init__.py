@@ -20,7 +20,10 @@ from agent.tools.analytics_tools import (
     GetElectionVelocityTool,
     GetRateBenchmarkTool,
     GetGrievanceAnalysisTool,
-    GetDecayAnalysisTool
+    GetDecayAnalysisTool,
+    AggregateMPUtilizationTool,
+    GetDistrictRankingsTool,
+    CompareEntitiesTool
 )
 from agent.tools.geospatial_tools import (
     GetCrossSchemeOverlapTool,
@@ -63,6 +66,9 @@ class ToolRegistry:
             GetRateBenchmarkTool(),
             GetGrievanceAnalysisTool(),
             GetDecayAnalysisTool(),
+            AggregateMPUtilizationTool(),
+            GetDistrictRankingsTool(),
+            CompareEntitiesTool(),
             # Geospatial
             GetCrossSchemeOverlapTool(),
             GetNearbyProjectsTool(),

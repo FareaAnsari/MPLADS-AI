@@ -51,8 +51,12 @@ class QueryPlanner:
         if entities.max_amount:
             filters["max_amount"] = entities.max_amount
 
-        # Determine Tool Call Sequence based on Intent
-        if IntentType.DEEP_RESEARCH in intents:
+        # Determine Tool Call Sequence based on Intent and Entities
+        q_low = user_query.lower()
+        if IntentType.OUT_OF_SCOPE in intents:
+            operation = "out_of_scope"
+            tools = []
+        elif IntentType.DEEP_RESEARCH in intents:
             operation = "deep_research"
             tools = [
                 "get_project",
@@ -62,6 +66,40 @@ class QueryPlanner:
                 "get_dpr_similarity",
                 "search_guidelines"
             ]
+        elif "district" in q_low and (IntentType.RANKING in intents or "highest" in q_low or "most" in q_low or "expenditure" in q_low or "which district" in q_low):
+            operation = "rank_districts"
+            target_entity = "districts"
+            tools = ["get_district_rankings"]
+        elif (
+            IntentType.UTILIZATION_ANALYSIS in intents
+            or entities.max_utilization is not None
+            or entities.min_projects is not None
+            or "who spent" in q_low
+            or "which mps" in q_low
+            or "utilization" in q_low
+            or "show mps" in q_low
+            or "list mps" in q_low
+            or "mps in" in q_low
+            or "mps from" in q_low
+            or "only those" in q_low
+            or "lok sabha" in q_low
+            or "rajya sabha" in q_low
+        ):
+            operation = "utilization_aggregate"
+            target_entity = "mps"
+            tools = ["aggregate_mp_utilization"]
+        elif IntentType.RANKING in intents:
+            if "district" in q_low or entities.district:
+                operation = "rank_districts"
+                target_entity = "districts"
+                tools = ["get_district_rankings"]
+            else:
+                operation = "rank_mps"
+                target_entity = "mps"
+                tools = ["aggregate_mp_utilization"]
+        elif IntentType.COMPARISON in intents:
+            operation = "compare"
+            tools = ["compare_entities"]
         elif IntentType.RISK_ANALYSIS in intents or IntentType.ANOMALY_ANALYSIS in intents:
             operation = "risk_analysis"
             tools = ["get_project_risk", "get_peer_comparison"]
@@ -71,7 +109,7 @@ class QueryPlanner:
             operation = "rag"
             target_entity = "guidelines"
             tools = ["search_guidelines"]
-        elif IntentType.MP_LOOKUP in intents:
+        elif (IntentType.MP_PROFILE in intents or IntentType.MP_LOOKUP in intents) and (entities.mp_name or entities.constituency):
             operation = "lookup"
             target_entity = "mps"
             tools = ["get_mp"]
@@ -81,12 +119,20 @@ class QueryPlanner:
         elif IntentType.REPORT_GENERATION in intents:
             operation = "report"
             tools = ["generate_report"]
-        elif IntentType.AGGREGATION in intents or IntentType.FINANCIAL_ANALYSIS in intents:
-            operation = "aggregate"
-            tools = ["get_state_statistics", "run_structured_query"]
+        elif IntentType.AGGREGATION in intents or IntentType.FINANCIAL_ANALYSIS in intents or IntentType.EXPENDITURE_ANALYSIS in intents:
+            if entities.state and not entities.mp_name and "mp" not in q_low:
+                operation = "aggregate"
+                tools = ["get_state_statistics"]
+            else:
+                operation = "aggregate"
+                tools = ["aggregate_mp_utilization"]
         elif entities.work_id:
             operation = "lookup"
             tools = ["get_project"]
+        elif entities.mp_name:
+            operation = "lookup"
+            target_entity = "mps"
+            tools = ["get_mp"]
         else:
             operation = "search"
             tools = ["search_projects"]

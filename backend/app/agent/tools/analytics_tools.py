@@ -302,3 +302,223 @@ class GetDecayAnalysisTool(TypedTool):
             ),
             execution_time_ms=round((time.time() - start_t) * 1000, 2)
         )
+
+
+class AggregateMPUtilizationTool(TypedTool):
+    name = "aggregate_mp_utilization"
+    description = "Calculates exact deterministic MP budget utilization, allocations, expenditure, remaining balances, and project counts with multi-criteria filtering and ranking."
+    min_role = UserRole.CITIZEN
+
+    async def execute(self, params: Dict[str, Any], user_role: UserRole = UserRole.CITIZEN) -> ToolResult:
+        import pandas as pd
+        start_t = time.time()
+        state = params.get("state")
+        house = params.get("house")
+        min_util = params.get("min_utilization")
+        max_util = params.get("max_utilization")
+        min_projects = params.get("min_projects")
+        max_projects = params.get("max_projects")
+        sort_by = params.get("sort_by", "utilization_pct")
+        sort_order = params.get("sort_order", "asc")
+        limit = min(int(params.get("limit", 25)), 100)
+
+        if data_access.df_projects.empty or data_access.df_mps.empty:
+            return ToolResult(
+                tool_name=self.name,
+                success=True,
+                data={"matched_mps": [], "total_matched_count": 0, "cohort_summary": {}},
+                metadata=ToolMetadata(
+                    source="eSAKSHI Official 30,002 Works + MP Allocation Limits",
+                    provenance_tier=ProvenanceTier.TIER_1,
+                    timestamp=datetime.utcnow().isoformat()
+                ),
+                execution_time_ms=round((time.time() - start_t) * 1000, 2)
+            )
+
+        # 1. Group projects by MP
+        proj_agg = data_access.df_projects.groupby("mp_name").agg(
+            total_projects=("work_id", "count"),
+            total_disbursed_inr=("disbursed_amount_inr", "sum"),
+            total_sanctioned_inr=("sanctioned_amount_inr", "sum")
+        ).reset_index()
+
+        # 2. Merge with MP allocation limits
+        merged = pd.merge(data_access.df_mps, proj_agg, on="mp_name", how="left")
+        # Filter out empty or whitespace mp_names
+        merged = merged[merged["mp_name"].str.strip().str.len() > 1]
+        merged["total_projects"] = merged["total_projects"].fillna(0).astype(int)
+        merged["total_disbursed_inr"] = merged["total_disbursed_inr"].fillna(0.0).astype(float)
+        merged["total_sanctioned_inr"] = merged["total_sanctioned_inr"].fillna(0.0).astype(float)
+        merged["allocated_limit_inr"] = merged["allocated_limit_inr"].fillna(0.0).astype(float)
+
+        merged["utilization_pct"] = merged.apply(
+            lambda r: round((r["total_disbursed_inr"] / r["allocated_limit_inr"] * 100.0), 2) if r["allocated_limit_inr"] > 0 else 0.0,
+            axis=1
+        )
+        merged["remaining_inr"] = merged["allocated_limit_inr"] - merged["total_disbursed_inr"]
+
+        # 3. Apply Multi-Criteria Filters
+        filtered_df = merged
+        if state:
+            st_clean = state.strip().upper()
+            filtered_df = filtered_df[filtered_df["state"].str.upper().str.contains(st_clean, na=False)]
+
+        if house:
+            h_clean = house.strip().upper()
+            filtered_df = filtered_df[filtered_df["house"].str.upper().str.contains(h_clean, na=False)]
+
+        if min_util is not None:
+            filtered_df = filtered_df[filtered_df["utilization_pct"] >= float(min_util)]
+
+        if max_util is not None:
+            filtered_df = filtered_df[filtered_df["utilization_pct"] <= float(max_util)]
+
+        if min_projects is not None:
+            filtered_df = filtered_df[filtered_df["total_projects"] >= int(min_projects)]
+
+        if max_projects is not None:
+            filtered_df = filtered_df[filtered_df["total_projects"] <= int(max_projects)]
+
+        # 4. Deterministic Sorting
+        ascending = (str(sort_order).lower() == "asc")
+        if sort_by in filtered_df.columns:
+            filtered_df = filtered_df.sort_values(by=sort_by, ascending=ascending)
+        else:
+            filtered_df = filtered_df.sort_values(by="utilization_pct", ascending=ascending)
+
+        total_matched = len(filtered_df)
+        records = filtered_df.head(limit).to_dict(orient="records")
+
+        for r in records:
+            for k, v in list(r.items()):
+                if pd.isna(v):
+                    r[k] = None
+
+        cohort_summary = {
+            "total_matched_mps": total_matched,
+            "total_allocated_inr": float(filtered_df["allocated_limit_inr"].sum()),
+            "total_disbursed_inr": float(filtered_df["total_disbursed_inr"].sum()),
+            "avg_utilization_pct": round(float(filtered_df["utilization_pct"].mean()), 2) if total_matched > 0 else 0.0,
+            "filter_criteria": {
+                "state": state,
+                "min_utilization": min_util,
+                "max_utilization": max_util,
+                "min_projects": min_projects
+            }
+        }
+
+        return ToolResult(
+            tool_name=self.name,
+            success=True,
+            data={
+                "matched_mps": records,
+                "total_matched_count": total_matched,
+                "cohort_summary": cohort_summary
+            },
+            metadata=ToolMetadata(
+                source="eSAKSHI Official 30,002 Works + MP Allocation Registry",
+                provenance_tier=ProvenanceTier.TIER_1,
+                citable_anchor=f"Aggregated {total_matched} MPs (State: {state or 'National'})",
+                timestamp=datetime.utcnow().isoformat(),
+                record_count=total_matched
+            ),
+            execution_time_ms=round((time.time() - start_t) * 1000, 2)
+        )
+
+
+class GetDistrictRankingsTool(TypedTool):
+    name = "get_district_rankings"
+    description = "Ranks districts / Implementing District Authorities (IDAs) by total expenditure, project counts, or utilization."
+    min_role = UserRole.CITIZEN
+
+    async def execute(self, params: Dict[str, Any], user_role: UserRole = UserRole.CITIZEN) -> ToolResult:
+        start_t = time.time()
+        state = params.get("state")
+        sort_by = params.get("sort_by", "total_disbursed_inr")
+        limit = min(int(params.get("limit", 20)), 100)
+
+        df = data_access.df_projects
+        if df.empty:
+            return ToolResult(tool_name=self.name, success=True, data={"districts": []})
+
+        if state:
+            st_clean = state.strip().upper()
+            df = df[df["state"].str.upper().str.contains(st_clean, na=False)]
+
+        grouped = df.groupby(["ida_office", "state"]).agg(
+            total_works=("work_id", "count"),
+            total_disbursed_inr=("disbursed_amount_inr", "sum"),
+            total_sanctioned_inr=("sanctioned_amount_inr", "sum")
+        ).reset_index()
+
+        grouped = grouped[grouped["ida_office"].str.len() > 0]
+        if sort_by in grouped.columns:
+            grouped = grouped.sort_values(by=sort_by, ascending=False)
+        else:
+            grouped = grouped.sort_values(by="total_disbursed_inr", ascending=False)
+
+        records = grouped.head(limit).to_dict(orient="records")
+        for r in records:
+            r["district"] = r.pop("ida_office")
+
+        return ToolResult(
+            tool_name=self.name,
+            success=True,
+            data={"districts": records, "total_districts": len(grouped)},
+            metadata=ToolMetadata(
+                source="eSAKSHI Official 30,002 Aggregated Works Dataset",
+                provenance_tier=ProvenanceTier.TIER_1,
+                citable_anchor=f"Top Districts in {state or 'India'}",
+                timestamp=datetime.utcnow().isoformat(),
+                record_count=len(records)
+            ),
+            execution_time_ms=round((time.time() - start_t) * 1000, 2)
+        )
+
+
+class CompareEntitiesTool(TypedTool):
+    name = "compare_entities"
+    description = "Compares two or more MPs, Districts, or States on allocations, expenditure, utilization rate, and project count."
+    min_role = UserRole.CITIZEN
+
+    async def execute(self, params: Dict[str, Any], user_role: UserRole = UserRole.CITIZEN) -> ToolResult:
+        start_t = time.time()
+        entity_type = params.get("entity_type", "mp")
+        names = params.get("names", [])
+        
+        comparison = []
+        if entity_type == "mp":
+            for n in names:
+                mp_info = data_access.get_mp_by_name_or_constituency(n)
+                if mp_info:
+                    mp_name = mp_info.get("mp_name")
+                    projs, count = data_access.search_projects(mp_name=mp_name, limit=1000)
+                    disbursed = sum(p.get("disbursed_amount_inr", 0) for p in projs)
+                    alloc = float(mp_info.get("allocated_limit_inr", 0))
+                    util = round((disbursed / alloc * 100), 2) if alloc > 0 else 0.0
+                    comparison.append({
+                        "name": mp_name,
+                        "state": mp_info.get("state"),
+                        "constituency": mp_info.get("constituency"),
+                        "allocated_limit_inr": alloc,
+                        "total_disbursed_inr": disbursed,
+                        "utilization_pct": util,
+                        "project_count": count
+                    })
+        elif entity_type == "state":
+            for s in names:
+                stat = data_access.get_state_summary(s)
+                comparison.append(stat)
+
+        return ToolResult(
+            tool_name=self.name,
+            success=True,
+            data={"entity_type": entity_type, "comparison": comparison},
+            metadata=ToolMetadata(
+                source="eSAKSHI Comparative Multi-Entity Analysis",
+                provenance_tier=ProvenanceTier.TIER_1,
+                timestamp=datetime.utcnow().isoformat()
+            ),
+            execution_time_ms=round((time.time() - start_t) * 1000, 2)
+        )
+

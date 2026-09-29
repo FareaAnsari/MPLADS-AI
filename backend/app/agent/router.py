@@ -9,13 +9,16 @@ import re
 
 
 class IntentType(str, Enum):
+    OUT_OF_SCOPE = "OUT_OF_SCOPE"
     MP_LOOKUP = "MP_LOOKUP"
+    MP_PROFILE = "MP_PROFILE"
     CONSTITUENCY_LOOKUP = "CONSTITUENCY_LOOKUP"
     PROJECT_LOOKUP = "PROJECT_LOOKUP"
     PROJECT_SEARCH = "PROJECT_SEARCH"
     PROJECT_TIMELINE = "PROJECT_TIMELINE"
     FINANCIAL_ANALYSIS = "FINANCIAL_ANALYSIS"
     EXPENDITURE_ANALYSIS = "EXPENDITURE_ANALYSIS"
+    UTILIZATION_ANALYSIS = "UTILIZATION_ANALYSIS"
     STATUS_ANALYSIS = "STATUS_ANALYSIS"
     RISK_ANALYSIS = "RISK_ANALYSIS"
     ANOMALY_ANALYSIS = "ANOMALY_ANALYSIS"
@@ -28,6 +31,7 @@ class IntentType(str, Enum):
     TREND_ANALYSIS = "TREND_ANALYSIS"
     COMPARISON = "COMPARISON"
     AGGREGATION = "AGGREGATION"
+    RANKING = "RANKING"
     REPORT_GENERATION = "REPORT_GENERATION"
     MAP_QUERY = "MAP_QUERY"
     MULTI_HOP_QUERY = "MULTI_HOP_QUERY"
@@ -38,7 +42,6 @@ class IntentType(str, Enum):
 
 class IntentRouter:
     def __init__(self):
-        # Multilingual / Hinglish translation & normalization dictionary
         self._hinglish_mappings = [
             (r'\b(kitna|kitne|kitni)\b', 'how much / how many'),
             (r'\b(paisa|funds|rupaye|raashi)\b', 'funds expenditure sanctioned'),
@@ -58,8 +61,7 @@ class IntentRouter:
         hindi_chars = len(re.findall(r'[\u0900-\u097F]', text))
         if hindi_chars > 3:
             return "hi"
-        # Check hinglish triggers
-        hinglish_words = {"kitna", "kitne", "paisa", "kharch", "kaam", "kyun", "kaun", "kahan", "batao", "dikhao", "mein", "par", "hai", "hain", "karo"}
+        hinglish_words = {"kitna", "kitne", "paisa", "kharch", "kaam", "kyun", "kaun", "kahan", "batao", "dikhao", "mein", "par", "hai", "hain", "karo", "sadak", "paani"}
         tokens = set(re.findall(r'\b[a-z]+\b', text.lower()))
         if len(tokens.intersection(hinglish_words)) >= 1:
             return "hinglish"
@@ -80,72 +82,91 @@ class IntentRouter:
             "requires_geo": False
         }
 
-        # 1. Deep Research Mode
+        # 1. Out-of-Scope Detection (rejection guardrail)
+        if re.search(r'\b(write.*python|write.*code|write.*script|write.*java|write.*c\+\+|build.*website|create.*website|solve.*math|tell.*joke|joke|weather|medical advice|travel advice|recipe|play game|movie)\b', q):
+            intents.add(IntentType.OUT_OF_SCOPE)
+            return [IntentType.OUT_OF_SCOPE], metadata
+
+        # 2. Deep Research Mode
         if re.search(r'\b(deep research|complete investigation|complete analysis|dossier|full audit|detail analysis|jaanchna)\b', q):
             intents.add(IntentType.DEEP_RESEARCH)
             metadata["is_deep_research"] = True
 
-        # 2. Risk & Anomaly
+        # 3. Utilization & Quantitative Financial Aggregation
+        if re.search(r'\b(0%|zero percent|zero utilization|0 utilization|used 0%|spent nothing|no expenditure|not spent anything|zero budget|unutilized|budget utilization|utilization percentage|utilization rate|who spent.*most|highest expenditure|lowest utilization|less than.*%)\b', q):
+            intents.add(IntentType.UTILIZATION_ANALYSIS)
+            intents.add(IntentType.FINANCIAL_ANALYSIS)
+            intents.add(IntentType.AGGREGATION)
+            metadata["requires_sql"] = True
+
+        # 4. Risk & Anomaly
         if re.search(r'\b(risk|anomaly|flagged|signal|why is.*flagged|kyun.*risk|unusual|verification|alert)\b', q):
             intents.add(IntentType.RISK_ANALYSIS)
             intents.add(IntentType.ANOMALY_ANALYSIS)
             metadata["requires_ml"] = True
 
-        # 3. Duplicate / Cross Scheme / DPR Plagiarism
+        # 5. Duplicate / Cross Scheme / DPR Plagiarism
         if re.search(r'\b(duplicate|copy-paste|plagiarism|similar|pmgsy|mgnrega|double dipping|cross scheme)\b', q):
             intents.add(IntentType.DUPLICATE_ANALYSIS)
             metadata["requires_ml"] = True
             metadata["requires_geo"] = True
 
-        # 4. Guidelines / Policy / MoSPI Rules
-        if re.search(r'\b(guideline|guidelines|policy|rule|rules|permissible|prohibited|calamity|sc.*st|ceiling|mandate|norm)\b', q):
+        # 6. Guidelines / Policy / MoSPI Rules
+        if re.search(r'\b(guideline|guidelines|policy|rule|rules|permissible|prohibited|calamity|sc.*st|ceiling|mandate|norm|prohibit|allow)\b', q):
             intents.add(IntentType.GUIDELINE_QUERY)
             intents.add(IntentType.POLICY_QUERY)
             metadata["requires_rag"] = True
 
-        # 5. Financial & Expenditure Aggregation
-        if re.search(r'\b(how much|sanctioned|spent|disbursed|expenditure|cost|crore|lakh|budget|utilization|paisa|kharch)\b', q):
+        # 7. General Financial & Expenditure
+        if re.search(r'\b(how much|sanctioned|spent|disbursed|expenditure|cost|crore|lakh|budget|paisa|kharch|kharcha|kitna|kitne|kitni)\b', q) and IntentType.UTILIZATION_ANALYSIS not in intents:
             intents.add(IntentType.FINANCIAL_ANALYSIS)
             intents.add(IntentType.EXPENDITURE_ANALYSIS)
             intents.add(IntentType.AGGREGATION)
             metadata["requires_sql"] = True
 
-        # 6. Status & Delay
-        if re.search(r'\b(delay|delayed|incomplete|completed|progress|physical progress|status|deri)\b', q):
+        # 8. Rankings & Extremes
+        if re.search(r'\b(highest|most|lowest|least|top|rank|ranking|maximum|minimum|who spent.*most|which district has.*most)\b', q):
+            intents.add(IntentType.RANKING)
+            intents.add(IntentType.AGGREGATION)
+
+        # 9. Status & Delay
+        if re.search(r'\b(delay|delayed|incomplete|completed|progress|physical progress|status|deri|adhura)\b', q):
             intents.add(IntentType.STATUS_ANALYSIS)
             metadata["requires_sql"] = True
 
-        # 7. MP Lookup
-        if re.search(r'\b(mp|member of parliament|who is the mp|rahul|modi|sharma|singh|hon\'ble|constituency mp)\b', q):
+        # 10. MP Lookup / Profile
+        if re.search(r'\b(mp|member of parliament|who is the mp|tell me about|profile of|details of|who is|about mp|hon\'ble)\b', q):
             intents.add(IntentType.MP_LOOKUP)
+            intents.add(IntentType.MP_PROFILE)
 
-        # 8. Project Lookup / Search
+        # 11. Comparison
+        if re.search(r'\b(compare|comparison|versus|vs|difference|better|who spent more)\b', q):
+            intents.add(IntentType.COMPARISON)
+            intents.add(IntentType.BENCHMARK_ANALYSIS)
+
+        # 12. Project Lookup / Search
         if re.search(r'\b(project|projects|work|works|ws/mp|kaam|list|show)\b', q):
             intents.add(IntentType.PROJECT_SEARCH)
             metadata["requires_sql"] = True
 
-        # 9. Geospatial / Map
+        # 13. Geospatial / Map
         if re.search(r'\b(map|nearby|within.*km|distance|location|geospatial|coordinates|naksha|kahan)\b', q):
             intents.add(IntentType.GEOSPATIAL_QUERY)
             intents.add(IntentType.MAP_QUERY)
             metadata["requires_geo"] = True
 
-        # 10. Report Generation
+        # 14. Report Generation
         if re.search(r'\b(report|export|download|csv|json|pdf|summary sheet)\b', q):
             intents.add(IntentType.REPORT_GENERATION)
 
-        # 11. Comparison
-        if re.search(r'\b(compare|comparison|versus|vs|difference|better)\b', q):
-            intents.add(IntentType.COMPARISON)
-            intents.add(IntentType.BENCHMARK_ANALYSIS)
-
-        # 12. Follow-up anaphora check
-        if re.search(r'\b(that mp|that project|the third one|the first one|which one|why\?|it|they|these)\b', q):
+        # 15. Follow-up anaphora check
+        if re.search(r'\b(that mp|that project|the third one|the first one|which one|why\?|it|they|these|which have|only those)\b', q):
             intents.add(IntentType.FOLLOW_UP_QUERY)
 
         if not intents:
-            intents.add(IntentType.PROJECT_SEARCH)
+            intents.add(IntentType.MP_LOOKUP)
 
         return sorted(list(intents), key=lambda x: x.value), metadata
 
 intent_router = IntentRouter()
+

@@ -84,6 +84,16 @@ class UniversalAgentOrchestrator:
         intents, intent_meta = self.router.classify_intent(query)
         resp.intents = [i.value for i in intents]
 
+        # Early return for Out-of-Scope non-MPLADS queries
+        if IntentType.OUT_OF_SCOPE in intents:
+            resp.answer_text = (
+                "Ask MPLAD is designed specifically for MPLADS data, records, projects, expenditure, "
+                "guidelines, evidence, and related analysis. I can help with questions within that scope."
+            )
+            resp.provenance_tier = 1
+            resp.execution_time_ms = round((time.time() - start_t) * 1000, 2)
+            return resp
+
         # 2. Entity Resolution with Session Context
         resolved_entities = self.resolver.resolve(query, session_context=session.to_dict())
         resp.entities = resolved_entities.to_dict()
@@ -139,8 +149,33 @@ class UniversalAgentOrchestrator:
 
     def _build_tool_params(self, tool_name: str, entities: ResolvedEntities, query: str) -> Dict[str, Any]:
         params = {}
+        q_low = query.lower()
         if tool_name in ["get_project", "get_project_risk", "get_peer_comparison", "get_cross_scheme_overlap", "get_dpr_similarity", "get_grievance_analysis", "get_decay_analysis"]:
             params["work_id"] = entities.work_id or "WS/MP/001"
+        elif tool_name == "aggregate_mp_utilization":
+            params["state"] = entities.state
+            params["house"] = entities.house
+            params["min_utilization"] = entities.min_utilization
+            params["max_utilization"] = entities.max_utilization
+            params["min_projects"] = entities.min_projects
+            params["max_projects"] = entities.max_projects
+            if any(w in q_low for w in ["most", "highest", "top", "max"]):
+                params["sort_by"] = "total_disbursed_inr"
+                params["sort_order"] = "desc"
+            elif any(w in q_low for w in ["least", "lowest", "0%", "zero", "nothing", "min"]):
+                params["sort_by"] = "utilization_pct"
+                params["sort_order"] = "asc"
+            else:
+                params["sort_by"] = "utilization_pct"
+                params["sort_order"] = "asc"
+            params["limit"] = 25
+        elif tool_name == "get_district_rankings":
+            params["state"] = entities.state
+            params["sort_by"] = "total_works" if "most projects" in q_low else "total_disbursed_inr"
+            params["limit"] = 20
+        elif tool_name == "compare_entities":
+            params["entity_type"] = "mp" if entities.mp_name else "state"
+            params["names"] = [entities.mp_name] if entities.mp_name else [entities.state or "Maharashtra"]
         elif tool_name == "search_projects":
             params["state"] = entities.state
             params["category"] = entities.work_category
@@ -150,9 +185,8 @@ class UniversalAgentOrchestrator:
             params["fiscal_year"] = entities.fiscal_year
             params["min_amount"] = entities.min_amount
             params["max_amount"] = entities.max_amount
-            # Only pass text search query if there is a distinct topic/keyword not already covered by entities
             cleaned_q = query.lower()
-            for stop in ["show", "list", "find", "all", "projects", "project", "in", "of", "the", "kaam", "dikhao", "mein"]:
+            for stop in ["show", "list", "find", "all", "projects", "project", "in", "of", "the", "kaam", "dikhao", "mein", "delayed"]:
                 cleaned_q = re.sub(rf'\b{stop}\b', '', cleaned_q)
             if entities.state:
                 cleaned_q = cleaned_q.replace(entities.state.lower(), '')
@@ -194,12 +228,75 @@ class UniversalAgentOrchestrator:
         map_d = None
         narrative_parts = []
 
-        # Process each tool result into narrative and UI cards
         for tr in tool_results:
             if not tr or not tr.success or not tr.data:
                 continue
 
-            if tr.tool_name == "get_state_statistics":
+            if tr.tool_name == "aggregate_mp_utilization":
+                d = tr.data
+                matched_mps = d.get("matched_mps", [])
+                total_cnt = d.get("total_matched_count", len(matched_mps))
+                summary = d.get("cohort_summary", {})
+                state_lbl = summary.get("filter_criteria", {}).get("state") or "National"
+
+                # Build narrative
+                if summary.get("filter_criteria", {}).get("max_utilization") == 0.0:
+                    narrative_parts.append(
+                        f"### Verified Financial Utilization Analysis\n"
+                        f"A total of **{total_cnt:,} Members of Parliament** ({state_lbl}) show **0% budget utilization** "
+                        f"(zero recorded expenditure against allocated MPLADS limits)."
+                    )
+                else:
+                    narrative_parts.append(
+                        f"### Verified Financial Utilization Analysis\n"
+                        f"Analyzed **{total_cnt:,} Members of Parliament** ({state_lbl}) with total cohort allocation of "
+                        f"**₹{summary.get('total_allocated_inr', 0)/10000000:,.2f} Cr** and total expenditure of **₹{summary.get('total_disbursed_inr', 0)/10000000:,.2f} Cr**."
+                    )
+
+                kpis.append({"label": "Matched MPs", "value": f"{total_cnt:,}", "variant": "blue"})
+                kpis.append({"label": "Total Allocated", "value": f"₹{summary.get('total_allocated_inr', 0)/10000000:,.2f} Cr", "variant": "green"})
+                kpis.append({"label": "Avg Utilization", "value": f"{summary.get('avg_utilization_pct', 0)}%", "variant": "purple"})
+
+                # Transform MPs into tabular display
+                for mp in matched_mps:
+                    table.append({
+                        "work_id": mp.get("mp_name", "N/A"),
+                        "work_title": f"Hon'ble MP ({mp.get('house', 'LS')}) · {mp.get('constituency') or 'N/A'}",
+                        "work_category": f"{mp.get('utilization_pct', 0)}% Utilized ({mp.get('total_projects', 0)} Works)",
+                        "state": mp.get("state", "N/A"),
+                        "ida_office": mp.get("constituency", "N/A"),
+                        "sanctioned_amount_inr": mp.get("allocated_limit_inr", 0),
+                        "disbursed_amount_inr": mp.get("total_disbursed_inr", 0),
+                        "current_stage": f"Allocated: ₹{mp.get('allocated_limit_inr', 0)/10000000:.2f}Cr · Spent: ₹{mp.get('total_disbursed_inr', 0)/10000000:.2f}Cr"
+                    })
+
+            elif tr.tool_name == "get_district_rankings":
+                d = tr.data
+                districts = d.get("districts", [])
+                total_dist = d.get("total_districts", len(districts))
+                narrative_parts.append(
+                    f"### District Expenditure Rankings\n"
+                    f"Identified top districts ranked by total disbursed expenditure across official eSAKSHI records."
+                )
+                if districts:
+                    top_d = districts[0]
+                    kpis.append({"label": "Top District", "value": top_d.get("district", "N/A"), "variant": "blue"})
+                    kpis.append({"label": "Top Expenditure", "value": f"₹{top_d.get('total_disbursed_inr', 0)/10000000:,.2f} Cr", "variant": "green"})
+                    kpis.append({"label": "Total Districts", "value": str(total_dist), "variant": "purple"})
+
+                for dist in districts:
+                    table.append({
+                        "work_id": dist.get("district", "N/A"),
+                        "work_title": f"Implementing District Authority ({dist.get('state')})",
+                        "work_category": f"{dist.get('total_works', 0)} Total Works",
+                        "state": dist.get("state", "N/A"),
+                        "ida_office": dist.get("district", "N/A"),
+                        "disbursed_amount_inr": dist.get("total_disbursed_inr", 0),
+                        "sanctioned_amount_inr": dist.get("total_sanctioned_inr", 0),
+                        "current_stage": f"{dist.get('total_works', 0)} Recorded Works"
+                    })
+
+            elif tr.tool_name == "get_state_statistics":
                 d = tr.data
                 narrative_parts.append(
                     f"In **{d.get('state')}**, a total of **{d.get('total_works'):,} works** are recorded in the central eSAKSHI registry with total expenditure of **₹{d.get('total_disbursed_inr', 0):,.2f}** (utilization rate: **{d.get('utilization_pct')}%**)."
@@ -234,32 +331,20 @@ class UniversalAgentOrchestrator:
                 kpis.append({"label": "Disbursed Amount", "value": f"₹{p.get('disbursed_amount_inr', 0)/100000:.2f} L", "variant": "green"})
                 kpis.append({"label": "Lifecycle Stage", "value": p.get('current_stage', 'RECORDED'), "variant": "blue"})
 
-            elif tr.tool_name == "get_project_risk":
-                r = tr.data
-                score_val = r.get('risk_score', r.get('composite_risk_score', 0))
-                severity_val = r.get('risk_level', r.get('severity', 'LOW'))
-                narrative_parts.append(
-                    f"### Analytical Monitoring Signal\n"
-                    f"- **Composite Risk Indicator**: **{score_val}/100** ({severity_val} Severity)\n"
-                    f"- **Primary Contributing Factor**: {r.get('top_contributing_factor')}\n\n"
-                    f"**Explainable Factors**:\n" + "\n".join([f"• {exp}" for exp in r.get("explainable_reasons", [])]) + "\n\n"
-                    f"> *Note: Analytical indicators represent automated monitoring signals for verification and do not constitute findings of wrongdoing.*"
-                )
-                kpis.append({"label": "Risk Score", "value": f"{score_val}/100", "variant": "amber" if float(score_val or 0) < 70 else "red"})
-                kpis.append({"label": "Severity", "value": severity_val, "variant": "amber"})
-
             elif tr.tool_name == "get_mp":
                 mp = tr.data
                 narrative_parts.append(
                     f"### Member of Parliament Profile\n"
-                    f"- **Hon'ble MP**: {mp.get('mp_name')}\n"
+                    f"- **Hon'ble MP**: **{mp.get('mp_name')}**\n"
                     f"- **House**: {mp.get('house')}\n"
                     f"- **State / Constituency**: {mp.get('state')} ({mp.get('constituency') or 'N/A'})\n"
-                    f"- **Allocated Limit**: ₹{mp.get('allocated_limit_inr', 0):,.2f}\n"
+                    f"- **Allocated Limit**: ₹{mp.get('allocated_limit_inr', 0):,.2f} (₹{mp.get('allocated_limit_inr', 0)/10000000:.2f} Cr)\n"
                     f"- **Recorded Works in Registry**: {mp.get('recorded_projects_count', 0)}"
                 )
                 kpis.append({"label": "Allocated Limit", "value": f"₹{mp.get('allocated_limit_inr', 0)/10000000:.2f} Cr", "variant": "green"})
                 kpis.append({"label": "Works Sponsored", "value": str(mp.get('recorded_projects_count', 0)), "variant": "blue"})
+                if mp.get("sample_projects"):
+                    table.extend(mp.get("sample_projects"))
 
             elif tr.tool_name == "search_guidelines":
                 g_data = tr.data
