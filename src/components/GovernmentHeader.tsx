@@ -21,8 +21,7 @@ import {
   Check,
   MapPin,
   Briefcase,
-  Database,
-  Bot
+  Database
 } from 'lucide-react';
 import { useLanguage, SUPPORTED_LANGUAGES, SupportedLanguage } from '../contexts/LanguageContext';
 import { NationalEmblem } from './NationalEmblem';
@@ -148,7 +147,6 @@ export const GovernmentHeader: React.FC<HeaderProps> = ({ onSearch }) => {
       ]
     },
     { label: t('nav_citizen'), path: '/citizen', icon: <Users2 className="w-3.5 h-3.5" /> },
-    { label: 'Ask MPLAD', path: '/ask-mplad', icon: <Bot className="w-3.5 h-3.5 text-amber-400" /> },
   ];
 
   return (
@@ -267,15 +265,6 @@ export const GovernmentHeader: React.FC<HeaderProps> = ({ onSearch }) => {
             </Link>
             <span className="text-gray-300">|</span>
             <Link to="/about" className="hover:text-blue-700 transition">{t('contact_us')}</Link>
-            <span className="text-gray-300">|</span>
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('open-ask-mplad'))}
-              className="flex items-center space-x-1 font-bold text-blue-900 bg-amber-300/80 hover:bg-amber-300 px-2 py-0.5 rounded transition shadow-2xs cursor-pointer"
-              title="Open Ask MPLAD AI Assistant (⌘I)"
-            >
-              <Sparkles className="w-3 h-3 text-amber-900" />
-              <span>Ask MPLAD (AI)</span>
-            </button>
             <span className="text-gray-300">|</span>
             <button
               onClick={() => navigate('/projects')}
@@ -460,16 +449,6 @@ export const GovernmentHeader: React.FC<HeaderProps> = ({ onSearch }) => {
               >
                 <Search className="w-3.5 h-3.5 text-slate-900 stroke-[2.5]" />
                 <span className="hidden xl:inline text-[11px] font-bold uppercase tracking-wider">Search</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent('open-ask-mplad'))}
-                className="ml-2 px-2.5 sm:px-3 py-1.5 bg-[#14437a] hover:bg-[#1a5599] text-amber-300 hover:text-amber-200 border border-amber-400/60 rounded flex items-center space-x-1.5 transition font-bold text-xs shadow-xs cursor-pointer flex-shrink-0"
-                title="Launch Ask MPLAD Intelligence Assistant"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-                <span className="hidden sm:inline">Ask MPLAD</span>
-                <span className="text-[10px] uppercase font-mono px-1 py-0.2 bg-amber-400 text-slate-950 rounded font-black">AI</span>
               </button>
             </form>
           </div>
