@@ -99,6 +99,18 @@ const RoleSelectorNav: React.FC = () => {
 export const App: React.FC = () => {
   const [isAgentDrawerOpen, setIsAgentDrawerOpen] = React.useState(false);
 
+  // Global Keyboard Shortcut: ⌘+I or Ctrl+I to toggle Agent
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'i') {
+        e.preventDefault();
+        setIsAgentDrawerOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <LanguageProvider>
       <SecurityProvider>
@@ -114,8 +126,6 @@ export const App: React.FC = () => {
             <main id="main-content" className="flex-1 pb-8">
               <Routes>
                 <Route path="/" element={<DashboardPage />} />
-                <Route path="/agent" element={<UniversalChatPage />} />
-                <Route path="/chat" element={<UniversalChatPage />} />
                 <Route path="/projects" element={<ProjectsListPage />} />
                 <Route path="/projects/board" element={<ProjectBoardPage />} />
                 <Route path="/projects/:id/*" element={<ProjectDetailPage />} />
@@ -165,14 +175,29 @@ export const App: React.FC = () => {
               </Routes>
             </main>
 
-            {/* Global Floating AI Agent Launcher */}
+            {/* Restrained Enterprise Floating 'Ask Agent' Launcher */}
             <button
               onClick={() => setIsAgentDrawerOpen(true)}
-              className="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-indigo-600 via-purple-600 to-amber-600 hover:from-indigo-500 hover:to-amber-500 text-white rounded-full p-4 shadow-2xl hover:scale-105 transition-all flex items-center gap-2.5 ring-4 ring-white/30 border border-white/20 group"
-              title="Open Universal MPLADS AI Agent"
+              aria-label="Open Pratyaksh Assistant"
+              className="fixed bottom-6 right-6 z-40 bg-white/95 hover:bg-white text-slate-800 rounded-full px-3.5 py-2 shadow-lg hover:shadow-xl border border-slate-200/90 transition-all duration-200 flex items-center gap-2.5 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400"
+              title="Open Pratyaksh Intelligence Agent (⌘I)"
             >
-              <Bot className="w-6 h-6 animate-pulse" />
-              <span className="text-xs font-bold tracking-wide pr-1 hidden sm:inline-block">Ask AI Agent</span>
+              <div className="w-5 h-5 flex items-center justify-center text-slate-700 group-hover:text-slate-900">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <rect width="18" height="14" x="3" y="4" rx="3" />
+                  <path d="M7 9h.01" />
+                  <path d="M17 9h.01" />
+                  <path d="M7 13h10" />
+                  <path d="M8 18v2" />
+                  <path d="M16 18v2" />
+                  <path d="M12 2v2" />
+                </svg>
+              </div>
+              <span className="text-xs font-semibold text-slate-700 tracking-tight group-hover:text-slate-900">Ask Agent</span>
+              <div className="flex items-center gap-1 text-[10px] font-mono text-slate-400 bg-slate-100/90 px-1.5 py-0.5 rounded border border-slate-200/70">
+                <span>⌘</span>
+                <span>I</span>
+              </div>
             </button>
 
             {/* Universal Chat Drawer Modal */}

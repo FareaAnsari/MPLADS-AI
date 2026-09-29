@@ -1,21 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  Sparkles,
   Send,
   X,
   ShieldCheck,
-  FileText,
-  MapPin,
-  TrendingUp,
   Download,
-  AlertTriangle,
-  Layers,
   ChevronRight,
   RefreshCw,
-  ExternalLink,
-  Bot,
-  User,
-  Info
+  Search,
+  Database,
+  FileCheck,
+  Layers,
+  ArrowUpRight
 } from 'lucide-react';
 import { AgentChatService } from '../../services/agentChatService';
 import { AgentResponse, ChatMessage, KPIItem, ProjectTableItem } from '../../types/agent';
@@ -38,65 +33,48 @@ export const UniversalChatDrawer: React.FC<UniversalChatDrawerProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<'en' | 'hi' | 'hinglish'>('en');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  // Initialize with greeting and quick starters
-  useEffect(() => {
-    if (messages.length === 0) {
-      setMessages([
-        {
-          id: 'welcome',
-          role: 'assistant',
-          content: `### Namaste & Welcome to Pratyaksh Universal Intelligence Agent
-I am your **verified analytical research assistant** operating over **30,002+ statutory MPLADS records**, **MoSPI Revised Guidelines 2023**, and **18 AI anomaly detection engines**.
-
-**You can ask me anything about:**
-- 🏛 **MPs & Constituencies**: Sanctions, allocations, house records
-- 📊 **Expenditure & Trends**: State/district sums, financial progress
-- ⚠️ **AI Risk Signals**: Explainable cost & timeline variance factors
-- 📜 **Statutory Guidelines**: Permissible/prohibited works, emergency quotas
-- 🛰 **Geospatial & Duplicates**: Cross-scheme overlaps (PMGSY/MGNREGA), satellite persistence
-
-*Every fact is traceable to verified Tier 1/2 provenance records with zero fabricated data.*`,
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          responsePayload: {
-            conversation_id: 'init',
-            answer: '',
-            intents: [],
-            entities: {},
-            kpis: [
-              { label: 'Indexed Works', value: '30,002', variant: 'blue' },
-              { label: 'Constituencies', value: '543 LS / 245 RS', variant: 'green' },
-              { label: 'Analytical Engines', value: '18 Active', variant: 'purple' },
-              { label: 'Provenance Standard', value: 'Tier 1 Certified', variant: 'green' }
-            ],
-            projects: [],
-            citations: [
-              {
-                source: 'eSAKSHI Official Public Export & data.gov.in',
-                provenance_tier: 1,
-                citable_anchor: 'National Registry Baseline',
-                timestamp: new Date().toISOString()
-              },
-              {
-                source: 'MoSPI Statutory MPLADS Guidelines 2023',
-                provenance_tier: 1,
-                citable_anchor: 'Revised Guidelines Ch 1-12',
-                timestamp: new Date().toISOString()
-              }
-            ],
-            followups: [
-              'Show delayed projects in Maharashtra above ₹50 lakh',
-              'What are the strictly prohibited works under MPLADS?',
-              'Who is the MP for Varanasi and what is their allocated budget?',
-              'Do a complete deep research analysis on project WS/MP/18'
-            ],
-            provenance_tier: 1,
-            execution_time_ms: 5.0
-          }
-        }
-      ]);
+  const quickStarters = [
+    {
+      title: 'Delayed Works Analysis',
+      query: 'Show delayed projects in Maharashtra above ₹50 lakh',
+      category: 'Expenditure & Progress'
+    },
+    {
+      title: 'Risk & Anomaly Explanation',
+      query: 'Why is project WS/MP/18 flagged as a risk signal?',
+      category: 'Analytical Verification'
+    },
+    {
+      title: 'Statutory Guidelines RAG',
+      query: 'What are the strictly prohibited works under MPLADS guidelines?',
+      category: 'MoSPI 2023 Policy'
+    },
+    {
+      title: 'MP Constituency Lookup',
+      query: 'Who is the MP for Varanasi and what is their allocated budget?',
+      category: 'Parliamentary Records'
     }
-  }, []);
+  ];
+
+  // Auto focus input on open
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => inputRef.current?.focus(), 150);
+    }
+  }, [isOpen]);
+
+  // Handle escape key to close drawer
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     if (initialQuery && isOpen) {
@@ -137,7 +115,7 @@ I am your **verified analytical research assistant** operating over **30,002+ st
       const errorMsg: ChatMessage = {
         id: `err-${Date.now()}`,
         role: 'assistant',
-        content: `I encountered an operational issue while retrieving verified data. Please retry or refine your query.`,
+        content: `Unable to retrieve verified records at this moment. Please retry or adjust your search criteria.`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       setMessages((prev) => [...prev, errorMsg]);
@@ -162,7 +140,7 @@ I am your **verified analytical research assistant** operating over **30,002+ st
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `MPLADS_AI_Verified_Export_${Date.now()}.csv`);
+    link.setAttribute('download', `MPLADS_Verified_Data_${Date.now()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -171,43 +149,56 @@ I am your **verified analytical research assistant** operating over **30,002+ st
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="w-full max-w-3xl h-full bg-slate-900 border-l border-slate-700 shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out">
-        {/* Header */}
-        <div className="px-5 py-3.5 border-b border-slate-700 bg-slate-950/80 flex items-center justify-between">
+    <div className="fixed inset-0 z-50 flex justify-end bg-slate-900/40 backdrop-blur-[2px] animate-fadeIn transition-opacity">
+      <div 
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="agent-title"
+        className="w-full max-w-2xl sm:max-w-3xl h-full bg-white border-l border-slate-200 shadow-2xl flex flex-col transform transition-transform duration-200 ease-out"
+      >
+        {/* Institutional Government / Enterprise Header */}
+        <div className="px-6 py-4 border-b border-slate-200 bg-slate-50/90 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-amber-600 to-indigo-600 flex items-center justify-center shadow-lg ring-1 ring-white/20">
-              <Sparkles className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 rounded-lg bg-[#002B5B] flex items-center justify-center text-white shadow-sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                <rect width="18" height="14" x="3" y="4" rx="2" />
+                <path d="M7 9h.01" />
+                <path d="M17 9h.01" />
+                <path d="M7 13h10" />
+                <path d="M8 18v2" />
+                <path d="M16 18v2" />
+                <path d="M12 2v2" />
+              </svg>
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h3 className="text-base font-bold text-white tracking-tight">MPLADS Universal Intelligence Agent</h3>
-                <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-                  <ShieldCheck className="w-3 h-3" /> Tier 1 Grounded
+              <div className="flex items-center gap-2.5">
+                <h2 id="agent-title" className="text-base font-bold text-slate-900 tracking-tight">Pratyaksh Intelligence</h2>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <ShieldCheck className="w-3 h-3 text-emerald-600" /> Grounded in Verified Records
                 </span>
               </div>
-              <p className="text-xs text-slate-400">Ask anything across 30,002 verified projects & statutory guidelines</p>
+              <p className="text-xs text-slate-500 mt-0.5">Search and analyze 30,002+ verified MPLADS records, guidelines & analytics</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            {/* Language switch */}
-            <div className="flex bg-slate-800 rounded-md p-0.5 border border-slate-700 text-xs">
+          <div className="flex items-center gap-2.5">
+            {/* Language Selector */}
+            <div className="flex bg-slate-200/80 rounded-lg p-0.5 text-xs font-medium border border-slate-300/60">
               <button
                 onClick={() => setSelectedLanguage('en')}
-                className={`px-2 py-1 rounded ${selectedLanguage === 'en' ? 'bg-indigo-600 text-white font-medium' : 'text-slate-400 hover:text-white'}`}
+                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'en' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 EN
               </button>
               <button
                 onClick={() => setSelectedLanguage('hi')}
-                className={`px-2 py-1 rounded ${selectedLanguage === 'hi' ? 'bg-indigo-600 text-white font-medium' : 'text-slate-400 hover:text-white'}`}
+                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'hi' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 हिंदी
               </button>
               <button
                 onClick={() => setSelectedLanguage('hinglish')}
-                className={`px-2 py-1 rounded ${selectedLanguage === 'hinglish' ? 'bg-indigo-600 text-white font-medium' : 'text-slate-400 hover:text-white'}`}
+                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'hinglish' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 Hinglish
               </button>
@@ -215,204 +206,217 @@ I am your **verified analytical research assistant** operating over **30,002+ st
 
             <button
               onClick={onClose}
-              className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+              aria-label="Close panel"
+              className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Message Feed */}
-        <div className="flex-1 overflow-y-auto p-5 space-y-6">
-          {messages.map((msg) => (
-            <div
-              key={msg.id}
-              className={`flex gap-3.5 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-            >
-              {msg.role === 'assistant' && (
-                <div className="w-8 h-8 rounded-full bg-indigo-600/30 border border-indigo-500/40 flex items-center justify-center shrink-0 mt-1">
-                  <Bot className="w-4 h-4 text-indigo-300" />
-                </div>
-              )}
+        {/* Message Feed / Workspace */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-[#f8fafc]">
+          {messages.length === 0 ? (
+            /* Calm, Institutional Research Empty State */
+            <div className="py-8 px-2 max-w-xl mx-auto space-y-6 text-center animate-fadeIn">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto text-slate-700 shadow-sm">
+                <Search className="w-6 h-6 text-slate-600" />
+              </div>
 
+              <div className="space-y-1.5">
+                <h3 className="text-lg font-bold text-slate-900">Ask Pratyaksh</h3>
+                <p className="text-xs text-slate-500 leading-relaxed max-w-md mx-auto">
+                  Query verified project data, parliamentary allocations, financial progress, ML anomaly signals, and official MoSPI 2023 Guidelines.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left pt-2">
+                {quickStarters.map((item, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleSend(item.query)}
+                    className="p-3 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 rounded-xl transition-all shadow-sm flex flex-col justify-between group text-left cursor-pointer"
+                  >
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{item.category}</span>
+                      <p className="text-xs font-medium text-slate-800 group-hover:text-[#002B5B] transition-colors leading-snug">
+                        {item.query}
+                      </p>
+                    </div>
+                    <div className="pt-2 flex items-center justify-end text-[11px] text-slate-400 group-hover:text-slate-600 font-medium">
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            /* Message Thread */
+            messages.map((msg) => (
               <div
-                className={`max-w-[85%] rounded-2xl p-4 shadow-sm ${
-                  msg.role === 'user'
-                    ? 'bg-gradient-to-br from-indigo-600 to-indigo-700 text-white rounded-tr-none'
-                    : 'bg-slate-800/90 text-slate-200 border border-slate-700/80 rounded-tl-none'
-                }`}
+                key={msg.id}
+                className={`flex gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                {/* Text Content */}
-                <div className="prose prose-invert prose-sm max-w-none space-y-2 leading-relaxed text-sm">
-                  {msg.content.split('\n').map((line, lIdx) => {
-                    if (line.startsWith('### ')) {
-                      return <h4 key={lIdx} className="text-base font-bold text-indigo-300 mt-2 mb-1">{line.replace('### ', '')}</h4>;
-                    }
-                    if (line.startsWith('## ')) {
-                      return <h3 key={lIdx} className="text-lg font-bold text-amber-300 mt-3 mb-1">{line.replace('## ', '')}</h3>;
-                    }
-                    if (line.startsWith('- ')) {
-                      return (
-                        <div key={lIdx} className="flex items-start gap-2 pl-2">
-                          <span className="text-indigo-400 mt-1">•</span>
-                          <span>{line.replace('- ', '')}</span>
-                        </div>
-                      );
-                    }
-                    if (line.startsWith('> ')) {
-                      return (
-                        <blockquote key={lIdx} className="border-l-2 border-amber-500/60 pl-3 py-1 my-2 text-xs italic text-amber-200/90 bg-amber-500/10 rounded-r">
-                          {line.replace('> ', '')}
-                        </blockquote>
-                      );
-                    }
-                    return line ? <p key={lIdx} className="my-1">{line}</p> : <div key={lIdx} className="h-1" />;
-                  })}
-                </div>
-
-                {/* Rich Structured Payload if present */}
-                {msg.responsePayload && (
-                  <div className="mt-4 space-y-3.5 pt-3 border-t border-slate-700/60">
-                    {/* KPI Cards */}
-                    {msg.responsePayload.kpis && msg.responsePayload.kpis.length > 0 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                        {msg.responsePayload.kpis.map((kpi, kIdx) => (
-                          <div
-                            key={kIdx}
-                            className="bg-slate-900/80 border border-slate-700 rounded-lg p-2.5 flex flex-col"
-                          >
-                            <span className="text-[11px] text-slate-400 font-medium">{kpi.label}</span>
-                            <span className="text-base font-bold text-white mt-0.5">{kpi.value}</span>
+                <div
+                  className={`max-w-[90%] rounded-xl p-4.5 ${
+                    msg.role === 'user'
+                      ? 'bg-[#002B5B] text-white shadow-sm'
+                      : 'bg-white text-slate-800 border border-slate-200 shadow-sm'
+                  }`}
+                >
+                  {/* Text Content */}
+                  <div className="prose prose-slate prose-sm max-w-none space-y-2 text-sm leading-relaxed">
+                    {msg.content.split('\n').map((line, lIdx) => {
+                      if (line.startsWith('### ')) {
+                        return <h4 key={lIdx} className="text-sm font-bold text-slate-900 mt-2 mb-1">{line.replace('### ', '')}</h4>;
+                      }
+                      if (line.startsWith('## ')) {
+                        return <h3 key={lIdx} className="text-base font-bold text-slate-900 mt-2.5 mb-1">{line.replace('## ', '')}</h3>;
+                      }
+                      if (line.startsWith('- ')) {
+                        return (
+                          <div key={lIdx} className="flex items-start gap-2 pl-2">
+                            <span className="text-slate-400 font-bold">•</span>
+                            <span className="text-slate-700">{line.replace('- ', '')}</span>
                           </div>
-                        ))}
-                      </div>
-                    )}
+                        );
+                      }
+                      if (line.startsWith('> ')) {
+                        return (
+                          <blockquote key={lIdx} className="border-l-3 border-amber-500/80 pl-3 py-1.5 my-2 text-xs text-slate-600 bg-amber-50/60 rounded-r">
+                            {line.replace('> ', '')}
+                          </blockquote>
+                        );
+                      }
+                      return line ? <p key={lIdx} className="my-1 text-slate-700">{line}</p> : <div key={lIdx} className="h-0.5" />;
+                    })}
+                  </div>
 
-                    {/* Table of Matched Works */}
-                    {msg.responsePayload.projects && msg.responsePayload.projects.length > 0 && (
-                      <div className="bg-slate-900/90 rounded-lg border border-slate-700 overflow-hidden">
-                        <div className="px-3 py-2 bg-slate-950/60 border-b border-slate-700/80 flex items-center justify-between">
-                          <span className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                            <Layers className="w-3.5 h-3.5 text-indigo-400" />
-                            Verified Records Preview ({msg.responsePayload.projects.length})
-                          </span>
-                          <button
-                            onClick={() => downloadReportCSV(msg.responsePayload!.projects)}
-                            className="text-[11px] px-2 py-0.5 rounded bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-300 border border-indigo-500/30 flex items-center gap-1 transition-colors"
-                          >
-                            <Download className="w-3 h-3" /> Export CSV
-                          </button>
-                        </div>
-                        <div className="max-h-48 overflow-y-auto">
-                          <table className="w-full text-left text-xs text-slate-300">
-                            <thead className="bg-slate-950/40 text-slate-400 border-b border-slate-800 sticky top-0">
-                              <tr>
-                                <th className="px-3 py-1.5 font-medium">Work ID</th>
-                                <th className="px-3 py-1.5 font-medium">Title</th>
-                                <th className="px-3 py-1.5 font-medium">State</th>
-                                <th className="px-3 py-1.5 font-medium text-right">Disbursed (₹)</th>
-                              </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-800">
-                              {msg.responsePayload.projects.slice(0, 10).map((proj, pIdx) => (
-                                <tr key={pIdx} className="hover:bg-slate-800/50 transition-colors">
-                                  <td className="px-3 py-1.5 font-mono text-[11px] text-indigo-300">{proj.work_id}</td>
-                                  <td className="px-3 py-1.5 truncate max-w-[200px]" title={proj.work_title}>{proj.work_title}</td>
-                                  <td className="px-3 py-1.5 text-slate-400">{proj.state}</td>
-                                  <td className="px-3 py-1.5 font-semibold text-right text-emerald-400">
-                                    ₹{(proj.disbursed_amount_inr || 0).toLocaleString('en-IN')}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Citations & Evidence Section */}
-                    {msg.responsePayload.citations && msg.responsePayload.citations.length > 0 && (
-                      <div className="bg-slate-900/60 rounded-lg p-3 border border-slate-700/60 space-y-1.5">
-                        <div className="flex items-center justify-between text-xs font-semibold text-slate-300">
-                          <span className="flex items-center gap-1.5">
-                            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                            Data Provenance & Citations
-                          </span>
-                          <span
-                            className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
-                              msg.responsePayload.provenance_tier === 1
-                                ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
-                                : 'bg-amber-500/20 text-amber-400 border border-amber-500/40'
-                            }`}
-                          >
-                            Tier {msg.responsePayload.provenance_tier}
-                          </span>
-                        </div>
-                        <div className="space-y-1">
-                          {msg.responsePayload.citations.map((cit, cIdx) => (
-                            <div key={cIdx} className="text-[11px] text-slate-400 flex items-start gap-1.5">
-                              <span className="text-emerald-500 shrink-0">[{cIdx + 1}]</span>
-                              <span>
-                                <strong className="text-slate-200">{cit.source}</strong> · {cit.citable_anchor}
-                              </span>
+                  {/* Analytical Components */}
+                  {msg.responsePayload && (
+                    <div className="mt-4 space-y-3.5 pt-3.5 border-t border-slate-100">
+                      {/* KPI Stat Cards */}
+                      {msg.responsePayload.kpis && msg.responsePayload.kpis.length > 0 && (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                          {msg.responsePayload.kpis.map((kpi, kIdx) => (
+                            <div
+                              key={kIdx}
+                              className="bg-slate-50 border border-slate-200/80 rounded-lg p-2.5 flex flex-col"
+                            >
+                              <span className="text-[11px] text-slate-500 font-medium">{kpi.label}</span>
+                              <span className="text-sm font-bold text-slate-900 mt-0.5 tracking-tight">{kpi.value}</span>
                             </div>
                           ))}
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {/* Follow-up Suggestions */}
-                    {msg.responsePayload.followups && msg.responsePayload.followups.length > 0 && (
-                      <div className="space-y-1.5">
-                        <span className="text-[11px] font-semibold text-slate-400 flex items-center gap-1">
-                          <Sparkles className="w-3 h-3 text-amber-400" /> Suggested Next Steps
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {msg.responsePayload.followups.map((fUp, fIdx) => (
+                      {/* Structured Data Table */}
+                      {msg.responsePayload.projects && msg.responsePayload.projects.length > 0 && (
+                        <div className="bg-white rounded-lg border border-slate-200 overflow-hidden shadow-xs">
+                          <div className="px-3.5 py-2 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                            <span className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+                              <Layers className="w-3.5 h-3.5 text-slate-500" />
+                              Matching Records ({msg.responsePayload.projects.length})
+                            </span>
                             <button
-                              key={fIdx}
-                              onClick={() => handleSend(fUp)}
-                              className="text-xs px-2.5 py-1.5 rounded-full bg-slate-900/80 hover:bg-indigo-900/50 text-indigo-300 hover:text-white border border-slate-700 hover:border-indigo-500/50 transition-all flex items-center gap-1"
+                              onClick={() => downloadReportCSV(msg.responsePayload!.projects)}
+                              className="text-[11px] px-2.5 py-1 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-medium flex items-center gap-1 transition-colors shadow-2xs"
                             >
-                              <span>{fUp}</span>
-                              <ChevronRight className="w-3 h-3 text-slate-500" />
+                              <Download className="w-3 h-3 text-slate-500" /> Export CSV
                             </button>
-                          ))}
+                          </div>
+                          <div className="max-h-48 overflow-y-auto">
+                            <table className="w-full text-left text-xs text-slate-600">
+                              <thead className="bg-slate-50/80 text-slate-500 border-b border-slate-200 sticky top-0 font-medium">
+                                <tr>
+                                  <th className="px-3 py-1.5 font-medium">Work ID</th>
+                                  <th className="px-3 py-1.5 font-medium">Title</th>
+                                  <th className="px-3 py-1.5 font-medium">State</th>
+                                  <th className="px-3 py-1.5 font-medium text-right">Disbursed</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-100 font-normal">
+                                {msg.responsePayload.projects.slice(0, 10).map((proj, pIdx) => (
+                                  <tr key={pIdx} className="hover:bg-slate-50 transition-colors">
+                                    <td className="px-3 py-1.5 font-mono text-[11px] text-slate-800 font-semibold">{proj.work_id}</td>
+                                    <td className="px-3 py-1.5 truncate max-w-[200px]" title={proj.work_title}>{proj.work_title}</td>
+                                    <td className="px-3 py-1.5 text-slate-500">{proj.state}</td>
+                                    <td className="px-3 py-1.5 font-medium text-right text-slate-900">
+                                      ₹{(proj.disbursed_amount_inr || 0).toLocaleString('en-IN')}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                )}
+                      )}
 
-                <div className="mt-2 text-[10px] text-slate-500 flex justify-end">
-                  {msg.timestamp}
+                      {/* Sources & Provenance */}
+                      {msg.responsePayload.citations && msg.responsePayload.citations.length > 0 && (
+                        <div className="bg-slate-50 rounded-lg p-3 border border-slate-200/80 space-y-1.5">
+                          <div className="flex items-center justify-between text-xs font-semibold text-slate-700">
+                            <span className="flex items-center gap-1.5">
+                              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                              Data Sources & Provenance
+                            </span>
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-white text-slate-600 border border-slate-200">
+                              Tier {msg.responsePayload.provenance_tier}
+                            </span>
+                          </div>
+                          <div className="space-y-1 text-[11px] text-slate-500">
+                            {msg.responsePayload.citations.map((cit, cIdx) => (
+                              <div key={cIdx} className="flex items-start gap-1.5">
+                                <span className="text-slate-400 font-mono">[{cIdx + 1}]</span>
+                                <span>
+                                  <strong className="text-slate-700">{cit.source}</strong> · {cit.citable_anchor}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Follow-up Suggestions */}
+                      {msg.responsePayload.followups && msg.responsePayload.followups.length > 0 && (
+                        <div className="space-y-1.5 pt-1">
+                          <span className="text-[11px] font-semibold text-slate-500">Suggested Next Queries:</span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {msg.responsePayload.followups.map((fUp, fIdx) => (
+                              <button
+                                key={fIdx}
+                                onClick={() => handleSend(fUp)}
+                                className="text-xs px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 transition-all flex items-center gap-1 shadow-2xs cursor-pointer"
+                              >
+                                <span>{fUp}</span>
+                                <ChevronRight className="w-3 h-3 text-slate-400" />
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  <div className={`mt-2 text-[10px] ${msg.role === 'user' ? 'text-indigo-200' : 'text-slate-400'} flex justify-end`}>
+                    {msg.timestamp}
+                  </div>
                 </div>
               </div>
-
-              {msg.role === 'user' && (
-                <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center shrink-0 mt-1 shadow-md">
-                  <User className="w-4 h-4 text-white" />
-                </div>
-              )}
-            </div>
-          ))}
+            ))
+          )}
 
           {isLoading && (
-            <div className="flex gap-3 justify-start items-center">
-              <div className="w-8 h-8 rounded-full bg-indigo-600/30 border border-indigo-500/40 flex items-center justify-center">
-                <RefreshCw className="w-4 h-4 text-indigo-400 animate-spin" />
-              </div>
-              <div className="bg-slate-800/80 rounded-2xl p-3.5 border border-slate-700 text-xs text-slate-300 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
-                <span>Orchestrating tools across 30,002 verified records and MoSPI guidelines...</span>
-              </div>
+            <div className="flex gap-2.5 items-center justify-start text-xs text-slate-500 bg-white p-3 rounded-xl border border-slate-200 max-w-sm">
+              <RefreshCw className="w-3.5 h-3.5 text-slate-600 animate-spin" />
+              <span>Retrieving verified records & evaluating signals...</span>
             </div>
           )}
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Bar */}
-        <div className="p-4 border-t border-slate-800 bg-slate-950/90">
+        {/* Search & Query Input Bar */}
+        <div className="p-4 border-t border-slate-200 bg-white shrink-0">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -421,23 +425,25 @@ I am your **verified analytical research assistant** operating over **30,002+ st
             className="flex items-center gap-2"
           >
             <input
+              ref={inputRef}
               type="text"
               value={inputQuery}
               onChange={(e) => setInputQuery(e.target.value)}
-              placeholder="Ask anything (e.g. 'Show delayed projects in Maharashtra', 'Why is WS/MP/18 flagged?')..."
-              className="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+              placeholder="Search projects, MPs, expenditure, guidelines..."
+              className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#002B5B] focus:border-transparent transition-all"
             />
             <button
               type="submit"
               disabled={!inputQuery.trim() || isLoading}
-              className="px-4 py-3 bg-gradient-to-r from-indigo-600 to-amber-600 hover:from-indigo-500 hover:to-amber-500 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-xl font-medium shadow-lg transition-all flex items-center gap-2"
+              aria-label="Send query"
+              className="px-4 py-2.5 bg-[#002B5B] hover:bg-[#0f284e] disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl font-medium shadow-sm transition-all flex items-center gap-1.5 shrink-0"
             >
               <Send className="w-4 h-4" />
             </button>
           </form>
-          <div className="mt-2 flex items-center justify-between text-[11px] text-slate-500">
-            <span>Universal AI Orchestrator · Strict Grounding Guardrail Active</span>
-            <span>Supports English · हिंदी · Hinglish</span>
+          <div className="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+            <span>Press Enter to send · Grounded in official eSAKSHI dataset</span>
+            <span>Supports EN · हिंदी · Hinglish</span>
           </div>
         </div>
       </div>
