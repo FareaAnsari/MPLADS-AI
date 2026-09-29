@@ -32,9 +32,12 @@ import { ProjectBoardPage } from './pages/ProjectBoardPage';
 import { PreSanctionSandboxPage } from './pages/PreSanctionSandboxPage';
 import { SupplyChainPage } from './pages/SupplyChainPage';
 import { DecisionSupportPage } from './pages/DecisionSupportPage';
+import { UniversalChatPage } from './pages/UniversalChatPage';
+import { UniversalChatDrawer } from './components/chat/UniversalChatDrawer';
 import { RoleSelector } from './components/RoleSelector';
 import { UserRole } from './types';
 import { SecurityProvider, useSecurity } from './security';
+import { Sparkles, Bot } from 'lucide-react';
 
 const RoleSelectorNav: React.FC = () => {
   const navigate = useNavigate();
@@ -94,11 +97,13 @@ const RoleSelectorNav: React.FC = () => {
 };
 
 export const App: React.FC = () => {
+  const [isAgentDrawerOpen, setIsAgentDrawerOpen] = React.useState(false);
+
   return (
     <LanguageProvider>
       <SecurityProvider>
         <BrowserRouter>
-          <div className="min-h-screen flex flex-col bg-[#f4f6f9] text-slate-800 antialiased font-sans">
+          <div className="min-h-screen flex flex-col bg-[#f4f6f9] text-slate-800 antialiased font-sans relative">
             {/* Top Government Portal Header */}
             <GovernmentHeader />
 
@@ -109,6 +114,8 @@ export const App: React.FC = () => {
             <main id="main-content" className="flex-1 pb-8">
               <Routes>
                 <Route path="/" element={<DashboardPage />} />
+                <Route path="/agent" element={<UniversalChatPage />} />
+                <Route path="/chat" element={<UniversalChatPage />} />
                 <Route path="/projects" element={<ProjectsListPage />} />
                 <Route path="/projects/board" element={<ProjectBoardPage />} />
                 <Route path="/projects/:id/*" element={<ProjectDetailPage />} />
@@ -157,6 +164,22 @@ export const App: React.FC = () => {
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
+
+            {/* Global Floating AI Agent Launcher */}
+            <button
+              onClick={() => setIsAgentDrawerOpen(true)}
+              className="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-indigo-600 via-purple-600 to-amber-600 hover:from-indigo-500 hover:to-amber-500 text-white rounded-full p-4 shadow-2xl hover:scale-105 transition-all flex items-center gap-2.5 ring-4 ring-white/30 border border-white/20 group"
+              title="Open Universal MPLADS AI Agent"
+            >
+              <Bot className="w-6 h-6 animate-pulse" />
+              <span className="text-xs font-bold tracking-wide pr-1 hidden sm:inline-block">Ask AI Agent</span>
+            </button>
+
+            {/* Universal Chat Drawer Modal */}
+            <UniversalChatDrawer
+              isOpen={isAgentDrawerOpen}
+              onClose={() => setIsAgentDrawerOpen(false)}
+            />
 
             {/* Official Government Footer */}
             <GovernmentFooter />

@@ -58,6 +58,7 @@ export const GovernmentHeader: React.FC<HeaderProps> = ({ onSearch }) => {
 
   const navItems = [
     { label: t('nav_home'), path: '/', icon: <Home className="w-3.5 h-3.5" />, isHome: true },
+    { label: 'AI Agent', path: '/agent', icon: <Sparkles className="w-3.5 h-3.5 text-amber-400" /> },
     { label: t('nav_mps'), path: '/mps', icon: <Award className="w-3.5 h-3.5" /> },
     {
       label: t('nav_projects'),

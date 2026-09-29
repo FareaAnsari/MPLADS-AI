@@ -1,0 +1,101 @@
+[
+  {
+    "section_id": "MOSPI-2023-CH1",
+    "chapter": 1,
+    "chapter_title": "Scheme Background & Financial Entitlement",
+    "title": "Annual Entitlement & Single Nodal Account (SNA) System",
+    "text": "Under the Revised MPLADS Guidelines 2023 issued by the Ministry of Statistics and Programme Implementation (MoSPI), Government of India, each Member of Parliament (MP) is entitled to recommend developmental works to the tune of ₹5.00 Crore per annum, released in two equal installments of ₹2.50 Crore each. The funds are routed directly from the Central Government to the Single Nodal Agency (SNA) account at the State level, maintaining zero-balance subsidiary accounts at the Implementing District Authority (IDA) level to prevent fiscal parking and ensure transparent fund drawdown.",
+    "keywords": ["entitlement", "5 crore", "installment", "2.5 crore", "SNA", "single nodal agency", "mospi", "drawdown", "annual allocation"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 1 (Para 1.3 - 1.5)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH2",
+    "chapter": 2,
+    "chapter_title": "Jurisdiction & MP Recommendation Scope",
+    "title": "Lok Sabha, Rajya Sabha and Nominated MP Scope",
+    "text": "Lok Sabha MPs can recommend works only within their respective Parliamentary Constituencies. Elected Rajya Sabha MPs can recommend works in one or more districts within the State from which they have been elected. Nominated Members of both Lok Sabha and Rajya Sabha may recommend works in one or more districts anywhere in India. Recommendations must be submitted through the statutory eSAKSHI digital portal.",
+    "keywords": ["lok sabha", "rajya sabha", "nominated mp", "jurisdiction", "constituency", "recommendation", "esakshi"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 2 (Para 2.1 - 2.4)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH3-PERM",
+    "chapter": 3,
+    "chapter_title": "Permissible Works",
+    "title": "Permissible Categories of Community Assets",
+    "text": "MPLADS funds can be utilized only for the creation of durable community assets of public utility. Permissible sectors include: 1. Drinking Water Supply (tube wells, piped water lines, water filtration plants); 2. Education Infrastructure (classrooms, libraries, laboratories, computer labs in government/aided schools); 3. Public Health & Sanitation (public health centres, maternity wards, ambulance services, public toilets); 4. Roads, Pathways & Bridges (culverts, footbridges, all-weather village roads connecting to habitations); 5. Renewable Energy (solar streetlights, community biogas plants); 6. Sports & Community Centres (open gymnasiums, community halls, cremation/burial grounds).",
+    "keywords": ["permissible works", "community assets", "drinking water", "education", "health", "sanitation", "roads", "solar", "ambulance", "libraries"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 3 (Para 3.1 & Annexure-I)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH3-PROH",
+    "chapter": 3,
+    "chapter_title": "Prohibited Works",
+    "title": "Strictly Prohibited Works under MPLADS",
+    "text": "The following works are strictly prohibited under MPLADS: 1. Construction of religious structures, places of worship (temples, mosques, churches, gurudwaras), or monuments; 2. Works benefiting private individuals, private trusts, commercial entities, or residential buildings; 3. Maintenance, repair, whitewashing, or recurring expenditure of existing buildings/assets; 4. Land acquisition costs or compensation payments; 5. Purchase of inventory, office stationery, or recurring administrative overheads; 6. Construction of office buildings for commercial or administrative staff.",
+    "keywords": ["prohibited works", "religious structures", "places of worship", "temple", "mosque", "church", "private property", "maintenance", "repair", "land acquisition"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 3 (Para 3.4 & Annexure-II Prohibited List)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH4-SCST",
+    "chapter": 4,
+    "chapter_title": "Special Focus Areas & Mandatory Sub-Plans",
+    "title": "Mandatory SC (15%) and ST (7.5%) Area Allocation",
+    "text": "To ensure equitable development, it is mandatory that at least 15% of the annual MPLADS entitlement (₹75 Lakhs out of ₹5 Crore) must be recommended for works in areas inhabited by Scheduled Caste (SC) population. Similarly, at least 7.5% of the annual entitlement (₹37.5 Lakhs out of ₹5 Crore) must be recommended for areas inhabited by Scheduled Tribe (ST) population. In the event of non-allocation or insufficient SC/ST population in a constituency, funds may be allocated in other SC/ST clusters within the State upon certification by the District Authority.",
+    "keywords": ["sc allocation", "st allocation", "scheduled caste", "scheduled tribe", "15 percent", "7.5 percent", "sub-plan", "mandate", "75 lakh", "37.5 lakh"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 4 (Para 4.1 - 4.3)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH4-TRUSTS",
+    "chapter": 4,
+    "chapter_title": "Assistance to Trusts & Societies",
+    "title": "Ceiling Limit for Registered Trusts and Societies",
+    "text": "An MP may recommend funds for community infrastructure to registered non-profit Trusts or Societies running educational, medical, or elderly care institutions. The lifetime maximum ceiling limit for assistance to any single Trust or Society is ₹50 Lakh. Furthermore, an MP cannot allocate more than ₹1.00 Crore per financial year across all eligible Trusts/Societies combined. The Trust must have been active and registered for at least 3 years, and the asset created must remain public community property.",
+    "keywords": ["trusts", "societies", "ceiling limit", "50 lakh", "1 crore limit", "non-profit", "public property"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 4 (Para 4.5 - 4.8)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH5-CALAMITY",
+    "chapter": 5,
+    "chapter_title": "Natural Calamities & Disaster Mitigation",
+    "title": "Emergency Funds for Natural Calamities",
+    "text": "In the event of a notified natural calamity (floods, earthquakes, cyclones, cloudbursts) within the State: 1. Any MP from that State may recommend up to ₹1.00 Crore per year for disaster relief and reconstruction works. 2. In the event of a Calamity of Severe Nature declared by the Central Government anywhere in India, any Lok Sabha or Rajya Sabha MP from anywhere in the country may contribute up to ₹1.00 Crore from their MPLADS funds to the affected district(s) for immediate rehabilitation.",
+    "keywords": ["calamity", "disaster", "emergency", "severe nature", "1 crore", "flood", "earthquake", "cyclone", "rehabilitation"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 5 (Para 5.1 - 5.4)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH6-IDA",
+    "chapter": 6,
+    "chapter_title": "Implementing District Authority (IDA)",
+    "title": "Powers, Scrutiny and 75-Day Statutory SLA Tracker",
+    "text": "The District Collector / District Magistrate / Deputy Commissioner acts as the Implementing District Authority (IDA). The IDA is responsible for: 1. Verifying technical feasibility, land title, and cost estimates of recommended works; 2. Ensuring the work does not duplicate any other Central/State scheme (PMGSY, MGNREGA); 3. Granting administrative and financial sanction within a statutory Service Level Agreement (SLA) of 75 days from the date of MP recommendation. If a work is rejected, the IDA must communicate reasons in writing to the MP within 45 days.",
+    "keywords": ["ida", "district authority", "district collector", "sla", "75 days", "administrative sanction", "scrutiny", "statutory timeline", "rejection notice"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 6 (Para 6.1 - 6.6)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH7-PROCUREMENT",
+    "chapter": 7,
+    "chapter_title": "Procurement & Tendering",
+    "title": "Mandatory E-Tendering & GeM Procurement Standards",
+    "text": "All works under MPLADS must be executed strictly following State Government Public Works Department (PWD) procurement codes and central vigilance guidelines. 1. E-Tendering is mandatory for all works above ₹5 Lakh; 2. Material procurement must leverage the Government e-Marketplace (GeM) wherever applicable; 3. Projects must be completed within 12 months from the date of financial sanction; 4. Split-tendering or breaking contracts to bypass e-tendering thresholds is strictly prohibited.",
+    "keywords": ["procurement", "e-tendering", "gem", "pwd", "rates", "contractor", "split tendering", "12 months", "tender"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 7 (Para 7.1 - 7.5)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH9-MONITORING",
+    "chapter": 9,
+    "chapter_title": "Monitoring, Inspection & Citizen Transparency",
+    "title": "Annual 10% Physical Inspection & Citizen Information Boards",
+    "text": "1. The District Planning Officer / Collectorate must conduct physical inspections of at least 10% of all ongoing and completed works every financial year. 2. A permanent Citizen Information Plaque (Signboard) must be erected at every project site in the local language and Hindi/English, specifying: Project Title, Sanctioned Cost, Date of Start, Date of Completion, Hon'ble MP's Name, and Implementing Agency Name. 3. Geo-tagged before/after photographs must be uploaded to the eSAKSHI mobile application.",
+    "keywords": ["inspection", "10 percent", "citizen board", "plaque", "esakshi", "geo-tagged", "transparency", "monitoring"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 9 (Para 9.1 - 9.7)"
+  },
+  {
+    "section_id": "MOSPI-2023-CH11-AUDIT",
+    "chapter": 11,
+    "chapter_title": "Audit & Utilization Certificates (UC)",
+    "title": "CAG Compliance & Utilization Certification Milestones",
+    "text": "All MPLADS expenditure is subject to statutory audit by the Comptroller and Auditor General (CAG) of India and Local Fund Auditors. Release of the second annual installment (₹2.50 Cr) is contingent on the District Authority submitting Utilization Certificates (UC) certifying that at least 80% of previously disbursed funds have been physically utilized, along with an unspent balance certificate.",
+    "keywords": ["audit", "cag", "utilization certificate", "uc", "80 percent", "unspent balance", "financial milestone"],
+    "citation": "MoSPI Revised MPLADS Guidelines 2023 · Chapter 11 (Para 11.1 - 11.4)"
+  }
+]
