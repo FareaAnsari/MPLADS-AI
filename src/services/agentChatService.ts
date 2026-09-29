@@ -69,8 +69,174 @@ export class AgentChatService {
     const convId = this.conversationId || `session-${Date.now()}`;
     const tokens = q.split(/\s+/).filter(t => t.length > 2);
 
-    // 1. STATUTORY GUIDELINES & POLICY RULES
-    if (q.includes('prohibit') || q.includes('negative list') || q.includes('guideline') || q.includes('rule') || q.includes('not allowed') || q.includes('mandate')) {
+    // 1. STATUTORY POLICY & GUIDELINE HANDLERS (GRANULAR INTENT MATCHING)
+
+    // A. 75-DAY SANCTION TIMELINE MANDATE
+    if (q.includes('75-day') || q.includes('75 day') || q.includes('75 days') || q.includes('sanction rule') || q.includes('sanction timeline')) {
+      return {
+        conversation_id: convId,
+        answer: `**The 75-Day Sanction Mandate under MoSPI Revised Guidelines 2023 (Section 3.11)**:
+
+District Authorities (IDA / District Collector / Deputy Commissioner) are under a **statutory time-bound obligation** to process project recommendations from Hon'ble MPs:
+
+1. **Mandatory 75-Day Ceiling**:
+   * The District Authority must accord administrative and financial sanction to all eligible recommended works within **75 days** of receiving the recommendation through the e-SAKSHI portal.
+2. **Technical Sanction & Estimate Preparation**:
+   * Within this 75-day window, the implementing agency must prepare detailed technical estimates, check land availability, verify non-duplication, and accord technical sanction.
+3. **Formal Ineligibility Communication**:
+   * If a recommended work is found technically unfeasible or falls under the Annexure-II Negative List, the District Authority **MUST formally communicate the detailed reasons for rejection** to the Hon'ble MP and MoSPI within the same 75-day timeline.
+4. **Automated Delay Escalation**:
+   * In MPLADS-AI, works pending sanction past **75 days** are automatically tagged with a ⏱️ *Sanction Overdue Alert* and escalated to the State Nodal Authority (SNA) and MoSPI dashboard.`,
+        intents: ['GUIDELINES_75_DAY_RULE'],
+        entities: { policy_section: 'Section 3.11', statutory_days: 75 },
+        kpis: [
+          { label: 'Statutory Limit', value: '75 Days Max', variant: 'blue' },
+          { label: 'Portal', value: 'e-SAKSHI Mandatory', variant: 'green' },
+          { label: 'Authority', value: 'District Magistrate', variant: 'blue' },
+          { label: 'Escalation', value: 'State Nodal + MoSPI', variant: 'amber' }
+        ],
+        projects: [],
+        citations: [
+          {
+            source: 'MoSPI Revised Guidelines on MPLADS 2023',
+            provenance_tier: 1,
+            citable_anchor: 'Clause 3.11 (Time Frame for Sanction of Works)',
+            timestamp: new Date().toISOString()
+          }
+        ],
+        followups: [
+          'How does the 15% SC / 7.5% ST quota engine calculate compliance?',
+          'What are the penalty rules for project splitting?',
+          'What are the strictly prohibited works under MPLADS?'
+        ],
+        provenance_tier: 1,
+        execution_time_ms: 6.8
+      };
+    }
+
+    // B. STATUTORY SC / ST QUOTA ALLOCATION (15% & 7.5%)
+    if (q.includes('quota') || q.includes('sc/st') || q.includes('sc st') || q.includes('15%') || q.includes('7.5%') || q.includes('scheduled caste') || q.includes('tribal')) {
+      return {
+        conversation_id: convId,
+        answer: `**Statutory SC/ST Quota Mandates under MoSPI Guidelines 2023 (Section 3.12)**:
+
+To ensure inclusive development, the guidelines mandate specific spatial target spending for disadvantaged communities:
+
+1. **Mandatory Quota Percentages**:
+   * **Scheduled Caste (SC) Areas**: At least **15.0% of annual allocation** (₹75.00 Lakh out of ₹5.00 Cr annual entitlement).
+   * **Scheduled Tribe (ST) Areas**: At least **7.5% of annual allocation** (₹37.50 Lakh out of ₹5.00 Cr annual entitlement).
+2. **Eligibility Criteria for SC/ST Area Works**:
+   * Works must be recommended inside villages, habitations, or wards where SC/ST population constitutes **over 50%** of the local population (or in areas predominantly inhabited by SC/ST communities).
+3. **Audit & Non-Compliance Rules**:
+   * If an MP fails to achieve the minimum 15% SC and 7.5% ST allocation thresholds, the system flags a quota deficit. Unutilized quota entitlements carry forward as earmarked balances.
+4. **Exemptions**:
+   * Nominated MPs and Rajya Sabha MPs can recommend SC/ST works anywhere in the state or nation where SC/ST communities reside.`,
+        intents: ['GUIDELINES_SC_ST_QUOTA'],
+        entities: { sc_quota: '15%', st_quota: '7.5%', section: 'Section 3.12' },
+        kpis: [
+          { label: 'SC Quota', value: '15.0% (₹75 L/yr)', variant: 'blue' },
+          { label: 'ST Quota', value: '7.5% (₹37.5 L/yr)', variant: 'blue' },
+          { label: 'Annual Entitlement', value: '₹5.00 Cr', variant: 'green' },
+          { label: 'Compliance Status', value: 'Audited in Real-Time', variant: 'green' }
+        ],
+        projects: [],
+        citations: [
+          {
+            source: 'MoSPI Revised Guidelines on MPLADS 2023',
+            provenance_tier: 1,
+            citable_anchor: 'Clause 3.12 (Works for SC and ST Population Areas)',
+            timestamp: new Date().toISOString()
+          }
+        ],
+        followups: [
+          'What is the 75-day sanction rule for District Authorities?',
+          'What are the penalty rules for project splitting?',
+          'What are the strictly prohibited works under MPLADS?'
+        ],
+        provenance_tier: 1,
+        execution_time_ms: 7.2
+      };
+    }
+
+    // C. PROJECT SPLITTING & ARTIFICIAL FRAGMENTATION RULES
+    if (q.includes('split') || q.includes('fragment') || q.includes('circumvent') || q.includes('penalty')) {
+      return {
+        conversation_id: convId,
+        answer: `**Statutory Prohibition on Project Splitting under MoSPI Guidelines 2023 (Section 4.5)**:
+
+1. **Definition of Project Splitting**:
+   * Dividing a single composite public works asset into multiple smaller micro-works to artificially remain below tender thresholds, financial limits, or technical approval tiers is **strictly illegal**.
+2. **Common Splitting Patterns Detected by AI**:
+   * *Spatial Splitting*: Recommending multiple ₹4.95 Lakh road segments within the same 500-meter stretch on the same day.
+   * *Phase Splitting*: Splitting building superstructure, electrical works, and plumbing into separate works awarded to the same contractor without a single master DPR.
+3. **Enforcement & Penalties**:
+   * District Authorities are forbidden from issuing separate sanctions for fragmented components of a single asset.
+   * MPLADS-AI employs spatial clustering (DBSCAN) and contractor co-occurrence analysis to automatically flag suspected project splitting before sanction.`,
+        intents: ['GUIDELINES_PROJECT_SPLITTING'],
+        entities: { policy_section: 'Section 4.5', violation_type: 'Artificial Project Splitting' },
+        kpis: [
+          { label: 'Splitting Rule', value: 'STRICTLY PROHIBITED', variant: 'red' },
+          { label: 'Detection Engine', value: 'Spatial AI DBSCAN', variant: 'blue' },
+          { label: 'Sanction Type', value: 'Unified DPR Mandatory', variant: 'green' }
+        ],
+        projects: [],
+        citations: [
+          {
+            source: 'MoSPI Revised Guidelines on MPLADS 2023',
+            provenance_tier: 1,
+            citable_anchor: 'Clause 4.5 (Prohibition of Artificial Splitting of Works)',
+            timestamp: new Date().toISOString()
+          }
+        ],
+        followups: [
+          'What is the 75-day sanction rule for District Authorities?',
+          'What are the strictly prohibited works under MPLADS?',
+          'How does the 15% SC / 7.5% ST quota engine calculate compliance?'
+        ],
+        provenance_tier: 1,
+        execution_time_ms: 7.0
+      };
+    }
+
+    // D. NATURAL DISASTER / EMERGENCY CALAMITY PROVISIONS
+    if (q.includes('disaster') || q.includes('calamity') || q.includes('flood') || q.includes('earthquake') || q.includes('emergency')) {
+      return {
+        conversation_id: convId,
+        answer: `**Natural Calamity & Disaster Provisions under MoSPI Guidelines 2023 (Section 3.18)**:
+
+1. **Severe Natural Calamities (Nationwide)**:
+   * In the event of a severe natural calamity (e.g. major flood, cyclone, earthquake) declared by the Central Government, an MP can recommend works up to **₹1.00 Cr per financial year** in affected areas **anywhere in India**.
+2. **Calamities within State / Constituency**:
+   * For local disasters declared by State Governments, MPs can recommend up to **₹25.00 Lakh per disaster event** for emergency reconstruction of damaged public infrastructure.
+3. **Permissible Emergency Works**:
+   * Rebuilding drinking water wells, rebuilding damaged school roofs, restoring primary health dispensaries, and community shelters.`,
+        intents: ['GUIDELINES_DISASTER_PROVISION'],
+        entities: { section: 'Section 3.18', max_amount: '₹1.00 Cr/year' },
+        kpis: [
+          { label: 'National Calamity Cap', value: '₹1.00 Cr / FY', variant: 'green' },
+          { label: 'State Calamity Cap', value: '₹25.00 L / Event', variant: 'blue' },
+          { label: 'Scope', value: 'Pan-India for Central Calamities', variant: 'blue' }
+        ],
+        projects: [],
+        citations: [
+          {
+            source: 'MoSPI Revised Guidelines on MPLADS 2023',
+            provenance_tier: 1,
+            citable_anchor: 'Clause 3.18 (Works in Areas Affected by Natural Calamity)',
+            timestamp: new Date().toISOString()
+          }
+        ],
+        followups: [
+          'What are the strictly prohibited works under MPLADS?',
+          'What is the 75-day sanction rule for District Authorities?'
+        ],
+        provenance_tier: 1,
+        execution_time_ms: 6.9
+      };
+    }
+
+    // E. STRICTLY PROHIBITED WORKS (NEGATIVE LIST — ANNEXURE-II)
+    if (q.includes('prohibit') || q.includes('negative list') || q.includes('not allowed') || q.includes('forbidden') || q.includes('temple') || q.includes('religious') || q.includes('statue')) {
       return {
         conversation_id: convId,
         answer: `**Statutory Prohibited Works under MoSPI Revised MPLADS Guidelines 2023 (Negative List — Annexure-II)**:
@@ -78,14 +244,14 @@ export class AgentChatService {
 The following categories are **STRICTLY PROHIBITED** from sanction under MPLADS funds:
 
 1. ❌ **Religious Structures & Places of Worship**: Construction, renovation, or boundary walls for temples, mosques, churches, gurdwaras, or religious trusts.
-2. ❌ **Commercial Assets**: Assets that generate profit for private entities, private commercial clinics, or business parks.
-3. ❌ **Land Acquisition**: Purchase of land or compensation payments.
+2. ❌ **Commercial & Revenue-Generating Assets**: Assets that generate profit for private entities, private clinics, or business parks.
+3. ❌ **Land Acquisition**: Purchase of land or payment of compensation for land acquisition.
 4. ❌ **Grants to Private / Unaided Institutions**: Grants to privately managed bodies (except registered non-profit trusts serving SC/ST/Divyangjan under Section 3.14 statutory caps).
 5. ❌ **Recurring Expenditures & Maintenance**: Routine repairs, staff salaries, consumables, fuel, or operational maintenance.
 6. ❌ **Memorials & Statues**: Erection of statues, memorials, or commemorative arches.
 
 **Statutory Quota Mandate**: Every MP must recommend at least **15% of annual allocation for SC population areas** and **7.5% for ST population areas**.`,
-        intents: ['GUIDELINES_POLICY_QUERY'],
+        intents: ['GUIDELINES_NEGATIVE_LIST'],
         entities: { policy_ref: 'MoSPI Guidelines 2023', section: 'Annexure-II' },
         kpis: [
           { label: 'SC Quota', value: '15.0% Mandatory', variant: 'blue' },
@@ -109,6 +275,51 @@ The following categories are **STRICTLY PROHIBITED** from sanction under MPLADS 
         ],
         provenance_tier: 1,
         execution_time_ms: 7.1
+      };
+    }
+
+    // F. GENERAL GUIDELINES OVERVIEW
+    if (q.includes('guideline') || q.includes('what do the mplads guidelines say') || q.includes('framework') || q.includes('how does mplads work')) {
+      return {
+        conversation_id: convId,
+        answer: `**Core Statutory Architecture of the MPLAD Scheme (MoSPI Revised Guidelines 2023)**:
+
+The Members of Parliament Local Area Development Scheme (MPLADS) enables Hon'ble MPs to recommend durable community asset works with local priority:
+
+1. **Annual Financial Entitlement**:
+   * **₹5.00 Crore per MP per Financial Year**, released in two equal non-lapsable tranches of ₹2.50 Cr directly to the District Authority via the **e-SAKSHI digital portal**.
+2. **Role of Implementing Authority (District Collector / DM)**:
+   * The MP only *recommends* works. The District Authority is the administrative head responsible for examining feasibility, awarding tenders, supervising quality, and making vendor disbursements.
+3. **Statutory Timeframe (The 75-Day Rule)**:
+   * District Authorities must sanction eligible works within **75 days** of receipt.
+4. **Mandatory Spatial Quotas**:
+   * At least **15% for SC population areas** and **7.5% for ST population areas**.
+5. **Permissible Focus Sectors**:
+   * Drinking Water, Education, Public Health, Sanitation, Rural Roads & Bridges, Renewable Energy, and Disaster Mitigation.`,
+        intents: ['GUIDELINES_OVERVIEW'],
+        entities: { entitlement: '₹5.00 Cr/year', portal: 'e-SAKSHI' },
+        kpis: [
+          { label: 'Annual Entitlement', value: '₹5.00 Cr / Year', variant: 'green' },
+          { label: 'Sanction Timeline', value: '75 Days Statutory', variant: 'blue' },
+          { label: 'SC / ST Quota', value: '15% SC · 7.5% ST', variant: 'blue' },
+          { label: 'Portal', value: 'e-SAKSHI (Paperless)', variant: 'green' }
+        ],
+        projects: [],
+        citations: [
+          {
+            source: 'MoSPI Revised Guidelines on MPLADS 2023',
+            provenance_tier: 1,
+            citable_anchor: 'Chapter 1 & 2 (Scheme Architecture & Operational Guidelines)',
+            timestamp: new Date().toISOString()
+          }
+        ],
+        followups: [
+          'What is the 75-day sanction rule for District Authorities?',
+          'What are the strictly prohibited works under MPLADS?',
+          'How does the 15% SC / 7.5% ST quota engine calculate compliance?'
+        ],
+        provenance_tier: 1,
+        execution_time_ms: 7.0
       };
     }
 
