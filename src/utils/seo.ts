@@ -13,14 +13,14 @@ export const SITE_CONFIG = {
   titleTemplate: '%s | MPLADS-AI',
   description:
     'AI-powered national monitoring, anomaly detection, and decision support platform for the Members of Parliament Local Area Development Scheme (MPLADS). MoSPI, Government of India.',
-  siteUrl: (import.meta as any).env?.VITE_SITE_URL || 'https://mplads-ai.vercel.app',
+  siteUrl: (import.meta as any).env?.VITE_SITE_URL || 'https://mplads-ai-pratyaksh.vercel.app',
   ogImage: '/assets/images/hero_parliament.jpg',
   themeColor: '#0b2e59',
   locale: 'en_IN',
   organization: {
     name: 'MPLADS-AI Governance Platform',
-    url: 'https://mplads-ai.vercel.app',
-    logo: 'https://mplads-ai.vercel.app/assets/images/national_emblem.png',
+    url: 'https://mplads-ai-pratyaksh.vercel.app',
+    logo: 'https://mplads-ai-pratyaksh.vercel.app/assets/images/national_emblem.png',
     description:
       'National AI-powered auditing and decision support platform analyzing 38,000+ MPLADS public infrastructure works.',
     sameAs: ['https://mplads.mospi.gov.in', 'https://data.gov.in']

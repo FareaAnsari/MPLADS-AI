@@ -29,4 +29,4 @@ Disallow: /*?*token=*
 Disallow: /*?*key=*
 
 # Production XML Sitemap Location
-Sitemap: https://mplads-ai.vercel.app/sitemap.xml
+Sitemap: https://mplads-ai-pratyaksh.vercel.app/sitemap.xml
