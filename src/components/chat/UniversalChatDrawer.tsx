@@ -37,24 +37,20 @@ export const UniversalChatDrawer: React.FC<UniversalChatDrawerProps> = ({
 
   const quickStarters = [
     {
-      title: 'Delayed Works Analysis',
-      query: 'Show delayed projects in Maharashtra above ₹50 lakh',
+      query: 'Show delayed projects in Maharashtra',
       category: 'Expenditure & Progress'
     },
     {
-      title: 'Risk & Anomaly Explanation',
-      query: 'Why is project WS/MP/18 flagged as a risk signal?',
+      query: 'Why is this project flagged?',
       category: 'Analytical Verification'
     },
     {
-      title: 'Statutory Guidelines RAG',
-      query: 'What are the strictly prohibited works under MPLADS guidelines?',
-      category: 'MoSPI 2023 Policy'
+      query: 'Compare expenditure across districts',
+      category: 'Constituency Benchmarking'
     },
     {
-      title: 'MP Constituency Lookup',
-      query: 'Who is the MP for Varanasi and what is their allocated budget?',
-      category: 'Parliamentary Records'
+      query: 'What do the MPLADS guidelines say?',
+      category: 'MoSPI 2023 Policy'
     }
   ];
 
@@ -157,48 +153,40 @@ export const UniversalChatDrawer: React.FC<UniversalChatDrawerProps> = ({
         className="w-full max-w-2xl sm:max-w-3xl h-full bg-white border-l border-slate-200 shadow-2xl flex flex-col transform transition-transform duration-200 ease-out"
       >
         {/* Institutional Government / Enterprise Header */}
-        <div className="px-6 py-4 border-b border-slate-200 bg-slate-50/90 flex items-center justify-between shrink-0">
+        <div className="px-6 py-4 border-b border-slate-200 bg-slate-50/95 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#002B5B] flex items-center justify-center text-white shadow-sm">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                <rect width="18" height="14" x="3" y="4" rx="2" />
-                <path d="M7 9h.01" />
-                <path d="M17 9h.01" />
-                <path d="M7 13h10" />
-                <path d="M8 18v2" />
-                <path d="M16 18v2" />
-                <path d="M12 2v2" />
-              </svg>
+            <div className="w-8 h-8 rounded-lg bg-[#002B5B] flex items-center justify-center text-white shadow-xs">
+              <span className="text-sm font-bold leading-none">✦</span>
             </div>
             <div>
               <div className="flex items-center gap-2.5">
-                <h2 id="agent-title" className="text-base font-bold text-slate-900 tracking-tight">Pratyaksh Intelligence</h2>
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  <ShieldCheck className="w-3 h-3 text-emerald-600" /> Grounded in Verified Records
+                <h2 id="agent-title" className="text-base font-bold text-slate-900 tracking-tight">Ask MPLAD</h2>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                  <ShieldCheck className="w-3 h-3 text-slate-600" /> Grounded in verified records
                 </span>
               </div>
-              <p className="text-xs text-slate-500 mt-0.5">Search and analyze 30,002+ verified MPLADS records, guidelines & analytics</p>
+              <p className="text-xs text-slate-500 mt-0.5">Search and analyze MPLADS projects, expenditure, guidelines, records, and analytical signals.</p>
             </div>
           </div>
 
           <div className="flex items-center gap-2.5">
-            {/* Language Selector */}
-            <div className="flex bg-slate-200/80 rounded-lg p-0.5 text-xs font-medium border border-slate-300/60">
+            {/* Standard Language Selector */}
+            <div className="flex bg-slate-100 rounded-lg p-0.5 text-xs font-medium border border-slate-200">
               <button
                 onClick={() => setSelectedLanguage('en')}
-                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'en' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'en' ? 'bg-white text-slate-900 shadow-xs border border-slate-200/60' : 'text-slate-600 hover:text-slate-900'}`}
               >
-                EN
+                English
               </button>
               <button
                 onClick={() => setSelectedLanguage('hi')}
-                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'hi' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'hi' ? 'bg-white text-slate-900 shadow-xs border border-slate-200/60' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 हिंदी
               </button>
               <button
                 onClick={() => setSelectedLanguage('hinglish')}
-                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'hinglish' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-2.5 py-1 rounded-md transition-colors ${selectedLanguage === 'hinglish' ? 'bg-white text-slate-900 shadow-xs border border-slate-200/60' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 Hinglish
               </button>
@@ -219,35 +207,38 @@ export const UniversalChatDrawer: React.FC<UniversalChatDrawerProps> = ({
           {messages.length === 0 ? (
             /* Calm, Institutional Research Empty State */
             <div className="py-8 px-2 max-w-xl mx-auto space-y-6 text-center animate-fadeIn">
-              <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto text-slate-700 shadow-sm">
-                <Search className="w-6 h-6 text-slate-600" />
+              <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto text-slate-700 shadow-xs">
+                <Search className="w-5 h-5 text-slate-600" />
               </div>
 
               <div className="space-y-1.5">
-                <h3 className="text-lg font-bold text-slate-900">Ask Pratyaksh</h3>
+                <h3 className="text-lg font-bold text-slate-900">Ask MPLAD</h3>
                 <p className="text-xs text-slate-500 leading-relaxed max-w-md mx-auto">
-                  Query verified project data, parliamentary allocations, financial progress, ML anomaly signals, and official MoSPI 2023 Guidelines.
+                  Search and analyze MPLADS projects, expenditure, guidelines, records and analytical signals.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left pt-2">
-                {quickStarters.map((item, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleSend(item.query)}
-                    className="p-3 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 rounded-xl transition-all shadow-sm flex flex-col justify-between group text-left cursor-pointer"
-                  >
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{item.category}</span>
-                      <p className="text-xs font-medium text-slate-800 group-hover:text-[#002B5B] transition-colors leading-snug">
-                        {item.query}
-                      </p>
-                    </div>
-                    <div className="pt-2 flex items-center justify-end text-[11px] text-slate-400 group-hover:text-slate-600 font-medium">
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </div>
-                  </button>
-                ))}
+              <div className="space-y-2 pt-2 text-left">
+                <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-1">Try asking:</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {quickStarters.map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSend(item.query)}
+                      className="p-3 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 rounded-xl transition-all shadow-xs flex flex-col justify-between group text-left cursor-pointer"
+                    >
+                      <div className="space-y-1">
+                        <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{item.category}</span>
+                        <p className="text-xs font-medium text-slate-800 group-hover:text-[#002B5B] transition-colors leading-snug">
+                          {item.query}
+                        </p>
+                      </div>
+                      <div className="pt-2 flex items-center justify-end text-[11px] text-slate-400 group-hover:text-slate-600 font-medium">
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           ) : (

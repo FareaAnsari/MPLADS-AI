@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ShieldCheck, Search, Database, FileCheck, Layers, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Search, Database, FileCheck, ArrowRight } from 'lucide-react';
 import { UniversalChatDrawer } from '../components/chat/UniversalChatDrawer';
 
 export const UniversalChatPage: React.FC = () => {
@@ -12,27 +12,27 @@ export const UniversalChatPage: React.FC = () => {
       query: 'How much money has been sanctioned and spent in Maharashtra in FY 2024-25?',
       desc: 'Aggregate expenditure, utilization percentages, and category distributions',
       icon: Database,
-      badge: 'Tier 1'
+      badge: 'Verified Data'
     },
     {
-      title: 'AI Anomaly & Risk Breakdown',
+      title: 'Anomaly & Risk Breakdown',
       query: 'Why is project WS/MP/18 flagged as a monitoring signal?',
       desc: 'Additive 5-factor risk score, Z-score cost variance, and milestone delays',
       icon: ShieldCheck,
-      badge: 'ML Engine'
+      badge: 'Analytical Engine'
     },
     {
       title: 'MoSPI Statutory Guidelines 2023',
       query: 'What are the strictly prohibited works under MPLADS guidelines?',
       desc: 'Statutory rules on religious structures, maintenance, and emergency disaster limits',
       icon: FileCheck,
-      badge: 'Policy RAG'
+      badge: 'Policy Records'
     },
     {
       title: 'Deep Research Investigation',
       query: 'Do a complete deep research investigation on project WS/MP/18',
-      desc: '19-section dossier with cross-scheme checks, peer benchmarks, and field questions',
-      icon: Sparkles,
+      desc: '19-section dossier with cross-scheme checks, peer benchmarks, and field audit questions',
+      icon: Search,
       badge: 'Dossier'
     }
   ];
@@ -43,21 +43,20 @@ export const UniversalChatPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white pt-6 pb-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 pt-6 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
-        {/* Hero Section */}
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-900/40 via-slate-900 to-slate-950 border border-slate-800 p-8 sm:p-12 shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Institutional Hero Section */}
+        <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 p-8 sm:p-12 shadow-sm">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Universal MPLADS Intelligence Agent</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold">
+              <span className="text-xs font-bold leading-none">✦</span>
+              <span>Ask MPLAD</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Ask Anything About <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-indigo-300 to-emerald-400">MPLADS Works</span>
+            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+              MPLADS Intelligence & Research Workspace
             </h1>
-            <p className="text-base text-slate-300 leading-relaxed">
-              Real-time conversational intelligence powered by <strong>30,002+ verified project records</strong>, <strong>18 statutory analytical engines</strong>, and official <strong>MoSPI Revised Guidelines 2023</strong> with 100% citable provenance.
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Search and analyze <strong>30,002+ verified project records</strong>, <strong>18 statutory analytical engines</strong>, and official <strong>MoSPI Revised Guidelines 2023</strong> with 100% citable provenance.
             </p>
 
             {/* Main Interactive Search Input */}
@@ -69,20 +68,20 @@ export const UniversalChatPage: React.FC = () => {
               className="pt-4 flex flex-col sm:flex-row gap-2 max-w-2xl"
             >
               <div className="relative flex-1">
-                <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="e.g. 'Show delayed projects in Maharashtra above ₹50 lakh'..."
-                  className="w-full pl-12 pr-4 py-3.5 bg-slate-900/90 border border-slate-700 rounded-2xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner"
+                  placeholder="Search projects, MPs, expenditure, guidelines..."
+                  className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#002B5B] shadow-2xs"
                 />
               </div>
               <button
                 type="submit"
-                className="px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-amber-600 hover:from-indigo-500 hover:to-amber-500 text-white rounded-2xl font-semibold shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
+                className="px-6 py-3 bg-[#002B5B] hover:bg-[#001f42] text-white rounded-xl font-medium shadow-xs transition-all flex items-center justify-center gap-2 shrink-0"
               >
-                <span>Launch Agent</span>
+                <span>Ask MPLAD</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
@@ -97,28 +96,28 @@ export const UniversalChatPage: React.FC = () => {
               <div
                 key={idx}
                 onClick={() => handleLaunch(item.query)}
-                className="group p-5 bg-slate-900/60 hover:bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 rounded-2xl cursor-pointer transition-all duration-200 flex flex-col justify-between space-y-4"
+                className="group p-5 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 rounded-xl cursor-pointer transition-all duration-200 flex flex-col justify-between space-y-4 shadow-2xs"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:scale-105 transition-transform">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-9 h-9 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700">
+                      <Icon className="w-4 h-4" />
                     </div>
-                    <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                    <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-600 border border-slate-200">
                       {item.badge}
                     </span>
                   </div>
-                  <h3 className="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">
+                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#002B5B] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-500 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-indigo-400 font-medium">
-                  <span className="truncate pr-2 font-mono text-[11px] text-slate-300">"{item.query}"</span>
-                  <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
+                  <span className="truncate pr-2 font-mono text-[11px] text-slate-500">"{item.query}"</span>
+                  <ArrowRight className="w-3.5 h-3.5 shrink-0 text-slate-400 group-hover:text-slate-700 group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
             );
@@ -135,3 +134,4 @@ export const UniversalChatPage: React.FC = () => {
     </div>
   );
 };
+
